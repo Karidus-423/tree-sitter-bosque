@@ -1,0 +1,11 @@
+======================
+Namespaces Definition
+======================
+
+declare namespace Main;
+
+---
+
+(source_file
+	(_components)
+)
