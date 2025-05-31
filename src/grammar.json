@@ -201,6 +201,10 @@
             "type": "SYMBOL",
             "name": "namespace_tok"
           }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },

@@ -7,5 +7,5 @@ declare namespace Main;
 ---
 
 (source_file
-	(_components)
+	(namespace_tok)
 )

@@ -67,6 +67,7 @@ module.exports = grammar({
         "declare",
         "namespace",
         field("name", $.namespace_tok),
+        ";",
       ),
 
     _entity: ($) =>
