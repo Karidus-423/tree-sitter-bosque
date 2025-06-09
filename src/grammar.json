@@ -65,26 +65,34 @@
           "type": "FIELD",
           "name": "return_type",
           "content": {
-            "type": "SEQ",
+            "type": "CHOICE",
             "members": [
               {
-                "type": "STRING",
-                "value": ":"
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ":"
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "bsq_prim",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_type"
+                    }
+                  }
+                ]
               },
               {
-                "type": "FIELD",
-                "name": "bsq_prim",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_type"
-                }
+                "type": "BLANK"
               }
             ]
           }
         },
         {
           "type": "FIELD",
-          "name": "body",
+          "name": "func_body",
           "content": {
             "type": "SYMBOL",
             "name": "_statement_block"
@@ -137,8 +145,25 @@
           "value": "return"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -196,7 +221,7 @@
         },
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "namespace_id",
           "content": {
             "type": "SYMBOL",
             "name": "namespace_tok"
@@ -213,7 +238,7 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "token",
+          "name": "keyword",
           "content": {
             "type": "STRING",
             "value": "entity"
@@ -229,7 +254,7 @@
         },
         {
           "type": "FIELD",
-          "name": "fields",
+          "name": "field_block",
           "content": {
             "type": "SYMBOL",
             "name": "_field_block"
@@ -282,8 +307,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "field"
+          "type": "FIELD",
+          "name": "keyword",
+          "content": {
+            "type": "STRING",
+            "value": "field"
+          }
         },
         {
           "type": "SYMBOL",
@@ -484,6 +513,10 @@
         {
           "type": "STRING",
           "value": "String"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "namespace_tok"
         }
       ]
     },

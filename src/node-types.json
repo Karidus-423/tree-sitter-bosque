@@ -4,7 +4,93 @@
     "named": true,
     "root": true,
     "fields": {
-      "body": {
+      "bsq_prim": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "namespace_tok",
+            "named": true
+          }
+        ]
+      },
+      "entity_name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "namespace_tok",
+            "named": true
+          }
+        ]
+      },
+      "field_block": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "field",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "namespace_tok",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "func_body": {
         "multiple": true,
         "required": false,
         "types": [
@@ -69,86 +155,12 @@
             "named": false
           },
           {
-            "type": "return",
-            "named": false
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
-          }
-        ]
-      },
-      "bsq_prim": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          }
-        ]
-      },
-      "entity_name": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
             "type": "namespace_tok",
             "named": true
-          }
-        ]
-      },
-      "fields": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": ":",
-            "named": false
           },
           {
-            "type": ";",
+            "type": "return",
             "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
-            "type": "field",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
           },
           {
             "type": "{",
@@ -170,7 +182,21 @@
           }
         ]
       },
-      "name": {
+      "keyword": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "entity",
+            "named": false
+          },
+          {
+            "type": "field",
+            "named": false
+          }
+        ]
+      },
+      "namespace_id": {
         "multiple": true,
         "required": false,
         "types": [
@@ -219,6 +245,10 @@
           {
             "type": "identifier",
             "named": true
+          },
+          {
+            "type": "namespace_tok",
+            "named": true
           }
         ]
       },
@@ -228,16 +258,6 @@
         "types": [
           {
             "type": ":",
-            "named": false
-          }
-        ]
-      },
-      "token": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "entity",
             "named": false
           }
         ]

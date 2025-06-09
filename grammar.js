@@ -20,6 +20,7 @@ module.exports = grammar({
         $._function_def,
       ),
 
+    //TODO: Are there function declarations?
     _function_def: ($) =>
       seq(
         optional("public"),
@@ -28,12 +29,12 @@ module.exports = grammar({
         field("params", $._parameters),
         field(
           "return_type",
-          seq(
+          optional(seq(
             ":",
             field("bsq_prim", $._type),
-          ),
+          )),
         ),
-        field("body", $._statement_block),
+        field("func_body", $._statement_block),
       ),
 
     _parameters: ($) =>
@@ -48,7 +49,9 @@ module.exports = grammar({
     _return: ($) =>
       seq(
         "return",
-        $.identifier,
+        optional(
+          choice($._expression, $.identifier),
+        ),
         ";",
       ),
 
@@ -66,15 +69,15 @@ module.exports = grammar({
       seq(
         "declare",
         "namespace",
-        field("name", $.namespace_tok),
+        field("namespace_id", $.namespace_tok),
         ";",
       ),
 
     _entity: ($) =>
       seq(
-        field("token", "entity"),
+        field("keyword", "entity"),
         field("entity_name", $.namespace_tok),
-        field("fields", $._field_block),
+        field("field_block", $._field_block),
       ),
 
     _field_block: ($) =>
@@ -96,7 +99,7 @@ module.exports = grammar({
 
     _field: ($) =>
       seq(
-        "field",
+        field("keyword", "field"),
         $._bind_id_to_type,
         ";",
       ),
@@ -169,6 +172,7 @@ module.exports = grammar({
         "Nat",
         "CString",
         "String",
+        $.namespace_tok,
       ),
 
     namespace_tok: ($) => /[A-Z][a-z]*/,

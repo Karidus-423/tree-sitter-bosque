@@ -1,0 +1,27 @@
+===========================
+Function Definiton Void
+===========================
+
+function main() { 
+    return ;
+}
+
+---
+
+(source_file
+    func_name: (identifier)
+)
+
+===========================
+Function Definiton Params
+===========================
+
+function main(k: Itt) { 
+    return ;
+}
+
+---
+
+(source_file
+    func_name: (identifier)
+)
