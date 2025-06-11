@@ -18,6 +18,7 @@ module.exports = grammar({
         $._namespace_def,
         $._entity,
         $._function_def,
+        $._enum,
       ),
 
     //TODO: Are there function declarations?
@@ -31,7 +32,7 @@ module.exports = grammar({
           "return_type",
           optional(seq(
             ":",
-            field("bsq_prim", $._type),
+            $._type,
           )),
         ),
         field("func_body", $._statement_block),
@@ -50,7 +51,7 @@ module.exports = grammar({
       seq(
         "return",
         optional(
-          choice($._expression, $.identifier),
+          $._value,
         ),
         ";",
       ),
@@ -76,17 +77,57 @@ module.exports = grammar({
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
-        field("entity_name", $.namespace_tok),
+        field("entity_name", $.identifier),
         field("field_block", $._field_block),
       ),
 
     _field_block: ($) =>
       seq(
         "{",
-        repeat(
-          $._field,
-        ),
+        repeat(field("field", $._field)),
         "}",
+      ),
+
+    _accessor: ($) =>
+      seq(
+        $.identifier,
+        ".",
+        $.identifier,
+      ),
+
+    _enum: ($) =>
+      seq(
+        field("enum_key", "enum"),
+        field("enum_name", $.enum_tok),
+        field("enum_values", $._enum_block),
+      ),
+
+    _enum_block: ($) =>
+      seq(
+        "{",
+        optional(repeat($._enum_value)),
+        "}",
+      ),
+
+    _enum_value: ($) =>
+      seq(
+        $.identifier,
+        optional(","),
+      ),
+
+    _value: ($) =>
+      choice(
+        $._expression,
+        $.identifier,
+        $.num_lit,
+        $._accessor,
+      ),
+
+    _field: ($) =>
+      seq(
+        field("keyword", "field"),
+        $._bind_id_to_type,
+        ";",
       ),
 
     _assertion: ($) =>
@@ -97,27 +138,21 @@ module.exports = grammar({
         ";",
       ),
 
-    _field: ($) =>
-      seq(
-        field("keyword", "field"),
-        $._bind_id_to_type,
-        ";",
-      ),
-
     _definition: ($) =>
       seq(
         optional(
           "let",
         ),
-        choice(
+        optional(choice(
           $._bind_id_to_type,
           $.identifier,
-        ),
+        )),
         "=",
         $._addition,
         ";",
       ),
 
+    ///////////Should be able to have a calculator here/////////////////////////
     _expression: ($) =>
       choice(
         $._greater_than,
@@ -154,10 +189,11 @@ module.exports = grammar({
 
     _addition: ($) =>
       seq(
-        $.identifier,
+        $._value,
         "+",
-        $.identifier,
+        $._value,
       ),
+    ///////////////////////////////////////////
 
     _bind_id_to_type: ($) =>
       seq(
@@ -172,11 +208,14 @@ module.exports = grammar({
         "Nat",
         "CString",
         "String",
+        "BigNat",
         $.namespace_tok,
       ),
 
+    num_lit: ($) => /[0-9]*[iInN]/,
+    enum_tok: ($) => /[A-Z][A-Za-z]*/,
     namespace_tok: ($) => /[A-Z][a-z]*/,
-    identifier: ($) => /[a-z]+/,
+    identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
     number: ($) => /\d+/,
   },
 });

@@ -1,0 +1,46 @@
+===========================
+Entities Definition Empty
+===========================
+
+entity Base{
+}
+
+---
+
+(source_file
+	entity_name: (identifier)
+)
+
+===========================
+Entities Definition Values
+===========================
+
+entity Food{
+    field x: Int;
+	field z: Nat;
+	field y: CString;
+	field a: BigNat;
+}
+
+---
+
+(source_file
+	entity_name: (identifier)
+	field: (identifier)
+	field: (identifier)
+	field: (identifier)
+	field: (identifier)
+)
+
+===========================
+Entities Use Accessors
+===========================
+
+public function main(f: Foo): Int { 
+    let k = f.x + f.y;
+    assert k > f.x;
+
+    return k;
+}
+
+---

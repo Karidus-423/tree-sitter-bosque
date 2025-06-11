@@ -1,0 +1,33 @@
+===========================
+Enums Empty
+===========================
+
+enum Test {
+}
+
+---
+
+(source_file
+	enum_name: (enum_tok)
+)
+
+===========================
+Enums Multiple
+===========================
+
+enum AnotherTest {
+	value,
+	worth,
+	price,
+	cost
+}
+
+---
+
+(source_file
+	enum_name: (enum_tok)
+	enum_values: (identifier)
+	enum_values: (identifier)
+	enum_values: (identifier)
+	enum_values: (identifier)
+)

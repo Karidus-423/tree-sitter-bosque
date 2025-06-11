@@ -9,6 +9,10 @@
         "required": false,
         "types": [
           {
+            "type": "BigNat",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
@@ -35,6 +39,94 @@
         "required": false,
         "types": [
           {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "enum_key": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum",
+            "named": false
+          }
+        ]
+      },
+      "enum_name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_tok",
+            "named": true
+          }
+        ]
+      },
+      "enum_values": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "field": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "field",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "namespace_tok",
             "named": true
           }
@@ -50,6 +142,10 @@
           },
           {
             "type": ";",
+            "named": false
+          },
+          {
+            "type": "BigNat",
             "named": false
           },
           {
@@ -99,6 +195,10 @@
             "named": false
           },
           {
+            "type": ".",
+            "named": false
+          },
+          {
             "type": ":",
             "named": false
           },
@@ -124,6 +224,10 @@
           },
           {
             "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigNat",
             "named": false
           },
           {
@@ -156,6 +260,10 @@
           },
           {
             "type": "namespace_tok",
+            "named": true
+          },
+          {
+            "type": "num_lit",
             "named": true
           },
           {
@@ -227,6 +335,10 @@
             "named": false
           },
           {
+            "type": "BigNat",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
@@ -259,6 +371,30 @@
           {
             "type": ":",
             "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "namespace_tok",
+            "named": true
           }
         ]
       }
@@ -278,6 +414,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
@@ -309,6 +449,10 @@
     "named": false
   },
   {
+    "type": "BigNat",
+    "named": false
+  },
+  {
     "type": "CString",
     "named": false
   },
@@ -337,6 +481,14 @@
     "named": false
   },
   {
+    "type": "enum",
+    "named": false
+  },
+  {
+    "type": "enum_tok",
+    "named": true
+  },
+  {
     "type": "field",
     "named": false
   },
@@ -358,6 +510,10 @@
   },
   {
     "type": "namespace_tok",
+    "named": true
+  },
+  {
+    "type": "num_lit",
     "named": true
   },
   {

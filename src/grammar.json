@@ -23,6 +23,10 @@
         {
           "type": "SYMBOL",
           "name": "_function_def"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_enum"
         }
       ]
     },
@@ -75,12 +79,8 @@
                     "value": ":"
                   },
                   {
-                    "type": "FIELD",
-                    "name": "bsq_prim",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_type"
-                    }
+                    "type": "SYMBOL",
+                    "name": "_type"
                   }
                 ]
               },
@@ -148,17 +148,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_expression"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "_value"
             },
             {
               "type": "BLANK"
@@ -249,7 +240,7 @@
           "name": "entity_name",
           "content": {
             "type": "SYMBOL",
-            "name": "namespace_tok"
+            "name": "identifier"
           }
         },
         {
@@ -272,8 +263,12 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "_field"
+            "type": "FIELD",
+            "name": "field",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_field"
+            }
           }
         },
         {
@@ -282,24 +277,119 @@
         }
       ]
     },
-    "_assertion": {
+    "_accessor": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
+    "_enum": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "enum_key",
+          "content": {
+            "type": "STRING",
+            "value": "enum"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "enum_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "enum_tok"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "enum_values",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_enum_block"
+          }
+        }
+      ]
+    },
+    "_enum_block": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "assert"
+          "value": "{"
         },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_enum_value"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "_enum_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_value": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "_expression"
         },
         {
           "type": "SYMBOL",
-          "name": "_definition"
+          "name": "identifier"
         },
         {
-          "type": "STRING",
-          "value": ";"
+          "type": "SYMBOL",
+          "name": "num_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_accessor"
         }
       ]
     },
@@ -317,6 +407,27 @@
         {
           "type": "SYMBOL",
           "name": "_bind_id_to_type"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "_assertion": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "assert"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_definition"
         },
         {
           "type": "STRING",
@@ -343,12 +454,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_bind_id_to_type"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bind_id_to_type"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
             },
             {
-              "type": "SYMBOL",
-              "name": "identifier"
+              "type": "BLANK"
             }
           ]
         },
@@ -462,7 +581,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "_value"
         },
         {
           "type": "STRING",
@@ -470,7 +589,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "_value"
         }
       ]
     },
@@ -515,10 +634,22 @@
           "value": "String"
         },
         {
+          "type": "STRING",
+          "value": "BigNat"
+        },
+        {
           "type": "SYMBOL",
           "name": "namespace_tok"
         }
       ]
+    },
+    "num_lit": {
+      "type": "PATTERN",
+      "value": "[0-9]*[iInN]"
+    },
+    "enum_tok": {
+      "type": "PATTERN",
+      "value": "[A-Z][A-Za-z]*"
     },
     "namespace_tok": {
       "type": "PATTERN",
@@ -526,7 +657,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-z]+"
+      "value": "[$]?[_a-zA-Z][_a-zA-Z0-9]*"
     },
     "number": {
       "type": "PATTERN",

@@ -1,5 +1,5 @@
 ===========================
-Function Definiton Void
+Function Definition Void
 ===========================
 
 function main() { 
@@ -13,10 +13,10 @@ function main() {
 )
 
 ===========================
-Function Definiton Params
+Function Definition Params
 ===========================
 
-function main(k: Itt) { 
+function main(k: CString) { 
     return ;
 }
 
@@ -24,4 +24,21 @@ function main(k: Itt) {
 
 (source_file
     func_name: (identifier)
+	params: (identifier)
+)
+
+===========================
+Function Definition Return
+===========================
+
+function main(k: CString): Int { 
+    return 2i;
+}
+
+---
+
+(source_file
+    func_name: (identifier)
+	params: (identifier)
+	func_body: (num_lit)
 )
