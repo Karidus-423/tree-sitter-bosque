@@ -51,7 +51,7 @@ module.exports = grammar({
       seq(
         "return",
         optional(
-          $._value,
+          $._statement,
         ),
         ";",
       ),
@@ -60,10 +60,18 @@ module.exports = grammar({
       seq(
         "{",
         repeat(choice(
-          $._assertion,
+          $._statement,
+          $._definition,
         )),
         optional($._return),
         "}",
+      ),
+
+    _statement: ($) =>
+      choice(
+        $._assertion,
+        $._enum_access,
+        $.num_lit,
       ),
 
     _namespace_def: ($) =>
@@ -88,7 +96,7 @@ module.exports = grammar({
         "}",
       ),
 
-    _accessor: ($) =>
+    _entity_access: ($) =>
       seq(
         $.identifier,
         ".",
@@ -115,12 +123,19 @@ module.exports = grammar({
         optional(","),
       ),
 
+    _enum_access: ($) =>
+      seq(
+        field("enum_name", $.enum_tok),
+        field("enum_accessor", "#"),
+        field("enum_access", $.identifier),
+      ),
+
     _value: ($) =>
       choice(
         $._expression,
         $.identifier,
         $.num_lit,
-        $._accessor,
+        $._entity_access,
       ),
 
     _field: ($) =>
@@ -133,8 +148,7 @@ module.exports = grammar({
     _assertion: ($) =>
       seq(
         "assert",
-        $._expression,
-        $._definition,
+        $._value,
         ";",
       ),
 
@@ -143,20 +157,26 @@ module.exports = grammar({
         optional(
           "let",
         ),
-        optional(choice(
+        choice(
           $._bind_id_to_type,
           $.identifier,
-        )),
+        ),
         "=",
-        $._addition,
+        $._value,
         ";",
       ),
 
     ///////////Should be able to have a calculator here/////////////////////////
-    _expression: ($) =>
+    _binary_operation: ($) =>
+      choice(
+        $._addition,
+      ),
+
+    _boolean_expression: ($) =>
       choice(
         $._greater_than,
         $._less_than,
+        $._addition,
       ),
 
     _less_than: ($) =>
@@ -188,11 +208,11 @@ module.exports = grammar({
       ),
 
     _addition: ($) =>
-      seq(
+      prec.left(seq(
         $._value,
         "+",
         $._value,
-      ),
+      )),
     ///////////////////////////////////////////
 
     _bind_id_to_type: ($) =>

@@ -44,6 +44,26 @@
           }
         ]
       },
+      "enum_access": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "enum_accessor": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "#",
+            "named": false
+          }
+        ]
+      },
       "enum_key": {
         "multiple": true,
         "required": false,
@@ -191,6 +211,10 @@
         "required": false,
         "types": [
           {
+            "type": "#",
+            "named": false
+          },
+          {
             "type": "+",
             "named": false
           },
@@ -249,6 +273,10 @@
           {
             "type": "assert",
             "named": false
+          },
+          {
+            "type": "enum_tok",
+            "named": true
           },
           {
             "type": "identifier",
@@ -399,6 +427,10 @@
         ]
       }
     }
+  },
+  {
+    "type": "#",
+    "named": false
   },
   {
     "type": "(",

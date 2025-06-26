@@ -12,7 +12,7 @@ enum Test {
 )
 
 ===========================
-Enums Multiple
+Enums Multiple Definition
 ===========================
 
 enum AnotherTest {
@@ -30,4 +30,29 @@ enum AnotherTest {
 	enum_values: (identifier)
 	enum_values: (identifier)
 	enum_values: (identifier)
+)
+
+===========================
+Enums Multiple Access
+===========================
+enum Foo {
+	f1,
+	F2,
+	_f3
+}
+
+function main(): Int {
+	return Foo#_f3; 
+}
+
+---
+
+(source_file
+	enum_name: (enum_tok)
+	enum_values: (identifier)
+	enum_values: (identifier)
+	enum_values: (identifier)
+	func_name: (identifier)
+	enum_name: (enum_tok)
+	enum_access: (identifier)
 )

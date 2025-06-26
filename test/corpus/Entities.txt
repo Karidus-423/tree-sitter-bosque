@@ -33,7 +33,7 @@ entity Food{
 )
 
 ===========================
-Entities Use Accessors
+Entities Accesors Use
 ===========================
 
 public function main(f: Foo): Int { 
@@ -44,3 +44,9 @@ public function main(f: Foo): Int {
 }
 
 ---
+
+(source_file
+    func_name: (identifier)
+	params: (identifier)
+	return_type: (_type)
+)
