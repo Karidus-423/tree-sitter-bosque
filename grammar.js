@@ -17,8 +17,8 @@ module.exports = grammar({
       choice(
         $._namespace_def,
         $._entity,
-        $._function_def,
         $._enum,
+        $._function_def,
       ),
 
     //TODO: Are there function declarations?
@@ -51,7 +51,7 @@ module.exports = grammar({
       seq(
         "return",
         optional(
-          $._statement,
+          $._value,
         ),
         ";",
       ),
@@ -59,19 +59,15 @@ module.exports = grammar({
     _statement_block: ($) =>
       seq(
         "{",
-        repeat(choice(
-          $._statement,
-          $._definition,
-        )),
+        repeat($._statement),
         optional($._return),
         "}",
       ),
 
     _statement: ($) =>
       choice(
+        $._definition,
         $._assertion,
-        $._enum_access,
-        $.num_lit,
       ),
 
     _namespace_def: ($) =>
@@ -85,8 +81,23 @@ module.exports = grammar({
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
-        field("entity_name", $.identifier),
+        field("entity_name", $.entity_id),
         field("field_block", $._field_block),
+      ),
+
+    _entity_access: ($) =>
+      choice(
+        seq(
+          $.identifier,
+          ".",
+          $.identifier,
+        ),
+        seq(
+          $.entity_id,
+          "{",
+          $._value,
+          "}",
+        ),
       ),
 
     _field_block: ($) =>
@@ -96,28 +107,21 @@ module.exports = grammar({
         "}",
       ),
 
-    _entity_access: ($) =>
-      seq(
-        $.identifier,
-        ".",
-        $.identifier,
-      ),
-
     _enum: ($) =>
       seq(
         field("enum_key", "enum"),
         field("enum_name", $.enum_tok),
-        field("enum_values", $._enum_block),
+        field("enum_fields", $._enum_block),
       ),
 
     _enum_block: ($) =>
       seq(
         "{",
-        optional(repeat($._enum_value)),
+        optional(repeat($._enum_field)),
         "}",
       ),
 
-    _enum_value: ($) =>
+    _enum_field: ($) =>
       seq(
         $.identifier,
         optional(","),
@@ -132,10 +136,12 @@ module.exports = grammar({
 
     _value: ($) =>
       choice(
-        $._expression,
+        $._enum_access,
         $.identifier,
         $.num_lit,
         $._entity_access,
+        $._binary_operation,
+        $._boolean_expression,
       ),
 
     _field: ($) =>
@@ -146,10 +152,20 @@ module.exports = grammar({
       ),
 
     _assertion: ($) =>
-      seq(
-        "assert",
-        $._value,
-        ";",
+      choice(
+        seq(
+          "assert",
+          optional(field("assert_tag", $.identifier)),
+          $._value,
+          ";",
+        ),
+        seq(
+          "assert",
+          "(",
+          $._value,
+          ")",
+          ";",
+        ),
       ),
 
     _definition: ($) =>
@@ -166,10 +182,34 @@ module.exports = grammar({
         ";",
       ),
 
+    _bind_id_to_type: ($) =>
+      seq(
+        $.identifier,
+        ":",
+        field("type", $._type),
+      ),
+
+    _type: ($) =>
+      choice(
+        $.namespace_tok,
+        $.entity_id,
+        "Int",
+        "Nat",
+        "CString",
+        "String",
+        "BigNat",
+      ),
+
     ///////////Should be able to have a calculator here/////////////////////////
     _binary_operation: ($) =>
-      choice(
-        $._addition,
+      prec(
+        2,
+        choice(
+          $._addition,
+          $._subtraction,
+          $._multiplication,
+          $._division,
+        ),
       ),
 
     _boolean_expression: ($) =>
@@ -180,32 +220,32 @@ module.exports = grammar({
       ),
 
     _less_than: ($) =>
-      choice(
+      prec.left(choice(
         seq(
-          $.identifier,
+          $._value,
           ">",
-          $.identifier,
+          $._value,
         ),
         seq(
-          $.identifier,
+          $._value,
           ">=",
-          $.identifier,
+          $._value,
         ),
-      ),
+      )),
 
     _greater_than: ($) =>
-      choice(
+      prec.left(choice(
         seq(
-          $.identifier,
+          $._value,
           "<",
-          $.identifier,
+          $._value,
         ),
         seq(
-          $.identifier,
+          $._value,
           "<=",
-          $.identifier,
+          $._value,
         ),
-      ),
+      )),
 
     _addition: ($) =>
       prec.left(seq(
@@ -213,29 +253,34 @@ module.exports = grammar({
         "+",
         $._value,
       )),
+
+    _subtraction: ($) =>
+      prec.left(seq(
+        $._value,
+        "-",
+        $._value,
+      )),
+
+    _multiplication: ($) =>
+      prec.left(seq(
+        $._value,
+        "*",
+        $._value,
+      )),
+
+    _division: ($) =>
+      prec.left(seq(
+        $._value,
+        "//",
+        $._value,
+      )),
+
     ///////////////////////////////////////////
-
-    _bind_id_to_type: ($) =>
-      seq(
-        $.identifier,
-        ":",
-        field("bsq_prim", $._type),
-      ),
-
-    _type: ($) =>
-      choice(
-        "Int",
-        "Nat",
-        "CString",
-        "String",
-        "BigNat",
-        $.namespace_tok,
-      ),
 
     num_lit: ($) => /[0-9]*[iInN]/,
     enum_tok: ($) => /[A-Z][A-Za-z]*/,
+    entity_id: ($) => /[A-Z][A-Za-z]*/,
     namespace_tok: ($) => /[A-Z][a-z]*/,
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
-    number: ($) => /\d+/,
   },
 });

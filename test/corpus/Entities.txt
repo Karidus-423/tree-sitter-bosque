@@ -8,7 +8,7 @@ entity Base{
 ---
 
 (source_file
-	entity_name: (identifier)
+	entity_name: (entity_id)
 )
 
 ===========================
@@ -25,7 +25,7 @@ entity Food{
 ---
 
 (source_file
-	entity_name: (identifier)
+	entity_name: (entity_id)
 	field: (identifier)
 	field: (identifier)
 	field: (identifier)
@@ -48,5 +48,67 @@ public function main(f: Foo): Int {
 (source_file
     func_name: (identifier)
 	params: (identifier)
-	return_type: (_type)
+	type: (entity_id)
+	func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
+    func_body: (identifier)
 )
+
+===========================
+Entities Accesors Use Alt
+===========================
+entity Foo {
+	field f: Int; 
+} 
+
+function foo(): Foo {
+	return Foo{1i}; 
+}
+
+
+---
+
+(source_file
+    entity_name: (entity_id)
+    field: (identifier)
+    func_name: (identifier)
+    return_type: (entity_id)
+    func_body: (entity_id)
+    func_body: (num_lit)
+)
+
+===========================
+Entities Field Update
+===========================
+
+entity Foo{
+	field x: Int; 
+} 
+
+function main(): Int {
+	var v = Foo{1i};
+	return v[x = 2i].x;
+}
+
+----
+
+===========================
+Entities Field Update Alt
+===========================
+
+entity Foo{
+	field x: Int; 
+} 
+
+function main(): Int {
+	var v = Foo{1i};
+	return v[x = $x + 1i].x;
+}
+
+----

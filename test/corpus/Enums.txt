@@ -26,10 +26,10 @@ enum AnotherTest {
 
 (source_file
 	enum_name: (enum_tok)
-	enum_values: (identifier)
-	enum_values: (identifier)
-	enum_values: (identifier)
-	enum_values: (identifier)
+	enum_fields: (identifier)
+	enum_fields: (identifier)
+	enum_fields: (identifier)
+	enum_fields: (identifier)
 )
 
 ===========================
@@ -49,9 +49,9 @@ function main(): Int {
 
 (source_file
 	enum_name: (enum_tok)
-	enum_values: (identifier)
-	enum_values: (identifier)
-	enum_values: (identifier)
+	enum_fields: (identifier)
+	enum_fields: (identifier)
+	enum_fields: (identifier)
 	func_name: (identifier)
 	enum_name: (enum_tok)
 	enum_access: (identifier)

@@ -1,35 +1,25 @@
 [
   {
+    "type": "entity_id",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "enum_tok",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
     "fields": {
-      "bsq_prim": {
+      "assert_tag": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "BigNat",
-            "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
-            "type": "namespace_tok",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -39,7 +29,7 @@
         "required": false,
         "types": [
           {
-            "type": "identifier",
+            "type": "entity_id",
             "named": true
           }
         ]
@@ -64,27 +54,7 @@
           }
         ]
       },
-      "enum_key": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "enum",
-            "named": false
-          }
-        ]
-      },
-      "enum_name": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "enum_tok",
-            "named": true
-          }
-        ]
-      },
-      "enum_values": {
+      "enum_fields": {
         "multiple": true,
         "required": false,
         "types": [
@@ -103,6 +73,26 @@
           {
             "type": "}",
             "named": false
+          }
+        ]
+      },
+      "enum_key": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum",
+            "named": false
+          }
+        ]
+      },
+      "enum_name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_tok",
+            "named": true
           }
         ]
       },
@@ -137,6 +127,10 @@
           {
             "type": "String",
             "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
           },
           {
             "type": "field",
@@ -185,6 +179,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "field",
             "named": false
           },
@@ -215,11 +213,31 @@
             "named": false
           },
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
             "type": "+",
             "named": false
           },
           {
+            "type": "-",
+            "named": false
+          },
+          {
             "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
             "named": false
           },
           {
@@ -273,6 +291,10 @@
           {
             "type": "assert",
             "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
           },
           {
             "type": "enum_tok",
@@ -383,6 +405,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -421,6 +447,44 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "namespace_tok",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "namespace_tok",
             "named": true
           }
@@ -441,6 +505,10 @@
     "named": false
   },
   {
+    "type": "*",
+    "named": false
+  },
+  {
     "type": "+",
     "named": false
   },
@@ -449,7 +517,15 @@
     "named": false
   },
   {
+    "type": "-",
+    "named": false
+  },
+  {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {
@@ -515,10 +591,6 @@
   {
     "type": "enum",
     "named": false
-  },
-  {
-    "type": "enum_tok",
-    "named": true
   },
   {
     "type": "field",

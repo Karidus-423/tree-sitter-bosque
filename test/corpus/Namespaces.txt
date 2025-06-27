@@ -9,3 +9,45 @@ declare namespace Main;
 (source_file
 	(namespace_tok)
 )
+
+===============================
+Namespaces Scope Simple
+===============================
+declare namespace Main;
+entity Bar { } 
+
+function main(): Option<Bar> {
+	return none; 
+}
+
+---
+
+===============================
+Namespaces Scope Access
+===============================
+
+----
+
+===============================
+Namespace Import Access
+===============================
+declare namespace Main {
+	using NSOther; 
+} 
+
+function main(): Option<Other::Foo> {
+	return none; 
+}
+
+---
+
+===============================
+Namespace Import Access Rename
+===============================
+declare namespace Main {
+	using NSOther as Other; 
+} 
+
+function main(): Option<Other::Foo> {
+	return none; 
+}
