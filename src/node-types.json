@@ -583,51 +583,7 @@
         "required": false,
         "types": [
           {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": "BigNat",
-            "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "None",
-            "named": false
-          },
-          {
-            "type": "Option",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
             "type": "entity_id",
-            "named": true
-          },
-          {
-            "type": "namespace_id",
             "named": true
           }
         ]

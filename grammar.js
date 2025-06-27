@@ -249,7 +249,7 @@ module.exports = grammar({
       seq(
         field("namespace_id", $.namespace_id),
         field("namespace_accessor", "::"),
-        field("scoped_type", $._type),
+        field("scoped_type", $.entity_id),
       ),
 
     _option: ($) =>

@@ -810,7 +810,7 @@
           "name": "scoped_type",
           "content": {
             "type": "SYMBOL",
-            "name": "_type"
+            "name": "entity_id"
           }
         }
       ]
