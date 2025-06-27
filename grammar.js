@@ -30,10 +30,9 @@ module.exports = grammar({
         field("params", $._parameters),
         field(
           "return_type",
-          optional(seq(
-            ":",
-            $._type,
-          )),
+          optional(
+            $._bind_type,
+          ),
         ),
         field("func_body", $._statement_block),
       ),
@@ -42,7 +41,7 @@ module.exports = grammar({
       seq(
         "(",
         repeat(
-          seq($._bind_id_to_type, optional(",")),
+          seq($.identifier, $._bind_type, optional(",")),
         ),
         ")",
       ),
@@ -68,13 +67,14 @@ module.exports = grammar({
       choice(
         $._definition,
         $._assertion,
+        $._variable,
       ),
 
     _namespace_def: ($) =>
       seq(
         "declare",
         "namespace",
-        field("namespace_id", $.namespace_tok),
+        field("namespace_id", $.namespace_id),
         ";",
       ),
 
@@ -85,10 +85,21 @@ module.exports = grammar({
         field("field_block", $._field_block),
       ),
 
+    _entity_update: ($) =>
+      seq(
+        $.identifier,
+        "[",
+        $._assignment,
+        "]",
+      ),
+
     _entity_access: ($) =>
       choice(
         seq(
-          $.identifier,
+          choice(
+            $.identifier,
+            $._entity_update,
+          ),
           ".",
           $.identifier,
         ),
@@ -110,7 +121,7 @@ module.exports = grammar({
     _enum: ($) =>
       seq(
         field("enum_key", "enum"),
-        field("enum_name", $.enum_tok),
+        field("enum_name", $.enum_id),
         field("enum_fields", $._enum_block),
       ),
 
@@ -129,25 +140,46 @@ module.exports = grammar({
 
     _enum_access: ($) =>
       seq(
-        field("enum_name", $.enum_tok),
+        field("enum_name", $.enum_id),
         field("enum_accessor", "#"),
         field("enum_access", $.identifier),
+      ),
+
+    _self_access: ($) =>
+      seq(
+        "$",
+        $.identifier,
       ),
 
     _value: ($) =>
       choice(
         $._enum_access,
         $.identifier,
+        $._self_access,
         $.num_lit,
         $._entity_access,
         $._binary_operation,
         $._boolean_expression,
+        "none",
+      ),
+
+    _variable: ($) =>
+      seq(
+        "var",
+        choice(
+          $.identifier,
+          optional($._bind_type),
+        ),
+        "=",
+        $._value,
+        ";",
       ),
 
     _field: ($) =>
       seq(
         field("keyword", "field"),
-        $._bind_id_to_type,
+        $.identifier,
+        $._bind_type,
         ";",
       ),
 
@@ -174,30 +206,58 @@ module.exports = grammar({
           "let",
         ),
         choice(
-          $._bind_id_to_type,
           $.identifier,
+          seq(
+            $.identifier,
+            $._bind_type,
+          ),
         ),
         "=",
         $._value,
         ";",
       ),
 
-    _bind_id_to_type: ($) =>
+    _assignment: ($) =>
       seq(
         $.identifier,
-        ":",
-        field("type", $._type),
+        "=",
+        $._value,
+        optional(";"),
       ),
 
     _type: ($) =>
       choice(
-        $.namespace_tok,
+        $._option,
         $.entity_id,
+        $._namespace_access,
+        $.namespace_id,
         "Int",
         "Nat",
         "CString",
         "String",
         "BigNat",
+        "None",
+      ),
+
+    _bind_type: ($) =>
+      seq(
+        ":",
+        field("type", $._type),
+      ),
+
+    _namespace_access: ($) =>
+      seq(
+        field("namespace_id", $.namespace_id),
+        field("namespace_accessor", "::"),
+        field("scoped_type", $._type),
+      ),
+
+    _option: ($) =>
+      seq(
+        "Option",
+        "<",
+        $._type,
+        ">",
       ),
 
     ///////////Should be able to have a calculator here/////////////////////////
@@ -275,12 +335,13 @@ module.exports = grammar({
         $._value,
       )),
 
+    //TOKENS
     ///////////////////////////////////////////
 
     num_lit: ($) => /[0-9]*[iInN]/,
-    enum_tok: ($) => /[A-Z][A-Za-z]*/,
+    enum_id: ($) => /[A-Z][A-Za-z]*/,
     entity_id: ($) => /[A-Z][A-Za-z]*/,
-    namespace_tok: ($) => /[A-Z][a-z]*/,
+    namespace_id: ($) => /[A-Z][a-z]*/,
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
   },
 });

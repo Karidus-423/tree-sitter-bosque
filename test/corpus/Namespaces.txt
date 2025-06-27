@@ -7,7 +7,7 @@ declare namespace Main;
 ---
 
 (source_file
-	(namespace_tok)
+	(namespace_id)
 )
 
 ===============================
@@ -22,9 +22,22 @@ function main(): Option<Bar> {
 
 ---
 
-===============================
-Namespaces Scope Access
-===============================
+(source_file
+    (namespace_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+)
+
+=================================
+Namespaces Scope Access Explicit
+=================================
+declare namespace Main;
+entity Bar { }
+
+function main(): Option<Main::Bar> {
+	return none; 
+}
 
 ----
 

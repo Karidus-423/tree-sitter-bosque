@@ -1,13 +1,7 @@
 declare namespace Main;
+entity Bar { }
 
-entity Foo {
-    field x: Int;
-    field y: Int;
+function main(): Option<Main::Bar> {
+	return none; 
 }
 
-public function main(f: Foo): Int { 
-    let k = f.x + f.y;
-    assert k > f.x;
-
-    return k;
-}

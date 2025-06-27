@@ -5,7 +5,7 @@
     "fields": {}
   },
   {
-    "type": "enum_tok",
+    "type": "enum_id",
     "named": true,
     "fields": {}
   },
@@ -91,7 +91,7 @@
         "required": false,
         "types": [
           {
-            "type": "enum_tok",
+            "type": "enum_id",
             "named": true
           }
         ]
@@ -105,7 +105,19 @@
             "named": false
           },
           {
+            "type": "::",
+            "named": false
+          },
+          {
             "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
             "named": false
           },
           {
@@ -125,6 +137,14 @@
             "named": false
           },
           {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
             "type": "String",
             "named": false
           },
@@ -141,7 +161,7 @@
             "named": true
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -155,7 +175,19 @@
             "named": false
           },
           {
+            "type": "::",
+            "named": false
+          },
+          {
             "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
             "named": false
           },
           {
@@ -175,6 +207,14 @@
             "named": false
           },
           {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
             "type": "String",
             "named": false
           },
@@ -191,7 +231,7 @@
             "named": true
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
           },
           {
@@ -210,6 +250,10 @@
         "types": [
           {
             "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
             "named": false
           },
           {
@@ -242,6 +286,10 @@
           },
           {
             "type": ":",
+            "named": false
+          },
+          {
+            "type": "::",
             "named": false
           },
           {
@@ -285,7 +333,23 @@
             "named": false
           },
           {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -297,7 +361,7 @@
             "named": true
           },
           {
-            "type": "enum_tok",
+            "type": "enum_id",
             "named": true
           },
           {
@@ -309,8 +373,12 @@
             "named": false
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
+          },
+          {
+            "type": "none",
+            "named": false
           },
           {
             "type": "num_lit",
@@ -318,6 +386,10 @@
           },
           {
             "type": "return",
+            "named": false
+          },
+          {
+            "type": "var",
             "named": false
           },
           {
@@ -354,12 +426,22 @@
           }
         ]
       },
+      "namespace_accessor": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "::",
+            "named": false
+          }
+        ]
+      },
       "namespace_id": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -385,6 +467,18 @@
             "named": false
           },
           {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
             "type": "BigNat",
             "named": false
           },
@@ -398,6 +492,14 @@
           },
           {
             "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
             "named": false
           },
           {
@@ -413,7 +515,7 @@
             "named": true
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -427,6 +529,18 @@
             "named": false
           },
           {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
             "type": "BigNat",
             "named": false
           },
@@ -443,6 +557,14 @@
             "named": false
           },
           {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
             "type": "String",
             "named": false
           },
@@ -451,7 +573,61 @@
             "named": true
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
+            "named": true
+          }
+        ]
+      },
+      "scoped_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -461,6 +637,18 @@
         "required": false,
         "types": [
           {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
             "type": "BigNat",
             "named": false
           },
@@ -477,6 +665,14 @@
             "named": false
           },
           {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
             "type": "String",
             "named": false
           },
@@ -485,7 +681,7 @@
             "named": true
           },
           {
-            "type": "namespace_tok",
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -494,6 +690,10 @@
   },
   {
     "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
     "named": false
   },
   {
@@ -530,6 +730,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
     "named": false
   },
   {
@@ -573,7 +777,23 @@
     "named": false
   },
   {
+    "type": "None",
+    "named": false
+  },
+  {
+    "type": "Option",
+    "named": false
+  },
+  {
     "type": "String",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
@@ -613,8 +833,12 @@
     "named": false
   },
   {
-    "type": "namespace_tok",
+    "type": "namespace_id",
     "named": true
+  },
+  {
+    "type": "none",
+    "named": false
   },
   {
     "type": "num_lit",
@@ -626,6 +850,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "var",
     "named": false
   },
   {

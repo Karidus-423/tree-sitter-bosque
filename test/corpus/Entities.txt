@@ -78,7 +78,7 @@ function foo(): Foo {
     entity_name: (entity_id)
     field: (identifier)
     func_name: (identifier)
-    return_type: (entity_id)
+    type: (entity_id)
     func_body: (entity_id)
     func_body: (num_lit)
 )
@@ -98,6 +98,19 @@ function main(): Int {
 
 ----
 
+(source_file
+	(entity_id)
+	(identifier)
+	(identifier)
+	(identifier)
+	(entity_id)
+	(num_lit)
+	(identifier)
+	(identifier)
+	(num_lit)
+	(identifier)
+)
+
 ===========================
 Entities Field Update Alt
 ===========================
@@ -112,3 +125,18 @@ function main(): Int {
 }
 
 ----
+
+(source_file
+	(entity_id)
+	(identifier)
+	(identifier)
+	(identifier)
+	(entity_id)
+	(num_lit)
+	(identifier)
+	(identifier)
+	(identifier)
+	(num_lit)
+	(identifier)
+)
+
