@@ -1,7 +1,8 @@
-declare namespace Main;
-entity Bar { }
+declare namespace Main {
+	using NSOther; 
+} 
 
-function main(): Option<Main::Bar> {
+function main(): Option<NSOther::Foo> {
 	return none; 
 }
 

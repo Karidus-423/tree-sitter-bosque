@@ -19,6 +19,7 @@ module.exports = grammar({
         $._entity,
         $._enum,
         $._function_def,
+        $._statement,
       ),
 
     //TODO: Are there function declarations?
@@ -68,20 +69,60 @@ module.exports = grammar({
         $._definition,
         $._assertion,
         $._variable,
+        $._debug,
+        $._value,
       ),
 
     _namespace_def: ($) =>
+      choice(
+        seq(
+          "declare",
+          "namespace",
+          field("namespace_id", $.namespace_id),
+          ";",
+        ),
+        seq(
+          "declare",
+          "namespace",
+          field("namespace_id", $.namespace_id),
+          $._namespace_block,
+        ),
+      ),
+
+    _namespace_block: ($) =>
       seq(
-        "declare",
-        "namespace",
+        "{",
+        repeat(field("namespace_import", $._namespace_import)),
+        "}",
+      ),
+
+    _namespace_import: ($) =>
+      choice(
+        seq(
+          "using",
+          $.namespace_id,
+          ";",
+        ),
+        seq(
+          "using",
+          $.namespace_id,
+          "as",
+          $.namespace_id,
+          ";",
+        ),
+      ),
+
+    _namespace_access: ($) =>
+      seq(
         field("namespace_id", $.namespace_id),
-        ";",
+        field("namespace_accessor", "::"),
+        field("scoped_type", $.object_id),
       ),
 
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
-        field("entity_name", $.entity_id),
+        field("entity_name", $.object_id),
         field("field_block", $._field_block),
       ),
 
@@ -104,7 +145,7 @@ module.exports = grammar({
           $.identifier,
         ),
         seq(
-          $.entity_id,
+          $.object_id,
           "{",
           $._value,
           "}",
@@ -121,7 +162,7 @@ module.exports = grammar({
     _enum: ($) =>
       seq(
         field("enum_key", "enum"),
-        field("enum_name", $.enum_id),
+        field("enum_name", $.object_id),
         field("enum_fields", $._enum_block),
       ),
 
@@ -140,7 +181,7 @@ module.exports = grammar({
 
     _enum_access: ($) =>
       seq(
-        field("enum_name", $.enum_id),
+        field("enum_name", $.object_id),
         field("enum_accessor", "#"),
         field("enum_access", $.identifier),
       ),
@@ -217,6 +258,13 @@ module.exports = grammar({
         ";",
       ),
 
+    _debug: ($) =>
+      seq(
+        field("debug_keyword", "_debug"),
+        field("debug_target", $._value),
+        ";",
+      ),
+
     _assignment: ($) =>
       seq(
         $.identifier,
@@ -228,7 +276,7 @@ module.exports = grammar({
     _type: ($) =>
       choice(
         $._option,
-        $.entity_id,
+        $.object_id,
         $._namespace_access,
         $.namespace_id,
         "Int",
@@ -243,13 +291,6 @@ module.exports = grammar({
       seq(
         ":",
         field("type", $._type),
-      ),
-
-    _namespace_access: ($) =>
-      seq(
-        field("namespace_id", $.namespace_id),
-        field("namespace_accessor", "::"),
-        field("scoped_type", $.entity_id),
       ),
 
     _option: ($) =>
@@ -338,10 +379,11 @@ module.exports = grammar({
     //TOKENS
     ///////////////////////////////////////////
 
-    num_lit: ($) => /[0-9]*[iInN]/,
-    enum_id: ($) => /[A-Z][A-Za-z]*/,
-    entity_id: ($) => /[A-Z][A-Za-z]*/,
-    namespace_id: ($) => /[A-Z][a-z]*/,
+    //TODO: Make enum and entity id tokens less abstract.
+    namespace_id: ($) => /[A-Z][_a-zA-Z0-9]+/,
+    object_id: ($) => /[A-Z][A-Za-z]*/,
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
+
+    num_lit: ($) => choice(/[+]?[0-9]*[nN]/, /[+-]?[0-9]*[iI]/),
   },
 });

@@ -1,0 +1,48 @@
+=================
+Addition
+=================
+
+0I + 1I
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+=================
+Subtraction
+=================
+
+-5i - 8i
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+=================
+Division
+=================
+
+-35I // 8I
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+=================
+Multiplication
+=================
+
+35N * +8N
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+

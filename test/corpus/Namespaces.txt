@@ -24,9 +24,9 @@ function main(): Option<Bar> {
 
 (source_file
     (namespace_id)
-    (entity_id)
+    (object_id)
     (identifier)
-    (entity_id)
+    (namespace_id)
 )
 
 =================================
@@ -40,6 +40,13 @@ function main(): Option<Main::Bar> {
 }
 
 ----
+(source_file
+	(namespace_id)
+	(object_id)
+	(identifier)
+	(namespace_id)
+	(object_id)
+)
 
 ===============================
 Namespace Import Access
@@ -48,11 +55,19 @@ declare namespace Main {
 	using NSOther; 
 } 
 
-function main(): Option<Other::Foo> {
+function main(): Option<NSOther::Foo> {
 	return none; 
 }
 
 ---
+(source_file
+      (namespace_id)
+      (namespace_id)
+      (identifier)
+      (namespace_id)
+      (object_id)
+)
+
 
 ===============================
 Namespace Import Access Rename
@@ -64,3 +79,15 @@ declare namespace Main {
 function main(): Option<Other::Foo> {
 	return none; 
 }
+
+---
+
+(source_file
+  (namespace_id)
+  (namespace_id)
+  (namespace_id)
+  (identifier)
+  (namespace_id)
+  (object_id)
+)
+

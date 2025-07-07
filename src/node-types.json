@@ -1,11 +1,6 @@
 [
   {
-    "type": "entity_id",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "enum_id",
+    "type": "num_lit",
     "named": true,
     "fields": {}
   },
@@ -24,12 +19,112 @@
           }
         ]
       },
+      "debug_keyword": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "_debug",
+            "named": false
+          }
+        ]
+      },
+      "debug_target": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "object_id",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
       "entity_name": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "entity_id",
+            "type": "object_id",
             "named": true
           }
         ]
@@ -91,7 +186,7 @@
         "required": false,
         "types": [
           {
-            "type": "enum_id",
+            "type": "object_id",
             "named": true
           }
         ]
@@ -149,10 +244,6 @@
             "named": false
           },
           {
-            "type": "entity_id",
-            "named": true
-          },
-          {
             "type": "field",
             "named": false
           },
@@ -162,6 +253,10 @@
           },
           {
             "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "object_id",
             "named": true
           }
         ]
@@ -219,10 +314,6 @@
             "named": false
           },
           {
-            "type": "entity_id",
-            "named": true
-          },
-          {
             "type": "field",
             "named": false
           },
@@ -232,6 +323,10 @@
           },
           {
             "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "object_id",
             "named": true
           },
           {
@@ -353,16 +448,12 @@
             "named": false
           },
           {
-            "type": "assert",
+            "type": "_debug",
             "named": false
           },
           {
-            "type": "entity_id",
-            "named": true
-          },
-          {
-            "type": "enum_id",
-            "named": true
+            "type": "assert",
+            "named": false
           },
           {
             "type": "identifier",
@@ -382,6 +473,10 @@
           },
           {
             "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "object_id",
             "named": true
           },
           {
@@ -446,6 +541,28 @@
           }
         ]
       },
+      "namespace_import": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "as",
+            "named": false
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "using",
+            "named": false
+          }
+        ]
+      },
       "params": {
         "multiple": true,
         "required": false,
@@ -507,15 +624,15 @@
             "named": false
           },
           {
-            "type": "entity_id",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "object_id",
             "named": true
           }
         ]
@@ -569,11 +686,11 @@
             "named": false
           },
           {
-            "type": "entity_id",
+            "type": "namespace_id",
             "named": true
           },
           {
-            "type": "namespace_id",
+            "type": "object_id",
             "named": true
           }
         ]
@@ -583,7 +700,7 @@
         "required": false,
         "types": [
           {
-            "type": "entity_id",
+            "type": "object_id",
             "named": true
           }
         ]
@@ -633,15 +750,33 @@
             "named": false
           },
           {
-            "type": "entity_id",
+            "type": "namespace_id",
             "named": true
           },
           {
-            "type": "namespace_id",
+            "type": "object_id",
             "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "object_id",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -753,6 +888,14 @@
     "named": false
   },
   {
+    "type": "_debug",
+    "named": false
+  },
+  {
+    "type": "as",
+    "named": false
+  },
+  {
     "type": "assert",
     "named": false
   },
@@ -797,7 +940,7 @@
     "named": false
   },
   {
-    "type": "num_lit",
+    "type": "object_id",
     "named": true
   },
   {
@@ -806,6 +949,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "using",
     "named": false
   },
   {
