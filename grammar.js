@@ -318,35 +318,88 @@ module.exports = grammar({
         $._greater_than,
         $._less_than,
         $._addition,
+        $._compare,
+        $._equality,
+        $._compare,
+        $._key_comparator,
+      ),
+
+    _equality: ($) =>
+      prec.left(choice(
+        seq(
+          $._value,
+          "==",
+          $._value,
+        ),
+        seq(
+          $._value,
+          "!=",
+          $._value,
+        ),
+      )),
+
+    _compare: ($) =>
+      prec.left(choice(
+        seq(
+          $._value,
+          "===",
+          $._value,
+        ),
+        seq(
+          $._value,
+          "!==",
+          $._value,
+        ),
+      )),
+
+    _key_comparator: ($) =>
+      seq(
+        "KeyComparator",
+        "::",
+        choice("equal", "less"),
+        "<",
+        $._type,
+        ">",
+        "(",
+        $._value,
+        ",",
+        $._value,
+        ")",
       ),
 
     _less_than: ($) =>
-      prec.left(choice(
-        seq(
-          $._value,
-          ">",
-          $._value,
-        ),
-        seq(
-          $._value,
-          ">=",
-          $._value,
-        ),
-      )),
+      prec(
+        2,
+        prec.left(choice(
+          seq(
+            $._value,
+            ">",
+            $._value,
+          ),
+          seq(
+            $._value,
+            ">=",
+            $._value,
+          ),
+        )),
+      ),
 
     _greater_than: ($) =>
-      prec.left(choice(
-        seq(
-          $._value,
-          "<",
-          $._value,
-        ),
-        seq(
-          $._value,
-          "<=",
-          $._value,
-        ),
-      )),
+      prec(
+        2,
+        prec.left(choice(
+          seq(
+            $._value,
+            "<",
+            $._value,
+          ),
+          seq(
+            $._value,
+            "<=",
+            $._value,
+          ),
+        )),
+      ),
 
     _addition: ($) =>
       prec.left(seq(

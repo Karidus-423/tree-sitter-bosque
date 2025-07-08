@@ -34,6 +34,14 @@
         "required": false,
         "types": [
           {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
             "type": "#",
             "named": false
           },
@@ -42,11 +50,23 @@
             "named": false
           },
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
             "type": "*",
             "named": false
           },
           {
             "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
             "named": false
           },
           {
@@ -59,6 +79,10 @@
           },
           {
             "type": "//",
+            "named": false
+          },
+          {
+            "type": "::",
             "named": false
           },
           {
@@ -78,11 +102,51 @@
             "named": false
           },
           {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
             "type": ">",
             "named": false
           },
           {
             "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "String",
             "named": false
           },
           {
@@ -94,7 +158,19 @@
             "named": false
           },
           {
+            "type": "equal",
+            "named": false
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "less",
+            "named": false
+          },
+          {
+            "type": "namespace_id",
             "named": true
           },
           {
@@ -344,6 +420,14 @@
         "required": false,
         "types": [
           {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
             "type": "#",
             "named": false
           },
@@ -365,6 +449,10 @@
           },
           {
             "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
             "named": false
           },
           {
@@ -404,6 +492,14 @@
             "named": false
           },
           {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
             "type": ">",
             "named": false
           },
@@ -421,6 +517,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
             "named": false
           },
           {
@@ -456,8 +556,16 @@
             "named": false
           },
           {
+            "type": "equal",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
+          },
+          {
+            "type": "less",
+            "named": false
           },
           {
             "type": "let",
@@ -769,6 +877,10 @@
           "named": true
         },
         {
+          "type": "namespace_id",
+          "named": true
+        },
+        {
           "type": "num_lit",
           "named": true
         },
@@ -778,6 +890,14 @@
         }
       ]
     }
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "!==",
+    "named": false
   },
   {
     "type": "#",
@@ -844,6 +964,14 @@
     "named": false
   },
   {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": "===",
+    "named": false
+  },
+  {
     "type": ">",
     "named": false
   },
@@ -861,6 +989,10 @@
   },
   {
     "type": "Int",
+    "named": false
+  },
+  {
+    "type": "KeyComparator",
     "named": false
   },
   {
@@ -912,6 +1044,10 @@
     "named": false
   },
   {
+    "type": "equal",
+    "named": false
+  },
+  {
     "type": "field",
     "named": false
   },
@@ -922,6 +1058,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "less",
+    "named": false
   },
   {
     "type": "let",

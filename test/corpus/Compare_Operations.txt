@@ -1,0 +1,123 @@
+===================================
+Compare Operation
+===================================
+
++20n === 10n
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Inequality Compare Operation
+===================================
+
+0n !== 1n
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+
+===================================
+Equality Operation
+===================================
+
+33i == 32n
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Inequality Operation
+===================================
+
+3n != 3n
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Greater Than Equal Operation
+===================================
+
+20n >= 100N
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Greater Than Operation
+===================================
+
+0I > -1I
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Less Than Equal Operation
+===================================
+
+20n <= 100N
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Less Than Operation
+===================================
+
+-2I < 1I
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+
+===================================
+Key Comparator Operator Equal
+===================================
+
+KeyComparator::equal<Nat>(0n, 1n)
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
+
+===================================
+Key Comparator Operator Less
+===================================
+
+KeyComparator::less<Nat>(5n, 80n)
+
+---
+(source_file
+      (num_lit)
+      (num_lit)
+)
