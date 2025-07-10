@@ -1,8 +1,8 @@
-declare namespace Main {
-	using NSOther; 
+function foo(x: Int, y: Int): Int {
+	return x + y; 
 } 
 
-function main(): Option<NSOther::Foo> {
-	return none; 
+function main(): Int {
+	var x: Int = 0i;
+	return foo(y = x, x = x); 
 }
-

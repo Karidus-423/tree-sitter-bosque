@@ -82,6 +82,10 @@
             "named": false
           },
           {
+            "type": "0",
+            "named": false
+          },
+          {
             "type": "::",
             "named": false
           },
@@ -118,11 +122,23 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
             "named": false
           },
           {
+            "type": "Bool",
+            "named": false
+          },
+          {
             "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Fail",
             "named": false
           },
           {
@@ -134,6 +150,10 @@
             "named": false
           },
           {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
             "type": "Nat",
             "named": false
           },
@@ -142,7 +162,19 @@
             "named": false
           },
           {
+            "type": "Ok",
+            "named": false
+          },
+          {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "Some",
             "named": false
           },
           {
@@ -159,6 +191,10 @@
           },
           {
             "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
             "named": false
           },
           {
@@ -186,7 +222,15 @@
             "named": true
           },
           {
+            "type": "true",
+            "named": false
+          },
+          {
             "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
             "named": false
           },
           {
@@ -272,6 +316,10 @@
         "required": false,
         "types": [
           {
+            "type": ",",
+            "named": false
+          },
+          {
             "type": ":",
             "named": false
           },
@@ -292,7 +340,15 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
             "named": false
           },
           {
@@ -301,6 +357,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
             "named": false
           },
           {
@@ -313,6 +373,10 @@
           },
           {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
             "named": false
           },
           {
@@ -342,6 +406,10 @@
         "required": false,
         "types": [
           {
+            "type": ",",
+            "named": false
+          },
+          {
             "type": ":",
             "named": false
           },
@@ -362,7 +430,15 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
             "named": false
           },
           {
@@ -371,6 +447,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
             "named": false
           },
           {
@@ -383,6 +463,10 @@
           },
           {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
             "named": false
           },
           {
@@ -468,6 +552,10 @@
             "named": false
           },
           {
+            "type": "0",
+            "named": false
+          },
+          {
             "type": ":",
             "named": false
           },
@@ -508,11 +596,23 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
             "named": false
           },
           {
+            "type": "Bool",
+            "named": false
+          },
+          {
             "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Fail",
             "named": false
           },
           {
@@ -524,6 +624,10 @@
             "named": false
           },
           {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
             "type": "Nat",
             "named": false
           },
@@ -532,7 +636,19 @@
             "named": false
           },
           {
+            "type": "Ok",
+            "named": false
+          },
+          {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "Some",
             "named": false
           },
           {
@@ -557,6 +673,10 @@
           },
           {
             "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
             "named": false
           },
           {
@@ -592,11 +712,19 @@
             "named": false
           },
           {
+            "type": "true",
+            "named": false
+          },
+          {
             "type": "var",
             "named": false
           },
           {
             "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
             "named": false
           },
           {
@@ -606,6 +734,16 @@
         ]
       },
       "func_name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "function_id": {
         "multiple": true,
         "required": false,
         "types": [
@@ -704,7 +842,15 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
             "named": false
           },
           {
@@ -713,6 +859,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
             "named": false
           },
           {
@@ -725,6 +875,10 @@
           },
           {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
             "named": false
           },
           {
@@ -750,6 +904,10 @@
         "required": false,
         "types": [
           {
+            "type": ",",
+            "named": false
+          },
+          {
             "type": ":",
             "named": false
           },
@@ -766,7 +924,15 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
             "named": false
           },
           {
@@ -775,6 +941,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
             "named": false
           },
           {
@@ -787,6 +957,10 @@
           },
           {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
             "named": false
           },
           {
@@ -818,6 +992,10 @@
         "required": false,
         "types": [
           {
+            "type": ",",
+            "named": false
+          },
+          {
             "type": "::",
             "named": false
           },
@@ -830,7 +1008,15 @@
             "named": false
           },
           {
+            "type": "BigInt",
+            "named": false
+          },
+          {
             "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
             "named": false
           },
           {
@@ -839,6 +1025,10 @@
           },
           {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
             "named": false
           },
           {
@@ -851,6 +1041,10 @@
           },
           {
             "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Result",
             "named": false
           },
           {
@@ -940,6 +1134,10 @@
     "named": false
   },
   {
+    "type": "0",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -980,11 +1178,23 @@
     "named": false
   },
   {
+    "type": "BigInt",
+    "named": false
+  },
+  {
     "type": "BigNat",
     "named": false
   },
   {
+    "type": "Bool",
+    "named": false
+  },
+  {
     "type": "CString",
+    "named": false
+  },
+  {
+    "type": "Fail",
     "named": false
   },
   {
@@ -996,6 +1206,10 @@
     "named": false
   },
   {
+    "type": "MapEntry",
+    "named": false
+  },
+  {
     "type": "Nat",
     "named": false
   },
@@ -1004,7 +1218,19 @@
     "named": false
   },
   {
+    "type": "Ok",
+    "named": false
+  },
+  {
     "type": "Option",
+    "named": false
+  },
+  {
+    "type": "Result",
+    "named": false
+  },
+  {
+    "type": "Some",
     "named": false
   },
   {
@@ -1045,6 +1271,10 @@
   },
   {
     "type": "equal",
+    "named": false
+  },
+  {
+    "type": "false",
     "named": false
   },
   {
@@ -1092,6 +1322,10 @@
     "named": false
   },
   {
+    "type": "true",
+    "named": false
+  },
+  {
     "type": "using",
     "named": false
   },
@@ -1101,6 +1335,10 @@
   },
   {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
     "named": false
   },
   {

@@ -38,6 +38,25 @@ module.exports = grammar({
         field("func_body", $._statement_block),
       ),
 
+    _function_call: ($) =>
+      prec(
+        2,
+        seq(
+          field("function_id", $.identifier),
+          "(",
+          repeat(
+            seq(
+              choice(
+                seq($.identifier, "=", $._value),
+                seq($._value),
+              ),
+              optional(","),
+            ),
+          ),
+          ")",
+        ),
+      ),
+
     _parameters: ($) =>
       seq(
         "(",
@@ -198,10 +217,30 @@ module.exports = grammar({
         $.identifier,
         $._self_access,
         $.num_lit,
+        $._function_call,
         $._entity_access,
         $._binary_operation,
         $._boolean_expression,
+        $._constructors,
+        $._elist,
+        "false",
+        "true",
         "none",
+      ),
+
+    _elist: ($) =>
+      seq(
+        "(",
+        "|",
+        repeat1(seq(
+          $._value,
+          optional(","),
+        )),
+        "|",
+        ")",
+        ".",
+        //TODO: What should be here?
+        "0",
       ),
 
     _variable: ($) =>
@@ -265,6 +304,67 @@ module.exports = grammar({
         ";",
       ),
 
+    _constructors: ($) =>
+      choice(
+        $._some_constructor,
+        $._result_constructor,
+        $._map_constructor,
+      ),
+
+    _map_entry: ($) =>
+      seq(
+        "MapEntry",
+        "<",
+        $._type,
+        ",",
+        $._type,
+        ">",
+      ),
+
+    _map_constructor: ($) =>
+      seq(
+        $._map_entry,
+        "{",
+        $._value,
+        ",",
+        $._value,
+        "}",
+      ),
+
+    _result: ($) =>
+      seq(
+        "Result",
+        "<",
+        $._type,
+        ",",
+        $._type,
+        ">",
+      ),
+
+    _result_constructor: ($) =>
+      seq(
+        $._result,
+        "::",
+        choice(
+          "Ok",
+          "Fail",
+        ),
+        "{",
+        $._value,
+        "}",
+      ),
+
+    _some_constructor: ($) =>
+      seq(
+        "Some",
+        "<",
+        $._type,
+        ">",
+        "{",
+        $._value,
+        "}",
+      ),
+
     _assignment: ($) =>
       seq(
         $.identifier,
@@ -275,16 +375,20 @@ module.exports = grammar({
 
     _type: ($) =>
       choice(
+        "None",
+        "Int",
+        "Bool",
+        "Nat",
+        "BigInt",
+        "BigNat",
+        "CString",
+        "String",
         $._option,
         $.object_id,
         $._namespace_access,
+        $._result,
+        $._map_entry,
         $.namespace_id,
-        "Int",
-        "Nat",
-        "CString",
-        "String",
-        "BigNat",
-        "None",
       ),
 
     _bind_type: ($) =>

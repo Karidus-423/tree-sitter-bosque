@@ -1,0 +1,15 @@
+====================
+Simple EList
+====================
+
+function main(): Int {
+	return (|2i, true|).0; 
+}
+
+---
+
+(source_file
+	(identifier)
+	(num_lit)
+	(boolean)
+)

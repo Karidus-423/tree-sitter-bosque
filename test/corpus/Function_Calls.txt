@@ -1,0 +1,135 @@
+==============================
+Simple Call
+==============================
+
+function foo(): Int {
+	return 1i; 
+} 
+
+function main(): Int {
+	return foo(); 
+}
+
+---
+
+
+(source_file
+	(identifier)
+	(num_lit)
+	(identifier)
+	(identifier)
+)
+
+==============================
+Simple Call with Arguments
+==============================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+} 
+
+function main(): Int {
+	return foo(1i, 2i); 
+}
+
+---
+
+(source_file
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(num_lit)
+	(num_lit)
+)
+
+
+==============================================================
+Simple Call with Accessing Arguments Ordered
+==============================================================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+} 
+
+function main(): Int {
+	return foo(x = 1i, y = 2i); 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit))
+
+==============================================================
+Simple Call with Accessing Arguments Unordered
+==============================================================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+}
+
+function main(): Int {
+	var x: Int = 0i;
+	return foo(y = 0i, x = 2i); 
+}
+
+---
+
+(source_file
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+	(identifier)
+)
+
+===============================
+Function Call with Scoping
+===============================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+} 
+
+function main(): Int {
+	var x: Int = 0i;
+	return foo(y = x, x = x); 
+}
+
+---
+
+(source_file
+      func_name: (identifier)
+      params: (identifier)
+      params: (identifier)
+      func_body: (identifier)
+      func_body: (identifier)
+      func_name: (identifier)
+      func_body: (identifier)
+      func_body: (num_lit)
+      function_id: (identifier)
+      func_body: (identifier)
+      func_body: (identifier)
+      func_body: (identifier)
+      func_body: (identifier)
+)
