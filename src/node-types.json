@@ -134,11 +134,67 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
             "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
             "named": false
           },
           {
@@ -147,6 +203,14 @@
           },
           {
             "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -170,7 +234,39 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
             "named": false
           },
           {
@@ -179,6 +275,30 @@
           },
           {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -352,11 +472,75 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -376,11 +560,67 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
             "named": false
           },
           {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -442,11 +682,75 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -466,11 +770,67 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
             "named": false
           },
           {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -608,11 +968,67 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
             "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
             "named": false
           },
           {
@@ -621,6 +1037,14 @@
           },
           {
             "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -644,7 +1068,39 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
             "named": false
           },
           {
@@ -653,6 +1109,30 @@
           },
           {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -854,11 +1334,75 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -878,11 +1422,67 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
             "named": false
           },
           {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -936,11 +1536,75 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -960,11 +1624,67 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
             "named": false
           },
           {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -1020,11 +1740,75 @@
             "named": false
           },
           {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
             "type": "CString",
             "named": false
           },
           {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
             "type": "Int",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
             "named": false
           },
           {
@@ -1044,11 +1828,67 @@
             "named": false
           },
           {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
             "type": "Result",
             "named": false
           },
           {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
             "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
             "named": false
           },
           {
@@ -1190,11 +2030,67 @@
     "named": false
   },
   {
+    "type": "ByteBuffer",
+    "named": false
+  },
+  {
+    "type": "CChar",
+    "named": false
+  },
+  {
+    "type": "CCharBuffer",
+    "named": false
+  },
+  {
+    "type": "CRegex",
+    "named": false
+  },
+  {
     "type": "CString",
     "named": false
   },
   {
+    "type": "Complex",
+    "named": false
+  },
+  {
+    "type": "Decimal",
+    "named": false
+  },
+  {
+    "type": "DecimalDegree",
+    "named": false
+  },
+  {
+    "type": "DeltaDateTime",
+    "named": false
+  },
+  {
+    "type": "DeltaISOTimestamp",
+    "named": false
+  },
+  {
+    "type": "DeltaLogicalTime",
+    "named": false
+  },
+  {
+    "type": "DeltaSeconds",
+    "named": false
+  },
+  {
     "type": "Fail",
+    "named": false
+  },
+  {
+    "type": "Float",
+    "named": false
+  },
+  {
+    "type": "Glob",
+    "named": false
+  },
+  {
+    "type": "ISOTimestamp",
     "named": false
   },
   {
@@ -1203,6 +2099,14 @@
   },
   {
     "type": "KeyComparator",
+    "named": false
+  },
+  {
+    "type": "LatLongCoordinate",
+    "named": false
+  },
+  {
+    "type": "LogicalTime",
     "named": false
   },
   {
@@ -1226,7 +2130,39 @@
     "named": false
   },
   {
+    "type": "Path",
+    "named": false
+  },
+  {
+    "type": "PathItem",
+    "named": false
+  },
+  {
+    "type": "PathRegex",
+    "named": false
+  },
+  {
+    "type": "PlainDate",
+    "named": false
+  },
+  {
+    "type": "PlainTime",
+    "named": false
+  },
+  {
+    "type": "Rational",
+    "named": false
+  },
+  {
+    "type": "Regex",
+    "named": false
+  },
+  {
     "type": "Result",
+    "named": false
+  },
+  {
+    "type": "SHAContentHash",
     "named": false
   },
   {
@@ -1235,6 +2171,30 @@
   },
   {
     "type": "String",
+    "named": false
+  },
+  {
+    "type": "TAITime",
+    "named": false
+  },
+  {
+    "type": "TZDateTime",
+    "named": false
+  },
+  {
+    "type": "UUIDv4",
+    "named": false
+  },
+  {
+    "type": "UUIDv7",
+    "named": false
+  },
+  {
+    "type": "UnicodeChar",
+    "named": false
+  },
+  {
+    "type": "UnicodeCharBuffer",
     "named": false
   },
   {

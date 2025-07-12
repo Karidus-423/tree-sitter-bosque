@@ -6,6 +6,59 @@
 
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
+//
+
+const PREC = {
+  primary: 7,
+  unary: 6,
+  multiplicative: 5,
+  additive: 4,
+  comparative: 3,
+  and: 2,
+  or: 1,
+  composite_literal: -1,
+};
+
+const PRIMITIVE_ENTITY_TYPE_NAMES = [
+  "None",
+  "Bool",
+  "Nat",
+  "Int",
+  "BigInt",
+  "BigNat",
+  "Rational",
+  "Float",
+  "Decimal",
+  "DecimalDegree",
+  "LatLongCoordinate",
+  "Complex",
+  "ByteBuffer",
+  "UUIDv4",
+  "UUIDv7",
+  "SHAContentHash",
+  "TZDateTime",
+  "TAITime",
+  "PlainDate",
+  "PlainTime",
+  "LogicalTime",
+  "ISOTimestamp",
+  "DeltaDateTime",
+  "DeltaSeconds",
+  "DeltaLogicalTime",
+  "DeltaISOTimestamp",
+  "CChar",
+  "UnicodeChar",
+  "CCharBuffer",
+  "UnicodeCharBuffer",
+  "String",
+  "CString",
+  "Regex",
+  "CRegex",
+  "PathRegex",
+  "Path",
+  "PathItem",
+  "Glob",
+];
 
 module.exports = grammar({
   name: "bosque",
@@ -375,14 +428,7 @@ module.exports = grammar({
 
     _type: ($) =>
       choice(
-        "None",
-        "Int",
-        "Bool",
-        "Nat",
-        "BigInt",
-        "BigNat",
-        "CString",
-        "String",
+        ...PRIMITIVE_ENTITY_TYPE_NAMES,
         $._option,
         $.object_id,
         $._namespace_access,
@@ -407,21 +453,17 @@ module.exports = grammar({
 
     ///////////Should be able to have a calculator here/////////////////////////
     _binary_operation: ($) =>
-      prec(
-        2,
-        choice(
-          $._addition,
-          $._subtraction,
-          $._multiplication,
-          $._division,
-        ),
+      choice(
+        $._addition,
+        $._subtraction,
+        $._multiplication,
+        $._division,
       ),
 
     _boolean_expression: ($) =>
       choice(
         $._greater_than,
         $._less_than,
-        $._addition,
         $._compare,
         $._equality,
         $._compare,
@@ -429,32 +471,38 @@ module.exports = grammar({
       ),
 
     _equality: ($) =>
-      prec.left(choice(
-        seq(
-          $._value,
-          "==",
-          $._value,
-        ),
-        seq(
-          $._value,
-          "!=",
-          $._value,
-        ),
-      )),
+      prec(
+        PREC.comparative,
+        prec.left(choice(
+          seq(
+            $._value,
+            "==",
+            $._value,
+          ),
+          seq(
+            $._value,
+            "!=",
+            $._value,
+          ),
+        )),
+      ),
 
     _compare: ($) =>
-      prec.left(choice(
-        seq(
-          $._value,
-          "===",
-          $._value,
-        ),
-        seq(
-          $._value,
-          "!==",
-          $._value,
-        ),
-      )),
+      prec(
+        PREC.comparative,
+        prec.left(choice(
+          seq(
+            $._value,
+            "===",
+            $._value,
+          ),
+          seq(
+            $._value,
+            "!==",
+            $._value,
+          ),
+        )),
+      ),
 
     _key_comparator: ($) =>
       seq(
@@ -506,41 +554,51 @@ module.exports = grammar({
       ),
 
     _addition: ($) =>
-      prec.left(seq(
-        $._value,
-        "+",
-        $._value,
-      )),
+      prec(
+        PREC.additive,
+        prec.left(seq(
+          $._value,
+          "+",
+          $._value,
+        )),
+      ),
 
     _subtraction: ($) =>
-      prec.left(seq(
-        $._value,
-        "-",
-        $._value,
-      )),
+      prec(
+        PREC.additive,
+        prec.left(seq(
+          $._value,
+          "-",
+          $._value,
+        )),
+      ),
 
     _multiplication: ($) =>
-      prec.left(seq(
-        $._value,
-        "*",
-        $._value,
-      )),
+      prec(
+        PREC.multiplicative,
+        prec.left(seq(
+          $._value,
+          "*",
+          $._value,
+        )),
+      ),
 
     _division: ($) =>
-      prec.left(seq(
-        $._value,
-        "//",
-        $._value,
-      )),
+      prec(
+        PREC.multiplicative,
+        prec.left(seq(
+          $._value,
+          "//",
+          $._value,
+        )),
+      ),
 
     //TOKENS
     ///////////////////////////////////////////
-
-    //TODO: Make enum and entity id tokens less abstract.
-    namespace_id: ($) => /[A-Z][_a-zA-Z0-9]+/,
+    //Try to find a way to differentiate between all of these.
     object_id: ($) => /[A-Z][A-Za-z]*/,
+    namespace_id: ($) => /[A-Z][_a-zA-Z0-9]+/,
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
-
     num_lit: ($) => choice(/[+]?[0-9]*[nN]/, /[+-]?[0-9]*[iI]/),
   },
 });
