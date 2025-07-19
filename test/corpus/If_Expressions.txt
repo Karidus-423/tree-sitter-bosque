@@ -1,0 +1,154 @@
+==========================
+If Expression
+==========================
+
+if(true) then 2i else 3i + 5i
+
+---
+
+(source_file
+	(num_lit)
+	(num_lit)
+	(num_lit)
+)
+
+==================================
+If Expression Multiple and Paren
+==================================
+
+if(3n != 2n) then 2i else (3i + 5i)
+
+if(3n != 2n) then 2i else 3i + 5i
+
+---
+
+(source_file
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+	(num_lit)
+)
+
+==============================
+If Expression Paren Nested
+==============================
+
+(if(false) then 2i else 3i) + 5i
+
+---
+
+(source_file
+	(num_lit)
+	(num_lit)
+	(num_lit)
+)
+
+==========================
+If Expression ITest None
+==========================
+
+if(true)!none then 2i else 3i
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit))
+
+==========================
+If Expression ITest Some
+==========================
+
+if(3n)some then 2i else 3i
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+      (num_lit))
+
+=============================
+If Expression ITest Some Alt
+=============================
+
+if(3n)<Some> then 2i else 3i
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+      (num_lit))
+
+============================
+If Expression Nested Nested
+============================
+
+if(if(true) then false else true) then 2i else 3i
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit))
+
+================================
+If Expression Func ITest Return
+================================
+
+function main(x: Option<Int>): Int {
+	return if(x)@!none then $x else 3i; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+===============================================
+If Expression ITest Reference Nothing
+===============================================
+
+function main(x: Option<Int>): Int {
+	return if(x + 1i)@!none then $_ else 3i; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit))
+
+================================================
+If Expression Reference of If Reference Val
+================================================
+
+function main(x: Option<Int>): Int {
+	return if($y = x + 1i)@<Some> then $y else 3i; 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+)

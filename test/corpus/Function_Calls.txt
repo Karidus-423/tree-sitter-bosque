@@ -288,3 +288,153 @@ function main(): Int {
       (identifier)
       (num_lit)
       (num_lit))
+
+==================================
+Function Call Pre
+==================================
+
+function foo(x: Int): Int requires x > 0i; {
+	return 1i; 
+}
+
+function main(): Int {
+	return foo(1i); 
+}
+
+----
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+==================================
+Function Call Pre Multiple
+==================================
+
+function foo(x: Int): Int requires x > 0i; requires x > 1i; {
+	return 1i; 
+}
+
+function main(): Int {
+	return foo(1i); 
+}
+
+----
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+==================================
+Function Call Post
+==================================
+
+function foo(x: Int): Int ensures $return > 0i; {
+	return 1i; 
+}
+function main(): Int {
+	return foo(1i); 
+}
+
+----
+
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+
+==================================
+Function Call Post Multiple
+==================================
+
+function foo(x: Int): Int ensures $return > 0i; ensures $return > 1i; {
+	return 1i; 
+}
+
+function main(): Int {
+	return foo(1i); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+==================================
+Function Call Pre & Post
+==================================
+
+function foo(x: Int): Int requires x > 0i; ensures $return > 0i; {
+	return 1i; 
+}
+function main(): Int {
+	return foo(1i); 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+==================================
+Function Call Ref Params
+==================================
+
+entity Foo{ }
+
+function foo(ref y: Foo): Int {
+	return 1i; 
+} 
+
+function main(): Int {
+	let ff = Foo{};
+	return foo(ref ff); 
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (identifier))

@@ -1,8 +1,8 @@
-function foo(x: Int, ...y: List<Int>): Int {
-	return x; 
-} 
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+}
 
-function main(): Int {
-	return foo(3i, x = 1i, 33i); 
+function main(): Bool {
+	return foo(fn(x: Int): Int => x + 1i); 
 }
 

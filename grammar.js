@@ -84,11 +84,39 @@ module.exports = grammar({
         field("params", $._parameters),
         field(
           "return_type",
-          optional(
-            $._bind_type,
-          ),
+          optional($._function_return_conditions),
         ),
         field("func_body", $._statement_block),
+      ),
+
+    _function_return_conditions: ($) => (
+      seq(
+        $._bind_type,
+        optional(
+          repeat($._function_return_modifier),
+        ),
+      )
+    ),
+
+    _function_return_modifier: ($) =>
+      seq(
+        choice(
+          $._return_post,
+          $._return_pre,
+        ),
+        ";",
+      ),
+
+    _return_post: ($) =>
+      seq(
+        "ensures",
+        $._value,
+      ),
+
+    _return_pre: ($) =>
+      seq(
+        "requires",
+        $._value,
       ),
 
     _function_call: ($) =>
@@ -100,6 +128,16 @@ module.exports = grammar({
           repeat(
             seq(
               choice(
+                seq(
+                  optional(
+                    choice(
+                      field("ref_param", "ref"),
+                      field("rest_param", "..."),
+                    ),
+                  ),
+                  $.identifier,
+                  $._bind_type,
+                ),
                 seq($.identifier, "=", $._value),
                 seq($._value),
               ),
@@ -107,6 +145,17 @@ module.exports = grammar({
             ),
           ),
           ")",
+          optional($._lambda_call),
+        ),
+      ),
+
+    _lambda_call: ($) =>
+      seq(
+        optional($._bind_type),
+        "=>",
+        choice(
+          $._value,
+          $._statement_block,
         ),
       ),
 
@@ -151,17 +200,20 @@ module.exports = grammar({
       seq(
         "{",
         repeat($._statement),
-        optional($._return),
         "}",
       ),
 
     _statement: ($) =>
-      choice(
-        $._definition,
-        $._assertion,
-        $._variable,
-        $._debug,
-        $._value,
+      seq(
+        choice(
+          $._definition,
+          $._if_statement,
+          $._assertion,
+          $._variable,
+          $._return,
+          $._debug,
+          $._value,
+        ),
       ),
 
     _namespace_def: ($) =>
@@ -213,6 +265,11 @@ module.exports = grammar({
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
+        $._entity_ref,
+      ),
+
+    _entity_ref: ($) =>
+      seq(
         field("entity_name", $._entity_id),
         field("field_block", $._field_block),
       ),
@@ -246,7 +303,11 @@ module.exports = grammar({
     _field_block: ($) =>
       seq(
         "{",
-        repeat(field("field", $._field)),
+        optional(
+          repeat(
+            field("field", $._field),
+          ),
+        ),
         "}",
       ),
 
@@ -277,11 +338,7 @@ module.exports = grammar({
         field("enum_access", $.identifier),
       ),
 
-    _self_access: ($) =>
-      seq(
-        "$",
-        $.identifier,
-      ),
+    _return_access: ($) => "$return",
 
     _ref_val: ($) =>
       seq(
@@ -289,22 +346,94 @@ module.exports = grammar({
         $.identifier,
       ),
 
+    _ITest: ($) =>
+      seq(
+        optional(repeat("@")),
+        choice($._some, $._none),
+      ),
+
+    _some: ($) =>
+      choice(
+        "<Some>",
+        seq(optional("!"), "some"),
+        //TODO: Find something better for this.
+        seq("some(", $._value, ")"),
+      ),
+
+    _none: ($) => seq(optional("!"), "none"),
+
+    _if_start: ($) =>
+      seq(
+        "if",
+        "(",
+        choice(
+          $._assignment,
+          $._value,
+        ),
+        ")",
+        optional(
+          $._ITest,
+        ),
+      ),
+
+    _if_statement: ($) =>
+      seq(
+        $._if_start,
+        $._if_statement_block,
+        optional(seq(
+          "else",
+          $._if_statement_block,
+        )),
+      ),
+
+    _if_statement_block: ($) =>
+      seq(
+        "{",
+        choice(
+          repeat(
+            $._statement,
+          ),
+          ";",
+        ),
+        "}",
+      ),
+
+    _if_expression: ($) =>
+      seq(
+        $._if_start,
+        "then",
+        $._value,
+        "else",
+        $._value,
+      ),
+
     _value: ($) =>
       choice(
-        $._enum_access,
         $.identifier,
-        $._self_access,
+        $._enum_access,
+        $._return_access,
         $.num_lit,
+        $._entity_ref,
         $._function_call,
         $._entity_access,
         $._binary_operation,
+        $._if_expression,
         $._boolean_expression,
         $._constructors,
         $._elist,
         $._ref_val,
-        "false",
-        "true",
-        "none",
+        $._value_expression,
+        $._ITest,
+      ),
+
+    _value_expression: ($) =>
+      prec(
+        2,
+        seq(
+          "(",
+          $._value,
+          ")",
+        ),
       ),
 
     _elist: ($) =>
@@ -459,10 +588,27 @@ module.exports = grammar({
         ">",
       ),
 
+    _lambda_type: ($) =>
+      seq(
+        "fn",
+        "(",
+        optional(
+          choice(
+            field("ref_param", "ref"),
+            field("rest_param", "..."),
+          ),
+        ),
+        $._type,
+        ")",
+        "->",
+        $._type,
+      ),
+
     _type: ($) =>
       choice(
         ...PRIMITIVE_ENTITY_TYPE_NAMES,
         $._option,
+        $._lambda_type,
         $._list,
         $._namespace_access,
         $._result,
@@ -501,6 +647,8 @@ module.exports = grammar({
         $._equality,
         $._compare,
         $._key_comparator,
+        "false",
+        "true",
       ),
 
     _equality: ($) =>

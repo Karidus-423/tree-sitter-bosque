@@ -1,0 +1,291 @@
+===============================
+Simple If Statement
+===============================
+
+function main(): Int {
+	if(true) {
+		return 3i; 
+	}
+
+	return 1i; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+===============================
+Simple If Statement Empty
+===============================
+
+function main(): Int { 
+	if(true) {
+		;
+	}
+	return 1i;
+}
+
+---
+(source_file
+  (identifier)
+  (num_lit)
+)
+
+===============================
+If Statement ITest
+===============================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+
+	if(x)some { 
+		return 3i;
+	}
+
+	return 1i;
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+=================================
+If Statement Binder ITest
+=================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+
+	if(x)@some {
+		return $x; 
+	} 
+
+	return 1i; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+=========================================
+If Statement ITest Binder and Ref
+=========================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+
+	if($y = x)@some {
+		return $y; 
+	} 
+
+	return 1i; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+	  )
+
+=========================================
+If Statement ITest Binder and Reflow
+=========================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+
+	if(x)@@!some {
+		return 0i; 
+	} 
+
+	return x; 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (identifier))
+
+===============================
+Simple If Else Statement
+===============================
+
+function main(): Int {
+	if(true) {
+		return 3i; 
+	} else {
+		return 1i; 
+	} 
+}
+
+---
+
+(source_file
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+===============================
+Simple If Else Statement Empty
+===============================
+
+function main(): Int {
+	if(true) {
+		return 3i; 
+	} else {
+		;
+	} 
+
+	return 1i;
+}
+
+---
+
+(source_file
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+===============================
+If Else Statement Binder
+===============================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+	if(x)some {
+		return 3i; 
+	} else {
+		return 1i; 
+	} 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+
+=================================
+If Else Statement Binder and Ref
+=================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+	if(x)@some {
+		return $x;
+	} else {
+		return 1i; 
+	} 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+
+======================================
+If Else Statement Binder Some and Ref
+======================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+	if($y = x)@some {
+		return $y; 
+	} else {
+		return 1i; 
+	} 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+======================================
+If Else Statement Some and Ref
+======================================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+	if(x)some {
+		return 1i; 
+	} else {
+		return $x; 
+	} 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (identifier))
+
+=========================================
+If Else Statement Binder Some and Empty
+=========================================
+
+function main(): Int { 
+	let x: Option<Int> = some(3i);
+	if(x)@@!some {
+		return 0i; 
+	} else {
+		;
+	}
+	return x;
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (identifier))

@@ -1,0 +1,205 @@
+=========================================
+Simple Lambda
+=========================================
+
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+}
+
+function main(): Bool {
+	return foo(fn(x: Int): Int => x + 1i); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+=========================================
+Simple Lambda Infer Argument
+=========================================
+
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+} 
+function main(): Bool {
+	return foo(fn(x): Int => { return x + 1i; }); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+
+=========================================
+Simple Lambda with Return
+=========================================
+
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+} 
+
+function main(): Bool {
+	return foo(fn(x: Int) => { return x + 1i; });
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+=========================================
+Simple Lambda Infer Both
+=========================================
+
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+} 
+
+function main(): Bool {
+	return foo(fn(x) => { return x + 1i; });
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit))
+
+
+=========================================
+Simple Lambda Capture
+=========================================
+
+function foo(f: fn(Int) -> Int): Int {
+	return f(1i); 
+} 
+
+function main(): Bool {
+	let y = 1i;
+	return foo(fn(x) => { return x + y; }); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+
+=========================================
+Simple Lambda Reference Full
+=========================================
+
+entity Foo {
+	field v: Int;
+}
+
+function foo(f: fn(ref Foo) -> Int): Int {
+	let x = Foo{ 1i };
+	return f(ref x);
+} 
+
+function main(): Bool {
+	return foo(fn(ref x: Foo): Int => x.v); 
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (identifier))
+
+=========================================
+Simple Lambda Reference Infer
+=========================================
+
+entity Foo {
+	field v: Int; 
+} 
+
+function foo(f: fn(ref Foo) -> Int): Int {
+	let x = Foo{ 1i };
+	return f(ref x);
+}
+
+function main(): Bool {
+	return foo(fn(ref x) => { return x.v; });
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
