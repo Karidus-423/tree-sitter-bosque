@@ -8,7 +8,7 @@ entity Base{
 ---
 
 (source_file
-	entity_name: (object_id)
+	entity_name: (entity_id)
 )
 
 ===========================
@@ -25,7 +25,7 @@ entity Food{
 ---
 
 (source_file
-	entity_name: (object_id)
+	entity_name: (entity_id)
 	field: (identifier)
 	field: (identifier)
 	field: (identifier)
@@ -48,7 +48,7 @@ public function main(f: Foo): Int {
 (source_file
     func_name: (identifier)
 	params: (identifier)
-	type: (namespace_id)
+	type: (entity_id)
 	func_body: (identifier)
     func_body: (identifier)
     func_body: (identifier)
@@ -75,11 +75,11 @@ function foo(): Foo {
 ---
 
 (source_file
-    entity_name: (object_id)
+    entity_name: (entity_id)
     field: (identifier)
     func_name: (identifier)
-    type: (namespace_id)
-    func_body: (object_id)
+    type: (entity_id)
+    func_body: (entity_id)
     func_body: (num_lit)
 )
 
@@ -99,11 +99,11 @@ function main(): Int {
 ----
 
 (source_file
-	(object_id)
+	(entity_id)
 	(identifier)
 	(identifier)
 	(identifier)
-	(object_id)
+	(entity_id)
 	(num_lit)
 	(identifier)
 	(identifier)
@@ -127,11 +127,11 @@ function main(): Int {
 ----
 
 (source_file
-	(object_id)
+	(entity_id)
 	(identifier)
 	(identifier)
 	(identifier)
-	(object_id)
+	(entity_id)
 	(num_lit)
 	(identifier)
 	(identifier)

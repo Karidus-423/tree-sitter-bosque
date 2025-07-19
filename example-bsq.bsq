@@ -1,8 +1,8 @@
-function foo(x: Int, y: Int): Int {
-	return x + y; 
+function foo(x: Int, ...y: List<Int>): Int {
+	return x; 
 } 
 
 function main(): Int {
-	var x: Int = 0i;
-	return foo(y = x, x = x); 
+	return foo(3i, x = 1i, 33i); 
 }
+

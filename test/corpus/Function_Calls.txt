@@ -83,7 +83,6 @@ function foo(x: Int, y: Int): Int {
 }
 
 function main(): Int {
-	var x: Int = 0i;
 	return foo(y = 0i, x = 2i); 
 }
 
@@ -98,9 +97,9 @@ function main(): Int {
 	(identifier)
 	(identifier)
 	(identifier)
+	(num_lit)
 	(identifier)
-	(identifier)
-	(identifier)
+	(num_lit)
 )
 
 ===============================
@@ -125,11 +124,167 @@ function main(): Int {
       func_body: (identifier)
       func_body: (identifier)
       func_name: (identifier)
-      func_body: (identifier)
-      func_body: (num_lit)
+      var_id: (identifier)
+      var_value: (num_lit)
       function_id: (identifier)
       func_body: (identifier)
       func_body: (identifier)
       func_body: (identifier)
       func_body: (identifier)
 )
+
+
+========================================
+Function Call with Accessing Mixed 󰀫
+========================================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+}
+
+function main(): Int {
+	return foo(y = 1i, 2i); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+========================================
+Function Call with Accessing Mixed 󰂡
+========================================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+}
+
+function main(): Int {
+	return foo(1i, x = 2i); 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit))
+
+========================================
+Function Call with Accessing Mixed 󱃮
+========================================
+
+function foo(x: Int, y: Int): Int {
+	return x + y; 
+}
+
+function main(): Int {
+	return foo(x = 1i, 2i); 
+}
+
+---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+========================================
+Function Call with Rest
+========================================
+
+function foo(x: Int, ...y: List<Int>): Int {
+	return x; 
+} 
+
+function main(): Int {
+	return foo(3i, x = 1i, 33i); 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (num_lit))
+
+========================================
+Function Call with Ref
+========================================
+
+function foo(ref x: Int): Int {
+	return 1i; 
+} 
+
+function main(): Int {
+	var y: Int = 0i;
+	return foo(ref y); 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier))
+
+========================================
+Function Call with Ref
+========================================
+
+function foo(x: Int = 3i, y: Int = $x + 1i): Int {
+	return x + y; 
+} 
+
+function main(): Int {
+	return foo(1i, 2i);
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit))

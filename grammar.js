@@ -114,14 +114,33 @@ module.exports = grammar({
       seq(
         "(",
         repeat(
-          seq($.identifier, $._bind_type, optional(",")),
+          seq(
+            optional(
+              choice(
+                field("ref_param", "ref"),
+                field("rest_param", "..."),
+              ),
+            ),
+            $.identifier,
+            $._bind_type,
+            field(
+              "def_val",
+              optional(
+                seq(
+                  "=",
+                  $._value,
+                ),
+              ),
+            ),
+            optional(","),
+          ),
         ),
         ")",
       ),
 
     _return: ($) =>
       seq(
-        "return",
+        field("return_key", "return"),
         optional(
           $._value,
         ),
@@ -150,13 +169,13 @@ module.exports = grammar({
         seq(
           "declare",
           "namespace",
-          field("namespace_id", $.namespace_id),
+          field("namespace_id", $._namespace_id),
           ";",
         ),
         seq(
           "declare",
           "namespace",
-          field("namespace_id", $.namespace_id),
+          field("namespace_id", $._namespace_id),
           $._namespace_block,
         ),
       ),
@@ -172,29 +191,29 @@ module.exports = grammar({
       choice(
         seq(
           "using",
-          $.namespace_id,
+          $._namespace_id,
           ";",
         ),
         seq(
           "using",
-          $.namespace_id,
+          $._namespace_id,
           "as",
-          $.namespace_id,
+          $._namespace_id,
           ";",
         ),
       ),
 
     _namespace_access: ($) =>
       seq(
-        field("namespace_id", $.namespace_id),
+        field("namespace_id", $._namespace_id),
         field("namespace_accessor", "::"),
-        field("scoped_type", $.object_id),
+        field("scoped_type", $._entity_id),
       ),
 
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
-        field("entity_name", $.object_id),
+        field("entity_name", $._entity_id),
         field("field_block", $._field_block),
       ),
 
@@ -217,7 +236,7 @@ module.exports = grammar({
           $.identifier,
         ),
         seq(
-          $.object_id,
+          $._entity_id,
           "{",
           $._value,
           "}",
@@ -234,7 +253,7 @@ module.exports = grammar({
     _enum: ($) =>
       seq(
         field("enum_key", "enum"),
-        field("enum_name", $.object_id),
+        field("enum_name", $._entity_id),
         field("enum_fields", $._enum_block),
       ),
 
@@ -253,7 +272,7 @@ module.exports = grammar({
 
     _enum_access: ($) =>
       seq(
-        field("enum_name", $.object_id),
+        field("enum_name", $._entity_id),
         field("enum_accessor", "#"),
         field("enum_access", $.identifier),
       ),
@@ -261,6 +280,12 @@ module.exports = grammar({
     _self_access: ($) =>
       seq(
         "$",
+        $.identifier,
+      ),
+
+    _ref_val: ($) =>
+      seq(
+        "ref",
         $.identifier,
       ),
 
@@ -276,6 +301,7 @@ module.exports = grammar({
         $._boolean_expression,
         $._constructors,
         $._elist,
+        $._ref_val,
         "false",
         "true",
         "none",
@@ -299,12 +325,13 @@ module.exports = grammar({
     _variable: ($) =>
       seq(
         "var",
-        choice(
+        field(
+          "var_id",
           $.identifier,
-          optional($._bind_type),
         ),
+        optional($._bind_type),
         "=",
-        $._value,
+        field("var_value", $._value),
         ";",
       ),
 
@@ -338,13 +365,8 @@ module.exports = grammar({
         optional(
           "let",
         ),
-        choice(
-          $.identifier,
-          seq(
-            $.identifier,
-            $._bind_type,
-          ),
-        ),
+        $.identifier,
+        optional($._bind_type),
         "=",
         $._value,
         ";",
@@ -385,13 +407,16 @@ module.exports = grammar({
       ),
 
     _result: ($) =>
-      seq(
-        "Result",
-        "<",
-        $._type,
-        ",",
-        $._type,
-        ">",
+      field(
+        "result_types",
+        seq(
+          "Result",
+          "<",
+          $._type,
+          ",",
+          $._type,
+          ">",
+        ),
       ),
 
     _result_constructor: ($) =>
@@ -403,7 +428,7 @@ module.exports = grammar({
           "Fail",
         ),
         "{",
-        $._value,
+        field("result_val", $._value),
         "}",
       ),
 
@@ -426,15 +451,23 @@ module.exports = grammar({
         optional(";"),
       ),
 
+    _list: ($) =>
+      seq(
+        "List",
+        "<",
+        $._type,
+        ">",
+      ),
+
     _type: ($) =>
       choice(
         ...PRIMITIVE_ENTITY_TYPE_NAMES,
         $._option,
-        $.object_id,
+        $._list,
         $._namespace_access,
         $._result,
         $._map_entry,
-        $.namespace_id,
+        $._entity_id,
       ),
 
     _bind_type: ($) =>
@@ -596,9 +629,10 @@ module.exports = grammar({
     //TOKENS
     ///////////////////////////////////////////
     //Try to find a way to differentiate between all of these.
-    object_id: ($) => /[A-Z][A-Za-z]*/,
-    namespace_id: ($) => /[A-Z][_a-zA-Z0-9]+/,
+
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
+    _namespace_id: ($) => alias($.identifier, $.namespace_id),
+    _entity_id: ($) => alias($.identifier, $.entity_id),
     num_lit: ($) => choice(/[+]?[0-9]*[nN]/, /[+-]?[0-9]*[iI]/),
   },
 });

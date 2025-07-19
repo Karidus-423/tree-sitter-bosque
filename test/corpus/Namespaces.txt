@@ -24,9 +24,9 @@ function main(): Option<Bar> {
 
 (source_file
     (namespace_id)
-    (object_id)
+    (entity_id)
     (identifier)
-    (namespace_id)
+    (entity_id)
 )
 
 =================================
@@ -42,10 +42,10 @@ function main(): Option<Main::Bar> {
 ----
 (source_file
 	(namespace_id)
-	(object_id)
+	(entity_id)
 	(identifier)
 	(namespace_id)
-	(object_id)
+	(entity_id)
 )
 
 ===============================
@@ -65,7 +65,7 @@ function main(): Option<NSOther::Foo> {
       (namespace_id)
       (identifier)
       (namespace_id)
-      (object_id)
+      (entity_id)
 )
 
 
@@ -88,6 +88,6 @@ function main(): Option<Other::Foo> {
   (namespace_id)
   (identifier)
   (namespace_id)
-  (object_id)
+  (entity_id)
 )
 

@@ -8,7 +8,7 @@ enum Test {
 ---
 
 (source_file
-	enum_name: (object_id)
+	enum_name: (entity_id)
 )
 
 ===========================
@@ -25,7 +25,7 @@ enum AnotherTest {
 ---
 
 (source_file
-	enum_name: (object_id)
+	enum_name: (entity_id)
 	enum_fields: (identifier)
 	enum_fields: (identifier)
 	enum_fields: (identifier)
@@ -48,11 +48,11 @@ function main(): Int {
 ---
 
 (source_file
-	enum_name: (object_id)
+	enum_name: (entity_id)
 	enum_fields: (identifier)
 	enum_fields: (identifier)
 	enum_fields: (identifier)
 	func_name: (identifier)
-	enum_name: (object_id)
+	enum_name: (entity_id)
 	enum_access: (identifier)
 )

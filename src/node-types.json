@@ -210,6 +210,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -310,6 +314,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "equal",
             "named": false
           },
@@ -338,8 +346,346 @@
             "named": true
           },
           {
-            "type": "object_id",
+            "type": "ref",
+            "named": false
+          },
+          {
+            "type": "true",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "def_val": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
+            "named": false
+          },
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "0",
+            "named": false
+          },
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigInt",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
+            "named": false
+          },
+          {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "List",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Ok",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
+            "type": "Some",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "entity_id",
             "named": true
+          },
+          {
+            "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "less",
+            "named": false
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": false
           },
           {
             "type": "true",
@@ -364,7 +710,7 @@
         "required": false,
         "types": [
           {
-            "type": "object_id",
+            "type": "entity_id",
             "named": true
           }
         ]
@@ -426,7 +772,7 @@
         "required": false,
         "types": [
           {
-            "type": "object_id",
+            "type": "entity_id",
             "named": true
           }
         ]
@@ -540,6 +886,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -624,6 +974,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "field",
             "named": false
           },
@@ -633,10 +987,6 @@
           },
           {
             "type": "namespace_id",
-            "named": true
-          },
-          {
-            "type": "object_id",
             "named": true
           }
         ]
@@ -750,6 +1100,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -834,6 +1188,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "field",
             "named": false
           },
@@ -843,10 +1201,6 @@
           },
           {
             "type": "namespace_id",
-            "named": true
-          },
-          {
-            "type": "object_id",
             "named": true
           },
           {
@@ -1044,6 +1398,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -1152,6 +1510,10 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
             "type": "equal",
             "named": false
           },
@@ -1184,8 +1546,8 @@
             "named": true
           },
           {
-            "type": "object_id",
-            "named": true
+            "type": "ref",
+            "named": false
           },
           {
             "type": "return",
@@ -1294,6 +1656,22 @@
         "required": false,
         "types": [
           {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -1302,11 +1680,349 @@
             "named": false
           },
           {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
             "type": ",",
             "named": false
           },
           {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "...",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "0",
+            "named": false
+          },
+          {
             "type": ":",
+            "named": false
+          },
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigInt",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
+            "named": false
+          },
+          {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "List",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Ok",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
+            "type": "Some",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "less",
+            "named": false
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": false
+          },
+          {
+            "type": "true",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "ref_param": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "ref",
+            "named": false
+          }
+        ]
+      },
+      "rest_param": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "...",
+            "named": false
+          }
+        ]
+      },
+      "result_types": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
             "named": false
           },
           {
@@ -1402,6 +2118,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -1486,16 +2206,360 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          }
+        ]
+      },
+      "result_val": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
+            "named": false
+          },
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "0",
+            "named": false
+          },
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigInt",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
+            "named": false
+          },
+          {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "List",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Ok",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
+            "type": "Some",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
+          },
+          {
+            "type": "less",
+            "named": false
           },
           {
             "type": "namespace_id",
             "named": true
           },
           {
-            "type": "object_id",
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "num_lit",
             "named": true
+          },
+          {
+            "type": "ref",
+            "named": false
+          },
+          {
+            "type": "true",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "return_key": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "return",
+            "named": false
           }
         ]
       },
@@ -1604,6 +2668,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -1688,11 +2756,11 @@
             "named": false
           },
           {
-            "type": "namespace_id",
+            "type": "entity_id",
             "named": true
           },
           {
-            "type": "object_id",
+            "type": "namespace_id",
             "named": true
           }
         ]
@@ -1702,7 +2770,7 @@
         "required": false,
         "types": [
           {
-            "type": "object_id",
+            "type": "entity_id",
             "named": true
           }
         ]
@@ -1808,6 +2876,10 @@
             "named": false
           },
           {
+            "type": "List",
+            "named": false
+          },
+          {
             "type": "LogicalTime",
             "named": false
           },
@@ -1892,12 +2964,360 @@
             "named": false
           },
           {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          }
+        ]
+      },
+      "var_id": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "var_value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$",
+            "named": false
+          },
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "0",
+            "named": false
+          },
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "BigInt",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
+            "named": false
+          },
+          {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "List",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Ok",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
+            "type": "Some",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "equal",
+            "named": false
+          },
+          {
+            "type": "false",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "less",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
-            "type": "object_id",
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "num_lit",
             "named": true
+          },
+          {
+            "type": "ref",
+            "named": false
+          },
+          {
+            "type": "true",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
           }
         ]
       }
@@ -1907,19 +3327,15 @@
       "required": false,
       "types": [
         {
+          "type": "entity_id",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "namespace_id",
-          "named": true
-        },
-        {
           "type": "num_lit",
-          "named": true
-        },
-        {
-          "type": "object_id",
           "named": true
         }
       ]
@@ -1967,6 +3383,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "...",
     "named": false
   },
   {
@@ -2106,6 +3526,10 @@
     "named": false
   },
   {
+    "type": "List",
+    "named": false
+  },
+  {
     "type": "LogicalTime",
     "named": false
   },
@@ -2226,6 +3650,10 @@
     "named": false
   },
   {
+    "type": "entity_id",
+    "named": true
+  },
+  {
     "type": "enum",
     "named": false
   },
@@ -2270,11 +3698,11 @@
     "named": false
   },
   {
-    "type": "object_id",
-    "named": true
+    "type": "public",
+    "named": false
   },
   {
-    "type": "public",
+    "type": "ref",
     "named": false
   },
   {

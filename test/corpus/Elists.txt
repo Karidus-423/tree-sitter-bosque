@@ -9,7 +9,6 @@ function main(): Int {
 ---
 
 (source_file
-	(identifier)
-	(num_lit)
-	(boolean)
+  (identifier)
+  (num_lit)
 )

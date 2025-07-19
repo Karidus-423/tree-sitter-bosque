@@ -25,10 +25,8 @@ function main(): Result<Int, Bool> {
 ---
 
 (source_file
-	(identifier)
-	(namespace_id)
-	(namespace_id)
-	(num_lit)
+      (identifier)
+      (num_lit)
 )
 
 
@@ -44,9 +42,6 @@ function main(): Result<Int, Bool> {
 
 (source_file
 	(identifier)
-	(namespace_id)
-	(namespace_id)
-	(boolean)
 )
 
 ==============================
@@ -61,8 +56,5 @@ function main(): MapEntry<Int, Bool> {
 
 (source_file
 	(identifier)
-	(namespace_id)
-	(namespace_id)
 	(num_lit)
-	(boolean)
 )

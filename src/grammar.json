@@ -184,12 +184,66 @@
             "type": "SEQ",
             "members": [
               {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "ref_param",
+                        "content": {
+                          "type": "STRING",
+                          "value": "ref"
+                        }
+                      },
+                      {
+                        "type": "FIELD",
+                        "name": "rest_param",
+                        "content": {
+                          "type": "STRING",
+                          "value": "..."
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
                 "type": "SYMBOL",
                 "name": "identifier"
               },
               {
                 "type": "SYMBOL",
                 "name": "_bind_type"
+              },
+              {
+                "type": "FIELD",
+                "name": "def_val",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "="
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_value"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
               },
               {
                 "type": "CHOICE",
@@ -216,8 +270,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "return"
+          "type": "FIELD",
+          "name": "return_key",
+          "content": {
+            "type": "STRING",
+            "value": "return"
+          }
         },
         {
           "type": "CHOICE",
@@ -313,7 +371,7 @@
               "name": "namespace_id",
               "content": {
                 "type": "SYMBOL",
-                "name": "namespace_id"
+                "name": "_namespace_id"
               }
             },
             {
@@ -338,7 +396,7 @@
               "name": "namespace_id",
               "content": {
                 "type": "SYMBOL",
-                "name": "namespace_id"
+                "name": "_namespace_id"
               }
             },
             {
@@ -385,7 +443,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "namespace_id"
+              "name": "_namespace_id"
             },
             {
               "type": "STRING",
@@ -402,7 +460,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "namespace_id"
+              "name": "_namespace_id"
             },
             {
               "type": "STRING",
@@ -410,7 +468,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "namespace_id"
+              "name": "_namespace_id"
             },
             {
               "type": "STRING",
@@ -428,7 +486,7 @@
           "name": "namespace_id",
           "content": {
             "type": "SYMBOL",
-            "name": "namespace_id"
+            "name": "_namespace_id"
           }
         },
         {
@@ -444,7 +502,7 @@
           "name": "scoped_type",
           "content": {
             "type": "SYMBOL",
-            "name": "object_id"
+            "name": "_entity_id"
           }
         }
       ]
@@ -465,7 +523,7 @@
           "name": "entity_name",
           "content": {
             "type": "SYMBOL",
-            "name": "object_id"
+            "name": "_entity_id"
           }
         },
         {
@@ -533,7 +591,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "object_id"
+              "name": "_entity_id"
             },
             {
               "type": "STRING",
@@ -591,7 +649,7 @@
           "name": "enum_name",
           "content": {
             "type": "SYMBOL",
-            "name": "object_id"
+            "name": "_entity_id"
           }
         },
         {
@@ -661,7 +719,7 @@
           "name": "enum_name",
           "content": {
             "type": "SYMBOL",
-            "name": "object_id"
+            "name": "_entity_id"
           }
         },
         {
@@ -688,6 +746,19 @@
         {
           "type": "STRING",
           "value": "$"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
+    "_ref_val": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ref"
         },
         {
           "type": "SYMBOL",
@@ -737,6 +808,10 @@
         {
           "type": "SYMBOL",
           "name": "_elist"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ref_val"
         },
         {
           "type": "STRING",
@@ -813,23 +888,22 @@
           "value": "var"
         },
         {
+          "type": "FIELD",
+          "name": "var_id",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "identifier"
+              "name": "_bind_type"
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_bind_type"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "BLANK"
             }
           ]
         },
@@ -838,8 +912,12 @@
           "value": "="
         },
         {
-          "type": "SYMBOL",
-          "name": "_value"
+          "type": "FIELD",
+          "name": "var_value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_value"
+          }
         },
         {
           "type": "STRING",
@@ -951,24 +1029,18 @@
           ]
         },
         {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "identifier"
+              "name": "_bind_type"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_bind_type"
-                }
-              ]
+              "type": "BLANK"
             }
           ]
         },
@@ -1087,33 +1159,37 @@
       ]
     },
     "_result": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "Result"
-        },
-        {
-          "type": "STRING",
-          "value": "<"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_type"
-        },
-        {
-          "type": "STRING",
-          "value": ","
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_type"
-        },
-        {
-          "type": "STRING",
-          "value": ">"
-        }
-      ]
+      "type": "FIELD",
+      "name": "result_types",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "Result"
+          },
+          {
+            "type": "STRING",
+            "value": "<"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_type"
+          },
+          {
+            "type": "STRING",
+            "value": ","
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_type"
+          },
+          {
+            "type": "STRING",
+            "value": ">"
+          }
+        ]
+      }
     },
     "_result_constructor": {
       "type": "SEQ",
@@ -1144,8 +1220,12 @@
           "value": "{"
         },
         {
-          "type": "SYMBOL",
-          "name": "_value"
+          "type": "FIELD",
+          "name": "result_val",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_value"
+          }
         },
         {
           "type": "STRING",
@@ -1212,6 +1292,27 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "List"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type"
+        },
+        {
+          "type": "STRING",
+          "value": ">"
         }
       ]
     },
@@ -1376,7 +1477,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_id"
+          "name": "_list"
         },
         {
           "type": "SYMBOL",
@@ -1392,7 +1493,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "namespace_id"
+          "name": "_entity_id"
         }
       ]
     },
@@ -1834,13 +1935,23 @@
       "type": "PATTERN",
       "value": "[$]?[_a-zA-Z][_a-zA-Z0-9]*"
     },
-    "object_id": {
-      "type": "PATTERN",
-      "value": "[A-Z][A-Za-z]*"
+    "_namespace_id": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "namespace_id"
     },
-    "namespace_id": {
-      "type": "PATTERN",
-      "value": "[A-Z][_a-zA-Z0-9]+"
+    "_entity_id": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "entity_id"
     },
     "num_lit": {
       "type": "CHOICE",
