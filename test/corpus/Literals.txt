@@ -1,0 +1,108 @@
+=========================
+Un-annotaded Error
+=========================
+2
+
+---
+
+(source_file
+      (ERROR
+        (UNEXPECTED '2'))
+)
+
+=========================
+Simple Numbers
+=========================
++2n
+0n
++0n
+-1i
+0N
++2N
+0i
++33I
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit))
+
+==========================
+Simple Float and Decimals
+==========================
+0.0f
++2.0f
+-2.0f
+0.0d
++2.0d
+-2.0d
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit)
+      (num_lit))
+
+==========================
+Simple Rational
+==========================
+1/2R
+-3/4R
+
+---
+(source_file
+      (num_lit)
+      (num_lit))
+
+==========================
+Simple Latitude/Longitude
+==========================
+
+2.0lat-80.123long
+-2.0lat+80.123long
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit))
+
+==========================
+Simple Complex
+==========================
+
+0.0+0.0j
+-2.0-0.5j
+
+---
+
+(source_file
+      (num_lit)
+      (num_lit))
+
+
+==========================
+Simple Specials
+==========================
+true
+false
+none
+
+---
+
+(source_file
+      (boolean_lit)
+      (boolean_lit)
+	  (none_lit)
+	  )

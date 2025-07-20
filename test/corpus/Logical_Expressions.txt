@@ -1,0 +1,59 @@
+===============================
+Simple AND
+===============================
+
+true && false
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))
+
+===============================
+Simple OR
+===============================
+
+true || false
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))
+
+===============================
+Simple IFF
+===============================
+
+true <==> false
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))
+
+===============================
+Simple IMPLIES
+===============================
+
+true ==> false
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))
+
+===============================
+Simple Op AND
+===============================
+
+/\(true,false)
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))
+
+===============================
+Simple Op Or
+===============================
+
+\/(true,false)
+---
+(source_file
+      (boolean_lit)
+      (boolean_lit))

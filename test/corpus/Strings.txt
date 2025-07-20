@@ -1,0 +1,56 @@
+==========================
+Simple Strings
+==========================
+
+""
+"abc"
+"a🌵c"
+
+---
+
+(source_file
+      (string)
+      (string)
+      (string))
+
+==========================
+Simple Escaped Strings
+==========================
+'"%x59;"'
+'"%x1f335;"'
+'"%%;"'
+'"%;"'
+
+---
+(source_file
+(cstring)
+(cstring)
+(cstring)
+(cstring))
+
+
+==========================
+Simple CStrings
+==========================
+"''"
+"'abc'"
+
+---
+(source_file
+(string)
+(string))
+
+==========================
+Simple Escaped CStrings
+==========================
+
+"'%x59;'"
+"'%%;'"
+"'%;'"
+
+---
+
+(source_file
+(string)
+(string)
+(string))

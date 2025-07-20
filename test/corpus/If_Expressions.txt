@@ -7,6 +7,7 @@ if(true) then 2i else 3i + 5i
 ---
 
 (source_file
+	(boolean_lit)
 	(num_lit)
 	(num_lit)
 	(num_lit)
@@ -44,6 +45,7 @@ If Expression Paren Nested
 ---
 
 (source_file
+	(boolean_lit)
 	(num_lit)
 	(num_lit)
 	(num_lit)
@@ -58,6 +60,7 @@ if(true)!none then 2i else 3i
 ---
 
 (source_file
+	  (boolean_lit)
       (num_lit)
       (num_lit))
 
@@ -96,8 +99,11 @@ if(if(true) then false else true) then 2i else 3i
 ---
 
 (source_file
-      (num_lit)
-      (num_lit))
+ (boolean_lit)
+ (boolean_lit)
+ (boolean_lit)
+ (num_lit)
+ (num_lit))
 
 ================================
 If Expression Func ITest Return

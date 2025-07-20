@@ -14,6 +14,7 @@ const PREC = {
   multiplicative: 5,
   additive: 4,
   comparative: 3,
+  func_call: 3,
   and: 2,
   or: 1,
   composite_literal: -1,
@@ -69,6 +70,7 @@ module.exports = grammar({
     _components: ($) =>
       choice(
         $._namespace_def,
+        // $._data_type,
         $._entity,
         $._enum,
         $._function_def,
@@ -120,8 +122,8 @@ module.exports = grammar({
       ),
 
     _function_call: ($) =>
-      prec(
-        2,
+      prec.left(prec(
+        PREC.func_call,
         seq(
           field("function_id", $.identifier),
           "(",
@@ -147,7 +149,7 @@ module.exports = grammar({
           ")",
           optional($._lambda_call),
         ),
-      ),
+      )),
 
     _lambda_call: ($) =>
       seq(
@@ -210,6 +212,8 @@ module.exports = grammar({
           $._if_statement,
           $._assertion,
           $._variable,
+          $._match,
+          $._switch,
           $._return,
           $._debug,
           $._value,
@@ -338,6 +342,42 @@ module.exports = grammar({
         field("enum_access", $.identifier),
       ),
 
+    _match: ($) =>
+      seq(
+        "match",
+        "(",
+        $.identifier,
+        ")",
+        "{",
+        repeat(seq($._match_block, optional("|"))),
+        "}",
+      ),
+
+    _match_block: ($) =>
+      seq(
+        $._type,
+        "=>",
+        $._statement_block,
+      ),
+
+    _switch: ($) =>
+      seq(
+        "switch",
+        "(",
+        $.identifier,
+        ")",
+        "{",
+        repeat(seq($._switch_block, optional("|"))),
+        "}",
+      ),
+
+    _switch_block: ($) =>
+      seq(
+        $._value,
+        "=>",
+        $._statement_block,
+      ),
+
     _return_access: ($) => "$return",
 
     _ref_val: ($) =>
@@ -349,7 +389,7 @@ module.exports = grammar({
     _ITest: ($) =>
       seq(
         optional(repeat("@")),
-        choice($._some, $._none),
+        choice($._some, $._none_test),
       ),
 
     _some: ($) =>
@@ -360,7 +400,7 @@ module.exports = grammar({
         seq("some(", $._value, ")"),
       ),
 
-    _none: ($) => seq(optional("!"), "none"),
+    _none_test: ($) => prec(-1, seq(optional("!"), "none")),
 
     _if_start: ($) =>
       seq(
@@ -408,22 +448,28 @@ module.exports = grammar({
       ),
 
     _value: ($) =>
-      choice(
-        $.identifier,
-        $._enum_access,
-        $._return_access,
-        $.num_lit,
-        $._entity_ref,
-        $._function_call,
-        $._entity_access,
-        $._binary_operation,
-        $._if_expression,
-        $._boolean_expression,
-        $._constructors,
-        $._elist,
-        $._ref_val,
-        $._value_expression,
-        $._ITest,
+      prec(
+        PREC.primary,
+        choice(
+          $.identifier,
+          $._enum_access,
+          $._return_access,
+          $.num_lit,
+          $.boolean_lit,
+          $.none_lit,
+          $._entity_ref,
+          $._function_call,
+          $._entity_access,
+          $._binary_operation,
+          $._if_expression,
+          $._boolean_expression,
+          $._constructors,
+          $._elist,
+          $._ref_val,
+          $._value_expression,
+          $._ITest,
+          $._strings,
+        ),
       ),
 
     _value_expression: ($) =>
@@ -647,8 +693,66 @@ module.exports = grammar({
         $._equality,
         $._compare,
         $._key_comparator,
-        "false",
-        "true",
+        $._and_expression,
+        $._or_expression,
+        $._iff_expression,
+        $._implies_expression,
+      ),
+
+    _and_expression: ($) =>
+      prec.left(
+        PREC.and,
+        choice(
+          seq(
+            $._value,
+            "&&",
+            $._value,
+          ),
+          seq(
+            "/\\",
+            "(",
+            repeat(seq($._value, optional(","))),
+            ")",
+          ),
+        ),
+      ),
+
+    _or_expression: ($) =>
+      prec.left(
+        PREC.or,
+        choice(
+          seq(
+            $._value,
+            "||",
+            $._value,
+          ),
+          seq(
+            "\\/",
+            "(",
+            repeat(seq($._value, optional(","))),
+            ")",
+          ),
+        ),
+      ),
+
+    _iff_expression: ($) =>
+      prec.left(
+        PREC.composite_literal,
+        seq(
+          $._value,
+          "<==>",
+          $._value,
+        ),
+      ),
+
+    _implies_expression: ($) =>
+      prec.left(
+        PREC.composite_literal,
+        seq(
+          $._value,
+          "==>",
+          $._value,
+        ),
       ),
 
     _equality: ($) =>
@@ -781,6 +885,20 @@ module.exports = grammar({
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
     _entity_id: ($) => alias($.identifier, $.entity_id),
-    num_lit: ($) => choice(/[+]?[0-9]*[nN]/, /[+-]?[0-9]*[iI]/),
+    none_lit: ($) => prec(1, "none"),
+    boolean_lit: ($) => choice("true", "false"),
+    num_lit: ($) =>
+      choice(
+        /[+]?[0-9]*[nN]/,
+        /[+-]?[0-9]*[iI]/,
+        /[+-]?[0-9]\.[0-9]f/,
+        /[+-]?[0-9]\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
+        /-?[0-9]+\/[1-9][0-9]*R/,
+        /[+-]?[0-9]+(?:\.[0-9]+)?lat[+-]?[0-9]+(?:\.[0-9]+)?long/,
+        /[+-]?[0-9]+(?:\.[0-9]+)?[+-]?[0-9]+(?:\.[0-9]+)?j/,
+      ),
+    _strings: ($) => choice($.string, $.cstring),
+    string: ($) => /"(?:[^%"\\]|%.)*"/u,
+    cstring: ($) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
   },
 });

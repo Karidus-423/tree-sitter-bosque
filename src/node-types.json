@@ -1,5 +1,15 @@
 [
   {
+    "type": "boolean_lit",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "none_lit",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "num_lit",
     "named": true,
     "fields": {}
@@ -54,6 +64,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -94,6 +108,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -118,6 +136,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -131,6 +153,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -338,6 +364,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -350,6 +380,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -359,10 +397,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -390,12 +424,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -418,11 +460,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -435,6 +481,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -468,6 +518,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -508,6 +562,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -532,6 +590,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -545,6 +607,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -752,6 +818,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -764,6 +834,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -773,10 +851,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -804,12 +878,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -832,11 +914,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -849,6 +935,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -1438,6 +1528,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -1478,6 +1572,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -1502,6 +1600,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -1515,6 +1617,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -1722,6 +1828,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -1734,6 +1844,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -1743,10 +1861,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -1774,12 +1888,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -1802,11 +1924,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -1819,6 +1945,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -1928,6 +2058,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -1968,6 +2102,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -1992,6 +2130,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -2005,6 +2147,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -2212,6 +2358,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -2224,6 +2374,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -2233,10 +2391,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -2264,12 +2418,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -2292,11 +2454,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -2309,6 +2475,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -2584,6 +2754,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -2624,6 +2798,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -2648,6 +2826,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -2661,6 +2843,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -2868,6 +3054,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -2880,6 +3070,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -2889,10 +3087,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -2920,12 +3114,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -2948,11 +3150,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -2965,6 +3171,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -3008,6 +3218,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -3048,6 +3262,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -3072,6 +3290,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -3085,6 +3307,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -3292,6 +3518,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -3302,6 +3532,14 @@
           {
             "type": "assert",
             "named": false
+          },
+          {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
           },
           {
             "type": "else",
@@ -3317,10 +3555,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -3348,12 +3582,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -3380,11 +3622,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -3397,6 +3643,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
             "named": false
           },
           {
@@ -3672,6 +3922,10 @@
             "named": false
           },
           {
+            "type": "&&",
+            "named": false
+          },
+          {
             "type": "(",
             "named": false
           },
@@ -3712,6 +3966,10 @@
             "named": false
           },
           {
+            "type": "/\\",
+            "named": false
+          },
+          {
             "type": "0",
             "named": false
           },
@@ -3736,6 +3994,10 @@
             "named": false
           },
           {
+            "type": "<==>",
+            "named": false
+          },
+          {
             "type": "<Some>",
             "named": false
           },
@@ -3749,6 +4011,10 @@
           },
           {
             "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
             "named": false
           },
           {
@@ -3956,6 +4222,10 @@
             "named": false
           },
           {
+            "type": "\\/",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -3968,6 +4238,14 @@
             "named": false
           },
           {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -3977,10 +4255,6 @@
           },
           {
             "type": "equal",
-            "named": false
-          },
-          {
-            "type": "false",
             "named": false
           },
           {
@@ -4008,12 +4282,20 @@
             "named": false
           },
           {
+            "type": "match",
+            "named": false
+          },
+          {
             "type": "namespace_id",
             "named": true
           },
           {
             "type": "none",
             "named": false
+          },
+          {
+            "type": "none_lit",
+            "named": true
           },
           {
             "type": "num_lit",
@@ -4036,11 +4318,15 @@
             "named": false
           },
           {
-            "type": "then",
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": false
           },
           {
-            "type": "true",
+            "type": "then",
             "named": false
           },
           {
@@ -4056,6 +4342,10 @@
             "named": false
           },
           {
+            "type": "||",
+            "named": false
+          },
+          {
             "type": "}",
             "named": false
           }
@@ -4067,6 +4357,14 @@
       "required": false,
       "types": [
         {
+          "type": "boolean_lit",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
@@ -4075,7 +4373,15 @@
           "named": true
         },
         {
+          "type": "none_lit",
+          "named": true
+        },
+        {
           "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -4099,6 +4405,10 @@
   },
   {
     "type": "$return",
+    "named": false
+  },
+  {
+    "type": "&&",
     "named": false
   },
   {
@@ -4142,6 +4452,10 @@
     "named": false
   },
   {
+    "type": "/\\",
+    "named": false
+  },
+  {
     "type": "0",
     "named": false
   },
@@ -4166,6 +4480,10 @@
     "named": false
   },
   {
+    "type": "<==>",
+    "named": false
+  },
+  {
     "type": "<Some>",
     "named": false
   },
@@ -4179,6 +4497,10 @@
   },
   {
     "type": "===",
+    "named": false
+  },
+  {
+    "type": "==>",
     "named": false
   },
   {
@@ -4386,6 +4708,10 @@
     "named": false
   },
   {
+    "type": "\\/",
+    "named": false
+  },
+  {
     "type": "]",
     "named": false
   },
@@ -4400,6 +4726,10 @@
   {
     "type": "assert",
     "named": false
+  },
+  {
+    "type": "cstring",
+    "named": true
   },
   {
     "type": "declare",
@@ -4462,6 +4792,10 @@
     "named": false
   },
   {
+    "type": "match",
+    "named": false
+  },
+  {
     "type": "namespace",
     "named": false
   },
@@ -4498,6 +4832,14 @@
     "named": false
   },
   {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
     "type": "then",
     "named": false
   },
@@ -4519,6 +4861,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {
