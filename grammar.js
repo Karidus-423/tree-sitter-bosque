@@ -91,6 +91,34 @@ module.exports = grammar({
         field("func_body", $._statement_block),
       ),
 
+    _parameters: ($) =>
+      seq(
+        "(",
+        repeat(
+          seq(
+            optional(
+              choice(
+                field("ref_param", "ref"),
+                field("rest_param", "..."),
+              ),
+            ),
+            $.identifier,
+            $._bind_type,
+            field(
+              "def_val",
+              optional(
+                seq(
+                  "=",
+                  $._value,
+                ),
+              ),
+            ),
+            optional(","),
+          ),
+        ),
+        ")",
+      ),
+
     _function_return_conditions: ($) => (
       seq(
         $._bind_type,
@@ -122,37 +150,31 @@ module.exports = grammar({
       ),
 
     _function_call: ($) =>
-      prec.left(prec(
-        PREC.func_call,
-        seq(
-          field("function_id", $.identifier),
-          "(",
-          repeat(
-            seq(
-              choice(
-                seq(
-                  optional(
-                    choice(
-                      field("ref_param", "ref"),
-                      field("rest_param", "..."),
-                    ),
-                  ),
-                  $.identifier,
-                  $._bind_type,
-                ),
-                seq($.identifier, "=", $._value),
-                seq($._value),
-              ),
-              optional(","),
-            ),
-          ),
-          ")",
-          optional($._lambda_call),
-        ),
-      )),
+      seq(
+        field("function_id", $.identifier),
+        "(",
+        optional(repeat($._function_arguments)),
+        ")",
+      ),
 
+    // return foo(1i, x = 2i);
+    _function_arguments: ($) =>
+      seq(
+        choice(
+          $._value,
+          $._assignment,
+        ),
+        optional(","),
+      ),
+
+    // fn(x) => x + 1i
+    // fn(x: Int): Int => x + 1i;
     _lambda_call: ($) =>
       seq(
+        "fn",
+        "(",
+        optional(repeat($._lambda_arguments)),
+        ")",
         optional($._bind_type),
         "=>",
         choice(
@@ -161,33 +183,16 @@ module.exports = grammar({
         ),
       ),
 
-    _parameters: ($) =>
-      seq(
-        "(",
-        repeat(
-          seq(
-            optional(
-              choice(
-                field("ref_param", "ref"),
-                field("rest_param", "..."),
-              ),
-            ),
-            $.identifier,
-            $._bind_type,
-            field(
-              "def_val",
-              optional(
-                seq(
-                  "=",
-                  $._value,
-                ),
-              ),
-            ),
-            optional(","),
-          ),
-        ),
-        ")",
-      ),
+    _lambda_arguments: ($) =>
+      prec.left(seq(
+        optional(choice(
+          field("ref_param", "ref"),
+          field("rest_param", "..."),
+        )),
+        $.identifier,
+        optional($._bind_type),
+        optional(","),
+      )),
 
     _return: ($) =>
       seq(
@@ -373,7 +378,9 @@ module.exports = grammar({
 
     _switch_block: ($) =>
       seq(
-        $._value,
+        choice(
+          $._value,
+        ),
         "=>",
         $._statement_block,
       ),
@@ -458,6 +465,7 @@ module.exports = grammar({
           $.boolean_lit,
           $.none_lit,
           $._entity_ref,
+          $._lambda_call,
           $._function_call,
           $._entity_access,
           $._binary_operation,
@@ -653,13 +661,13 @@ module.exports = grammar({
     _type: ($) =>
       choice(
         ...PRIMITIVE_ENTITY_TYPE_NAMES,
+        $._entity_id,
         $._option,
         $._lambda_type,
         $._list,
         $._namespace_access,
         $._result,
         $._map_entry,
-        $._entity_id,
       ),
 
     _bind_type: ($) =>

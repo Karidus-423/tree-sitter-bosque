@@ -1,13 +1,4 @@
-function main(): Int {
-	let x = 3i;
-	switch(x) { 
-		0i => {
-			return 0i; 
-		} 
-		| 
-		_ => {
-			return 1i; 
-		} 
-	} 
+function main(): Bool {
+	return foo(fn(x: Int): Int => x + 1i); 
 }
 

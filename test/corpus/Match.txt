@@ -29,7 +29,6 @@ function main(): Int {
 Simple Match Alt
 ===============================
 
-datatype Foo of F1 {} | F2 {};
 
 function main(): Int {
 	let x: Foo = F1{};
@@ -45,6 +44,18 @@ function main(): Int {
 }
 
 ----
+
+(source_file
+      (identifier)
+      (identifier)
+      (entity_id)
+      (entity_id)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (entity_id)
+      (num_lit))
+
 
 ===============================
 Simple Switch 
