@@ -56,6 +56,34 @@ function main(): Int {
       (entity_id)
       (num_lit))
 
+======================
+Simple Match Bind
+======================
+
+function main(): Int {
+	let x: Option<Int> = some(3i);
+	match(x)@ {
+		None => {
+			return 0i; 
+		}
+		| 
+		_ => {
+			return 1i; 
+		} 
+	} 
+}
+
+---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (entity_id)
+      (num_lit))
+
 
 ===============================
 Simple Switch 
@@ -83,3 +111,43 @@ function main(): Int {
       (num_lit)
       (identifier)
       (num_lit))
+
+============================
+Simple Enum Switch
+============================
+
+enum Foo {
+	f,
+	g 
+} 
+
+function main(): Int {
+	let x = Foo#f;
+	switch(x) {
+		Foo#f => {
+			return 0i; 
+		} 
+		| 
+		_ => {
+			return 1i; 
+		} 
+	} 
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit))
+

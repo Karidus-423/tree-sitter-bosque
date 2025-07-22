@@ -20,7 +20,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (identifier)
-      (identifier)
       (num_lit))
 
 =========================================
@@ -40,7 +39,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (num_lit)
-      (identifier)
       (identifier)
       (identifier)
       (identifier)
@@ -71,7 +69,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (identifier)
-      (identifier)
       (num_lit))
 
 =========================================
@@ -93,7 +90,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (num_lit)
-      (identifier)
       (identifier)
       (identifier)
       (identifier)
@@ -123,7 +119,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (num_lit)
-      (identifier)
       (identifier)
       (identifier)
       (identifier)
@@ -162,7 +157,6 @@ function main(): Bool {
       (identifier)
       (identifier)
       (identifier)
-      (identifier)
       (entity_id)
       (identifier)
       (identifier))
@@ -195,7 +189,6 @@ function main(): Bool {
       (identifier)
       (entity_id)
       (num_lit)
-      (identifier)
       (identifier)
       (identifier)
       (identifier)

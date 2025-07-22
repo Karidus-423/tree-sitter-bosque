@@ -64,6 +64,10 @@ const PRIMITIVE_ENTITY_TYPE_NAMES = [
 module.exports = grammar({
   name: "bosque",
 
+  conflicts: ($) => [
+    [$._entity_access_field, $._function_call],
+  ],
+
   rules: {
     source_file: ($) => repeat($._components),
 
@@ -274,7 +278,33 @@ module.exports = grammar({
     _entity: ($) =>
       seq(
         field("keyword", "entity"),
-        $._entity_ref,
+        $._entity_def,
+      ),
+
+    _entity_def: ($) =>
+      prec.left(seq(
+        field("entity_name", $._entity_id),
+        "{",
+        optional(repeat(
+          choice(
+            field("field", $._field),
+            field("method_def", $._method_def),
+          ),
+        )),
+        "}",
+      )),
+
+    _method_def: ($) =>
+      seq(
+        optional("ref"),
+        "method",
+        field("method_id", $.identifier),
+        field("params", $._parameters),
+        field(
+          "return_type",
+          optional($._function_return_conditions),
+        ),
+        field("func_body", $._statement_block),
       ),
 
     _entity_ref: ($) =>
@@ -291,21 +321,33 @@ module.exports = grammar({
         "]",
       ),
 
-    _entity_access: ($) =>
-      choice(
-        seq(
-          choice(
-            $.identifier,
-            $._entity_update,
-          ),
-          ".",
-          $.identifier,
+    _entity_access_field: ($) =>
+      seq(
+        choice(
+          $._data_structs,
+          $._entity_update,
+          "this",
         ),
-        seq(
-          $._entity_id,
-          "{",
-          $._value,
-          "}",
+        ".",
+        $.identifier,
+      ),
+
+    _entity_access_method: ($) =>
+      seq(
+        choice(
+          $.identifier,
+          "this",
+        ),
+        ".",
+        $._function_call,
+      ),
+
+    _entity_access: ($) =>
+      prec.left(
+        choice(
+          $._entity_access_method,
+          $._entity_access_field,
+          seq($._entity_id, "{", $._value, "}"),
         ),
       ),
 
@@ -353,6 +395,7 @@ module.exports = grammar({
         "(",
         $.identifier,
         ")",
+        optional(repeat("@")),
         "{",
         repeat(seq($._match_block, optional("|"))),
         "}",
@@ -388,10 +431,10 @@ module.exports = grammar({
     _return_access: ($) => "$return",
 
     _ref_val: ($) =>
-      seq(
+      prec.left(seq(
         "ref",
-        $.identifier,
-      ),
+        $._value,
+      )),
 
     _ITest: ($) =>
       seq(
@@ -452,6 +495,18 @@ module.exports = grammar({
         $._value,
         "else",
         $._value,
+      ),
+
+    _data_structs: ($) =>
+      choice(
+        $._constructors,
+        $.identifier,
+        $._return_access,
+        $._entity_ref,
+        $._function_call,
+        $._constructors,
+        $._ref_val,
+        $._ITest,
       ),
 
     _value: ($) =>

@@ -1,4 +1,12 @@
-function main(): Bool {
-	return foo(fn(x: Int): Int => x + 1i); 
+entity Foo {
+	field f: Int;
+	ref method foo(): Int {
+		return this.f; 
+	}
+} 
+
+function main(): Int {
+	let x = Foo{3i};
+	return ref x.foo();
 }
 

@@ -1,0 +1,91 @@
+=============================
+Simple Entity Method
+=============================
+entity Foo {
+	field f: Int;
+	ref method foo(): Int {
+		return this.f; 
+	}
+}
+
+function main(): Int {
+	return ref this.foo(); 
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+
+=============================
+Simple Entity Method
+=============================
+
+entity Foo {
+	field f: Int;
+	ref method foo(): Int {
+		return this.f; 
+	}
+} 
+
+function main(): Int {
+	let x = Foo{3i};
+	return ref x.foo();
+}
+
+---
+
+(source_file
+      (entity_id)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (identifier))
+
+
+=============================
+Simple Entity Eadt Methods
+=============================
+
+function main(): Int {
+	let x = Foo{3i};
+	return ref x.foo(1i);
+}
+
+----
+
+(source_file
+      (identifier)
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+
+==============================
+Entity With Args
+==============================
+
+entity Foo {
+	field f: Int;
+	method foo(x: Int): Int {
+		return this.f + x; 
+	}
+} 
+
+function main(): Int {
+	return Foo{3i}.foo(1i); 
+}
+
+---
