@@ -360,15 +360,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -469,10 +461,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -818,15 +806,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -927,10 +907,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -1832,15 +1808,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -1941,10 +1909,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -2324,15 +2288,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -2445,10 +2401,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -2846,15 +2798,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -2955,10 +2899,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -3546,15 +3486,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -3655,10 +3587,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -4014,15 +3942,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -4131,10 +4051,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -4722,15 +4638,7 @@
             "named": false
           },
           {
-            "type": "[",
-            "named": false
-          },
-          {
             "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "]",
             "named": false
           },
           {
@@ -4831,10 +4739,6 @@
           },
           {
             "type": "then",
-            "named": false
-          },
-          {
-            "type": "this",
             "named": false
           },
           {
@@ -5212,15 +5116,7 @@
     "named": false
   },
   {
-    "type": "[",
-    "named": false
-  },
-  {
     "type": "\\/",
-    "named": false
-  },
-  {
-    "type": "]",
     "named": false
   },
   {
@@ -5353,10 +5249,6 @@
   },
   {
     "type": "then",
-    "named": false
-  },
-  {
-    "type": "this",
     "named": false
   },
   {

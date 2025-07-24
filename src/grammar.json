@@ -18,15 +18,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_entity"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_enum"
+          "name": "_enum_def"
         },
         {
           "type": "SYMBOL",
           "name": "_function_def"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_entity_def"
         },
         {
           "type": "SYMBOL",
@@ -705,7 +705,7 @@
         }
       ]
     },
-    "_entity": {
+    "_entity_def": {
       "type": "SEQ",
       "members": [
         {
@@ -717,67 +717,59 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "_entity_def"
+          "type": "FIELD",
+          "name": "entity_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_entity_id"
+          }
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "{"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "field",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_field"
+                        }
+                      },
+                      {
+                        "type": "FIELD",
+                        "name": "method_def",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_method_def"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "}"
+            }
+          ]
         }
       ]
-    },
-    "_entity_def": {
-      "type": "PREC_LEFT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "entity_name",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_entity_id"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "{"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "FIELD",
-                      "name": "field",
-                      "content": {
-                        "type": "SYMBOL",
-                        "name": "_field"
-                      }
-                    },
-                    {
-                      "type": "FIELD",
-                      "name": "method_def",
-                      "content": {
-                        "type": "SYMBOL",
-                        "name": "_method_def"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "STRING",
-            "value": "}"
-          }
-        ]
-      }
     },
     "_method_def": {
       "type": "SEQ",
@@ -882,100 +874,6 @@
         }
       ]
     },
-    "_entity_access_field": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_data_structs"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_entity_update"
-            },
-            {
-              "type": "STRING",
-              "value": "this"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "."
-        },
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        }
-      ]
-    },
-    "_entity_access_method": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            {
-              "type": "STRING",
-              "value": "this"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "."
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_function_call"
-        }
-      ]
-    },
-    "_entity_access": {
-      "type": "PREC_LEFT",
-      "value": 0,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_entity_access_method"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_entity_access_field"
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_entity_id"
-              },
-              {
-                "type": "STRING",
-                "value": "{"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_value"
-              },
-              {
-                "type": "STRING",
-                "value": "}"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "_field_block": {
       "type": "SEQ",
       "members": [
@@ -1008,7 +906,7 @@
         }
       ]
     },
-    "_enum": {
+    "_enum_def": {
       "type": "SEQ",
       "members": [
         {
@@ -1609,10 +1507,6 @@
           {
             "type": "SYMBOL",
             "name": "_function_call"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_entity_access"
           },
           {
             "type": "SYMBOL",
@@ -3137,12 +3031,7 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [
-    [
-      "_entity_access_field",
-      "_function_call"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

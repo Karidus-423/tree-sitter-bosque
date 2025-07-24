@@ -1,0 +1,87 @@
+=======================================
+Access Field Simple 1
+=======================================
+
+entity Foo {
+	field f: Int;
+}
+
+function main(x: Foo): Int {
+	return x.f;
+}
+
+---
+
+=======================================
+Access Field Simple 2
+=======================================
+
+entity Foo {
+	field f: Int;
+}
+
+function foo(): Foo {
+	return Foo{1i};
+}
+
+function main(): Int {
+	return foo().f;
+}
+
+---
+
+
+
+=======================================
+Simple Field Updates 1
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	return v[x = 2i].x;
+}
+
+---
+
+=======================================
+Simple Field Updates 2
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	return v[x = $x + 1i].x;
+}
+
+---
+
+
+
+=======================================
+Postfix Field Updates 1
+=======================================
+
+entity Foo {
+	field x: Int;
+	field y: Int;
+}
+
+entity Bar {
+	field f: Foo;
+}
+
+function main(): Int {
+	let a = Bar{Foo{1i, 0i}};
+	let b = a.f[x = 3i];
+	return b.x;
+}
+
+---
+

@@ -1,0 +1,256 @@
+=======================================
+Multi Declare-Assign Only 1
+=======================================
+
+function main(): Int {
+	var x: Int, y: Bool = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 2
+=======================================
+
+function main(): Int {
+	var x: Int, _: Bool = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 3
+=======================================
+
+function main(): Int {
+	var x, y = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 4
+=======================================
+
+function main(): Int {
+	var x, _ = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 5
+=======================================
+
+function main(): Int {
+	var x, _, _ = 1i, true, false;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 6
+=======================================
+
+function main(): Int {
+	var x: Int, _, z: Int = 1i, true, 0i;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 1
+=======================================
+
+function main(): Int {
+	var x: Int, y: Bool = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 2
+=======================================
+
+function main(): Int {
+	var x: Int, _: Bool = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 3
+=======================================
+
+function main(): Int {
+	var x, y = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 4
+=======================================
+
+function main(): Int {
+	var x, _ = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 5
+=======================================
+
+function main(): Int {
+	var x, _, _ = (|1i, true, false|);
+	return x;
+}
+
+---
+
+
+=======================================
+Multi Assign 1
+=======================================
+
+function main(): Int {
+	var x: Int = 1i;
+	x, _ = 2i, false;
+	return x;
+}
+
+---
+
+=======================================
+Simple Ref Updates 1
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	ref v[x = 2i];
+	return v.x;
+}
+
+---
+
+=======================================
+Simple Ref Updates 2
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	ref v[x = $x + 1i];
+	return v.x;
+}
+
+---
+
+
+
+=======================================
+Simple Declare Only 1
+=======================================
+
+function main(): Int {
+	var x: Int;
+	return 0i;
+}
+
+---
+
+=======================================
+Simple Declare Only 2
+=======================================
+
+function main(): Bool {
+	var x: Bool;
+	return true;
+}
+
+---
+
+
+
+
+
+
+=======================================
+Simple Declare-Assign Only 1
+=======================================
+
+function main(): Int {
+	var x: Int = 1i;
+	return x;
+}
+
+---
+
+=======================================
+Simple Declare-Assign Only 2
+=======================================
+
+function main(): Bool {
+	let x: Bool = true;
+	return x;
+}
+
+---
+
+=======================================
+Simple Declare-Assign Only 3
+=======================================
+
+function main(): Bool {
+	let x = true;
+	return x;
+}
+
+---
+
+
+
+
+=======================================
+Simple Assign 1
+=======================================
+
+function main(): Int {
+	var x: Int = 1i;
+	x = 2i;
+	return x;
+}
+
+---
+
+=======================================
+Simple Assign 2
+=======================================
+
+function main(): Int {
+	_ = 2i;
+	return 0i;
+}
+
+---
+
+
+

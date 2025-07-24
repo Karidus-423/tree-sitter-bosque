@@ -1,0 +1,134 @@
+=======================================
+Multi Declare-Assign Only 1
+=======================================
+
+function main(): Int {
+	var x: Int, y: Bool = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 2
+=======================================
+
+function main(): Int {
+	var x: Int, _: Bool = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 3
+=======================================
+
+function main(): Int {
+	var x, y = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 4
+=======================================
+
+function main(): Int {
+	var x, _ = 1i, true;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 5
+=======================================
+
+function main(): Int {
+	var x, _, _ = 1i, true, false;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign Only 6
+=======================================
+
+function main(): Int {
+	var x: Int, _, z: Int = 1i, true, 0i;
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 1
+=======================================
+
+function main(): Int {
+	var x: Int, y: Bool = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 2
+=======================================
+
+function main(): Int {
+	var x: Int, _: Bool = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 3
+=======================================
+
+function main(): Int {
+	var x, y = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 4
+=======================================
+
+function main(): Int {
+	var x, _ = (|1i, true|);
+	return x;
+}
+
+---
+
+=======================================
+Multi Declare-Assign From EList 5
+=======================================
+
+function main(): Int {
+	var x, _, _ = (|1i, true, false|);
+	return x;
+}
+
+---
+
+
+=======================================
+Multi Assign 1
+=======================================
+
+function main(): Int {
+	var x: Int = 1i;
+	x, _ = 2i, false;
+	return x;
+}
+
+---
+

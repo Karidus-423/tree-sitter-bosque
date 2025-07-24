@@ -1,0 +1,37 @@
+=======================================
+Void NamespaceFunction Ref Params
+=======================================
+
+entity Foo{ } 
+
+function foo(ref y: Foo) {
+	return; 
+} 
+
+function main(): Int {
+	let ff = Foo{};
+
+	foo(ref ff);
+
+	return 1i;
+}
+
+---
+
+=======================================
+Void Namespace Method Ref Params
+=======================================
+
+entity Foo{
+	ref method foo() {
+		return;
+	} 
+} 
+
+function main(): Int {
+	let ff = Foo{};
+	ref ff.foo();
+	return 1i; 
+}
+
+---

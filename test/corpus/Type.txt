@@ -1,0 +1,99 @@
+=======================================
+Type Decl of Bool 1
+=======================================
+
+type Flag = Bool;
+
+function main(): Flag {
+	return true<Flag>;
+}
+
+---
+
+=======================================
+Type Decl of Number 1
+=======================================
+
+type NVal = Int;
+
+function main(): NVal {
+	return -2i<NVal>;
+}
+
+---
+
+=======================================
+Type Decl of Number 2
+=======================================
+
+type FVal = Float;
+
+function main(): FVal {
+	return 0.0f<FVal>;
+}
+
+---
+
+=======================================
+Type Decl of Number With Value 1
+=======================================
+
+type NVal = Int;
+
+function main(): Int {
+	let x = -2i<NVal>;
+	return x.value;
+}
+
+---
+
+
+=======================================
+Type Decl of Strings Without Constraints 1
+=======================================
+
+type SV1 = String;
+
+function main(): SV1 {
+	return "ok"<SV1>;
+}
+
+---
+
+=======================================
+Type Decl of Strings Without Constraints 2
+=======================================
+
+type SV2 = CString;
+
+function main(): SV2 {
+	return 'ok'<SV2>;
+}
+
+---
+
+=======================================
+Type Decl of Strings With Constraints 1
+=======================================
+
+type SV1 = String of /[a-z]+/;
+
+function main(): SV1 {
+	return "abc"<SV1>;
+}
+
+---
+
+=======================================
+Type Decl of Strings With Constraints 2
+=======================================
+
+const re2: CRegex = /[0-9]/c;
+type SV2 = CString of Main::re2;
+
+function main(): SV2 {
+	return '3'<SV2>;
+}
+
+---
+

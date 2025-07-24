@@ -6,7 +6,8 @@ entity Foo {
 } 
 
 function main(): Int {
-	let x = Foo{3i};
+
+	let x = Foo{3i}; 
 	return ref x.foo();
 }
 

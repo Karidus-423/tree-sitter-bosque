@@ -1,0 +1,33 @@
+=======================================
+Simple Ref Updates 1
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	ref v[x = 2i];
+	return v.x;
+}
+
+---
+
+=======================================
+Simple Ref Updates 2
+=======================================
+
+entity Foo {
+	field x: Int;
+}
+
+function main(): Int {
+	var v = Foo{1i};
+	ref v[x = $x + 1i];
+	return v.x;
+}
+
+---
+
+

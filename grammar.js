@@ -64,20 +64,15 @@ const PRIMITIVE_ENTITY_TYPE_NAMES = [
 module.exports = grammar({
   name: "bosque",
 
-  conflicts: ($) => [
-    [$._entity_access_field, $._function_call],
-  ],
-
   rules: {
     source_file: ($) => repeat($._components),
 
     _components: ($) =>
       choice(
         $._namespace_def,
-        // $._data_type,
-        $._entity,
-        $._enum,
+        $._enum_def,
         $._function_def,
+        $._entity_def,
         $._statement,
       ),
 
@@ -275,24 +270,21 @@ module.exports = grammar({
         field("scoped_type", $._entity_id),
       ),
 
-    _entity: ($) =>
+    _entity_def: ($) =>
       seq(
         field("keyword", "entity"),
-        $._entity_def,
-      ),
-
-    _entity_def: ($) =>
-      prec.left(seq(
         field("entity_name", $._entity_id),
-        "{",
-        optional(repeat(
-          choice(
-            field("field", $._field),
-            field("method_def", $._method_def),
-          ),
-        )),
-        "}",
-      )),
+        seq(
+          "{",
+          optional(repeat(
+            choice(
+              field("field", $._field),
+              field("method_def", $._method_def),
+            ),
+          )),
+          "}",
+        ),
+      ),
 
     _method_def: ($) =>
       seq(
@@ -321,36 +313,6 @@ module.exports = grammar({
         "]",
       ),
 
-    _entity_access_field: ($) =>
-      seq(
-        choice(
-          $._data_structs,
-          $._entity_update,
-          "this",
-        ),
-        ".",
-        $.identifier,
-      ),
-
-    _entity_access_method: ($) =>
-      seq(
-        choice(
-          $.identifier,
-          "this",
-        ),
-        ".",
-        $._function_call,
-      ),
-
-    _entity_access: ($) =>
-      prec.left(
-        choice(
-          $._entity_access_method,
-          $._entity_access_field,
-          seq($._entity_id, "{", $._value, "}"),
-        ),
-      ),
-
     _field_block: ($) =>
       seq(
         "{",
@@ -362,7 +324,7 @@ module.exports = grammar({
         "}",
       ),
 
-    _enum: ($) =>
+    _enum_def: ($) =>
       seq(
         field("enum_key", "enum"),
         field("enum_name", $._entity_id),
@@ -522,7 +484,6 @@ module.exports = grammar({
           $._entity_ref,
           $._lambda_call,
           $._function_call,
-          $._entity_access,
           $._binary_operation,
           $._if_expression,
           $._boolean_expression,

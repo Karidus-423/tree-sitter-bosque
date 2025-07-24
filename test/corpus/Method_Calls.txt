@@ -1,5 +1,5 @@
 =============================
-Simple Entity Method
+Simple Entity Method 1
 =============================
 entity Foo {
 	field f: Int;
@@ -23,7 +23,7 @@ function main(): Int {
       (identifier))
 
 =============================
-Simple Entity Method
+Simple Entity Method 2
 =============================
 
 entity Foo {
@@ -72,20 +72,27 @@ function main(): Int {
       (identifier)
       (identifier)
       (num_lit)
+)
 
 ==============================
-Entity With Args
+Entity Ref Method
 ==============================
 
-entity Foo {
-	field f: Int;
-	method foo(x: Int): Int {
-		return this.f + x; 
-	}
-} 
 
 function main(): Int {
-	return Foo{3i}.foo(1i); 
+	let x = Foo{3i};
+	return ref x.foo(1i);
 }
 
 ---
+
+(source_file
+	(identifier)
+	(identifier)
+	(entity_id)
+	(num_lit)
+	(identifier)
+	(identifier)
+	(num_lit)
+)
+
