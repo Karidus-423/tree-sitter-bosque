@@ -144,22 +144,27 @@ function main(): Bool {
 ---
 
 (source_file
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (identifier)
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (num_lit)
       (identifier)
       (identifier)
       (identifier)
       (identifier)
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (identifier))
+
 
 =========================================
 Simple Lambda Reference Infer
@@ -181,13 +186,16 @@ function main(): Bool {
 ---
 
 (source_file
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (identifier)
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (num_lit)
       (identifier)
       (identifier)

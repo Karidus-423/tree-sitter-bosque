@@ -21,12 +21,13 @@ function main(): Option<Bar> {
 }
 
 ---
-
 (source_file
       (namespace_id)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (none_lit))
 
 =================================
@@ -43,11 +44,14 @@ function main(): Option<Main::Bar> {
 
 (source_file
       (namespace_id)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (namespace_id)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (none_lit))
+
 
 ===============================
 Namespace Import Access
@@ -61,12 +65,14 @@ function main(): Option<NSOther::Foo> {
 }
 
 ---
+
 (source_file
       (namespace_id)
       (namespace_id)
       (identifier)
       (namespace_id)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (none_lit))
 
 
@@ -89,5 +95,6 @@ function main(): Option<Other::Foo> {
       (namespace_id)
       (identifier)
       (namespace_id)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (none_lit))

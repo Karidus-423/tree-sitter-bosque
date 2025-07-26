@@ -1,6 +1,2 @@
-function main(): Int {
-	let a = Bar{Foo{1i, 0i}};
-	let b = a.f[x = 3i];
-	return b.x;
-}
+foo();
 

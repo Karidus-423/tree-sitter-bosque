@@ -2153,6 +2153,10 @@
             "named": true
           },
           {
+            "type": "ref",
+            "named": false
+          },
+          {
             "type": "requires",
             "named": false
           },

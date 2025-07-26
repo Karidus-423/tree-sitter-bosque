@@ -279,6 +279,7 @@ module.exports = grammar({
 
     _method_def: ($) =>
       seq(
+        optional("ref"),
         "method",
         field("method_id", $.identifier),
         field("params", $._parameters),
@@ -476,7 +477,6 @@ module.exports = grammar({
           $._constructors,
           $._elist,
           $._ITest,
-          // ----
           $._boolean_expression,
           $._binary_operation,
         ),
