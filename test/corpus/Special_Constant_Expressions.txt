@@ -4,9 +4,9 @@ Special Constructor Option 1
 
 none
 
-# Type: None
-
 ---
+(source_file
+      (none_lit))
 
 =======================================
 Special Constructor Option 2
@@ -14,9 +14,10 @@ Special Constructor Option 2
 
 some(3i)
 
-# Type: Some
-
 ---
+(source_file
+      (identifier)
+      (num_lit))
 
 =======================================
 Special Constructor 1
@@ -24,9 +25,10 @@ Special Constructor 1
 
 ok(3i)
 
-# Type: Result<Int, Bool>
-
 ---
+(source_file
+      (identifier)
+      (num_lit))
 
 =======================================
 Special Constructor 2
@@ -34,6 +36,7 @@ Special Constructor 2
 
 fail('bad name')
 
-# Type: Result<Int, CString>
-
 ---
+(source_file
+      (identifier)
+      (cstring))

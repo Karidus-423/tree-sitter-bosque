@@ -4,9 +4,10 @@ Boolean Not 1
 
 !true
 
-# Type: Bool
 
 ---
+(source_file
+      (boolean_lit))
 
 =======================================
 Boolean Not 2
@@ -14,10 +15,9 @@ Boolean Not 2
 
 !!true
 
-# Normalized: !(!true)
-# Type: Bool
-
 ---
+(source_file
+      (boolean_lit))
 
 
 =======================================
@@ -26,9 +26,10 @@ Unary Arithmetic 1
 
 +(5i)
 
-# Type: Int
 
 ---
+(source_file
+      (num_lit))
 
 =======================================
 Unary Arithmetic 2
@@ -36,9 +37,10 @@ Unary Arithmetic 2
 
 -(3i)
 
-# Type: Int
-
 ---
+(source_file
+      (num_lit))
+
 
 =======================================
 Unary Arithmetic 3
@@ -46,7 +48,8 @@ Unary Arithmetic 3
 
 -(-3i)
 
-# Type: Int
-
 ---
+(source_file
+      (num_lit))
+
 

@@ -1,2 +1,6 @@
-foo();
+type Flag = Bool;
+
+function main(): Flag {
+	return true<Flag>;
+}
 
