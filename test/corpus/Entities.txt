@@ -8,8 +8,8 @@ entity Base{
 ---
 
 (source_file
-	entity_name: (entity_id)
-)
+      (entity_id
+        (entity_id)))
 
 ===========================
 Entities Definition Values
@@ -25,12 +25,13 @@ entity Food{
 ---
 
 (source_file
-	entity_name: (entity_id)
-	field: (identifier)
-	field: (identifier)
-	field: (identifier)
-	field: (identifier)
-)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+
 
 ===========================
 Entities Accesors Use
@@ -46,19 +47,20 @@ public function main(f: Foo): Int {
 ---
 
 (source_file
-    func_name: (identifier)
-	params: (identifier)
-	type: (entity_id)
-	func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-    func_body: (identifier)
-)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+
 
 ===========================
 Entities Accesors Use Alt
@@ -75,13 +77,16 @@ function foo(): Foo {
 ---
 
 (source_file
-    entity_name: (entity_id)
-    field: (identifier)
-    func_name: (identifier)
-    type: (entity_id)
-    func_body: (entity_id)
-    func_body: (num_lit)
-)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (num_lit))
+
 
 ===========================
 Entities Field Update
@@ -99,17 +104,19 @@ function main(): Int {
 ----
 
 (source_file
-	(entity_id)
-	(identifier)
-	(identifier)
-	(identifier)
-	(entity_id)
-	(num_lit)
-	(identifier)
-	(identifier)
-	(num_lit)
-	(identifier)
-)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier))
+
 
 ===========================
 Entities Field Update Alt
@@ -125,18 +132,17 @@ function main(): Int {
 }
 
 ----
-
 (source_file
-	(entity_id)
-	(identifier)
-	(identifier)
-	(identifier)
-	(entity_id)
-	(num_lit)
-	(identifier)
-	(identifier)
-	(identifier)
-	(num_lit)
-	(identifier)
-)
-
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier))

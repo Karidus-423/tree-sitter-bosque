@@ -9,6 +9,14 @@ function main(): Int {
 
 ---
 
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
+
 =======================================
 Multi Declare-Assign Only 2
 =======================================
@@ -19,6 +27,13 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign Only 3
@@ -31,6 +46,14 @@ function main(): Int {
 
 ---
 
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
+
 =======================================
 Multi Declare-Assign Only 4
 =======================================
@@ -41,6 +64,13 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign Only 5
@@ -52,6 +82,15 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign Only 6
@@ -63,6 +102,15 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (num_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign From EList 1
@@ -75,6 +123,15 @@ function main(): Int {
 
 ---
 
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
+
+
 =======================================
 Multi Declare-Assign From EList 2
 =======================================
@@ -85,6 +142,13 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign From EList 3
@@ -96,6 +160,13 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign From EList 4
@@ -107,6 +178,13 @@ function main(): Int {
 }
 
 ---
+ (source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Multi Declare-Assign From EList 5
@@ -118,6 +196,15 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (boolean_lit)
+      (identifier))
 
 
 =======================================
@@ -131,6 +218,16 @@ function main(): Int {
 }
 
 ---
+
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Simple Ref Updates 1
@@ -147,6 +244,20 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier))
 
 =======================================
 Simple Ref Updates 2
@@ -164,6 +275,22 @@ function main(): Int {
 
 ---
 
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier))
+
 
 
 =======================================
@@ -177,6 +304,11 @@ function main(): Int {
 
 ---
 
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit))
+
 =======================================
 Simple Declare Only 2
 =======================================
@@ -187,11 +319,10 @@ function main(): Bool {
 }
 
 ---
-
-
-
-
-
+(source_file
+      (identifier)
+      (identifier)
+      (boolean_lit))
 
 =======================================
 Simple Declare-Assign Only 1
@@ -203,6 +334,11 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier))
 
 =======================================
 Simple Declare-Assign Only 2
@@ -214,6 +350,11 @@ function main(): Bool {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Simple Declare-Assign Only 3
@@ -226,8 +367,11 @@ function main(): Bool {
 
 ---
 
-
-
+(source_file
+      (identifier)
+      (identifier)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 Simple Assign 1
@@ -240,6 +384,13 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (num_lit)
+      (identifier))
 
 =======================================
 Simple Assign 2
@@ -252,5 +403,10 @@ function main(): Int {
 
 ---
 
+ (source_file
+      (identifier)
+      (identifier)
+      (num_lit)
+      (num_lit))
 
 

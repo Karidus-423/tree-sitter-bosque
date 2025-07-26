@@ -9,6 +9,7 @@
 //
 
 const PREC = {
+  focused: 8,
   primary: 7,
   unary: 6,
   multiplicative: 5,
@@ -80,7 +81,7 @@ module.exports = grammar({
     _function_def: ($) =>
       seq(
         optional("public"),
-        "function",
+        field("func_keyword", "function"),
         field("func_name", $.identifier),
         field("params", $._parameters),
         field(
@@ -95,27 +96,28 @@ module.exports = grammar({
         "(",
         repeat(
           seq(
-            optional(
-              choice(
-                field("ref_param", "ref"),
-                field("rest_param", "..."),
-              ),
-            ),
-            $.identifier,
-            $._bind_type,
-            field(
-              "def_val",
-              optional(
-                seq(
-                  "=",
-                  $._value,
-                ),
-              ),
+            choice(
+              $._function_param_simple,
+              $._function_param_value,
             ),
             optional(","),
           ),
         ),
         ")",
+      ),
+
+    _function_param_simple: ($) =>
+      seq(
+        $.identifier,
+        $._bind_type,
+      ),
+
+    _function_param_value: ($) =>
+      seq(
+        $.identifier,
+        $._bind_type,
+        "=",
+        $._value,
       ),
 
     _function_return_conditions: ($) => (
@@ -184,10 +186,6 @@ module.exports = grammar({
 
     _lambda_arguments: ($) =>
       prec.left(seq(
-        optional(choice(
-          field("ref_param", "ref"),
-          field("rest_param", "..."),
-        )),
         $.identifier,
         optional($._bind_type),
         optional(","),
@@ -230,13 +228,10 @@ module.exports = grammar({
           "declare",
           "namespace",
           field("namespace_id", $._namespace_id),
-          ";",
-        ),
-        seq(
-          "declare",
-          "namespace",
-          field("namespace_id", $._namespace_id),
-          $._namespace_block,
+          choice(
+            ";",
+            $._namespace_block,
+          ),
         ),
       ),
 
@@ -252,14 +247,10 @@ module.exports = grammar({
         seq(
           "using",
           $._namespace_id,
-          ";",
-        ),
-        seq(
-          "using",
-          $._namespace_id,
-          "as",
-          $._namespace_id,
-          ";",
+          choice(
+            ";",
+            field("rename", seq("as", $._namespace_id, ";")),
+          ),
         ),
       ),
 
@@ -267,13 +258,13 @@ module.exports = grammar({
       seq(
         field("namespace_id", $._namespace_id),
         field("namespace_accessor", "::"),
-        field("scoped_type", $._entity_id),
+        field("scoped_import", $.entity_id),
       ),
 
     _entity_def: ($) =>
       seq(
         field("keyword", "entity"),
-        field("entity_name", $._entity_id),
+        field("entity_name", $.entity_id),
         seq(
           "{",
           optional(repeat(
@@ -288,7 +279,6 @@ module.exports = grammar({
 
     _method_def: ($) =>
       seq(
-        optional("ref"),
         "method",
         field("method_id", $.identifier),
         field("params", $._parameters),
@@ -301,33 +291,58 @@ module.exports = grammar({
 
     _entity_ref: ($) =>
       seq(
-        field("entity_name", $._entity_id),
-        field("field_block", $._field_block),
+        field("entity_name", $.entity_id),
+        field("field_block", $._entity_ref_block),
+      ),
+
+    _entity_ref_block: ($) =>
+      seq(
+        "{",
+        optional(repeat(
+          seq(
+            choice(
+              $._value,
+              $._assignment,
+            ),
+            optional(","),
+          ),
+        )),
+        "}",
       ),
 
     _entity_update: ($) =>
-      seq(
+      prec.left(seq(
         $.identifier,
         "[",
         $._assignment,
         "]",
+        optional(";"),
+      )),
+
+    _accessors: ($) =>
+      choice(
+        $.identifier,
+        $.this,
+        $._function_call,
+        $._entity_update,
+        $._entity_ref,
       ),
 
-    _field_block: ($) =>
-      seq(
-        "{",
-        optional(
-          repeat(
-            field("field", $._field),
-          ),
+    _member_access: ($) =>
+      prec.right(seq(
+        $._accessors,
+        ".",
+        choice(
+          $.identifier,
+          $._function_call,
+          $._entity_update,
         ),
-        "}",
-      ),
+      )),
 
     _enum_def: ($) =>
       seq(
         field("enum_key", "enum"),
-        field("enum_name", $._entity_id),
+        field("enum_name", $.entity_id),
         field("enum_fields", $._enum_block),
       ),
 
@@ -346,7 +361,7 @@ module.exports = grammar({
 
     _enum_access: ($) =>
       seq(
-        field("enum_name", $._entity_id),
+        field("enum_name", $.entity_id),
         field("enum_accessor", "#"),
         field("enum_access", $.identifier),
       ),
@@ -392,27 +407,18 @@ module.exports = grammar({
 
     _return_access: ($) => "$return",
 
-    _ref_val: ($) =>
-      prec.left(seq(
-        "ref",
-        $._value,
-      )),
-
     _ITest: ($) =>
       seq(
-        optional(repeat("@")),
-        choice($._some, $._none_test),
+        optional(repeat(choice("@", "!"))),
+        choice($._some, $.none_lit),
       ),
 
     _some: ($) =>
       choice(
         "<Some>",
-        seq(optional("!"), "some"),
-        //TODO: Find something better for this.
+        "some",
         seq("some(", $._value, ")"),
       ),
-
-    _none_test: ($) => prec(-1, seq(optional("!"), "none")),
 
     _if_start: ($) =>
       seq(
@@ -450,55 +456,35 @@ module.exports = grammar({
         "}",
       ),
 
-    _if_expression: ($) =>
-      seq(
-        $._if_start,
-        "then",
-        $._value,
-        "else",
-        $._value,
-      ),
-
-    _data_structs: ($) =>
-      choice(
-        $._constructors,
-        $.identifier,
-        $._return_access,
-        $._entity_ref,
-        $._function_call,
-        $._constructors,
-        $._ref_val,
-        $._ITest,
-      ),
-
     _value: ($) =>
       prec(
         PREC.primary,
         choice(
+          $._value_expression,
           $.identifier,
           $._enum_access,
           $._return_access,
+          $._member_access,
           $.num_lit,
           $.boolean_lit,
           $.none_lit,
+          $._strings,
           $._entity_ref,
+          $._entity_update,
           $._lambda_call,
           $._function_call,
-          $._binary_operation,
-          $._if_expression,
-          $._boolean_expression,
           $._constructors,
           $._elist,
-          $._ref_val,
-          $._value_expression,
           $._ITest,
-          $._strings,
+          // ----
+          $._boolean_expression,
+          $._binary_operation,
         ),
       ),
 
     _value_expression: ($) =>
       prec(
-        2,
+        PREC.focused,
         seq(
           "(",
           $._value,
@@ -508,29 +494,48 @@ module.exports = grammar({
 
     _elist: ($) =>
       seq(
-        "(",
-        "|",
+        "(|",
         repeat1(seq(
           $._value,
           optional(","),
         )),
-        "|",
-        ")",
-        ".",
-        //TODO: What should be here?
-        "0",
+        "|)",
+        optional(seq(".", "0")),
       ),
 
     _variable: ($) =>
+      choice(
+        $._var_assign,
+        $._var_reassign,
+      ),
+
+    _var_assign: ($) =>
       seq(
         "var",
-        field(
-          "var_id",
-          $.identifier,
+        prec.left(repeat(
+          seq(
+            $.identifier,
+            optional($._bind_type),
+            optional(","),
+          ),
+        )),
+        optional(seq(
+          "=",
+          repeat(seq($._value, optional(","))),
+        )),
+        ";",
+      ),
+
+    _var_reassign: ($) =>
+      seq(
+        repeat(
+          seq(
+            $.identifier,
+            optional(","),
+          ),
         ),
-        optional($._bind_type),
         "=",
-        field("var_value", $._value),
+        repeat(seq($._value, optional(","))),
         ";",
       ),
 
@@ -662,12 +667,6 @@ module.exports = grammar({
       seq(
         "fn",
         "(",
-        optional(
-          choice(
-            field("ref_param", "ref"),
-            field("rest_param", "..."),
-          ),
-        ),
         $._type,
         ")",
         "->",
@@ -677,7 +676,7 @@ module.exports = grammar({
     _type: ($) =>
       choice(
         ...PRIMITIVE_ENTITY_TYPE_NAMES,
-        $._entity_id,
+        $.entity_id,
         $._option,
         $._lambda_type,
         $._list,
@@ -700,7 +699,6 @@ module.exports = grammar({
         ">",
       ),
 
-    ///////////Should be able to have a calculator here/////////////////////////
     _binary_operation: ($) =>
       choice(
         $._addition,
@@ -906,9 +904,10 @@ module.exports = grammar({
     ///////////////////////////////////////////
     //Try to find a way to differentiate between all of these.
 
-    identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
+    identifier: ($) => seq(optional("ref"), /[$]?[_a-zA-Z][_a-zA-Z0-9]*/),
+    this: ($) => seq(optional("ref"), "this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
-    _entity_id: ($) => alias($.identifier, $.entity_id),
+    entity_id: ($) => alias($.identifier, $.entity_id),
     none_lit: ($) => prec(1, "none"),
     boolean_lit: ($) => choice("true", "false"),
     num_lit: ($) =>

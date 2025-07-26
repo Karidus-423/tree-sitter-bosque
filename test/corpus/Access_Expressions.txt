@@ -11,6 +11,16 @@ function main(x: Foo): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier))
 
 =======================================
 Access Field Simple 2
@@ -30,6 +40,19 @@ function main(): Int {
 
 ---
 
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier))
 
 
 =======================================
@@ -46,6 +69,19 @@ function main(): Int {
 }
 
 ---
+ (source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier))
 
 =======================================
 Simple Field Updates 2
@@ -61,6 +97,21 @@ function main(): Int {
 }
 
 ---
+
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier))
 
 
 
@@ -84,4 +135,29 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier))
 

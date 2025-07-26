@@ -1,13 +1,6 @@
-entity Foo {
-	field f: Int;
-	ref method foo(): Int {
-		return this.f; 
-	}
-} 
-
 function main(): Int {
-
-	let x = Foo{3i}; 
-	return ref x.foo();
+	let a = Bar{Foo{1i, 0i}};
+	let b = a.f[x = 3i];
+	return b.x;
 }
 

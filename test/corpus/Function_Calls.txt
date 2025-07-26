@@ -118,20 +118,20 @@ function main(): Int {
 ---
 
 (source_file
-      func_name: (identifier)
-      params: (identifier)
-      params: (identifier)
-      func_body: (identifier)
-      func_body: (identifier)
-      func_name: (identifier)
-      var_id: (identifier)
-      var_value: (num_lit)
-      function_id: (identifier)
-      func_body: (identifier)
-      func_body: (identifier)
-      func_body: (identifier)
-      func_body: (identifier)
-)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (num_lit)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+
 
 
 ========================================
@@ -227,7 +227,8 @@ function main(): Int {
 (source_file
       (identifier)
       (identifier)
-      (identifier)
+      (ERROR
+        (UNEXPECTED 'y'))
       (identifier)
       (identifier)
       (identifier)
@@ -235,6 +236,7 @@ function main(): Int {
       (identifier)
       (num_lit)
       (num_lit))
+
 
 ========================================
 Function Call with Ref
@@ -428,13 +430,17 @@ function main(): Int {
 ---
 
 (source_file
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (num_lit)
       (identifier)
       (identifier)
-      (entity_id)
+      (entity_id
+        (entity_id))
       (identifier)
       (identifier))
+

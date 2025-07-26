@@ -5,6 +5,31 @@
     "fields": {}
   },
   {
+    "type": "entity_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "entity_id",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "namespace_id",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "none_lit",
     "named": true,
     "fields": {}
@@ -72,6 +97,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -97,10 +126,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -360,7 +385,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -392,10 +425,6 @@
             "named": false
           },
           {
-            "type": "field",
-            "named": false
-          },
-          {
             "type": "fn",
             "named": false
           },
@@ -424,20 +453,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "return",
@@ -460,8 +481,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -476,449 +497,7 @@
             "named": false
           },
           {
-            "type": "||",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
-          }
-        ]
-      },
-      "def_val": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "!",
-            "named": false
-          },
-          {
-            "type": "!=",
-            "named": false
-          },
-          {
-            "type": "!==",
-            "named": false
-          },
-          {
-            "type": "#",
-            "named": false
-          },
-          {
-            "type": "$return",
-            "named": false
-          },
-          {
-            "type": "&&",
-            "named": false
-          },
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": "*",
-            "named": false
-          },
-          {
-            "type": "+",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "-",
-            "named": false
-          },
-          {
-            "type": "->",
-            "named": false
-          },
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
-            "named": false
-          },
-          {
-            "type": "//",
-            "named": false
-          },
-          {
-            "type": "/\\",
-            "named": false
-          },
-          {
-            "type": "0",
-            "named": false
-          },
-          {
-            "type": ":",
-            "named": false
-          },
-          {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "<=",
-            "named": false
-          },
-          {
-            "type": "<==>",
-            "named": false
-          },
-          {
-            "type": "<Some>",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": "==",
-            "named": false
-          },
-          {
-            "type": "===",
-            "named": false
-          },
-          {
-            "type": "==>",
-            "named": false
-          },
-          {
-            "type": "=>",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": ">=",
-            "named": false
-          },
-          {
-            "type": "@",
-            "named": false
-          },
-          {
-            "type": "BigInt",
-            "named": false
-          },
-          {
-            "type": "BigNat",
-            "named": false
-          },
-          {
-            "type": "Bool",
-            "named": false
-          },
-          {
-            "type": "ByteBuffer",
-            "named": false
-          },
-          {
-            "type": "CChar",
-            "named": false
-          },
-          {
-            "type": "CCharBuffer",
-            "named": false
-          },
-          {
-            "type": "CRegex",
-            "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Complex",
-            "named": false
-          },
-          {
-            "type": "Decimal",
-            "named": false
-          },
-          {
-            "type": "DecimalDegree",
-            "named": false
-          },
-          {
-            "type": "DeltaDateTime",
-            "named": false
-          },
-          {
-            "type": "DeltaISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "DeltaLogicalTime",
-            "named": false
-          },
-          {
-            "type": "DeltaSeconds",
-            "named": false
-          },
-          {
-            "type": "Fail",
-            "named": false
-          },
-          {
-            "type": "Float",
-            "named": false
-          },
-          {
-            "type": "Glob",
-            "named": false
-          },
-          {
-            "type": "ISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "KeyComparator",
-            "named": false
-          },
-          {
-            "type": "LatLongCoordinate",
-            "named": false
-          },
-          {
-            "type": "List",
-            "named": false
-          },
-          {
-            "type": "LogicalTime",
-            "named": false
-          },
-          {
-            "type": "MapEntry",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "None",
-            "named": false
-          },
-          {
-            "type": "Ok",
-            "named": false
-          },
-          {
-            "type": "Option",
-            "named": false
-          },
-          {
-            "type": "Path",
-            "named": false
-          },
-          {
-            "type": "PathItem",
-            "named": false
-          },
-          {
-            "type": "PathRegex",
-            "named": false
-          },
-          {
-            "type": "PlainDate",
-            "named": false
-          },
-          {
-            "type": "PlainTime",
-            "named": false
-          },
-          {
-            "type": "Rational",
-            "named": false
-          },
-          {
-            "type": "Regex",
-            "named": false
-          },
-          {
-            "type": "Result",
-            "named": false
-          },
-          {
-            "type": "SHAContentHash",
-            "named": false
-          },
-          {
-            "type": "Some",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
-            "type": "TAITime",
-            "named": false
-          },
-          {
-            "type": "TZDateTime",
-            "named": false
-          },
-          {
-            "type": "UUIDv4",
-            "named": false
-          },
-          {
-            "type": "UUIDv7",
-            "named": false
-          },
-          {
-            "type": "UnicodeChar",
-            "named": false
-          },
-          {
-            "type": "UnicodeCharBuffer",
-            "named": false
-          },
-          {
-            "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "_debug",
-            "named": false
-          },
-          {
-            "type": "assert",
-            "named": false
-          },
-          {
-            "type": "boolean_lit",
-            "named": true
-          },
-          {
-            "type": "cstring",
-            "named": true
-          },
-          {
-            "type": "else",
-            "named": false
-          },
-          {
-            "type": "entity_id",
-            "named": true
-          },
-          {
-            "type": "equal",
-            "named": false
-          },
-          {
-            "type": "field",
-            "named": false
-          },
-          {
-            "type": "fn",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": false
-          },
-          {
-            "type": "less",
-            "named": false
-          },
-          {
-            "type": "let",
-            "named": false
-          },
-          {
-            "type": "match",
-            "named": false
-          },
-          {
-            "type": "namespace_id",
-            "named": true
-          },
-          {
-            "type": "none",
-            "named": false
-          },
-          {
-            "type": "none_lit",
-            "named": true
-          },
-          {
-            "type": "num_lit",
-            "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
-          },
-          {
-            "type": "return",
-            "named": false
-          },
-          {
-            "type": "some",
-            "named": false
-          },
-          {
-            "type": "some(",
-            "named": false
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "switch",
-            "named": false
-          },
-          {
-            "type": "then",
-            "named": false
-          },
-          {
-            "type": "var",
-            "named": false
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "|",
+            "type": "|)",
             "named": false
           },
           {
@@ -1024,10 +603,6 @@
             "named": false
           },
           {
-            "type": "...",
-            "named": false
-          },
-          {
             "type": ":",
             "named": false
           },
@@ -1234,260 +809,10 @@
           {
             "type": "namespace_id",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           }
         ]
       },
       "field_block": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "->",
-            "named": false
-          },
-          {
-            "type": "...",
-            "named": false
-          },
-          {
-            "type": ":",
-            "named": false
-          },
-          {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": "BigInt",
-            "named": false
-          },
-          {
-            "type": "BigNat",
-            "named": false
-          },
-          {
-            "type": "Bool",
-            "named": false
-          },
-          {
-            "type": "ByteBuffer",
-            "named": false
-          },
-          {
-            "type": "CChar",
-            "named": false
-          },
-          {
-            "type": "CCharBuffer",
-            "named": false
-          },
-          {
-            "type": "CRegex",
-            "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Complex",
-            "named": false
-          },
-          {
-            "type": "Decimal",
-            "named": false
-          },
-          {
-            "type": "DecimalDegree",
-            "named": false
-          },
-          {
-            "type": "DeltaDateTime",
-            "named": false
-          },
-          {
-            "type": "DeltaISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "DeltaLogicalTime",
-            "named": false
-          },
-          {
-            "type": "DeltaSeconds",
-            "named": false
-          },
-          {
-            "type": "Float",
-            "named": false
-          },
-          {
-            "type": "Glob",
-            "named": false
-          },
-          {
-            "type": "ISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "LatLongCoordinate",
-            "named": false
-          },
-          {
-            "type": "List",
-            "named": false
-          },
-          {
-            "type": "LogicalTime",
-            "named": false
-          },
-          {
-            "type": "MapEntry",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "None",
-            "named": false
-          },
-          {
-            "type": "Option",
-            "named": false
-          },
-          {
-            "type": "Path",
-            "named": false
-          },
-          {
-            "type": "PathItem",
-            "named": false
-          },
-          {
-            "type": "PathRegex",
-            "named": false
-          },
-          {
-            "type": "PlainDate",
-            "named": false
-          },
-          {
-            "type": "PlainTime",
-            "named": false
-          },
-          {
-            "type": "Rational",
-            "named": false
-          },
-          {
-            "type": "Regex",
-            "named": false
-          },
-          {
-            "type": "Result",
-            "named": false
-          },
-          {
-            "type": "SHAContentHash",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
-            "type": "TAITime",
-            "named": false
-          },
-          {
-            "type": "TZDateTime",
-            "named": false
-          },
-          {
-            "type": "UUIDv4",
-            "named": false
-          },
-          {
-            "type": "UUIDv7",
-            "named": false
-          },
-          {
-            "type": "UnicodeChar",
-            "named": false
-          },
-          {
-            "type": "UnicodeCharBuffer",
-            "named": false
-          },
-          {
-            "type": "entity_id",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": false
-          },
-          {
-            "type": "fn",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "namespace_id",
-            "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
-          }
-        ]
-      },
-      "func_body": {
         "multiple": true,
         "required": false,
         "types": [
@@ -1520,6 +845,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -1545,10 +874,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -1808,7 +1133,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -1840,7 +1173,449 @@
             "named": false
           },
           {
-            "type": "field",
+            "type": "fn",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "less",
+            "named": false
+          },
+          {
+            "type": "let",
+            "named": false
+          },
+          {
+            "type": "match",
+            "named": false
+          },
+          {
+            "type": "namespace_id",
+            "named": true
+          },
+          {
+            "type": "none_lit",
+            "named": true
+          },
+          {
+            "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": false
+          },
+          {
+            "type": "some",
+            "named": false
+          },
+          {
+            "type": "some(",
+            "named": false
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch",
+            "named": false
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": false
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "|)",
+            "named": false
+          },
+          {
+            "type": "||",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "func_body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "!",
+            "named": false
+          },
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!==",
+            "named": false
+          },
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "$return",
+            "named": false
+          },
+          {
+            "type": "&&",
+            "named": false
+          },
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": "(|",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "<==>",
+            "named": false
+          },
+          {
+            "type": "<Some>",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "==>",
+            "named": false
+          },
+          {
+            "type": "=>",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "BigInt",
+            "named": false
+          },
+          {
+            "type": "BigNat",
+            "named": false
+          },
+          {
+            "type": "Bool",
+            "named": false
+          },
+          {
+            "type": "ByteBuffer",
+            "named": false
+          },
+          {
+            "type": "CChar",
+            "named": false
+          },
+          {
+            "type": "CCharBuffer",
+            "named": false
+          },
+          {
+            "type": "CRegex",
+            "named": false
+          },
+          {
+            "type": "CString",
+            "named": false
+          },
+          {
+            "type": "Complex",
+            "named": false
+          },
+          {
+            "type": "Decimal",
+            "named": false
+          },
+          {
+            "type": "DecimalDegree",
+            "named": false
+          },
+          {
+            "type": "DeltaDateTime",
+            "named": false
+          },
+          {
+            "type": "DeltaISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "DeltaLogicalTime",
+            "named": false
+          },
+          {
+            "type": "DeltaSeconds",
+            "named": false
+          },
+          {
+            "type": "Fail",
+            "named": false
+          },
+          {
+            "type": "Float",
+            "named": false
+          },
+          {
+            "type": "Glob",
+            "named": false
+          },
+          {
+            "type": "ISOTimestamp",
+            "named": false
+          },
+          {
+            "type": "Int",
+            "named": false
+          },
+          {
+            "type": "KeyComparator",
+            "named": false
+          },
+          {
+            "type": "LatLongCoordinate",
+            "named": false
+          },
+          {
+            "type": "List",
+            "named": false
+          },
+          {
+            "type": "LogicalTime",
+            "named": false
+          },
+          {
+            "type": "MapEntry",
+            "named": false
+          },
+          {
+            "type": "Nat",
+            "named": false
+          },
+          {
+            "type": "None",
+            "named": false
+          },
+          {
+            "type": "Ok",
+            "named": false
+          },
+          {
+            "type": "Option",
+            "named": false
+          },
+          {
+            "type": "Path",
+            "named": false
+          },
+          {
+            "type": "PathItem",
+            "named": false
+          },
+          {
+            "type": "PathRegex",
+            "named": false
+          },
+          {
+            "type": "PlainDate",
+            "named": false
+          },
+          {
+            "type": "PlainTime",
+            "named": false
+          },
+          {
+            "type": "Rational",
+            "named": false
+          },
+          {
+            "type": "Regex",
+            "named": false
+          },
+          {
+            "type": "Result",
+            "named": false
+          },
+          {
+            "type": "SHAContentHash",
+            "named": false
+          },
+          {
+            "type": "Some",
+            "named": false
+          },
+          {
+            "type": "String",
+            "named": false
+          },
+          {
+            "type": "TAITime",
+            "named": false
+          },
+          {
+            "type": "TZDateTime",
+            "named": false
+          },
+          {
+            "type": "UUIDv4",
+            "named": false
+          },
+          {
+            "type": "UUIDv7",
+            "named": false
+          },
+          {
+            "type": "UnicodeChar",
+            "named": false
+          },
+          {
+            "type": "UnicodeCharBuffer",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "_debug",
+            "named": false
+          },
+          {
+            "type": "assert",
+            "named": false
+          },
+          {
+            "type": "boolean_lit",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          },
+          {
+            "type": "equal",
             "named": false
           },
           {
@@ -1872,20 +1647,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "return",
@@ -1908,8 +1675,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -1924,11 +1691,25 @@
             "named": false
           },
           {
+            "type": "|)",
+            "named": false
+          },
+          {
             "type": "||",
             "named": false
           },
           {
             "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "func_keyword": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "function",
             "named": false
           }
         ]
@@ -2000,6 +1781,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -2025,10 +1810,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -2288,7 +2069,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -2324,10 +2113,6 @@
             "named": false
           },
           {
-            "type": "field",
-            "named": false
-          },
-          {
             "type": "fn",
             "named": false
           },
@@ -2360,20 +2145,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "requires",
@@ -2400,8 +2177,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -2413,6 +2190,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "|)",
             "named": false
           },
           {
@@ -2510,6 +2291,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -2535,10 +2320,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -2798,7 +2579,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -2830,10 +2619,6 @@
             "named": false
           },
           {
-            "type": "field",
-            "named": false
-          },
-          {
             "type": "fn",
             "named": false
           },
@@ -2862,20 +2647,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "return",
@@ -2898,8 +2675,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -2914,6 +2691,10 @@
             "named": false
           },
           {
+            "type": "|)",
+            "named": false
+          },
+          {
             "type": "||",
             "named": false
           },
@@ -2923,23 +2704,21 @@
           }
         ]
       },
-      "ref_param": {
+      "rename": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "ref",
+            "type": ";",
             "named": false
-          }
-        ]
-      },
-      "rest_param": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
-            "type": "...",
+            "type": "as",
             "named": false
+          },
+          {
+            "type": "namespace_id",
+            "named": true
           }
         ]
       },
@@ -2961,10 +2740,6 @@
           },
           {
             "type": "->",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -3158,10 +2933,6 @@
           {
             "type": "namespace_id",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           }
         ]
       },
@@ -3198,6 +2969,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -3223,10 +2998,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -3486,7 +3257,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -3518,10 +3297,6 @@
             "named": false
           },
           {
-            "type": "field",
-            "named": false
-          },
-          {
             "type": "fn",
             "named": false
           },
@@ -3550,20 +3325,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "return",
@@ -3586,8 +3353,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -3599,6 +3366,10 @@
           },
           {
             "type": "|",
+            "named": false
+          },
+          {
+            "type": "|)",
             "named": false
           },
           {
@@ -3654,6 +3425,10 @@
             "named": false
           },
           {
+            "type": "(|",
+            "named": false
+          },
+          {
             "type": ")",
             "named": false
           },
@@ -3679,10 +3454,6 @@
           },
           {
             "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
             "named": false
           },
           {
@@ -3942,7 +3713,15 @@
             "named": false
           },
           {
+            "type": "[",
+            "named": false
+          },
+          {
             "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
             "named": false
           },
           {
@@ -3978,10 +3757,6 @@
             "named": false
           },
           {
-            "type": "field",
-            "named": false
-          },
-          {
             "type": "fn",
             "named": false
           },
@@ -4010,20 +3785,12 @@
             "named": true
           },
           {
-            "type": "none",
-            "named": false
-          },
-          {
             "type": "none_lit",
             "named": true
           },
           {
             "type": "num_lit",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
           },
           {
             "type": "requires",
@@ -4050,8 +3817,8 @@
             "named": false
           },
           {
-            "type": "then",
-            "named": false
+            "type": "this",
+            "named": true
           },
           {
             "type": "var",
@@ -4066,6 +3833,10 @@
             "named": false
           },
           {
+            "type": "|)",
+            "named": false
+          },
+          {
             "type": "||",
             "named": false
           },
@@ -4075,7 +3846,7 @@
           }
         ]
       },
-      "scoped_type": {
+      "scoped_import": {
         "multiple": true,
         "required": false,
         "types": [
@@ -4106,10 +3877,6 @@
             "named": false
           },
           {
-            "type": "...",
-            "named": false
-          },
-          {
             "type": "::",
             "named": false
           },
@@ -4300,466 +4067,6 @@
           {
             "type": "namespace_id",
             "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
-          }
-        ]
-      },
-      "var_id": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "var_value": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "!",
-            "named": false
-          },
-          {
-            "type": "!=",
-            "named": false
-          },
-          {
-            "type": "!==",
-            "named": false
-          },
-          {
-            "type": "#",
-            "named": false
-          },
-          {
-            "type": "$return",
-            "named": false
-          },
-          {
-            "type": "&&",
-            "named": false
-          },
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": "*",
-            "named": false
-          },
-          {
-            "type": "+",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "-",
-            "named": false
-          },
-          {
-            "type": "->",
-            "named": false
-          },
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "...",
-            "named": false
-          },
-          {
-            "type": "//",
-            "named": false
-          },
-          {
-            "type": "/\\",
-            "named": false
-          },
-          {
-            "type": "0",
-            "named": false
-          },
-          {
-            "type": ":",
-            "named": false
-          },
-          {
-            "type": "::",
-            "named": false
-          },
-          {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "<=",
-            "named": false
-          },
-          {
-            "type": "<==>",
-            "named": false
-          },
-          {
-            "type": "<Some>",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": "==",
-            "named": false
-          },
-          {
-            "type": "===",
-            "named": false
-          },
-          {
-            "type": "==>",
-            "named": false
-          },
-          {
-            "type": "=>",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": ">=",
-            "named": false
-          },
-          {
-            "type": "@",
-            "named": false
-          },
-          {
-            "type": "BigInt",
-            "named": false
-          },
-          {
-            "type": "BigNat",
-            "named": false
-          },
-          {
-            "type": "Bool",
-            "named": false
-          },
-          {
-            "type": "ByteBuffer",
-            "named": false
-          },
-          {
-            "type": "CChar",
-            "named": false
-          },
-          {
-            "type": "CCharBuffer",
-            "named": false
-          },
-          {
-            "type": "CRegex",
-            "named": false
-          },
-          {
-            "type": "CString",
-            "named": false
-          },
-          {
-            "type": "Complex",
-            "named": false
-          },
-          {
-            "type": "Decimal",
-            "named": false
-          },
-          {
-            "type": "DecimalDegree",
-            "named": false
-          },
-          {
-            "type": "DeltaDateTime",
-            "named": false
-          },
-          {
-            "type": "DeltaISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "DeltaLogicalTime",
-            "named": false
-          },
-          {
-            "type": "DeltaSeconds",
-            "named": false
-          },
-          {
-            "type": "Fail",
-            "named": false
-          },
-          {
-            "type": "Float",
-            "named": false
-          },
-          {
-            "type": "Glob",
-            "named": false
-          },
-          {
-            "type": "ISOTimestamp",
-            "named": false
-          },
-          {
-            "type": "Int",
-            "named": false
-          },
-          {
-            "type": "KeyComparator",
-            "named": false
-          },
-          {
-            "type": "LatLongCoordinate",
-            "named": false
-          },
-          {
-            "type": "List",
-            "named": false
-          },
-          {
-            "type": "LogicalTime",
-            "named": false
-          },
-          {
-            "type": "MapEntry",
-            "named": false
-          },
-          {
-            "type": "Nat",
-            "named": false
-          },
-          {
-            "type": "None",
-            "named": false
-          },
-          {
-            "type": "Ok",
-            "named": false
-          },
-          {
-            "type": "Option",
-            "named": false
-          },
-          {
-            "type": "Path",
-            "named": false
-          },
-          {
-            "type": "PathItem",
-            "named": false
-          },
-          {
-            "type": "PathRegex",
-            "named": false
-          },
-          {
-            "type": "PlainDate",
-            "named": false
-          },
-          {
-            "type": "PlainTime",
-            "named": false
-          },
-          {
-            "type": "Rational",
-            "named": false
-          },
-          {
-            "type": "Regex",
-            "named": false
-          },
-          {
-            "type": "Result",
-            "named": false
-          },
-          {
-            "type": "SHAContentHash",
-            "named": false
-          },
-          {
-            "type": "Some",
-            "named": false
-          },
-          {
-            "type": "String",
-            "named": false
-          },
-          {
-            "type": "TAITime",
-            "named": false
-          },
-          {
-            "type": "TZDateTime",
-            "named": false
-          },
-          {
-            "type": "UUIDv4",
-            "named": false
-          },
-          {
-            "type": "UUIDv7",
-            "named": false
-          },
-          {
-            "type": "UnicodeChar",
-            "named": false
-          },
-          {
-            "type": "UnicodeCharBuffer",
-            "named": false
-          },
-          {
-            "type": "\\/",
-            "named": false
-          },
-          {
-            "type": "_debug",
-            "named": false
-          },
-          {
-            "type": "assert",
-            "named": false
-          },
-          {
-            "type": "boolean_lit",
-            "named": true
-          },
-          {
-            "type": "cstring",
-            "named": true
-          },
-          {
-            "type": "else",
-            "named": false
-          },
-          {
-            "type": "entity_id",
-            "named": true
-          },
-          {
-            "type": "equal",
-            "named": false
-          },
-          {
-            "type": "field",
-            "named": false
-          },
-          {
-            "type": "fn",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": false
-          },
-          {
-            "type": "less",
-            "named": false
-          },
-          {
-            "type": "let",
-            "named": false
-          },
-          {
-            "type": "match",
-            "named": false
-          },
-          {
-            "type": "namespace_id",
-            "named": true
-          },
-          {
-            "type": "none",
-            "named": false
-          },
-          {
-            "type": "none_lit",
-            "named": true
-          },
-          {
-            "type": "num_lit",
-            "named": true
-          },
-          {
-            "type": "ref",
-            "named": false
-          },
-          {
-            "type": "return",
-            "named": false
-          },
-          {
-            "type": "some",
-            "named": false
-          },
-          {
-            "type": "some(",
-            "named": false
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "switch",
-            "named": false
-          },
-          {
-            "type": "then",
-            "named": false
-          },
-          {
-            "type": "var",
-            "named": false
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "|",
-            "named": false
-          },
-          {
-            "type": "||",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
           }
         ]
       }
@@ -4795,9 +4102,18 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "this",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "this",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "!",
@@ -4828,6 +4144,10 @@
     "named": false
   },
   {
+    "type": "(|",
+    "named": false
+  },
+  {
     "type": ")",
     "named": false
   },
@@ -4853,10 +4173,6 @@
   },
   {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "...",
     "named": false
   },
   {
@@ -5116,7 +4432,15 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
     "type": "\\/",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
@@ -5152,10 +4476,6 @@
     "named": false
   },
   {
-    "type": "entity_id",
-    "named": true
-  },
-  {
     "type": "enum",
     "named": false
   },
@@ -5180,10 +4500,6 @@
     "named": false
   },
   {
-    "type": "identifier",
-    "named": true
-  },
-  {
     "type": "if",
     "named": false
   },
@@ -5206,10 +4522,6 @@
   {
     "type": "namespace",
     "named": false
-  },
-  {
-    "type": "namespace_id",
-    "named": true
   },
   {
     "type": "none",
@@ -5248,7 +4560,7 @@
     "named": false
   },
   {
-    "type": "then",
+    "type": "this",
     "named": false
   },
   {
@@ -5269,6 +4581,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "|)",
     "named": false
   },
   {
