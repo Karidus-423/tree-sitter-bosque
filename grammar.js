@@ -80,6 +80,7 @@ module.exports = grammar({
         $._entity_def,
         $._statement,
         $._type_def,
+        $._datatype_def,
       ),
 
     //TODO: Are there function declarations?
