@@ -11,6 +11,19 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier))
 
 =======================================
 eADT Decl 2
@@ -28,6 +41,23 @@ function main(): Bool {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (num_lit)
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (boolean_lit)
+      (identifier))
 
 =======================================
 eADT Decl 3
@@ -77,6 +107,19 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (entity_id
+        (entity_id))
+      (identifier)
+      (entity_id
+        (entity_id))
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier))
 
 =======================================
 eADT Basic 2
@@ -319,6 +362,15 @@ function main(): Int {
 }
 
 ---
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (entity_id
+        (entity_id))
+      (num_lit)
+      (identifier))
 
 =======================================
 Entity Decl 2
