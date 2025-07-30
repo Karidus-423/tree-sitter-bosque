@@ -95,10 +95,6 @@
             "named": false
           },
           {
-            "type": "$",
-            "named": false
-          },
-          {
             "type": "$return",
             "named": false
           },
@@ -855,10 +851,6 @@
             "named": false
           },
           {
-            "type": "$",
-            "named": false
-          },
-          {
             "type": "$return",
             "named": false
           },
@@ -1306,10 +1298,6 @@
           },
           {
             "type": "#",
-            "named": false
-          },
-          {
-            "type": "$",
             "named": false
           },
           {
@@ -1780,10 +1768,6 @@
           },
           {
             "type": "#",
-            "named": false
-          },
-          {
-            "type": "$",
             "named": false
           },
           {
@@ -2258,10 +2242,6 @@
           },
           {
             "type": "#",
-            "named": false
-          },
-          {
-            "type": "$",
             "named": false
           },
           {
@@ -2780,10 +2760,6 @@
           },
           {
             "type": "#",
-            "named": false
-          },
-          {
-            "type": "$",
             "named": false
           },
           {
@@ -3473,10 +3449,6 @@
             "named": false
           },
           {
-            "type": "$",
-            "named": false
-          },
-          {
             "type": "$return",
             "named": false
           },
@@ -3934,10 +3906,6 @@
           },
           {
             "type": "#",
-            "named": false
-          },
-          {
-            "type": "$",
             "named": false
           },
           {
@@ -4955,10 +4923,6 @@
     "named": false
   },
   {
-    "type": "$",
-    "named": false
-  },
-  {
     "type": "$return",
     "named": false
   },
@@ -5287,10 +5251,6 @@
     "named": true
   },
   {
-    "type": "datatype",
-    "named": false
-  },
-  {
     "type": "declare",
     "named": false
   },
@@ -5335,10 +5295,6 @@
     "named": false
   },
   {
-    "type": "invariant",
-    "named": false
-  },
-  {
     "type": "less",
     "named": false
   },
@@ -5360,10 +5316,6 @@
   },
   {
     "type": "none",
-    "named": false
-  },
-  {
-    "type": "of",
     "named": false
   },
   {

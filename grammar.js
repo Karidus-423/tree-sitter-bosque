@@ -65,9 +65,9 @@ const PRIMITIVE_ENTITY_TYPE_NAMES = [
 module.exports = grammar({
   name: "bosque",
 
-  // conflicts: ($) => [
-  //   [$._op_value, $._boolean_val],
-  // ],
+  conflicts: ($) => [
+    [$._op_value, $._boolean_val],
+  ],
 
   rules: {
     source_file: ($) => repeat($._components),
@@ -80,7 +80,6 @@ module.exports = grammar({
         $._entity_def,
         $._statement,
         $._type_def,
-        $._datatype_def,
       ),
 
     //TODO: Are there function declarations?
@@ -312,58 +311,9 @@ module.exports = grammar({
         field("func_body", $._statement_block),
       ),
 
-    _datatype_def: ($) =>
-      seq(
-        "datatype",
-        $.entity_id,
-        optional($.type_cast),
-        optional($._datatype_def_fields),
-        optional($._datatype_def_inherit),
-        ";",
-      ),
-
-    _datatype_def_fields: ($) =>
-      seq(
-        "using",
-        "{",
-        optional(repeat(
-          seq(
-            $._field,
-            optional($._invariant),
-          ),
-        )),
-        "}",
-      ),
-
-    _datatype_def_inherit: ($) =>
-      seq(
-        "of",
-        repeat1(seq(
-          $.entity_id,
-          "{",
-          optional(repeat($._field)),
-          "}",
-          optional("|"),
-        )),
-      ),
-
-    _invariant: ($) =>
-      seq(
-        "invariant",
-        $._boolean_expression,
-        ";",
-      ),
-
-    _self_access: ($) =>
-      seq(
-        "$",
-        $.identifier,
-      ),
-
     _entity_ref: ($) =>
       seq(
-        $.entity_id,
-        $.type_cast,
+        field("entity_name", $.entity_id),
         field("field_block", $._entity_ref_block),
       ),
 
@@ -803,17 +753,14 @@ module.exports = grammar({
       ),
 
     _op_value: ($) =>
-      prec(
-        PREC.unary,
-        choice(
-          $.identifier,
-          $.num_lit,
-          $._strings,
-          $._return_access,
-          $._member_access,
-          $._function_call,
-          $._lambda_call,
-        ),
+      choice(
+        $.identifier,
+        $.num_lit,
+        $._strings,
+        $._return_access,
+        $._member_access,
+        $._function_call,
+        $._lambda_call,
       ),
 
     _binary_operation: ($) =>
@@ -839,7 +786,6 @@ module.exports = grammar({
     _boolean_val: ($) =>
       choice(
         $.identifier,
-        $._self_access,
         $._function_call,
         $.boolean_lit,
         $._member_access,
@@ -1030,7 +976,7 @@ module.exports = grammar({
     ///////////////////////////////////////////
     //Try to find a way to differentiate between all of these.
 
-    identifier: ($) => seq(optional("ref"), /[_a-zA-Z][_a-zA-Z0-9]*/),
+    identifier: ($) => seq(optional("ref"), /[$]?[_a-zA-Z][_a-zA-Z0-9]*/),
     this: ($) => seq(optional("ref"), "this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
     entity_id: ($) => alias($.identifier, $.entity_id),
