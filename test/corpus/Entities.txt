@@ -20,6 +20,13 @@ entity Food{
 
 ---
 
+(source_file
+      (entity_id
+        (entity_id))
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
 
 
 ===========================
@@ -35,20 +42,6 @@ public function main(f: Foo): Int {
 
 ---
 
-(source_file
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
 
 
 ===========================
@@ -65,16 +58,6 @@ function foo(): Foo {
 
 ---
 
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (entity_id
-        (entity_id))
-      (num_lit))
 
 
 ===========================
@@ -92,19 +75,6 @@ function main(): Int {
 
 ----
 
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier))
 
 
 ===========================
@@ -121,17 +91,3 @@ function main(): Int {
 }
 
 ----
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier))

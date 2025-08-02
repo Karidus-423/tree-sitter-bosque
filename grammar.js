@@ -89,7 +89,7 @@ module.exports = grammar({
           seq(
             $.identifier,
             ":",
-            $.primitive_type,
+            $._type,
             optional(","),
           ),
         ),
@@ -98,7 +98,7 @@ module.exports = grammar({
     function_return_parameters: ($) =>
       seq(
         ":",
-        $.primitive_type,
+        $._type,
       ),
     function_body: ($) =>
       seq(
@@ -125,18 +125,30 @@ module.exports = grammar({
       ),
     _entity_field: ($) =>
       choice(
-        $._entity_member,
         $._entity_method,
+        $._entity_member,
       ),
+    _entity_method: ($) => seq("ref", "method", $._function_signature),
     _entity_member: ($) =>
       seq(
         "field",
         $.identifier,
         ":",
-        $.primitive_type,
+        $._type,
         ";",
       ),
-    _entity_method: ($) => seq("ref", "method", $._function_signature),
+    _entity_access: ($) =>
+      prec(
+        PREC.FIELD,
+        seq(
+          $._entity_id,
+          ".",
+          choice($.entity_method_call, $.entity_member_access),
+        ),
+      ),
+    entity_member_access: ($) => prec(PREC.FIELD, seq($.identifier)),
+    entity_method_call: ($) =>
+      prec(PREC.CALL, seq($._function_id, $.function_parameters)),
 
     enum: ($) => seq("enum", $._entity_id, $._enum_block),
     _enum_block: ($) =>
@@ -149,14 +161,45 @@ module.exports = grammar({
 
     _statement: ($) =>
       choice(
-        $.variable_statement,
         $.expression_statement,
+        $.variable_statement,
         $.return_statement,
       ),
-    variable_statement: ($) =>
-      seq("var", $.identifier, "=", $._expression, ";"),
-    expression_statement: ($) => seq($._expression, ";"),
+    expression_statement: ($) => seq($._expression_not_binary, ";"),
+    variable_statement: ($) => seq($.variable_expression, ";"),
     return_statement: ($) => seq("return", optional($._expression), ";"),
+
+    //TODO: Multi assign variables
+    variable_expression: ($) =>
+      seq(
+        choice("let", "var"),
+        $.variable_assignment,
+      ),
+
+    variable_assignment: ($) =>
+      seq(
+        $.identifier,
+        optional(seq(":", $._type)),
+        optional(","),
+      ),
+
+    _assignment_left_expression: ($) =>
+      choice(
+        $.identifier,
+        $.parenthesized_expression,
+        $.variable_expression,
+        $.variable_assignment,
+      ),
+
+    assignment_expression: ($) =>
+      prec.right(
+        PREC.ASSIGNMENT,
+        seq(
+          field("left", $._assignment_left_expression),
+          field("operator", choice("+=", "-=", "=")),
+          field("right", $._expression),
+        ),
+      ),
 
     _expression: ($) =>
       choice(
@@ -175,7 +218,10 @@ module.exports = grammar({
         $.unary_expression,
         $.parenthesized_expression,
         $.enum_access,
+        $._entity_access,
         $.key_comparator,
+        $.elist,
+        $.assignment_expression,
       ),
     parenthesized_expression: ($) =>
       seq(
@@ -196,7 +242,7 @@ module.exports = grammar({
         "KeyComparator::",
         choice("equal", "less"),
         "<",
-        $.primitive_type,
+        $._type,
         ">",
         "(",
         $._expression,
@@ -240,6 +286,13 @@ module.exports = grammar({
         ),
       ),
     enum_access: ($) => seq($._entity_id, "#", $._enum_member),
+    // (|1i, true|)
+    elist: ($) =>
+      seq(
+        "(|",
+        repeat(seq($._expression, optional(","))),
+        "|)",
+      ),
 
     binary_expression: ($) => {
       const table = [
@@ -303,6 +356,12 @@ module.exports = grammar({
     _strings: ($) => choice($.string, $.cstring),
     string: ($) => /"(?:[^%"\\]|%.)*"/u,
     cstring: ($) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
+
+    _type: ($) =>
+      choice(
+        $._entity_id,
+        $.primitive_type,
+      ),
 
     primitive_type: ($) =>
       token(choice(

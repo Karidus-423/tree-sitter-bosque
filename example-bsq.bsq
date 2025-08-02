@@ -1,1 +1,4 @@
-x + 5i;
+function main(): Int {
+	var x: Int, y: Bool = 1i, true;
+	return x;
+}
