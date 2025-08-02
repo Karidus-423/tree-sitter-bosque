@@ -6,19 +6,23 @@ Boolean Not 1
 
 
 ---
+
 (source_file
-      (boolean_lit))
+  (unary_expression
+    (true_lit)))
 
 =======================================
 Boolean Not 2
 =======================================
 
-!!true
+!!false
 
 ---
-(source_file
-      (boolean_lit))
 
+(source_file
+  (unary_expression
+    (unary_expression
+      (false_lit))))
 
 =======================================
 Unary Arithmetic 1
@@ -28,8 +32,11 @@ Unary Arithmetic 1
 
 
 ---
+
 (source_file
-      (num_lit))
+  (unary_expression
+    (parenthesized_expression
+      (num_lit))))
 
 =======================================
 Unary Arithmetic 2
@@ -38,9 +45,11 @@ Unary Arithmetic 2
 -(3i)
 
 ---
-(source_file
-      (num_lit))
 
+(source_file
+  (unary_expression
+    (parenthesized_expression
+      (num_lit))))
 
 =======================================
 Unary Arithmetic 3
@@ -49,7 +58,8 @@ Unary Arithmetic 3
 -(-3i)
 
 ---
+
 (source_file
-      (num_lit))
-
-
+  (unary_expression
+    (parenthesized_expression
+      (num_lit))))

@@ -1,7 +1,1 @@
-datatype Foo<T> using {
-	field f: T;
-} of F1 { } | F2 { };
-
-function main(): Int {
-	return F1<Int>{3i}.f;
-}
+x + 5i;

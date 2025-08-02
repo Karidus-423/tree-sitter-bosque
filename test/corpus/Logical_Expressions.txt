@@ -4,9 +4,11 @@ Simple AND
 
 true && false
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (binary_expression
+    (true_lit)
+    (false_lit)))
 
 ===============================
 Simple OR
@@ -14,9 +16,11 @@ Simple OR
 
 true || false
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (binary_expression
+    (true_lit)
+    (false_lit)))
 
 ===============================
 Simple IFF
@@ -24,9 +28,11 @@ Simple IFF
 
 true <==> false
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (binary_expression
+    (true_lit)
+    (false_lit)))
 
 ===============================
 Simple IMPLIES
@@ -34,9 +40,11 @@ Simple IMPLIES
 
 true ==> false
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (binary_expression
+    (true_lit)
+    (false_lit)))
 
 ===============================
 Simple Op AND
@@ -44,9 +52,11 @@ Simple Op AND
 
 /\(true,false)
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (compound_and
+    (true_lit)
+    (false_lit)))
 
 ===============================
 Simple Op Or
@@ -54,6 +64,8 @@ Simple Op Or
 
 \/(true,false)
 ---
+
 (source_file
-      (boolean_lit)
-      (boolean_lit))
+  (compound_or
+    (true_lit)
+    (false_lit)))

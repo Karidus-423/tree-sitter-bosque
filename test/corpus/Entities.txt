@@ -7,10 +7,6 @@ entity Base{
 
 ---
 
-(source_file
-      (entity_id
-        (entity_id)))
-
 ===========================
 Entities Definition Values
 ===========================
@@ -24,13 +20,6 @@ entity Food{
 
 ---
 
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
 
 
 ===========================

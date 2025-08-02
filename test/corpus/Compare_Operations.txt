@@ -7,9 +7,9 @@ Compare Operation
 ---
 
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Inequality Compare Operation
@@ -18,11 +18,11 @@ Inequality Compare Operation
 0n !== 1n
 
 ---
-(source_file
-      (num_lit)
-      (num_lit)
-)
 
+(source_file
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Equality Operation
@@ -33,9 +33,9 @@ Equality Operation
 ---
 
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Inequality Operation
@@ -44,10 +44,11 @@ Inequality Operation
 3n != 3n
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Greater Than Equal Operation
@@ -56,10 +57,11 @@ Greater Than Equal Operation
 20n >= 100N
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Greater Than Operation
@@ -68,10 +70,11 @@ Greater Than Operation
 0I > -1I
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Less Than Equal Operation
@@ -80,10 +83,11 @@ Less Than Equal Operation
 20n <= 100N
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Less Than Operation
@@ -92,11 +96,11 @@ Less Than Operation
 -2I < 1I
 
 ---
-(source_file
-      (num_lit)
-      (num_lit)
-)
 
+(source_file
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Key Comparator Operator Equal
@@ -105,10 +109,12 @@ Key Comparator Operator Equal
 KeyComparator::equal<Nat>(0n, 1n)
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (key_comparator
+    (primitive_type)
+    (num_lit)
+    (num_lit)))
 
 ===================================
 Key Comparator Operator Less
@@ -117,7 +123,9 @@ Key Comparator Operator Less
 KeyComparator::less<Nat>(5n, 80n)
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (key_comparator
+    (primitive_type)
+    (num_lit)
+    (num_lit)))

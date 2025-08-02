@@ -5,10 +5,11 @@ Addition
 0I + 1I
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 =================
 Subtraction
@@ -17,10 +18,11 @@ Subtraction
 -5i - 8i
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 =================
 Division
@@ -29,10 +31,11 @@ Division
 -35I // 8I
 
 ---
+
 (source_file
-      (num_lit)
-      (num_lit)
-)
+  (binary_expression
+    (num_lit)
+    (num_lit)))
 
 =================
 Multiplication
@@ -41,8 +44,8 @@ Multiplication
 35N * +8N
 
 ---
-(source_file
-      (num_lit)
-      (num_lit)
-)
 
+(source_file
+  (binary_expression
+    (num_lit)
+    (num_lit)))

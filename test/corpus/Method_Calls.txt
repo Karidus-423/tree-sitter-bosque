@@ -15,16 +15,15 @@ function main(): Int {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (this)
-      (identifier)
-      (identifier)
-      (this)
-      (identifier))
-
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (this)
+  (identifier)
+  (identifier)
+  (this)
+  (identifier))
 
 =============================
 Simple Entity Method 2
@@ -43,21 +42,21 @@ function main(): Int {
 }
 
 ---
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (this)
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier))
 
+(source_file
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (this)
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier))
 
 =============================
 Simple Entity Eadt Methods
@@ -71,15 +70,14 @@ function main(): Int {
 ----
 
 (source_file
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
-
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==============================
 Entity Ref Method
@@ -93,13 +91,12 @@ function main(): Int {
 
 ---
 
-
 (source_file
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
