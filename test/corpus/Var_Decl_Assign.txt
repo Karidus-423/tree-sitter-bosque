@@ -9,6 +9,23 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 2
@@ -21,6 +38,24 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Multi Declare-Assign Only 3
 =======================================
@@ -32,6 +67,21 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 4
@@ -44,6 +94,22 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Multi Declare-Assign Only 5
 =======================================
@@ -54,6 +120,24 @@ function main(): Int {
 }
 
 ---
+
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)
+          (false_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 6
@@ -66,6 +150,26 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)
+          (num_lit)))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Multi Declare-Assign From EList 1
 =======================================
@@ -77,7 +181,24 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 2
@@ -90,6 +211,25 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Multi Declare-Assign From EList 3
 =======================================
@@ -100,6 +240,23 @@ function main(): Int {
 }
 
 ---
+
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 4
@@ -112,6 +269,23 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Multi Declare-Assign From EList 5
 =======================================
@@ -123,6 +297,24 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit)
+            (false_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Assign 1
@@ -136,6 +328,26 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (variable_statement
+        (variable_redefinition
+          (identifier)
+          (identifier)
+          (num_lit)
+          (false_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Simple Ref Updates 1
@@ -153,6 +365,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Simple Ref Updates 2
 =======================================
@@ -169,6 +383,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Simple Declare Only 1
 =======================================
@@ -180,6 +396,19 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)))
+      (return_statement
+        (num_lit)))))
 
 =======================================
 Simple Declare Only 2
@@ -192,6 +421,20 @@ function main(): Bool {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)))
+      (return_statement
+        (true_lit)))))
+
 =======================================
 Simple Declare-Assign Only 1
 =======================================
@@ -202,6 +445,21 @@ function main(): Int {
 }
 
 ---
+
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Simple Declare-Assign Only 2
@@ -214,6 +472,21 @@ function main(): Bool {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Simple Declare-Assign Only 3
 =======================================
@@ -225,6 +498,19 @@ function main(): Bool {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Simple Assign 1
@@ -238,6 +524,25 @@ function main(): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (variable_statement
+        (variable_redefinition
+          (identifier)
+          (num_lit)))
+      (return_statement
+        (identifier)))))
+
 =======================================
 Simple Assign 2
 =======================================
@@ -249,5 +554,16 @@ function main(): Int {
 
 ---
 
-
-
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_redefinition
+          (identifier)
+          (num_lit)))
+      (return_statement
+        (num_lit)))))

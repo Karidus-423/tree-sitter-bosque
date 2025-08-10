@@ -72,6 +72,10 @@
             "named": true
           },
           {
+            "type": "special_lit",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -248,6 +252,10 @@
             "named": true
           },
           {
+            "type": "special_lit",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -329,6 +337,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "special_lit",
           "named": true
         },
         {
@@ -415,6 +427,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -498,6 +514,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -520,6 +540,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "elist",
+          "named": true
+        },
         {
           "type": "entity_id",
           "named": true
@@ -680,6 +704,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -753,6 +781,10 @@
       "required": false,
       "types": [
         {
+          "type": "elist",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
@@ -775,6 +807,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "elist",
+          "named": true
+        },
         {
           "type": "entity_id",
           "named": true
@@ -856,6 +892,10 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "special_lit",
           "named": true
         },
         {
@@ -981,6 +1021,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1061,6 +1105,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "special_lit",
           "named": true
         },
         {
@@ -1172,6 +1220,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1185,6 +1237,93 @@
         },
         {
           "type": "variable_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "special_lit",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "entity_member_access",
+          "named": true
+        },
+        {
+          "type": "entity_method_call",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -1260,6 +1399,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "special_lit",
             "named": true
           },
           {
@@ -1369,6 +1512,10 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1453,6 +1600,10 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "special_lit",
           "named": true
         },
         {
@@ -1654,6 +1805,10 @@
     "named": false
   },
   {
+    "type": "fail",
+    "named": false
+  },
+  {
     "type": "false_lit",
     "named": true
   },
@@ -1694,6 +1849,10 @@
     "named": true
   },
   {
+    "type": "ok",
+    "named": false
+  },
+  {
     "type": "primitive_type",
     "named": true
   },
@@ -1703,6 +1862,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "some",
     "named": false
   },
   {

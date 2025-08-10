@@ -168,9 +168,18 @@ module.exports = grammar({
     expression_statement: ($) => seq($._expression_not_binary, ";"),
     variable_statement: ($) =>
       seq(choice($.variable_redefinition, $.variable_expression), ";"),
-    return_statement: ($) => seq("return", optional($._expression), ";"),
+    return_statement: ($) =>
+      seq(
+        "return",
+        optional(repeat(
+          seq(
+            $._expression,
+            optional(","),
+          ),
+        )),
+        ";",
+      ),
 
-    //TODO: Multi assign variables
     variable_expression: ($) =>
       seq(
         choice("let", "var"),
@@ -224,6 +233,7 @@ module.exports = grammar({
         $.true_lit,
         $.false_lit,
         $.none_lit,
+        $.special_lit,
         $.identifier,
         $.unary_expression,
         $.parenthesized_expression,
@@ -295,13 +305,19 @@ module.exports = grammar({
         ),
       ),
     enum_access: ($) => seq($._entity_id, "#", $._enum_member),
-    // (|1i, true|)
     elist: ($) =>
       seq(
         "(|",
         repeat(seq($._expression, optional(","))),
         "|)",
       ),
+    special_lit: ($) =>
+      prec.left(seq(
+        choice("some", "ok", "fail"),
+        optional(
+          $._expression,
+        ),
+      )),
 
     binary_expression: ($) => {
       const table = [
@@ -370,6 +386,7 @@ module.exports = grammar({
       choice(
         $._entity_id,
         $.primitive_type,
+        $.elist,
       ),
 
     primitive_type: ($) =>

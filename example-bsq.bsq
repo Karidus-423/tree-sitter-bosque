@@ -1,6 +1,4 @@
-function main(): Int {
-	var x: Int = 1i;
-	x, _ = 2i, false;
-	return x;
+function main(): (|Int, Bool|) {
+	return (|2i, true|);
 }
 

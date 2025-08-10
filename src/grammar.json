@@ -557,8 +557,28 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_expression"
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "BLANK"
@@ -761,6 +781,10 @@
         {
           "type": "SYMBOL",
           "name": "none_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "special_lit"
         },
         {
           "type": "SYMBOL",
@@ -1057,6 +1081,44 @@
           "value": "|)"
         }
       ]
+    },
+    "special_lit": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "some"
+              },
+              {
+                "type": "STRING",
+                "value": "ok"
+              },
+              {
+                "type": "STRING",
+                "value": "fail"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "binary_expression": {
       "type": "CHOICE",
@@ -1933,6 +1995,10 @@
         {
           "type": "SYMBOL",
           "name": "primitive_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "elist"
         }
       ]
     },

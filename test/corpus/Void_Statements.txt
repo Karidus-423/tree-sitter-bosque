@@ -18,20 +18,6 @@ function main(): Int {
 
 
 ---
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (num_lit))
 
 
 =======================================
@@ -51,14 +37,3 @@ function main(): Int {
 }
 
 ---
-(source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (num_lit))

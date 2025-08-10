@@ -5,8 +5,9 @@ Special Constructor Option 1
 none
 
 ---
+
 (source_file
-      (none_lit))
+  (none_lit))
 
 =======================================
 Special Constructor Option 2
@@ -15,9 +16,11 @@ Special Constructor Option 2
 some(3i)
 
 ---
+
 (source_file
-      (identifier)
-      (num_lit))
+  (special_lit)
+  (parenthesized_expression
+    (num_lit)))
 
 =======================================
 Special Constructor 1
@@ -26,9 +29,11 @@ Special Constructor 1
 ok(3i)
 
 ---
+
 (source_file
-      (identifier)
-      (num_lit))
+  (special_lit)
+  (parenthesized_expression
+    (num_lit)))
 
 =======================================
 Special Constructor 2
@@ -37,6 +42,8 @@ Special Constructor 2
 fail('bad name')
 
 ---
+
 (source_file
-      (identifier)
-      (cstring))
+  (special_lit)
+  (parenthesized_expression
+    (cstring)))
