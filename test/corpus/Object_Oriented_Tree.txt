@@ -393,14 +393,21 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
+  (entity
+    (entity_id)
+    (identifier)
     (entity_id))
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Decl 2

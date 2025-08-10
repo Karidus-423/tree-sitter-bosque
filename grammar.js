@@ -87,9 +87,11 @@ module.exports = grammar({
         "(",
         repeat(
           seq(
+            optional(choice("ref", "...")),
             $.identifier,
             ":",
             $._type,
+            optional(seq("=", $._expression)),
             optional(","),
           ),
         ),
@@ -99,7 +101,16 @@ module.exports = grammar({
       seq(
         ":",
         $._type,
+        optional(repeat(seq($._pre_post_conditions, ";"))),
       ),
+    _pre_post_conditions: ($) =>
+      choice(
+        $.post_condition,
+        $.pre_condition,
+      ),
+    pre_condition: ($) => seq("requires", $._expression),
+    post_condition: ($) => seq("ensures", $._expression),
+
     function_body: ($) =>
       seq(
         "{",
@@ -107,8 +118,6 @@ module.exports = grammar({
         $.return_statement,
         "}",
       ),
-
-    // type: ($) => seq(),
 
     _object: ($) =>
       choice(
@@ -147,14 +156,11 @@ module.exports = grammar({
           ),
         ),
         choice(
-          $.entity_method_call,
-          $.entity_member_access,
+          $.identifier,
+          $.function_call,
           $.entity_update,
         ),
       ),
-    entity_member_access: ($) => prec(PREC.FIELD, seq($.identifier)),
-    entity_method_call: ($) =>
-      prec(PREC.CALL, seq($.identifier, $.function_parameters)),
     entity_definition: ($) =>
       seq(
         $._entity_id,
@@ -193,11 +199,13 @@ module.exports = grammar({
       choice(
         $.expression_statement,
         $.variable_statement,
+        $.assert_statement,
         $.return_statement,
       ),
     expression_statement: ($) => seq($._expression_not_binary, ";"),
     variable_statement: ($) =>
       seq(choice($.variable_redefinition, $.variable_expression), ";"),
+    assert_statement: ($) => seq("assert", $._expression, ";"),
     return_statement: ($) =>
       seq(
         "return",
@@ -345,19 +353,35 @@ module.exports = grammar({
         "|)",
       ),
     special_lit: ($) =>
-      prec.left(seq(
-        choice("some", "ok", "fail"),
-        optional(
-          $._expression,
+      prec.left(
+        seq(
+          token(choice("some", "ok", "fail")),
+          "(",
+          optional(
+            $._expression,
+          ),
+          ")",
         ),
-      )),
+      ),
     function_call: ($) =>
       prec(
         PREC.CALL,
         seq(
           $.identifier,
-          $.function_parameters,
+          $._function_call_params,
         ),
+      ),
+    _function_call_params: ($) =>
+      seq(
+        "(",
+        optional(repeat(
+          seq(
+            optional(seq($.identifier, "=")),
+            $._expression,
+            optional(","),
+          ),
+        )),
+        ")",
       ),
 
     binary_expression: ($) => {
@@ -427,6 +451,14 @@ module.exports = grammar({
         $._entity_id,
         $.primitive_type,
         $.elist,
+        $.list,
+      ),
+    list: ($) =>
+      seq(
+        "List",
+        "<",
+        $._type,
+        ">",
       ),
 
     primitive_type: ($) =>

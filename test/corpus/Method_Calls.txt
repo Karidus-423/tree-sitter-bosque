@@ -9,21 +9,34 @@ entity Foo {
 }
 
 function main(): Int {
-	return ref this.foo(); 
+	return this.foo(); 
 }
 
 ---
 
 (source_file
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier)
-  (this)
-  (identifier)
-  (identifier)
-  (this)
-  (identifier))
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (identifier)
+        (identifier))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (identifier)
+        (function_call
+          (identifier))))))
 
 =============================
 Simple Entity Method 2
@@ -38,25 +51,40 @@ entity Foo {
 
 function main(): Int {
 	let x = Foo{3i};
-	return ref x.foo();
+	return x.foo();
 }
 
 ---
 
 (source_file
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier)
-  (this)
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier))
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (identifier)
+        (identifier))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (identifier)
+        (function_call
+          (identifier))))))
 
 =============================
 Simple Entity Eadt Methods
@@ -70,14 +98,24 @@ function main(): Int {
 ----
 
 (source_file
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (identifier)
+        (identifier)
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==============================
 Entity Ref Method
@@ -92,11 +130,21 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (identifier)
+        (identifier)
+        (function_call
+          (identifier)
+          (num_lit))))))

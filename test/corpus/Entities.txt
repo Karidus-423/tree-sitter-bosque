@@ -49,7 +49,31 @@ public function main(f: Foo): Int {
 
 ---
 
-
+(source_file
+  (identifier)
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (binary_expression
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier))))
+      (assert_statement
+        (binary_expression
+          (identifier)
+          (identifier)
+          (identifier)))
+      (return_statement
+        (identifier)))))
 
 ===========================
 Entities Accesors Use Alt
@@ -65,7 +89,21 @@ function foo(): Foo {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))))))
 
 ===========================
 Entities Field Update
@@ -82,7 +120,30 @@ function main(): Int {
 
 ----
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (entity_update
+          (identifier)
+          (identifier)
+          (variable_redefinition)
+          (num_lit))
+        (identifier)))))
 
 ===========================
 Entities Field Update Alt
@@ -99,4 +160,29 @@ function main(): Int {
 
 ----
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (entity_update
+          (identifier)
+          (identifier)
+          (variable_redefinition)
+          (binary_expression
+            (identifier)
+            (num_lit)))
+        (identifier)))))

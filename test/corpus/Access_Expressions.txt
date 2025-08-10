@@ -27,8 +27,7 @@ function main(x: Foo): Int {
     (function_body
       (return_statement
         (identifier)
-        (entity_member_access
-          (identifier))))))
+        (identifier)))))
 
 =======================================
 Access Field Simple 2
@@ -71,10 +70,8 @@ function main(): Int {
     (function_body
       (return_statement
         (function_call
-          (identifier)
-          (function_parameters))
-        (entity_member_access
-          (identifier))))))
+          (identifier))
+        (identifier)))))
 
 =======================================
 Simple Field Updates 1
@@ -114,8 +111,7 @@ function main(): Int {
           (identifier)
           (variable_redefinition)
           (num_lit))
-        (entity_member_access
-          (identifier))))))
+        (identifier)))))
 
 =======================================
 Simple Field Updates 2
@@ -157,8 +153,7 @@ function main(): Int {
           (binary_expression
             (identifier)
             (num_lit)))
-        (entity_member_access
-          (identifier))))))
+        (identifier)))))
 
 =======================================
 Postfix Field Updates 1
@@ -218,5 +213,4 @@ function main(): Int {
             (num_lit))))
       (return_statement
         (identifier)
-        (entity_member_access
-          (identifier))))))
+        (identifier)))))

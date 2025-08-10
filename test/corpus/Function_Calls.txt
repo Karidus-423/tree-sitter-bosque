@@ -29,8 +29,7 @@ function main(): Int {
     (function_body
       (return_statement
         (function_call
-          (identifier)
-          (function_parameters))))))
+          (identifier))))))
 
 ==============================
 Simple Call with Arguments
@@ -47,15 +46,31 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)
+          (num_lit))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Ordered
@@ -72,17 +87,33 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (num_lit)
+          (identifier)
+          (num_lit))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Unordered
@@ -99,17 +130,33 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (num_lit)
+          (identifier)
+          (num_lit))))))
 
 ===============================
 Function Call with Scoping
@@ -127,19 +174,38 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))))))
 
 ========================================
 Function Call with Accessing Mixed 󰀫
@@ -156,16 +222,32 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (num_lit)
+          (num_lit))))))
 
 ========================================
 Function Call with Accessing Mixed 󰂡
@@ -182,16 +264,32 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)
+          (identifier)
+          (num_lit))))))
 
 ========================================
 Function Call with Accessing Mixed 󱃮
@@ -208,16 +306,32 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (num_lit)
+          (num_lit))))))
 
 ========================================
 Function Call with Rest
@@ -234,17 +348,32 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (ERROR
-    (UNEXPECTED 'y'))
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (identifier)
+      (list
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (identifier))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)
+          (identifier)
+          (num_lit)
+          (num_lit))))))
 
 ========================================
 Function Call with Ref
@@ -262,14 +391,32 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (identifier))))))
 
 ========================================
 Function Call with Ref
@@ -286,18 +433,35 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id)
+      (num_lit)
+      (identifier)
+      (entity_id)
+      (binary_expression
+        (identifier)
+        (num_lit)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)
+          (num_lit))))))
 
 ==================================
 Function Call Pre
@@ -314,14 +478,30 @@ function main(): Int {
 ----
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id)
+      (pre_condition
+        (binary_expression
+          (identifier)
+          (num_lit))))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==================================
 Function Call Pre Multiple
@@ -338,16 +518,34 @@ function main(): Int {
 ----
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id)
+      (pre_condition
+        (binary_expression
+          (identifier)
+          (num_lit)))
+      (pre_condition
+        (binary_expression
+          (identifier)
+          (num_lit))))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==================================
 Function Call Post
@@ -363,13 +561,30 @@ function main(): Int {
 ----
 
 (source_file
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id)
+      (post_condition
+        (binary_expression
+          (identifier)
+          (num_lit))))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==================================
 Function Call Post Multiple
@@ -386,14 +601,34 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id)
+      (post_condition
+        (binary_expression
+          (identifier)
+          (num_lit)))
+      (post_condition
+        (binary_expression
+          (identifier)
+          (num_lit))))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==================================
 Function Call Pre & Post
@@ -409,15 +644,34 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id)
+      (pre_condition
+        (binary_expression
+          (identifier)
+          (num_lit)))
+      (post_condition
+        (binary_expression
+          (identifier)
+          (num_lit))))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit))))))
 
 ==================================
 Function Call Ref Params
@@ -437,16 +691,31 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
+  (entity
     (entity_id))
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id))))
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (identifier))))))

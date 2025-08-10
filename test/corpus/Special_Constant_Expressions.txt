@@ -18,8 +18,7 @@ some(3i)
 ---
 
 (source_file
-  (special_lit)
-  (parenthesized_expression
+  (special_lit
     (num_lit)))
 
 =======================================
@@ -31,8 +30,7 @@ ok(3i)
 ---
 
 (source_file
-  (special_lit)
-  (parenthesized_expression
+  (special_lit
     (num_lit)))
 
 =======================================
@@ -44,6 +42,5 @@ fail('bad name')
 ---
 
 (source_file
-  (special_lit)
-  (parenthesized_expression
+  (special_lit
     (cstring)))

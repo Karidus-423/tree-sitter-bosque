@@ -1,14 +1,1 @@
-entity Foo {
-	field x: Int;
-	field y: Int;
-}
-
-entity Bar {
-	field f: Foo;
-}
-
-function main(): Int {
-	let a = Bar{Foo{1i, 0i}};
-	let b = a.f[x = 3i];
-	return b.x;
-}
+	x.foo();
