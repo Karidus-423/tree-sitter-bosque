@@ -77,7 +77,7 @@ module.exports = grammar({
       ),
     _function_signature: ($) =>
       seq(
-        $._function_id,
+        $.identifier,
         $.function_parameters,
         optional($.function_return_parameters),
         $.function_body,
@@ -138,17 +138,47 @@ module.exports = grammar({
         ";",
       ),
     _entity_access: ($) =>
-      prec(
-        PREC.FIELD,
-        seq(
-          $._entity_id,
-          ".",
-          choice($.entity_method_call, $.entity_member_access),
+      seq(
+        prec(
+          PREC.FIELD,
+          seq(
+            $._expression,
+            ".",
+          ),
+        ),
+        choice(
+          $.entity_method_call,
+          $.entity_member_access,
+          $.entity_update,
         ),
       ),
     entity_member_access: ($) => prec(PREC.FIELD, seq($.identifier)),
     entity_method_call: ($) =>
-      prec(PREC.CALL, seq($._function_id, $.function_parameters)),
+      prec(PREC.CALL, seq($.identifier, $.function_parameters)),
+    entity_definition: ($) =>
+      seq(
+        $._entity_id,
+        "{",
+        optional(repeat(
+          seq(
+            $._expression,
+            optional(","),
+          ),
+        )),
+        "}",
+      ),
+    entity_update: ($) =>
+      seq(
+        $.identifier,
+        "[",
+        optional(repeat(
+          seq(
+            choice($.variable_redefinition, $._expression),
+            optional(","),
+          ),
+        )),
+        "]",
+      ),
 
     enum: ($) => seq("enum", $._entity_id, $._enum_block),
     _enum_block: ($) =>
@@ -203,13 +233,13 @@ module.exports = grammar({
         ),
       ),
     _variable_assignment: ($) =>
-      seq(
+      prec.left(seq(
         $._expression,
         optional(","),
-      ),
+      )),
 
     variable_redefinition: ($) =>
-      prec(
+      prec.left(
         PREC.ASSIGNMENT,
         seq(
           repeat($._variable_definition),
@@ -237,8 +267,11 @@ module.exports = grammar({
         $.identifier,
         $.unary_expression,
         $.parenthesized_expression,
+        $.function_call,
         $.enum_access,
         $._entity_access,
+        $.entity_definition,
+        $.entity_update,
         $.key_comparator,
         $.elist,
       ),
@@ -318,6 +351,14 @@ module.exports = grammar({
           $._expression,
         ),
       )),
+    function_call: ($) =>
+      prec(
+        PREC.CALL,
+        seq(
+          $.identifier,
+          $.function_parameters,
+        ),
+      ),
 
     binary_expression: ($) => {
       const table = [
@@ -362,7 +403,6 @@ module.exports = grammar({
     this: ($) => seq("this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
     _entity_id: ($) => alias($.identifier, $.entity_id),
-    _function_id: ($) => alias($.identifier, $.function_id),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     type_id: ($) => alias($.identifier, $.type_id),
     none_lit: (_) => token("none"),

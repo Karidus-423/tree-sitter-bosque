@@ -11,19 +11,20 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier))
 
 =======================================
 eADT Decl 2
@@ -41,23 +42,24 @@ function main(): Bool {
 }
 
 ---
+
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (num_lit)
-      (entity_id
-        (entity_id))
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (num_lit)
+  (entity_id
+    (entity_id))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (boolean_lit)
+  (identifier))
 
 =======================================
 eADT Decl 3
@@ -72,6 +74,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 eADT Decl 4
@@ -94,6 +98,7 @@ function main(): Int {
 ---
 
 
+
 =======================================
 eADT Basic 1
 =======================================
@@ -107,19 +112,20 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (entity_id
-        (entity_id))
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier))
 
 =======================================
 eADT Basic 2
@@ -135,6 +141,8 @@ function main(): Bool {
 
 ---
 
+
+
 =======================================
 eADT Basic 3 (Generic)
 =======================================
@@ -148,7 +156,6 @@ function main(): Int {
 }
 
 ---
-
 
 
 
@@ -168,6 +175,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 eADT Const 2
 =======================================
@@ -183,6 +192,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 eADT Function 1
@@ -200,6 +211,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 eADT Function 2
 =======================================
@@ -216,6 +229,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Inherit Fields 1
 =======================================
@@ -230,6 +245,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 Entity Inherit Fields 2
@@ -247,6 +264,8 @@ function main(): Bool {
 }
 
 ---
+
+
 
 =======================================
 Entity Inherit Fields 3 (Multi Concept)
@@ -266,6 +285,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Inherit Generic 1
 =======================================
@@ -281,6 +302,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Inherit Generic 2 (Renamed Param)
 =======================================
@@ -295,6 +318,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 Entity Inherit Invariants 1
@@ -312,6 +337,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Inherit Invariants 2 (Override)
 =======================================
@@ -328,6 +355,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 Entity Inherit Invariants 3 (Composed)
@@ -362,15 +391,16 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier))
 
 =======================================
 Entity Decl 2
@@ -386,6 +416,8 @@ function main(): Int {
 }
 
 ---
+
+
 
 =======================================
 Entity Decl 3
@@ -417,6 +449,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Default Fields 2
 =======================================
@@ -432,6 +466,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Consts 1
 =======================================
@@ -446,6 +482,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Consts 2
 =======================================
@@ -459,7 +497,6 @@ function main(): Int {
 }
 
 ---
-
 
 
 
@@ -479,6 +516,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Functions 2
 =======================================
@@ -495,6 +534,8 @@ function main(): Int {
 
 ---
 
+
+
 =======================================
 Entity Functions 3
 =======================================
@@ -510,4 +551,5 @@ function main(): Int {
 }
 
 ---
+
 

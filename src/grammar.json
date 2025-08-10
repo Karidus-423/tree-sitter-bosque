@@ -149,7 +149,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_function_id"
+          "name": "identifier"
         },
         {
           "type": "SYMBOL",
@@ -369,34 +369,43 @@
       ]
     },
     "_entity_access": {
-      "type": "PREC",
-      "value": 16,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_entity_id"
-          },
-          {
-            "type": "STRING",
-            "value": "."
-          },
-          {
-            "type": "CHOICE",
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 16,
+          "content": {
+            "type": "SEQ",
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "entity_method_call"
+                "name": "_expression"
               },
               {
-                "type": "SYMBOL",
-                "name": "entity_member_access"
+                "type": "STRING",
+                "value": "."
               }
             ]
           }
-        ]
-      }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "entity_method_call"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "entity_member_access"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "entity_update"
+            }
+          ]
+        }
+      ]
     },
     "entity_member_access": {
       "type": "PREC",
@@ -419,7 +428,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_function_id"
+            "name": "identifier"
           },
           {
             "type": "SYMBOL",
@@ -427,6 +436,113 @@
           }
         ]
       }
+    },
+    "entity_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_entity_id"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "entity_update": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "variable_redefinition"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
     },
     "enum": {
       "type": "SEQ",
@@ -687,28 +803,32 @@
       }
     },
     "_variable_assignment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ","
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "variable_redefinition": {
-      "type": "PREC",
+      "type": "PREC_LEFT",
       "value": -2,
       "content": {
         "type": "SEQ",
@@ -800,11 +920,23 @@
         },
         {
           "type": "SYMBOL",
+          "name": "function_call"
+        },
+        {
+          "type": "SYMBOL",
           "name": "enum_access"
         },
         {
           "type": "SYMBOL",
           "name": "_entity_access"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entity_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entity_update"
         },
         {
           "type": "SYMBOL",
@@ -1116,6 +1248,23 @@
                 "type": "BLANK"
               }
             ]
+          }
+        ]
+      }
+    },
+    "function_call": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "function_parameters"
           }
         ]
       }
@@ -1881,15 +2030,6 @@
       },
       "named": true,
       "value": "entity_id"
-    },
-    "_function_id": {
-      "type": "ALIAS",
-      "content": {
-        "type": "SYMBOL",
-        "name": "identifier"
-      },
-      "named": true,
-      "value": "function_id"
     },
     "_enum_member": {
       "type": "ALIAS",

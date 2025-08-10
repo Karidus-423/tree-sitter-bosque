@@ -9,8 +9,11 @@ function main() {
 ---
 
 (source_file
-    func_name: (identifier)
-)
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_body
+      (return_statement))))
 
 ===========================
 Function Definition Params
@@ -23,9 +26,13 @@ function main(k: CString) {
 ---
 
 (source_file
-    func_name: (identifier)
-	params: (identifier)
-)
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_body
+      (return_statement))))
 
 ===========================
 Function Definition Return
@@ -38,7 +45,13 @@ function main(k: CString): Int {
 ---
 
 (source_file
-    func_name: (identifier)
-	params: (identifier)
-	func_body: (num_lit)
-)
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (num_lit)))))

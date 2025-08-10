@@ -10,7 +10,6 @@ function main(): Int {
 ---
 
 (source_file
-      func_name: (identifier)
-      debug_target: (num_lit)
-      func_body: (num_lit)
-)
+  func_name: (identifier)
+  debug_target: (num_lit)
+  func_body: (num_lit))

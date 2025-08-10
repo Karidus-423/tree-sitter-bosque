@@ -15,19 +15,19 @@ function main(): Int {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier))
 
 =======================================
 Simple Ref Updates 2
@@ -46,19 +46,17 @@ function main(): Int {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier))
-
-
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier))

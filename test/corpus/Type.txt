@@ -11,15 +11,15 @@ function main(): Flag {
 ---
 
 (source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (boolean_lit)
-      (type_cast
-        (entity_id
-          (entity_id))))
+  (type_id
+    (type_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (boolean_lit)
+  (type_cast
+    (entity_id
+      (entity_id))))
 
 =======================================
 Type Decl of Number 1
@@ -32,16 +32,17 @@ function main(): NVal {
 }
 
 ---
+
 (source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (type_cast
-        (entity_id
-          (entity_id))))
+  (type_id
+    (type_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (type_cast
+    (entity_id
+      (entity_id))))
 
 =======================================
 Type Decl of Number 2
@@ -56,15 +57,15 @@ function main(): FVal {
 ---
 
 (source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (type_cast
-        (entity_id
-          (entity_id))))
+  (type_id
+    (type_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (type_cast
+    (entity_id
+      (entity_id))))
 
 =======================================
 Type Decl of Number With Value 1
@@ -78,18 +79,18 @@ function main(): Int {
 }
 
 ---
-(source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (identifier)
-      (num_lit)
-      (type_cast
-        (entity_id
-          (entity_id)))
-      (identifier)
-      (identifier))
 
+(source_file
+  (type_id
+    (type_id))
+  (identifier)
+  (identifier)
+  (num_lit)
+  (type_cast
+    (entity_id
+      (entity_id)))
+  (identifier)
+  (identifier))
 
 =======================================
 Type Decl of Strings Without Constraints 1
@@ -102,16 +103,17 @@ function main(): SV1 {
 }
 
 ---
+
 (source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (string)
-      (type_cast
-        (entity_id
-          (entity_id))))
+  (type_id
+    (type_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (string)
+  (type_cast
+    (entity_id
+      (entity_id))))
 
 =======================================
 Type Decl of Strings Without Constraints 2
@@ -126,15 +128,15 @@ function main(): SV2 {
 ---
 
 (source_file
-      (type_id
-        (type_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (cstring)
-      (type_cast
-        (entity_id
-          (entity_id))))
+  (type_id
+    (type_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (cstring)
+  (type_cast
+    (entity_id
+      (entity_id))))
 
 =======================================
 Type Decl of Strings With Constraints 1
@@ -148,6 +150,8 @@ function main(): SV1 {
 
 ---
 
+
+
 =======================================
 Type Decl of Strings With Constraints 2
 =======================================
@@ -160,4 +164,5 @@ function main(): SV2 {
 }
 
 ---
+
 

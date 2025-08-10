@@ -20,6 +20,7 @@ function main(): Int {
 ---
 
 
+
 =======================================
 Void Namespace Method Ref Params
 =======================================
@@ -37,3 +38,5 @@ function main(): Int {
 }
 
 ---
+
+

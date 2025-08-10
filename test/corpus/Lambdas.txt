@@ -11,16 +11,17 @@ function main(): Bool {
 }
 
 ---
+
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 Simple Lambda Infer Argument
@@ -34,17 +35,17 @@ function main(): Bool {
 }
 
 ---
-(source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit))
 
+(source_file
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 Simple Lambda with Return
@@ -61,15 +62,15 @@ function main(): Bool {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 Simple Lambda Infer Both
@@ -86,16 +87,15 @@ function main(): Bool {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit))
-
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 Simple Lambda Capture
@@ -111,18 +111,19 @@ function main(): Bool {
 }
 
 ---
+
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier))
 
 =========================================
 Simple Lambda Reference Full
@@ -144,27 +145,26 @@ function main(): Bool {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier))
-
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier))
 
 =========================================
 Simple Lambda Reference Infer
@@ -186,21 +186,21 @@ function main(): Bool {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier))

@@ -12,13 +12,25 @@ function main(): Int {
 
 ---
 
-
 (source_file
-	(identifier)
-	(num_lit)
-	(identifier)
-	(identifier)
-)
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (function_parameters))))))
 
 ==============================
 Simple Call with Arguments
@@ -35,17 +47,15 @@ function main(): Int {
 ---
 
 (source_file
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(num_lit)
-	(num_lit)
-)
-
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 ==============================================================
 Simple Call with Accessing Arguments Ordered
@@ -62,17 +72,17 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit))
 
 ==============================================================
 Simple Call with Accessing Arguments Unordered
@@ -89,18 +99,17 @@ function main(): Int {
 ---
 
 (source_file
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(identifier)
-	(num_lit)
-	(identifier)
-	(num_lit)
-)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit))
 
 ===============================
 Function Call with Scoping
@@ -118,21 +127,19 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
-
-
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier))
 
 ========================================
 Function Call with Accessing Mixed 󰀫
@@ -147,17 +154,18 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 ========================================
 Function Call with Accessing Mixed 󰂡
@@ -174,16 +182,16 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit))
 
 ========================================
 Function Call with Accessing Mixed 󱃮
@@ -198,17 +206,18 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 ========================================
 Function Call with Rest
@@ -225,18 +234,17 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (ERROR
-        (UNEXPECTED 'y'))
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (num_lit))
-
+  (identifier)
+  (identifier)
+  (ERROR
+    (UNEXPECTED 'y'))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 ========================================
 Function Call with Ref
@@ -254,14 +262,14 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier))
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier))
 
 ========================================
 Function Call with Ref
@@ -278,18 +286,18 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 ==================================
 Function Call Pre
@@ -306,14 +314,14 @@ function main(): Int {
 ----
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==================================
 Function Call Pre Multiple
@@ -330,16 +338,16 @@ function main(): Int {
 ----
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==================================
 Function Call Post
@@ -354,16 +362,14 @@ function main(): Int {
 
 ----
 
-
 (source_file
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
-
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==================================
 Function Call Post Multiple
@@ -378,15 +384,16 @@ function main(): Int {
 }
 
 ---
+
 (source_file
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==================================
 Function Call Pre & Post
@@ -402,15 +409,15 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (num_lit)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (num_lit)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ==================================
 Function Call Ref Params
@@ -430,17 +437,16 @@ function main(): Int {
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (num_lit)
-      (identifier)
-      (identifier)
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier))
-
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (num_lit)
+  (identifier)
+  (identifier)
+  (entity_id
+    (entity_id))
+  (identifier)
+  (identifier))

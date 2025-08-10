@@ -11,23 +11,24 @@ function main(x: Foo): Int {
 }
 
 ---
+
 (source_file
-      (entity
-        (entity_id)
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters
+      (identifier)
+      (entity_id))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
         (identifier)
-        (entity_id))
-      (function_definition
-        (function_id)
-        (function_parameters
-          (identifier)
-          (entity_id))
-        (function_return_parameters
-          (entity_id))
-        (function_body
-          (return_statement
-            (entity_id)
-            (entity_member_access
-              (identifier))))))
+        (entity_member_access
+          (identifier))))))
 
 =======================================
 Access Field Simple 2
@@ -47,7 +48,33 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit)))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (function_parameters))
+        (entity_member_access
+          (identifier))))))
 
 =======================================
 Simple Field Updates 1
@@ -64,6 +91,32 @@ function main(): Int {
 
 ---
 
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (entity_update
+          (identifier)
+          (identifier)
+          (variable_redefinition)
+          (num_lit))
+        (entity_member_access
+          (identifier))))))
+
 =======================================
 Simple Field Updates 2
 =======================================
@@ -79,8 +132,33 @@ function main(): Int {
 
 ---
 
-
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (entity_update
+          (identifier)
+          (identifier)
+          (variable_redefinition)
+          (binary_expression
+            (identifier)
+            (num_lit)))
+        (entity_member_access
+          (identifier))))))
 
 =======================================
 Postfix Field Updates 1
@@ -103,3 +181,42 @@ function main(): Int {
 
 ---
 
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (entity_definition
+              (entity_id)
+              (num_lit)
+              (num_lit)))))
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (entity_update
+            (identifier)
+            (identifier)
+            (variable_redefinition)
+            (num_lit))))
+      (return_statement
+        (identifier)
+        (entity_member_access
+          (identifier))))))

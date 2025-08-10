@@ -7,6 +7,10 @@ entity Base{
 
 ---
 
+(source_file
+  (entity
+    (entity_id)))
+
 ===========================
 Entities Definition Values
 ===========================
@@ -21,13 +25,16 @@ entity Food{
 ---
 
 (source_file
-      (entity_id
-        (entity_id))
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
-
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (entity_id)))
 
 ===========================
 Entities Accesors Use
@@ -91,3 +98,5 @@ function main(): Int {
 }
 
 ----
+
+

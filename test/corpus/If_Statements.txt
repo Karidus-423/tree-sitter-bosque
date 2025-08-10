@@ -13,10 +13,10 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-	  (boolean_lit)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (boolean_lit)
+  (num_lit)
+  (num_lit))
 
 ===============================
 Simple If Statement Empty
@@ -30,11 +30,11 @@ function main(): Int {
 }
 
 ---
+
 (source_file
   (identifier)
   (boolean_lit)
-  (num_lit)
-)
+  (num_lit))
 
 ===============================
 If Statement ITest
@@ -53,13 +53,13 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 =================================
 If Statement Binder ITest
@@ -78,13 +78,13 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 If Statement ITest Binder and Ref
@@ -103,15 +103,14 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-	  )
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 =========================================
 If Statement ITest Binder and Reflow
@@ -130,13 +129,13 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (identifier))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (identifier))
 
 ===============================
 Simple If Else Statement
@@ -153,10 +152,10 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-	  (boolean_lit)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (boolean_lit)
+  (num_lit)
+  (num_lit))
 
 ===============================
 Simple If Else Statement Empty
@@ -175,10 +174,10 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-	  (boolean_lit)
-      (num_lit)
-      (num_lit))
+  (identifier)
+  (boolean_lit)
+  (num_lit)
+  (num_lit))
 
 ===============================
 If Else Statement Binder
@@ -196,14 +195,13 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (num_lit))
-
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (num_lit))
 
 =================================
 If Else Statement Binder and Ref
@@ -219,15 +217,15 @@ function main(): Int {
 }
 
 ---
-(source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit))
 
+(source_file
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ======================================
 If Else Statement Binder Some and Ref
@@ -245,14 +243,14 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit))
 
 ======================================
 If Else Statement Some and Ref
@@ -270,13 +268,13 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (identifier))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (identifier))
 
 =========================================
 If Else Statement Binder Some and Empty
@@ -295,10 +293,10 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (num_lit)
-      (identifier))
+  (identifier)
+  (identifier)
+  (identifier)
+  (num_lit)
+  (identifier)
+  (num_lit)
+  (identifier))

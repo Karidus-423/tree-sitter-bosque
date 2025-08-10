@@ -9,10 +9,8 @@ function main(): Option<Int> {
 ---
 
 (source_file
-	(identifier)
-	(num_lit)
-)
-
+  (identifier)
+  (num_lit))
 
 ==============================
 Result Constructor Ok
@@ -25,10 +23,8 @@ function main(): Result<Int, Bool> {
 ---
 
 (source_file
-      (identifier)
-      (num_lit)
-)
-
+  (identifier)
+  (num_lit))
 
 ==============================
 Result Constructor Fail
@@ -41,12 +37,11 @@ function main(): Result<Int, Bool> {
 ---
 
 (source_file
-	(identifier)
-	(boolean_lit)
-)
+  (identifier)
+  (boolean_lit))
 
 ==============================
-Map Constructor 
+Map Constructor
 ==============================
 
 function main(): MapEntry<Int, Bool> {
@@ -56,7 +51,6 @@ function main(): MapEntry<Int, Bool> {
 ---
 
 (source_file
-	(identifier)
-	(num_lit)
-	(boolean_lit)
-)
+  (identifier)
+  (num_lit)
+  (boolean_lit))

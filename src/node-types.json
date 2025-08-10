@@ -32,7 +32,7 @@
             "named": true
           },
           {
-            "type": "entity_id",
+            "type": "entity_definition",
             "named": true
           },
           {
@@ -44,11 +44,19 @@
             "named": true
           },
           {
+            "type": "entity_update",
+            "named": true
+          },
+          {
             "type": "enum_access",
             "named": true
           },
           {
             "type": "false_lit",
+            "named": true
+          },
+          {
+            "type": "function_call",
             "named": true
           },
           {
@@ -212,7 +220,7 @@
             "named": true
           },
           {
-            "type": "entity_id",
+            "type": "entity_definition",
             "named": true
           },
           {
@@ -224,11 +232,19 @@
             "named": true
           },
           {
+            "type": "entity_update",
+            "named": true
+          },
+          {
             "type": "enum_access",
             "named": true
           },
           {
             "type": "false_lit",
+            "named": true
+          },
+          {
+            "type": "function_call",
             "named": true
           },
           {
@@ -300,7 +316,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -312,11 +328,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -387,7 +411,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -399,11 +423,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -474,7 +506,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -486,11 +518,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -553,10 +593,6 @@
           "named": true
         },
         {
-          "type": "function_id",
-          "named": true
-        },
-        {
           "type": "function_parameters",
           "named": true
         },
@@ -570,6 +606,105 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entity_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "entity_member_access",
+          "named": true
+        },
+        {
+          "type": "entity_method_call",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -599,11 +734,110 @@
       "required": true,
       "types": [
         {
-          "type": "function_id",
+          "type": "function_parameters",
           "named": true
         },
         {
-          "type": "function_parameters",
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entity_update",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_member_access",
+          "named": true
+        },
+        {
+          "type": "entity_method_call",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable_redefinition",
           "named": true
         }
       ]
@@ -656,6 +890,18 @@
       "required": true,
       "types": [
         {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
           "type": "cstring",
           "named": true
         },
@@ -664,7 +910,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -676,11 +922,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -746,6 +1000,25 @@
     }
   },
   {
+    "type": "function_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "function_parameters",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_definition",
     "named": true,
     "fields": {},
@@ -758,15 +1031,15 @@
           "named": true
         },
         {
-          "type": "function_id",
-          "named": true
-        },
-        {
           "type": "function_parameters",
           "named": true
         },
         {
           "type": "function_return_parameters",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -851,6 +1124,10 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
@@ -863,11 +1140,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -981,7 +1266,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -993,11 +1278,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1068,7 +1361,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -1080,11 +1373,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1160,7 +1461,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -1169,6 +1470,10 @@
         },
         {
           "type": "entity_method_call",
+          "named": true
+        },
+        {
+          "type": "entity_update",
           "named": true
         },
         {
@@ -1185,6 +1490,10 @@
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1271,7 +1580,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "entity_definition",
           "named": true
         },
         {
@@ -1283,11 +1592,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1362,7 +1679,7 @@
             "named": true
           },
           {
-            "type": "entity_id",
+            "type": "entity_definition",
             "named": true
           },
           {
@@ -1374,11 +1691,19 @@
             "named": true
           },
           {
+            "type": "entity_update",
+            "named": true
+          },
+          {
             "type": "enum_access",
             "named": true
           },
           {
             "type": "false_lit",
+            "named": true
+          },
+          {
+            "type": "function_call",
             "named": true
           },
           {
@@ -1468,6 +1793,10 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
@@ -1480,11 +1809,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1559,6 +1896,10 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
@@ -1571,11 +1912,19 @@
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
           "type": "enum_access",
           "named": true
         },
         {
           "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -1765,7 +2114,15 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
     "type": "\\/",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
@@ -1819,10 +2176,6 @@
   {
     "type": "function",
     "named": false
-  },
-  {
-    "type": "function_id",
-    "named": true
   },
   {
     "type": "identifier",
