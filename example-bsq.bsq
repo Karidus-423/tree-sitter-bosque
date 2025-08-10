@@ -1,4 +1,6 @@
 function main(): Int {
-	var x: Int, y: Bool = 1i, true;
+	var x: Int = 1i;
+	x, _ = 2i, false;
 	return x;
 }
+

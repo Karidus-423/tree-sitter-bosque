@@ -112,7 +112,7 @@ KeyComparator::equal<Nat>(0n, 1n)
 
 (source_file
   (key_comparator
-    (primitive_type)
+    (entity_id)
     (num_lit)
     (num_lit)))
 
@@ -126,6 +126,6 @@ KeyComparator::less<Nat>(5n, 80n)
 
 (source_file
   (key_comparator
-    (primitive_type)
+    (entity_id)
     (num_lit)
     (num_lit)))

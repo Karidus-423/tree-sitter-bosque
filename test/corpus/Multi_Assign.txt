@@ -10,12 +10,22 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 2
@@ -29,12 +39,22 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 3
@@ -48,12 +68,20 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 4
@@ -67,13 +95,20 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
-
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 5
@@ -87,14 +122,22 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (identifier)
+          (num_lit)
+          (true_lit)
+          (false_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign Only 6
@@ -107,15 +150,25 @@ function main(): Int {
 
 ---
 
- (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (num_lit)
-      (identifier))
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (identifier)
+          (entity_id)
+          (num_lit)
+          (true_lit)
+          (num_lit)))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 1
@@ -129,13 +182,23 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
-
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 2
@@ -149,12 +212,23 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (identifier)
+          (entity_id)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 3
@@ -168,12 +242,21 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 4
@@ -187,12 +270,21 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (boolean_lit)
-  (identifier))
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Declare-Assign From EList 5
@@ -206,15 +298,23 @@ function main(): Int {
 ---
 
 (source_file
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (boolean_lit)
-      (identifier))
-
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (identifier)
+          (identifier)
+          (elist
+            (num_lit)
+            (true_lit)
+            (false_lit))))
+      (return_statement
+        (identifier)))))
 
 =======================================
 Multi Assign 1
@@ -227,13 +327,24 @@ function main(): Int {
 }
 
 ---
-(source_file
-      (identifier)
-      (identifier)
-      (num_lit)
-      (identifier)
-      (identifier)
-      (num_lit)
-      (boolean_lit)
-      (identifier))
 
+(source_file
+  (function_definition
+    (function_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_id)
+          (num_lit)))
+      (variable_statement
+        (variable_redefinition
+          (identifier)
+          (identifier)
+          (num_lit)
+          (false_lit)))
+      (return_statement
+        (identifier)))))

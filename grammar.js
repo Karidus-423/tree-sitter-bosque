@@ -166,38 +166,48 @@ module.exports = grammar({
         $.return_statement,
       ),
     expression_statement: ($) => seq($._expression_not_binary, ";"),
-    variable_statement: ($) => seq($.variable_expression, ";"),
+    variable_statement: ($) =>
+      seq(choice($.variable_redefinition, $.variable_expression), ";"),
     return_statement: ($) => seq("return", optional($._expression), ";"),
 
     //TODO: Multi assign variables
     variable_expression: ($) =>
       seq(
         choice("let", "var"),
-        $.variable_assignment,
+        repeat($._variable_definition),
+        optional(
+          seq(
+            "=",
+            repeat($._variable_assignment),
+          ),
+        ),
       ),
-
-    variable_assignment: ($) =>
+    _variable_definition: ($) =>
+      prec(
+        PREC.ASSIGNMENT,
+        seq(
+          $.identifier,
+          optional(
+            seq(":", $._type),
+          ),
+          optional(","),
+        ),
+      ),
+    _variable_assignment: ($) =>
       seq(
-        $.identifier,
-        optional(seq(":", $._type)),
+        $._expression,
         optional(","),
       ),
 
-    _assignment_left_expression: ($) =>
-      choice(
-        $.identifier,
-        $.parenthesized_expression,
-        $.variable_expression,
-        $.variable_assignment,
-      ),
-
-    assignment_expression: ($) =>
-      prec.right(
+    variable_redefinition: ($) =>
+      prec(
         PREC.ASSIGNMENT,
         seq(
-          field("left", $._assignment_left_expression),
-          field("operator", choice("+=", "-=", "=")),
-          field("right", $._expression),
+          repeat($._variable_definition),
+          "=",
+          optional(
+            repeat($._variable_assignment),
+          ),
         ),
       ),
 
@@ -221,7 +231,6 @@ module.exports = grammar({
         $._entity_access,
         $.key_comparator,
         $.elist,
-        $.assignment_expression,
       ),
     parenthesized_expression: ($) =>
       seq(
