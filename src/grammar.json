@@ -406,11 +406,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constant"
+          "name": "const_decl"
         }
       ]
     },
-    "constant": {
+    "const_decl": {
       "type": "SEQ",
       "members": [
         {
@@ -2746,22 +2746,25 @@
             "value": "/"
           },
           {
-            "type": "REPEAT",
+            "type": "REPEAT1",
             "content": {
               "type": "PATTERN",
-              "value": "[^/\\;]"
+              "value": "[^/]"
             }
+          },
+          {
+            "type": "STRING",
+            "value": "/"
           },
           {
             "type": "CHOICE",
             "members": [
               {
                 "type": "STRING",
-                "value": "/"
+                "value": "c"
               },
               {
-                "type": "STRING",
-                "value": "/c"
+                "type": "BLANK"
               }
             ]
           }
@@ -2773,15 +2776,15 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "primitive_type"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_namespace_type_import"
         },
         {
           "type": "SYMBOL",
           "name": "_entity_id"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "primitive_type"
         },
         {
           "type": "SYMBOL",
@@ -2806,8 +2809,37 @@
         {
           "type": "SYMBOL",
           "name": "map_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bind_regex"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_regex"
         }
       ]
+    },
+    "bind_regex": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_type"
+          },
+          {
+            "type": "STRING",
+            "value": "of"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
+        ]
+      }
     },
     "map_type": {
       "type": "SEQ",
@@ -2975,21 +3007,25 @@
       ]
     },
     "_namespace_type_import": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_namespace_id"
-        },
-        {
-          "type": "STRING",
-          "value": "::"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_type"
-        }
-      ]
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_namespace_id"
+          },
+          {
+            "type": "STRING",
+            "value": "::"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
+        ]
+      }
     },
     "primitive_type": {
       "type": "TOKEN",
@@ -3159,6 +3195,10 @@
     }
   ],
   "conflicts": [
+    [
+      "_strings",
+      "_type"
+    ],
     [
       "type_cast_expression",
       "binary_expression"

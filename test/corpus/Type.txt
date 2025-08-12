@@ -178,13 +178,28 @@ function main(): SV1 {
 
 ---
 
-
+(source_file
+  (type_decl
+    (entity_id)
+    (bind_regex
+      (entity_id)
+      (string_regex)))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (type_cast_expression
+          (string)
+          (entity_id))))))
 
 =======================================
 Type Decl of Strings With Constraints 2
 =======================================
 
-const re2: CRegex = /[0-9]/c;
+const re2: CRegex = /[0-9]/;
 type SV2 = CString of Main::re2;
 
 function main(): SV2 {
@@ -193,4 +208,24 @@ function main(): SV2 {
 
 ---
 
-
+(source_file
+  (const_decl
+    (identifier)
+    (entity_id)
+    (string_regex))
+  (type_decl
+    (entity_id)
+    (bind_regex
+      (entity_id)
+      (namespace_id)
+      (entity_id)))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (type_cast_expression
+          (cstring)
+          (entity_id))))))

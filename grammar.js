@@ -36,6 +36,7 @@ module.exports = grammar({
   name: "bosque",
 
   conflicts: ($) => [
+    [$._strings, $._type],
     [$.type_cast_expression, $.binary_expression],
     [$._expression_not_binary, $._type],
     [$.type_cast_expression, $.unary_expression, $.binary_expression],
@@ -136,10 +137,10 @@ module.exports = grammar({
       choice(
         $.entity,
         $.enum,
-        $.constant,
+        $.const_decl,
       ),
 
-    constant: ($) =>
+    const_decl: ($) =>
       seq(
         "const",
         $._variable_definition,
@@ -548,22 +549,34 @@ module.exports = grammar({
     string_regex: ($) =>
       token(seq(
         "/",
-        repeat(/[^/\;]/),
-        choice("/", "/c"),
+        repeat1(/[^/]/),
+        "/",
+        optional("c"),
       )),
 
     _type: ($) =>
       choice(
+        $.primitive_type,
         $._namespace_type_import,
         $._entity_id,
-        $.primitive_type,
         $.elist,
         $.list,
         $.option,
         $.some_type,
         $.result_type,
         $.map_type,
+        $.bind_regex,
+        $.string_regex,
       ),
+    bind_regex: ($) =>
+      prec.left(
+        seq(
+          $._type,
+          "of",
+          $._type,
+        ),
+      ),
+
     map_type: ($) =>
       seq(
         "MapEntry",
@@ -600,11 +613,11 @@ module.exports = grammar({
         ">",
       ),
     _namespace_type_import: ($) =>
-      seq(
+      prec.left(seq(
         $._namespace_id,
         "::",
         $._type,
-      ),
+      )),
 
     primitive_type: ($) =>
       token(choice(

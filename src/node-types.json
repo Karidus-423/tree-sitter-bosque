@@ -419,6 +419,61 @@
     }
   },
   {
+    "type": "bind_regex",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
+          "type": "namespace_id",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "compound_and",
     "named": true,
     "fields": {},
@@ -633,7 +688,7 @@
     }
   },
   {
-    "type": "constant",
+    "type": "const_decl",
     "named": true,
     "fields": {},
     "children": {
@@ -642,6 +697,10 @@
       "types": [
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
           "named": true
         },
         {
@@ -887,6 +946,10 @@
       "required": true,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -936,6 +999,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         }
       ]
@@ -1490,6 +1557,10 @@
           "named": true
         },
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "compound_and",
           "named": true
         },
@@ -1625,6 +1696,10 @@
       "required": true,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -1667,6 +1742,10 @@
         {
           "type": "some_type",
           "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
         }
       ]
     }
@@ -1681,6 +1760,10 @@
       "types": [
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
           "named": true
         },
         {
@@ -1819,6 +1902,10 @@
       "required": true,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -1852,6 +1939,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         }
       ]
@@ -1977,6 +2068,10 @@
       "required": false,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -2011,6 +2106,10 @@
         {
           "type": "some_type",
           "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
         }
       ]
     }
@@ -2036,6 +2135,10 @@
       "types": [
         {
           "type": "assert_statement",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
           "named": true
         },
         {
@@ -2084,6 +2187,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         },
         {
@@ -2145,6 +2252,10 @@
       "required": true,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -2178,6 +2289,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         }
       ]
@@ -2735,6 +2850,10 @@
       "required": false,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -2768,6 +2887,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         }
       ]
@@ -2889,6 +3012,10 @@
       "required": false,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -2923,6 +3050,10 @@
         {
           "type": "some_type",
           "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
         }
       ]
     }
@@ -2953,7 +3084,7 @@
           "named": true
         },
         {
-          "type": "constant",
+          "type": "const_decl",
           "named": true
         },
         {
@@ -3207,6 +3338,10 @@
           "named": true
         },
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "compound_and",
           "named": true
         },
@@ -3366,6 +3501,10 @@
           "named": true
         },
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "compound_and",
           "named": true
         },
@@ -3501,6 +3640,10 @@
       "required": true,
       "types": [
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "elist",
           "named": true
         },
@@ -3534,6 +3677,10 @@
         },
         {
           "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
           "named": true
         }
       ]
@@ -3682,6 +3829,10 @@
           "named": true
         },
         {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
           "type": "compound_and",
           "named": true
         },
@@ -3818,6 +3969,10 @@
       "types": [
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
           "named": true
         },
         {
@@ -4233,6 +4388,10 @@
   {
     "type": "none_lit",
     "named": true
+  },
+  {
+    "type": "of",
+    "named": false
   },
   {
     "type": "primitive_type",
