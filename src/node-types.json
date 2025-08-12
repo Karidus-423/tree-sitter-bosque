@@ -688,6 +688,81 @@
     }
   },
   {
+    "type": "concept",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_parameters",
+          "named": true
+        },
+        {
+          "type": "function_return_parameters",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
+          "type": "namespace_id",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "const_decl",
     "named": true,
     "fields": {},
@@ -831,6 +906,81 @@
     }
   },
   {
+    "type": "datatype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_parameters",
+          "named": true
+        },
+        {
+          "type": "function_return_parameters",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
+          "type": "namespace_id",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "elist",
     "named": true,
     "fields": {},
@@ -943,7 +1093,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "bind_regex",
@@ -971,6 +1121,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "invariant",
           "named": true
         },
         {
@@ -1745,6 +1899,113 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "invariant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -3084,11 +3345,19 @@
           "named": true
         },
         {
+          "type": "concept",
+          "named": true
+        },
+        {
           "type": "const_decl",
           "named": true
         },
         {
           "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "datatype",
           "named": true
         },
         {
@@ -4314,12 +4583,20 @@
     "named": false
   },
   {
+    "type": "concept",
+    "named": false
+  },
+  {
     "type": "const",
     "named": false
   },
   {
     "type": "cstring",
     "named": true
+  },
+  {
+    "type": "datatype",
+    "named": false
   },
   {
     "type": "declare namespace",
@@ -4366,6 +4643,10 @@
     "named": true
   },
   {
+    "type": "invariant",
+    "named": false
+  },
+  {
     "type": "less",
     "named": false
   },
@@ -4396,6 +4677,10 @@
   {
     "type": "primitive_type",
     "named": true
+  },
+  {
+    "type": "provides",
+    "named": false
   },
   {
     "type": "ref",

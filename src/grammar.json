@@ -22,7 +22,23 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_object"
+          "name": "entity"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "const_decl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "concept"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "datatype"
         },
         {
           "type": "SYMBOL",
@@ -393,20 +409,149 @@
         }
       ]
     },
-    "_object": {
-      "type": "CHOICE",
+    "concept": {
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "entity"
+          "type": "STRING",
+          "value": "concept"
         },
         {
           "type": "SYMBOL",
-          "name": "enum"
+          "name": "_concept_type"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_entity_field"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "datatype": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "datatype"
         },
         {
           "type": "SYMBOL",
-          "name": "const_decl"
+          "name": "_object_id"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "provides"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_type"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_datatype_block"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "of"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_entity_signature"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "|"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "_datatype_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "using"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_entity_field"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -460,6 +605,15 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_entity_signature"
+        }
+      ]
+    },
+    "_entity_signature": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
           "name": "_entity_id"
         },
         {
@@ -506,6 +660,10 @@
         {
           "type": "SYMBOL",
           "name": "_entity_member"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "invariant"
         }
       ]
     },
@@ -544,6 +702,23 @@
         {
           "type": "SYMBOL",
           "name": "_type"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "invariant": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "invariant"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         },
         {
           "type": "STRING",
@@ -595,7 +770,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_entity_id"
+          "name": "_object_id"
         },
         {
           "type": "STRING",
@@ -2626,17 +2801,13 @@
       "value": "namespace_id"
     },
     "_entity_id": {
-      "type": "PREC",
-      "value": 17,
+      "type": "ALIAS",
       "content": {
-        "type": "ALIAS",
-        "content": {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        "named": true,
-        "value": "entity_id"
-      }
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "entity_id"
     },
     "_enum_member": {
       "type": "ALIAS",
@@ -2771,6 +2942,19 @@
         ]
       }
     },
+    "_object_id": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_entity_id"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_concept_type"
+        }
+      ]
+    },
     "_type": {
       "type": "CHOICE",
       "members": [
@@ -2817,6 +3001,31 @@
         {
           "type": "SYMBOL",
           "name": "string_regex"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_concept_type"
+        }
+      ]
+    },
+    "_concept_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_entity_id"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_entity_id"
+        },
+        {
+          "type": "STRING",
+          "value": ">"
         }
       ]
     },
@@ -3195,6 +3404,10 @@
     }
   ],
   "conflicts": [
+    [
+      "_expression_not_binary",
+      "_entity_id"
+    ],
     [
       "_strings",
       "_type"

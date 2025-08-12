@@ -36,6 +36,7 @@ module.exports = grammar({
   name: "bosque",
 
   conflicts: ($) => [
+    [$._expression_not_binary, $._entity_id],
     [$._strings, $._type],
     [$.type_cast_expression, $.binary_expression],
     [$._expression_not_binary, $._type],
@@ -49,7 +50,11 @@ module.exports = grammar({
       choice(
         $.namespace,
         $.type_decl,
-        $._object,
+        $.entity,
+        $.enum,
+        $.const_decl,
+        $.concept,
+        $.datatype,
         $.function_definition,
         $._expression,
         $._statement,
@@ -133,11 +138,34 @@ module.exports = grammar({
         "}",
       ),
 
-    _object: ($) =>
-      choice(
-        $.entity,
-        $.enum,
-        $.const_decl,
+    concept: ($) =>
+      seq(
+        "concept",
+        $._concept_type,
+        "{",
+        optional(repeat($._entity_field)),
+        "}",
+      ),
+
+    datatype: ($) =>
+      seq(
+        "datatype",
+        $._object_id,
+        optional(seq("provides", $._type)),
+        optional($._datatype_block),
+        "of",
+        repeat(seq(
+          $._entity_signature,
+          optional("|"),
+        )),
+        ";",
+      ),
+    _datatype_block: ($) =>
+      seq(
+        "using",
+        "{",
+        optional(repeat($._entity_field)),
+        "}",
       ),
 
     const_decl: ($) =>
@@ -152,7 +180,8 @@ module.exports = grammar({
         ),
         ";",
       ),
-    entity: ($) => seq("entity", $._entity_id, $._entity_block),
+    entity: ($) => seq("entity", $._entity_signature),
+    _entity_signature: ($) => seq($._entity_id, $._entity_block),
     _entity_block: ($) =>
       seq(
         "{",
@@ -163,6 +192,7 @@ module.exports = grammar({
       choice(
         $._entity_method,
         $._entity_member,
+        $.invariant,
       ),
     _entity_method: ($) => seq("ref", "method", $._function_signature),
     _entity_member: ($) =>
@@ -171,6 +201,12 @@ module.exports = grammar({
         $.identifier,
         ":",
         $._type,
+        ";",
+      ),
+    invariant: ($) =>
+      seq(
+        "invariant",
+        $._expression,
         ";",
       ),
     _entity_access: ($) =>
@@ -190,7 +226,7 @@ module.exports = grammar({
       ),
     entity_definition: ($) =>
       seq(
-        $._entity_id,
+        $._object_id,
         "{",
         optional(repeat(
           seq(
@@ -527,7 +563,7 @@ module.exports = grammar({
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
     this: ($) => seq("this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
-    _entity_id: ($) => prec(PREC.SUBSCRIPT, alias($.identifier, $.entity_id)),
+    _entity_id: ($) => alias($.identifier, $.entity_id),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     type_id: ($) => alias($.identifier, $.type_id),
     none_lit: (_) => token("none"),
@@ -554,6 +590,12 @@ module.exports = grammar({
         optional("c"),
       )),
 
+    _object_id: ($) =>
+      choice(
+        $._entity_id,
+        $._concept_type,
+      ),
+
     _type: ($) =>
       choice(
         $.primitive_type,
@@ -567,7 +609,9 @@ module.exports = grammar({
         $.map_type,
         $.bind_regex,
         $.string_regex,
+        $._concept_type,
       ),
+    _concept_type: ($) => seq($._entity_id, "<", $._entity_id, ">"),
     bind_regex: ($) =>
       prec.left(
         seq(

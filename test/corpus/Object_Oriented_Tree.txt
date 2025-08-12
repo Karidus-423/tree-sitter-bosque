@@ -13,18 +13,23 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
+  (datatype
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
     (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (entity_id
-    (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 eADT Decl 2
@@ -44,22 +49,30 @@ function main(): Bool {
 ---
 
 (source_file
-  (entity_id
+  (datatype
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit)))
+    (entity_id)
+    (entity_id)
+    (identifier)
     (entity_id))
-  (identifier)
-  (identifier)
-  (num_lit)
-  (entity_id
-    (entity_id))
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (boolean_lit)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit)
+          (false_lit))
+        (identifier)))))
 
 =======================================
 eADT Decl 3
@@ -75,7 +88,26 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 eADT Decl 4
@@ -97,7 +129,39 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (datatype
+    (entity_id)
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (binary_expression
+          (identifier)
+          (identifier))
+        (num_lit)))
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit)
+          (true_lit))
+        (identifier)))))
 
 =======================================
 eADT Basic 1
@@ -114,18 +178,23 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
     (entity_id))
-  (entity_id
-    (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 eADT Basic 2
@@ -141,7 +210,30 @@ function main(): Bool {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit)))
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (false_lit))
+        (identifier)))))
 
 =======================================
 eADT Basic 3 (Generic)
@@ -157,7 +249,26 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 eADT Const 1
@@ -424,7 +535,26 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit))))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Decl 3

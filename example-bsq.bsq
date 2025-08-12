@@ -1,3 +1,5 @@
-type SV1 = String of /[a-z]+/;
-type SV2 = CString of Main::re2;
-const re2: CRegex = /[0-9]/;
+datatype Foo provides Bar<Int> using {
+	field g: Bool;
+} of F1 {
+	invariant $g ==> $f >= 0i;
+} | F2 { };
