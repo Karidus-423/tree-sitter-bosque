@@ -23,13 +23,19 @@ function main(): Option<Bar> {
 ---
 
 (source_file
-  (namespace_id)
-  (entity_id
+  (namespace
+    (namespace_id))
+  (entity
     (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (none_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (option
+        (entity_id)))
+    (function_body
+      (return_statement
+        (none_lit)))))
 
 =================================
 Namespaces Scope Access Explicit
@@ -44,14 +50,20 @@ function main(): Option<Main::Bar> {
 ----
 
 (source_file
-  (namespace_id)
-  (entity_id
+  (namespace
+    (namespace_id))
+  (entity
     (entity_id))
-  (identifier)
-  (namespace_id)
-  (entity_id
-    (entity_id))
-  (none_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (option
+        (namespace_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (none_lit)))))
 
 ===============================
 Namespace Import Access
@@ -67,13 +79,20 @@ function main(): Option<NSOther::Foo> {
 ---
 
 (source_file
-  (namespace_id)
-  (namespace_id)
-  (identifier)
-  (namespace_id)
-  (entity_id
-    (entity_id))
-  (none_lit))
+  (namespace
+    (namespace_id)
+    (namespace_import
+      (namespace_id)))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (option
+        (namespace_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (none_lit)))))
 
 ===============================
 Namespace Import Access Rename
@@ -89,11 +108,18 @@ function main(): Option<Other::Foo> {
 ---
 
 (source_file
-  (namespace_id)
-  (namespace_id)
-  (namespace_id)
-  (identifier)
-  (namespace_id)
-  (entity_id
-    (entity_id))
-  (none_lit))
+  (namespace
+    (namespace_id)
+    (namespace_import
+      (namespace_id)
+      (namespace_id)))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (option
+        (namespace_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (none_lit)))))

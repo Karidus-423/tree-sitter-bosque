@@ -24,16 +24,22 @@ const PREC = {
   SHIFT: 9,
   ADD: 10,
   MULTIPLY: 11,
-  CAST: 12,
   SIZEOF: 13,
   UNARY: 14,
   CALL: 15,
   FIELD: 16,
   SUBSCRIPT: 17,
+  CAST: 18,
 };
 
 module.exports = grammar({
   name: "bosque",
+
+  conflicts: ($) => [
+    [$.type_cast_expression, $.binary_expression],
+    [$._expression_not_binary, $._type],
+    [$.type_cast_expression, $.unary_expression, $.binary_expression],
+  ],
 
   rules: {
     source_file: ($) => repeat($._components),
@@ -41,7 +47,7 @@ module.exports = grammar({
     _components: ($) =>
       choice(
         $.namespace,
-        // $.type,
+        $.type_decl,
         $._object,
         $.function_definition,
         $._expression,
@@ -69,6 +75,15 @@ module.exports = grammar({
     _namespace_import_simple: ($) => seq("using", $._namespace_id, ";"),
     _namespace_import_with_alias: ($) =>
       seq("using", $._namespace_id, "as", $._namespace_id, ";"),
+
+    type_decl: ($) =>
+      seq(
+        "type",
+        $._entity_id,
+        "=",
+        $._type,
+        ";",
+      ),
 
     function_definition: ($) =>
       seq(
@@ -110,12 +125,10 @@ module.exports = grammar({
       ),
     pre_condition: ($) => seq("requires", $._expression),
     post_condition: ($) => seq("ensures", $._expression),
-
     function_body: ($) =>
       seq(
         "{",
-        repeat($._statement),
-        $.return_statement,
+        optional(repeat($._statement)),
         "}",
       ),
 
@@ -123,8 +136,21 @@ module.exports = grammar({
       choice(
         $.entity,
         $.enum,
+        $.constant,
       ),
 
+    constant: ($) =>
+      seq(
+        "const",
+        $._variable_definition,
+        optional(
+          seq(
+            "=",
+            repeat($._variable_assignment),
+          ),
+        ),
+        ";",
+      ),
     entity: ($) => seq("entity", $._entity_id, $._entity_block),
     _entity_block: ($) =>
       seq(
@@ -201,8 +227,10 @@ module.exports = grammar({
         $.variable_statement,
         $.assert_statement,
         $.return_statement,
+        $.match_statement,
+        $.switch_statement,
       ),
-    expression_statement: ($) => seq($._expression_not_binary, ";"),
+    expression_statement: ($) => seq($._expression, ";"),
     variable_statement: ($) =>
       seq(choice($.variable_redefinition, $.variable_expression), ";"),
     assert_statement: ($) => seq("assert", $._expression, ";"),
@@ -216,6 +244,43 @@ module.exports = grammar({
           ),
         )),
         ";",
+      ),
+    match_statement: ($) =>
+      seq(
+        "match",
+        "(",
+        $._type,
+        ")",
+        optional(field("bind", "@")),
+        "{",
+        repeat(seq($._match_case, optional("|"))),
+        "}",
+      ),
+    _match_case: ($) =>
+      seq(
+        $._type,
+        "=>",
+        "{",
+        optional(repeat($._statement)),
+        "}",
+      ),
+    switch_statement: ($) =>
+      seq(
+        "switch",
+        "(",
+        $._type,
+        ")",
+        "{",
+        repeat(seq($._switch_case, optional("|"))),
+        "}",
+      ),
+    _switch_case: ($) =>
+      seq(
+        $._expression,
+        "=>",
+        "{",
+        optional(repeat($._statement)),
+        "}",
       ),
 
     variable_expression: ($) =>
@@ -282,7 +347,42 @@ module.exports = grammar({
         $.entity_update,
         $.key_comparator,
         $.elist,
+        $._constructor,
+        $.type_cast_expression,
       ),
+    type_cast_expression: ($) =>
+      prec(PREC.CAST, seq($._expression, "<", $._type, ">")),
+    _constructor: ($) =>
+      choice($.option_constructor, $.result_constructor, $.map_constructor),
+    option_constructor: ($) =>
+      seq(
+        $.some_type,
+        "{",
+        $._expression,
+        "}",
+      ),
+    result_constructor: ($) =>
+      seq(
+        $.result_type,
+        "::",
+        choice("Ok", "Fail"),
+        "{",
+        $._expression,
+        "}",
+      ),
+    map_constructor: ($) =>
+      seq(
+        $.map_type,
+        "{",
+        repeat(
+          seq(
+            $._expression,
+            optional(","),
+          ),
+        ),
+        "}",
+      ),
+
     parenthesized_expression: ($) =>
       seq(
         "(",
@@ -426,7 +526,7 @@ module.exports = grammar({
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
     this: ($) => seq("this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
-    _entity_id: ($) => alias($.identifier, $.entity_id),
+    _entity_id: ($) => prec(PREC.SUBSCRIPT, alias($.identifier, $.entity_id)),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     type_id: ($) => alias($.identifier, $.type_id),
     none_lit: (_) => token("none"),
@@ -442,16 +542,48 @@ module.exports = grammar({
         /[+]?[0-9]*[nN]/,
         /-?[0-9]+\/[1-9][0-9]*R/,
       ),
-    _strings: ($) => choice($.string, $.cstring),
+    _strings: ($) => choice($.string, $.cstring, $.string_regex),
     string: ($) => /"(?:[^%"\\]|%.)*"/u,
     cstring: ($) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
+    string_regex: ($) =>
+      token(seq(
+        "/",
+        repeat(/[^/\;]/),
+        choice("/", "/c"),
+      )),
 
     _type: ($) =>
       choice(
+        $._namespace_type_import,
         $._entity_id,
         $.primitive_type,
         $.elist,
         $.list,
+        $.option,
+        $.some_type,
+        $.result_type,
+        $.map_type,
+      ),
+    map_type: ($) =>
+      seq(
+        "MapEntry",
+        "<",
+        repeat(seq($._type, optional(","))),
+        ">",
+      ),
+    result_type: ($) =>
+      seq(
+        "Result",
+        "<",
+        repeat(seq($._type, optional(","))),
+        ">",
+      ),
+    some_type: ($) =>
+      seq(
+        "Some",
+        "<",
+        repeat(seq($._type, optional(","))),
+        ">",
       ),
     list: ($) =>
       seq(
@@ -459,6 +591,19 @@ module.exports = grammar({
         "<",
         $._type,
         ">",
+      ),
+    option: ($) =>
+      seq(
+        "Option",
+        "<",
+        $._type,
+        ">",
+      ),
+    _namespace_type_import: ($) =>
+      seq(
+        $._namespace_id,
+        "::",
+        $._type,
       ),
 
     primitive_type: ($) =>

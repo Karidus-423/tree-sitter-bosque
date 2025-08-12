@@ -1,1 +1,5 @@
-	x.foo();
+type SV1 = String of /[a-z]+/;
+
+function main(): SV1 {
+	return "abc"<SV1>;
+}

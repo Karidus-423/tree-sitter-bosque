@@ -9,8 +9,18 @@ function main(): Option<Int> {
 ---
 
 (source_file
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (option
+        (entity_id)))
+    (function_body
+      (return_statement
+        (option_constructor
+          (some_type
+            (entity_id))
+          (num_lit))))))
 
 ==============================
 Result Constructor Ok
@@ -23,8 +33,20 @@ function main(): Result<Int, Bool> {
 ---
 
 (source_file
-  (identifier)
-  (num_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (result_type
+        (entity_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (result_constructor
+          (result_type
+            (entity_id)
+            (entity_id))
+          (num_lit))))))
 
 ==============================
 Result Constructor Fail
@@ -37,8 +59,20 @@ function main(): Result<Int, Bool> {
 ---
 
 (source_file
-  (identifier)
-  (boolean_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (result_type
+        (entity_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (result_constructor
+          (result_type
+            (entity_id)
+            (entity_id))
+          (false_lit))))))
 
 ==============================
 Map Constructor
@@ -51,6 +85,18 @@ function main(): MapEntry<Int, Bool> {
 ---
 
 (source_file
-  (identifier)
-  (num_lit)
-  (boolean_lit))
+  (function_definition
+    (identifier)
+    (function_parameters)
+    (function_return_parameters
+      (map_type
+        (entity_id)
+        (entity_id)))
+    (function_body
+      (return_statement
+        (map_constructor
+          (map_type
+            (entity_id)
+            (entity_id))
+          (num_lit)
+          (true_lit))))))
