@@ -36,7 +36,7 @@ Unary Arithmetic 1
 (source_file
   (unary_expression
     (parenthesized_expression
-      (num_lit))))
+      (num_whole))))
 
 =======================================
 Unary Arithmetic 2
@@ -49,7 +49,7 @@ Unary Arithmetic 2
 (source_file
   (unary_expression
     (parenthesized_expression
-      (num_lit))))
+      (num_whole))))
 
 =======================================
 Unary Arithmetic 3
@@ -62,4 +62,4 @@ Unary Arithmetic 3
 (source_file
   (unary_expression
     (parenthesized_expression
-      (num_lit))))
+      (num_whole))))

@@ -13,14 +13,14 @@ Simple Numbers
 ---
 
 (source_file
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit))
+  (num_whole)
+  (num_whole)
+  (num_whole)
+  (num_whole)
+  (num_whole)
+  (num_whole)
+  (num_whole)
+  (num_whole))
 
 ==========================
 Simple Float and Decimals
@@ -35,12 +35,12 @@ Simple Float and Decimals
 ---
 
 (source_file
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit)
-  (num_lit))
+  (num_float)
+  (num_float)
+  (num_float)
+  (num_float)
+  (num_float)
+  (num_float))
 
 ==========================
 Simple Rational
@@ -51,8 +51,8 @@ Simple Rational
 ---
 
 (source_file
-  (num_lit)
-  (num_lit))
+  (num_whole)
+  (num_whole))
 
 ==========================
 Simple Latitude/Longitude
@@ -64,8 +64,8 @@ Simple Latitude/Longitude
 ---
 
 (source_file
-  (num_lit)
-  (num_lit))
+  (num_whole)
+  (num_whole))
 
 ==========================
 Simple Complex
@@ -77,8 +77,8 @@ Simple Complex
 ---
 
 (source_file
-  (num_lit)
-  (num_lit))
+  (num_whole)
+  (num_whole))
 
 ==========================
 Simple Specials

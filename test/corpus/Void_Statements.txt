@@ -41,15 +41,14 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_definition
-            (object_id
-              (entity_id)))))
+            (entity_id))))
       (expression_statement
         (function_call
           (identifier)
           (identifier)
           (identifier)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =======================================
 Void Namespace Method Ref Params

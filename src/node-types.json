@@ -81,7 +81,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -204,7 +208,11 @@
             "named": true
           },
           {
-            "type": "num_lit",
+            "type": "num_float",
+            "named": true
+          },
+          {
+            "type": "num_whole",
             "named": true
           },
           {
@@ -416,7 +424,11 @@
             "named": true
           },
           {
-            "type": "num_lit",
+            "type": "num_float",
+            "named": true
+          },
+          {
+            "type": "num_whole",
             "named": true
           },
           {
@@ -523,6 +535,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "compound_and",
     "named": true,
     "fields": {},
@@ -599,7 +616,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -722,7 +743,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -833,10 +858,6 @@
           "named": true
         },
         {
-          "type": "function_body",
-          "named": true
-        },
-        {
           "type": "function_call",
           "named": true
         },
@@ -845,11 +866,7 @@
           "named": true
         },
         {
-          "type": "function_parameters",
-          "named": true
-        },
-        {
-          "type": "function_return_parameters",
+          "type": "function_signature",
           "named": true
         },
         {
@@ -893,11 +910,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1060,7 +1077,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1195,10 +1216,6 @@
           "named": true
         },
         {
-          "type": "function_body",
-          "named": true
-        },
-        {
           "type": "function_call",
           "named": true
         },
@@ -1207,11 +1224,7 @@
           "named": true
         },
         {
-          "type": "function_parameters",
-          "named": true
-        },
-        {
-          "type": "function_return_parameters",
+          "type": "function_signature",
           "named": true
         },
         {
@@ -1263,11 +1276,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1418,7 +1431,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1596,10 +1613,6 @@
           "named": true
         },
         {
-          "type": "function_body",
-          "named": true
-        },
-        {
           "type": "function_call",
           "named": true
         },
@@ -1608,11 +1621,7 @@
           "named": true
         },
         {
-          "type": "function_parameters",
-          "named": true
-        },
-        {
-          "type": "function_return_parameters",
+          "type": "function_signature",
           "named": true
         },
         {
@@ -1664,11 +1673,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1819,7 +1828,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -1958,7 +1971,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -2007,6 +2024,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "entity_id",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "entity_update",
@@ -2085,7 +2107,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -2174,6 +2200,11 @@
     }
   },
   {
+    "type": "enum_member",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "expression_statement",
     "named": true,
     "fields": {},
@@ -2250,7 +2281,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -2412,7 +2447,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -2463,23 +2502,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "function_body",
-          "named": true
-        },
-        {
-          "type": "function_parameters",
-          "named": true
-        },
-        {
-          "type": "function_return_parameters",
-          "named": true
-        },
-        {
-          "type": "object_id",
+          "type": "function_signature",
           "named": true
         }
       ]
@@ -2586,7 +2613,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -2716,6 +2747,53 @@
     }
   },
   {
+    "type": "function_signature",
+    "named": true,
+    "fields": {
+      "function_id": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "entity_id",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_parameters",
+          "named": true
+        },
+        {
+          "type": "function_return_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "if_statement",
     "named": true,
     "fields": {},
@@ -2812,7 +2890,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -3018,7 +3100,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -3165,7 +3251,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -3308,7 +3398,11 @@
             "named": true
           },
           {
-            "type": "num_lit",
+            "type": "num_float",
+            "named": true
+          },
+          {
+            "type": "num_whole",
             "named": true
           },
           {
@@ -3626,7 +3720,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -3832,15 +3930,22 @@
   {
     "type": "namespace",
     "named": true,
-    "fields": {},
+    "fields": {
+      "namespace_id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
-        {
-          "type": "namespace_id",
-          "named": true
-        },
         {
           "type": "namespace_import",
           "named": true
@@ -3857,31 +3962,21 @@
       "required": false,
       "types": [
         {
-          "type": "namespace_id",
+          "type": "identifier",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "num_lit",
+    "type": "num_float",
     "named": true,
     "fields": {}
   },
   {
-    "type": "object_id",
+    "type": "num_whole",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "entity_id",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "option",
@@ -4019,7 +4114,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4146,7 +4245,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4269,7 +4372,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4392,7 +4499,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4515,7 +4626,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4701,7 +4816,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -4932,7 +5051,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -5071,7 +5194,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -5234,7 +5361,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -5409,7 +5540,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -5607,7 +5742,11 @@
             "named": true
           },
           {
-            "type": "num_lit",
+            "type": "num_float",
+            "named": true
+          },
+          {
+            "type": "num_whole",
             "named": true
           },
           {
@@ -5773,7 +5912,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -5936,7 +6079,11 @@
           "named": true
         },
         {
-          "type": "num_lit",
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
           "named": true
         },
         {
@@ -6038,7 +6185,23 @@
     "named": false
   },
   {
+    "type": "$",
+    "named": false
+  },
+  {
     "type": "%",
+    "named": false
+  },
+  {
+    "type": "%%",
+    "named": false
+  },
+  {
+    "type": "%*",
+    "named": false
+  },
+  {
+    "type": "%**",
     "named": false
   },
   {
@@ -6063,6 +6226,14 @@
   },
   {
     "type": "*",
+    "named": false
+  },
+  {
+    "type": "*%",
+    "named": false
+  },
+  {
+    "type": "**%",
     "named": false
   },
   {
@@ -6218,10 +6389,6 @@
     "named": false
   },
   {
-    "type": "comment",
-    "named": true
-  },
-  {
     "type": "concept",
     "named": false
   },
@@ -6254,16 +6421,8 @@
     "named": false
   },
   {
-    "type": "entity_id",
-    "named": true
-  },
-  {
     "type": "enum",
     "named": false
-  },
-  {
-    "type": "enum_member",
-    "named": true
   },
   {
     "type": "equal",
@@ -6284,10 +6443,6 @@
   {
     "type": "function",
     "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
   },
   {
     "type": "if",
@@ -6316,10 +6471,6 @@
   {
     "type": "namespace",
     "named": false
-  },
-  {
-    "type": "namespace_id",
-    "named": true
   },
   {
     "type": "none_lit",

@@ -30,15 +30,15 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (match_statement
         (entity_id)
         (entity_id)
         (return_statement
-          (num_lit))
+          (num_whole))
         (entity_id)
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ===============================
 Simple Match Alt
@@ -73,16 +73,15 @@ function main(): Int {
           (identifier)
           (entity_id)
           (entity_definition
-            (object_id
-              (entity_id)))))
+            (entity_id))))
       (match_statement
         (entity_id)
         (entity_id)
         (return_statement
-          (num_lit))
+          (num_whole))
         (entity_id)
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ======================
 Simple Match Bind
@@ -117,15 +116,15 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (match_statement
         (entity_id)
         (entity_id)
         (return_statement
-          (num_lit))
+          (num_whole))
         (entity_id)
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ===============================
 Simple Switch
@@ -156,15 +155,15 @@ function main(): Int {
       (variable_statement
         (variable_expression
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (switch_statement
         (entity_id)
-        (num_lit)
+        (num_whole)
         (return_statement
-          (num_lit))
+          (num_whole))
         (identifier)
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ============================
 Simple Enum Switch
@@ -214,7 +213,7 @@ function main(): Int {
           (entity_id)
           (enum_member))
         (return_statement
-          (num_lit))
+          (num_whole))
         (identifier)
         (return_statement
-          (num_lit))))))
+          (num_whole))))))

@@ -57,4 +57,4 @@ function main(k: CString): Int {
       (entity_id))
     (function_body
       (return_statement
-        (num_lit)))))
+        (num_whole)))))

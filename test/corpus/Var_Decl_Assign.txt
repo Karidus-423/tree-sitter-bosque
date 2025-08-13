@@ -23,7 +23,7 @@ function main(): Int {
           (entity_id)
           (identifier)
           (entity_id)
-          (num_lit)
+          (num_whole)
           (true_lit)))
       (return_statement
         (identifier)))))
@@ -53,7 +53,7 @@ function main(): Int {
           (entity_id)
           (identifier)
           (entity_id)
-          (num_lit)
+          (num_whole)
           (true_lit)))
       (return_statement
         (identifier)))))
@@ -81,7 +81,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (true_lit)))
       (return_statement
         (identifier)))))
@@ -109,7 +109,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (true_lit)))
       (return_statement
         (identifier)))))
@@ -138,7 +138,7 @@ function main(): Int {
           (identifier)
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (true_lit)
           (false_lit)))
       (return_statement
@@ -170,9 +170,9 @@ function main(): Int {
           (identifier)
           (identifier)
           (entity_id)
-          (num_lit)
+          (num_whole)
           (true_lit)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (identifier)))))
 
@@ -202,7 +202,7 @@ function main(): Int {
           (identifier)
           (entity_id)
           (elist
-            (num_lit)
+            (num_whole)
             (true_lit))))
       (return_statement
         (identifier)))))
@@ -233,7 +233,7 @@ function main(): Int {
           (identifier)
           (entity_id)
           (elist
-            (num_lit)
+            (num_whole)
             (true_lit))))
       (return_statement
         (identifier)))))
@@ -262,7 +262,7 @@ function main(): Int {
           (identifier)
           (identifier)
           (elist
-            (num_lit)
+            (num_whole)
             (true_lit))))
       (return_statement
         (identifier)))))
@@ -291,7 +291,7 @@ function main(): Int {
           (identifier)
           (identifier)
           (elist
-            (num_lit)
+            (num_whole)
             (true_lit))))
       (return_statement
         (identifier)))))
@@ -321,7 +321,7 @@ function main(): Int {
           (identifier)
           (identifier)
           (elist
-            (num_lit)
+            (num_whole)
             (true_lit)
             (false_lit))))
       (return_statement
@@ -351,12 +351,12 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_id)
-          (num_lit)))
+          (num_whole)))
       (variable_statement
         (variable_redefinition
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (false_lit)))
       (return_statement
         (identifier)))))
@@ -421,7 +421,7 @@ function main(): Int {
           (identifier)
           (entity_id)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =======================================
 Simple Declare Only 2
@@ -472,7 +472,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_id)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (identifier)))))
 
@@ -553,11 +553,11 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_id)
-          (num_lit)))
+          (num_whole)))
       (variable_statement
         (variable_redefinition
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (identifier)))))
 
@@ -583,6 +583,6 @@ function main(): Int {
       (variable_statement
         (variable_redefinition
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))

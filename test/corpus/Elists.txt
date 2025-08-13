@@ -9,6 +9,15 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (num_lit)
-  (boolean_lit))
+  (function_definition
+    (object_id
+      (entity_id))
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_access
+          (elist
+            (num_whole)
+            (true_lit)))))))

@@ -51,7 +51,7 @@ function main(): NVal {
     (function_body
       (return_statement
         (type_cast_expression
-          (num_lit)
+          (num_whole)
           (entity_id))))))
 
 =======================================
@@ -79,7 +79,7 @@ function main(): FVal {
     (function_body
       (return_statement
         (type_cast_expression
-          (num_lit)
+          (num_float)
           (entity_id))))))
 
 =======================================
@@ -110,10 +110,11 @@ function main(): Int {
         (variable_expression
           (identifier)
           (type_cast_expression
-            (num_lit)
+            (num_whole)
             (entity_id))))
       (return_statement
-        (identifier)
+        (entity_access
+          (identifier))
         (identifier)))))
 
 =======================================

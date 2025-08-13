@@ -19,7 +19,7 @@ some(3i)
 
 (source_file
   (special_lit
-    (num_lit)))
+    (num_whole)))
 
 =======================================
 Special Constructor 1
@@ -31,7 +31,7 @@ ok(3i)
 
 (source_file
   (special_lit
-    (num_lit)))
+    (num_whole)))
 
 =======================================
 Special Constructor 2

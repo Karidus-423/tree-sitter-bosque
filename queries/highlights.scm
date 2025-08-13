@@ -1,78 +1,135 @@
 (identifier) @variable
-(namespace_id) @constant
+(this) @variable.builtin
+; "_" @variable.builtin
+
+(true_lit) @boolean
+(false_lit) @boolean
+
+(namespace
+  namespace_id: (identifier) @module)
+
 (entity_id) @constant
 (enum_member) @constant
-(this) @constant
-(true_lit) @constant
 (none_lit) @constant
-(false_lit) @constant
-(object_id) @constant
 
-"+" @operator
-"-" @operator
-"*" @operator
-"//" @operator
-"%" @operator
-"||" @operator
-"&&" @operator
-"|" @operator
-"^" @operator
-"&" @operator
-"===" @operator
-"!==" @operator
-"==" @operator
-"!=" @operator
-">" @operator
-">=" @operator
-"<=" @operator
-"==>" @operator
-"<==>" @operator
-"<" @operator
-"<<" @operator
-">>" @operator
+(function_call) @function.call
+(function_signature
+  function_id: (entity_id) @function)
 
-"." @delimiter
-";" @delimiter
-"=>" @delimiter
-"->" @delimiter
+[
+"+" 
+"-" 
+"*" 
+"//" 
+"%" 
+"||" 
+"&&" 
+"|" 
+"^" 
+"&" 
+"===" 
+"!==" 
+"==" 
+"!=" 
+">" 
+">=" 
+"<=" 
+"==>" 
+"<==>" 
+"<" 
+"<<" 
+">>" 
+] @operator
+
+[
+"(" 
+")" 
+"{" 
+"}" 
+] @punctuation.bracket
+
+[
+"(|" 
+"|)" 
+] @punctuation.special
+
+[
+"#"
+"$" 
+"." 
+";" 
+"=>" 
+"->" 
+] @punctuation.delimeter
 
 (string) @string
 (cstring) @string
-(string_regex) @string
+(string_regex) @string.regexp
 
-(num_lit) @number
+(num_whole) @number
+(num_float) @number.float
 
+[
+"fn" 
+"if" 
+"match" 
+"let" 
+"switch" 
+"else" 
+] @statement
 
+"return" @keyword.return
+
+[
+"assert" 
+] @keyword.conditional
+
+[
+"ref" 
+"var" 
+"const" 
+] @keyword.modifier
+
+"function" @keyword.function
+
+[
+"some" 
+"type" 
+"as" 
+"concept" 
+"declare" 
+"enum" 
+"entity" 
+"ensures" 
+"field" 
+"invariant" 
+"method" 
+"namespace" 
+"of" 
+"provides" 
+"requires" 
+"datatype" 
+"using" 
+"public" 
+] @keyword
 ; "recursive?" @keyword
 ; "recursive" @keyword
 ; "action" @keyword
 ; "_debug" @keyword
 ; "abort" @keyword
-"assert" @keyword
 ; "bsqon" @keyword
 ; "$bsqon" @keyword
 ; "do" @keyword
 ; "elif" @keyword
-"else" @keyword
 ; "env" @keyword
 ; "fail" @keyword
-"fn" @keyword
-"if" @keyword
 ; "implements" @keyword
-"let" @keyword
-"match" @keyword
 ; "ok" @keyword
 ; "option" @keyword
 ; "pred" @keyword
-"ref" @keyword
-"return" @keyword
 ; "result" @keyword
-"some" @keyword
 ; "self" @keyword
-"switch" @keyword
 ; "then" @keyword
-"type" @keyword
-"var" @keyword
 ; "yield" @keyword
 ; "continue" @keyword
 ; "break" @keyword
@@ -82,25 +139,8 @@
 ; "spec" @keyword
 ; "test" @keyword
 ; "api" @keyword
-"as" @keyword
-"concept" @keyword
-"const" @keyword
-"declare" @keyword
-"enum" @keyword
-"entity" @keyword
-"ensures" @keyword
-"field" @keyword
-"function" @keyword
-"invariant" @keyword
-"method" @keyword
-"namespace" @keyword
-"of" @keyword
-"provides" @keyword
-"requires" @keyword
 ; "in" @keyword
 ; "task" @keyword
-"datatype" @keyword
-"using" @keyword
 ; "validate" @keyword
 ; "when" @keyword
 ; "event" @keyword
@@ -116,7 +156,6 @@
 ; "private" @keyword
 ; "internal" @keyword
 ; "hidden" @keyword
-"public" @keyword
 ; "sensitive" @keyword
 ; "export" @keyword
 ; "deterministic" @keyword

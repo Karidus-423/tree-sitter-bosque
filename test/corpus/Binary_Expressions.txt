@@ -8,8 +8,8 @@ Addition
 
 (source_file
   (binary_expression
-    (num_lit)
-    (num_lit)))
+    (num_whole)
+    (num_whole)))
 
 =================
 Subtraction
@@ -21,8 +21,8 @@ Subtraction
 
 (source_file
   (binary_expression
-    (num_lit)
-    (num_lit)))
+    (num_whole)
+    (num_whole)))
 
 =================
 Division
@@ -34,8 +34,8 @@ Division
 
 (source_file
   (binary_expression
-    (num_lit)
-    (num_lit)))
+    (num_whole)
+    (num_whole)))
 
 =================
 Multiplication
@@ -47,5 +47,5 @@ Multiplication
 
 (source_file
   (binary_expression
-    (num_lit)
-    (num_lit)))
+    (num_whole)
+    (num_whole)))

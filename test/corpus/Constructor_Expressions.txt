@@ -21,7 +21,7 @@ function main(): Option<Int> {
         (option_constructor
           (some_type
             (entity_id))
-          (num_lit))))))
+          (num_whole))))))
 
 ==============================
 Result Constructor Ok
@@ -48,7 +48,7 @@ function main(): Result<Int, Bool> {
           (result_type
             (entity_id)
             (entity_id))
-          (num_lit))))))
+          (num_whole))))))
 
 ==============================
 Result Constructor Fail
@@ -102,5 +102,5 @@ function main(): MapEntry<Int, Bool> {
           (map_type
             (entity_id)
             (entity_id))
-          (num_lit)
+          (num_whole)
           (true_lit))))))

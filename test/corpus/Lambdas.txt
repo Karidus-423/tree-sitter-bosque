@@ -27,7 +27,7 @@ function main(): Bool {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
     (object_id
       (entity_id))
@@ -45,7 +45,7 @@ function main(): Bool {
               (function_return_parameters
                 (entity_id))
               (identifier))
-            (num_lit)))))))
+            (num_whole)))))))
 
 =========================================
 Simple Lambda Infer Argument
@@ -75,7 +75,7 @@ function main(): Bool {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
     (object_id
       (entity_id))
@@ -94,7 +94,7 @@ function main(): Bool {
               (return_statement
                 (binary_expression
                   (identifier)
-                  (num_lit))))))))))
+                  (num_whole))))))))))
 
 =========================================
 Simple Lambda with Return
@@ -125,7 +125,7 @@ function main(): Bool {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
     (object_id
       (entity_id))
@@ -143,7 +143,7 @@ function main(): Bool {
               (return_statement
                 (binary_expression
                   (identifier)
-                  (num_lit))))))))))
+                  (num_whole))))))))))
 
 =========================================
 Simple Lambda Infer Both
@@ -174,7 +174,7 @@ function main(): Bool {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
     (object_id
       (entity_id))
@@ -191,7 +191,7 @@ function main(): Bool {
               (return_statement
                 (binary_expression
                   (identifier)
-                  (num_lit))))))))))
+                  (num_whole))))))))))
 
 =========================================
 Simple Lambda Capture
@@ -223,7 +223,7 @@ function main(): Bool {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
     (object_id
       (entity_id))
@@ -234,7 +234,7 @@ function main(): Bool {
       (variable_statement
         (variable_expression
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (function_call
           (identifier)
@@ -271,7 +271,8 @@ function main(): Bool {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (lambda_type
@@ -285,14 +286,15 @@ function main(): Bool {
           (identifier)
           (entity_definition
             (entity_id)
-            (num_lit))))
+            (num_whole))))
       (return_statement
         (function_call
           (identifier)
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -305,8 +307,9 @@ function main(): Bool {
             (entity_id)
             (function_return_parameters
               (entity_id))
-            (identifier)
-            (identifier)))))))
+            (entity_access
+              (identifier)))
+          (identifier))))))
 
 =========================================
 Simple Lambda Reference Infer
@@ -333,7 +336,8 @@ function main(): Bool {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (lambda_type
@@ -347,14 +351,15 @@ function main(): Bool {
           (identifier)
           (entity_definition
             (entity_id)
-            (num_lit))))
+            (num_whole))))
       (return_statement
         (function_call
           (identifier)
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -366,5 +371,6 @@ function main(): Bool {
             (identifier)
             (function_body
               (return_statement
-                (identifier)
+                (entity_access
+                  (identifier))
                 (identifier)))))))))

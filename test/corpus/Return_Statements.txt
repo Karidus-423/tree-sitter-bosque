@@ -14,13 +14,13 @@ function main(): (|Int, Bool|) {
       (entity_id))
     (function_parameters)
     (function_return_parameters
-      (elist
-        (identifier)
-        (identifier)))
+      (elist_type
+        (entity_id)
+        (entity_id)))
     (function_body
       (return_statement
         (elist
-          (num_lit)
+          (num_whole)
           (true_lit))))))
 
 =======================================
@@ -39,12 +39,12 @@ function main(): (|Int, Bool|) {
       (entity_id))
     (function_parameters)
     (function_return_parameters
-      (elist
-        (identifier)
-        (identifier)))
+      (elist_type
+        (entity_id)
+        (entity_id)))
     (function_body
       (return_statement
-        (num_lit)
+        (num_whole)
         (true_lit)))))
 
 =======================================
@@ -66,7 +66,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =======================================
 Simple Return 2

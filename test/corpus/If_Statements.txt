@@ -23,9 +23,9 @@ function main(): Int {
       (if_statement
         (true_lit)
         (return_statement
-          (num_lit)))
+          (num_whole)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 ===============================
 Simple If Statement Empty
@@ -51,7 +51,7 @@ function main(): Int {
       (if_statement
         (true_lit))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 ===============================
 If Statement ITest
@@ -83,14 +83,14 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
-          (num_lit)))
+          (num_whole)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =================================
 If Statement Binder ITest
@@ -122,14 +122,14 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
           (identifier)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =========================================
 If Statement ITest Binder and Ref
@@ -161,7 +161,7 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (variable_redefinition
           (identifier)
@@ -170,7 +170,7 @@ function main(): Int {
         (return_statement
           (identifier)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 =========================================
 If Statement ITest Binder and Reflow
@@ -202,12 +202,12 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (identifier)))))
 
@@ -236,9 +236,9 @@ function main(): Int {
       (if_statement
         (true_lit)
         (return_statement
-          (num_lit))
+          (num_whole))
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ===============================
 Simple If Else Statement Empty
@@ -267,9 +267,9 @@ function main(): Int {
       (if_statement
         (true_lit)
         (return_statement
-          (num_lit)))
+          (num_whole)))
       (return_statement
-        (num_lit)))))
+        (num_whole)))))
 
 ===============================
 If Else Statement Binder
@@ -300,14 +300,14 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
-          (num_lit))
+          (num_whole))
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 =================================
 If Else Statement Binder and Ref
@@ -338,14 +338,14 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
           (identifier))
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ======================================
 If Else Statement Binder Some and Ref
@@ -376,7 +376,7 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (variable_redefinition
           (identifier)
@@ -385,7 +385,7 @@ function main(): Int {
         (return_statement
           (identifier))
         (return_statement
-          (num_lit))))))
+          (num_whole))))))
 
 ======================================
 If Else Statement Some and Ref
@@ -416,12 +416,12 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
-          (num_lit))
+          (num_whole))
         (return_statement
           (identifier))))))
 
@@ -455,11 +455,11 @@ function main(): Int {
           (option
             (entity_id))
           (special_lit
-            (num_lit))))
+            (num_whole))))
       (if_statement
         (identifier)
         (ITest)
         (return_statement
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (identifier)))))

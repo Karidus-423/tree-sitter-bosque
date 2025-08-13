@@ -67,9 +67,9 @@ module.exports = grammar({
 
     namespace: ($) =>
       seq(
-        "declare",
+        optional("declare"),
         "namespace",
-        $._namespace_id,
+        field("namespace_id", $.identifier),
         choice(
           ";",
           $.namespace_import,
@@ -84,9 +84,9 @@ module.exports = grammar({
         )),
         "}",
       ),
-    _namespace_import_simple: ($) => seq("using", $._namespace_id, ";"),
+    _namespace_import_simple: ($) => seq("using", $.identifier, ";"),
     _namespace_import_with_alias: ($) =>
-      seq("using", $._namespace_id, "as", $._namespace_id, ";"),
+      seq("using", $.identifier, "as", $.identifier, ";"),
 
     type_decl: ($) =>
       seq(
@@ -101,11 +101,11 @@ module.exports = grammar({
       seq(
         optional("public"),
         "function",
-        $._function_signature,
+        $.function_signature,
       ),
-    _function_signature: ($) =>
+    function_signature: ($) =>
       seq(
-        $.object_id,
+        field("function_id", $._object_id),
         $.function_parameters,
         optional($.function_return_parameters),
         $.function_body,
@@ -156,7 +156,7 @@ module.exports = grammar({
     datatype: ($) =>
       seq(
         "datatype",
-        $.object_id,
+        $._object_id,
         optional($._inherit),
         optional($._datatype_block),
         "of",
@@ -226,8 +226,7 @@ module.exports = grammar({
         $.const_decl,
         $.invariant,
       ),
-    _entity_method: ($) =>
-      seq(optional("ref"), "method", $._function_signature),
+    _entity_method: ($) => seq(optional("ref"), "method", $.function_signature),
     _entity_member: ($) =>
       seq(
         "field",
@@ -434,7 +433,7 @@ module.exports = grammar({
       ),
     _expression_not_binary: ($) =>
       choice(
-        $.num_lit,
+        $._num_lit,
         $.this,
         $._strings,
         $.true_lit,
@@ -556,9 +555,9 @@ module.exports = grammar({
     enum_access: ($) => seq($._entity_id, "#", $._enum_member),
     elist_type: ($) =>
       seq(
-        "(|",
+        token("(|"),
         repeat(seq($._type, optional(","))),
-        "|)",
+        token("|)"),
       ),
     elist: ($) =>
       seq(
@@ -665,27 +664,36 @@ module.exports = grammar({
     },
 
     comment: (_) =>
-      token(choice(
-        seq("%%", /(\\+(.|\r?\n)|[^\\\n])*/),
-      )),
-    identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
+      choice(
+        //Line
+        seq("%%", /(\\+(.|\r?)|[^\\\n])*/),
+        //Multiline
+        seq("%*", /(\\+(.|\r?\n)|[^\\\n])*/, "*%"),
+        //Inline
+        seq("%**", /[^*\n]*(\*+[^*\n]*)*/, "**%"),
+      ),
+    identifier: ($) => seq(optional("$"), /[_a-zA-Z][_a-zA-Z0-9]*/),
     this: ($) => token("this"),
-    _namespace_id: ($) => alias($.identifier, $.namespace_id),
     _entity_id: ($) => alias($.identifier, $.entity_id),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     none_lit: (_) => token("none"),
     true_lit: (_) => token("true"),
     false_lit: (_) => token("false"),
-    num_lit: ($) =>
+    _num_lit: ($) => choice($.num_float, $.num_whole),
+    num_whole: ($) =>
       choice(
         /[+-]?[0-9]*[iI]/,
-        /[+-]?\d+\.\d+f/,
-        /[+-]?[0-9]*\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
         /[+-]?[0-9]+(?:\.[0-9]+)?lat[+-]?[0-9]+(?:\.[0-9]+)?long/,
         /[+-]?[0-9]+(?:\.[0-9]+)?[+-]?[0-9]+(?:\.[0-9]+)?j/,
         /[+]?[0-9]*[nN]/,
         /-?[0-9]+\/[1-9][0-9]*R/,
       ),
+    num_float: ($) =>
+      choice(
+        /[+-]?\d+\.\d+f/,
+        /[+-]?[0-9]*\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
+      ),
+
     _strings: ($) => choice($.string, $.cstring, $.string_regex),
     string: ($) => /"(?:[^%"\\]|%.)*"/u,
     cstring: ($) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
@@ -697,7 +705,7 @@ module.exports = grammar({
         optional("c"),
       )),
 
-    object_id: ($) =>
+    _object_id: ($) =>
       choice(
         $._entity_id,
         $._concept_type,

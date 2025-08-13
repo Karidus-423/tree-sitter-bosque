@@ -21,7 +21,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -73,8 +73,8 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)
-          (num_lit))))))
+          (num_whole)
+          (num_whole))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Ordered
@@ -117,9 +117,9 @@ function main(): Int {
         (function_call
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Unordered
@@ -162,9 +162,9 @@ function main(): Int {
         (function_call
           (identifier)
           (identifier)
-          (num_lit)
+          (num_whole)
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ===============================
 Function Call with Scoping
@@ -208,7 +208,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_id)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (function_call
           (identifier)
@@ -258,8 +258,8 @@ function main(): Int {
         (function_call
           (identifier)
           (identifier)
-          (num_lit)
-          (num_lit))))))
+          (num_whole)
+          (num_whole))))))
 
 ========================================
 Function Call with Accessing Mixed 󰂡
@@ -301,9 +301,9 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)
+          (num_whole)
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ========================================
 Function Call with Accessing Mixed 󱃮
@@ -346,8 +346,8 @@ function main(): Int {
         (function_call
           (identifier)
           (identifier)
-          (num_lit)
-          (num_lit))))))
+          (num_whole)
+          (num_whole))))))
 
 ========================================
 Function Call with Rest
@@ -388,10 +388,10 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)
+          (num_whole)
           (identifier)
-          (num_lit)
-          (num_lit))))))
+          (num_whole)
+          (num_whole))))))
 
 ========================================
 Function Call with Ref
@@ -419,7 +419,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -431,7 +431,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_id)
-          (num_lit)))
+          (num_whole)))
       (return_statement
         (function_call
           (identifier)
@@ -459,12 +459,12 @@ function main(): Int {
     (function_parameters
       (identifier)
       (entity_id)
-      (num_lit)
+      (num_whole)
       (identifier)
       (entity_id)
       (binary_expression
         (identifier)
-        (num_lit)))
+        (num_whole)))
     (function_return_parameters
       (entity_id))
     (function_body
@@ -482,8 +482,8 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit)
-          (num_lit))))))
+          (num_whole)
+          (num_whole))))))
 
 ==================================
 Function Call Pre
@@ -511,10 +511,10 @@ function main(): Int {
       (pre_condition
         (binary_expression
           (identifier)
-          (num_lit))))
+          (num_whole))))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -525,7 +525,7 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==================================
 Function Call Pre Multiple
@@ -553,14 +553,14 @@ function main(): Int {
       (pre_condition
         (binary_expression
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (pre_condition
         (binary_expression
           (identifier)
-          (num_lit))))
+          (num_whole))))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -571,7 +571,7 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==================================
 Function Call Post
@@ -598,10 +598,10 @@ function main(): Int {
       (post_condition
         (binary_expression
           (identifier)
-          (num_lit))))
+          (num_whole))))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -612,7 +612,7 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==================================
 Function Call Post Multiple
@@ -640,14 +640,14 @@ function main(): Int {
       (post_condition
         (binary_expression
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (post_condition
         (binary_expression
           (identifier)
-          (num_lit))))
+          (num_whole))))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -658,7 +658,7 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==================================
 Function Call Pre & Post
@@ -685,14 +685,14 @@ function main(): Int {
       (pre_condition
         (binary_expression
           (identifier)
-          (num_lit)))
+          (num_whole)))
       (post_condition
         (binary_expression
           (identifier)
-          (num_lit))))
+          (num_whole))))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -703,7 +703,7 @@ function main(): Int {
       (return_statement
         (function_call
           (identifier)
-          (num_lit))))))
+          (num_whole))))))
 
 ==================================
 Function Call Ref Params
@@ -735,7 +735,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (num_lit))))
+        (num_whole))))
   (function_definition
     (object_id
       (entity_id))
@@ -747,8 +747,7 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_definition
-            (object_id
-              (entity_id)))))
+            (entity_id))))
       (return_statement
         (function_call
           (identifier)

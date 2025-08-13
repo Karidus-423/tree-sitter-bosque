@@ -18,7 +18,8 @@ function main(x: Foo): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -26,7 +27,8 @@ function main(x: Foo): Int {
       (entity_id))
     (function_body
       (return_statement
-        (identifier)
+        (entity_access
+          (identifier))
         (identifier)))))
 
 =======================================
@@ -53,7 +55,8 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -61,16 +64,18 @@ function main(): Int {
       (return_statement
         (entity_definition
           (entity_id)
-          (num_lit)))))
+          (num_whole)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
-        (function_call
-          (identifier))
+        (entity_access
+          (function_call
+            (identifier)))
         (identifier)))))
 
 =======================================
@@ -94,7 +99,8 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -104,13 +110,14 @@ function main(): Int {
           (identifier)
           (entity_definition
             (entity_id)
-            (num_lit))))
+            (num_whole))))
       (return_statement
-        (entity_update
-          (identifier)
-          (identifier)
-          (variable_redefinition)
-          (num_lit))
+        (entity_access
+          (entity_update
+            (identifier)
+            (identifier)
+            (variable_redefinition)
+            (num_whole)))
         (identifier)))))
 
 =======================================
@@ -134,7 +141,8 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -144,15 +152,16 @@ function main(): Int {
           (identifier)
           (entity_definition
             (entity_id)
-            (num_lit))))
+            (num_whole))))
       (return_statement
-        (entity_update
-          (identifier)
-          (identifier)
-          (variable_redefinition)
-          (binary_expression
+        (entity_access
+          (entity_update
             (identifier)
-            (num_lit)))
+            (identifier)
+            (variable_redefinition)
+            (binary_expression
+              (identifier)
+              (num_whole))))
         (identifier)))))
 
 =======================================
@@ -188,7 +197,8 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -200,17 +210,19 @@ function main(): Int {
             (entity_id)
             (entity_definition
               (entity_id)
-              (num_lit)
-              (num_lit)))))
+              (num_whole)
+              (num_whole)))))
       (variable_statement
         (variable_expression
           (identifier)
-          (identifier)
+          (entity_access
+            (identifier))
           (entity_update
             (identifier)
             (identifier)
             (variable_redefinition)
-            (num_lit))))
+            (num_whole))))
       (return_statement
-        (identifier)
+        (entity_access
+          (identifier))
         (identifier)))))
