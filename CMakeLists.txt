@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-bosque
-        VERSION "0.0.1"
+        VERSION "0.0.8"
         DESCRIPTION "n/a"
         HOMEPAGE_URL "https://github.com/karidus-423/tree-sitter-bosque"
         LANGUAGES C)
