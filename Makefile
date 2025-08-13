@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-bosque
 HOMEPAGE_URL := https://github.com/karidus-423/tree-sitter-bosque
-VERSION := 0.0.8
+VERSION := 0.0.9
 
 # repository
 SRC_DIR := src
