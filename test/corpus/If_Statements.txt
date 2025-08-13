@@ -13,10 +13,18 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (boolean_lit)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (if_statement
+        (true_lit)
+        (return_statement
+          (num_lit)))
+      (return_statement
+        (num_lit)))))
 
 ===============================
 Simple If Statement Empty
@@ -32,9 +40,16 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (boolean_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (if_statement
+        (true_lit))
+      (return_statement
+        (num_lit)))))
 
 ===============================
 If Statement ITest
@@ -53,13 +68,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (num_lit)))
+      (return_statement
+        (num_lit)))))
 
 =================================
 If Statement Binder ITest
@@ -78,13 +106,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (identifier)))
+      (return_statement
+        (num_lit)))))
 
 =========================================
 If Statement ITest Binder and Ref
@@ -103,14 +144,28 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (variable_redefinition
+          (identifier)
+          (identifier))
+        (ITest)
+        (return_statement
+          (identifier)))
+      (return_statement
+        (num_lit)))))
 
 =========================================
 If Statement ITest Binder and Reflow
@@ -129,13 +184,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (num_lit)))
+      (return_statement
+        (identifier)))))
 
 ===============================
 Simple If Else Statement
@@ -152,10 +220,18 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (boolean_lit)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (if_statement
+        (true_lit)
+        (return_statement
+          (num_lit))
+        (return_statement
+          (num_lit))))))
 
 ===============================
 Simple If Else Statement Empty
@@ -174,10 +250,18 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (boolean_lit)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (if_statement
+        (true_lit)
+        (return_statement
+          (num_lit)))
+      (return_statement
+        (num_lit)))))
 
 ===============================
 If Else Statement Binder
@@ -195,13 +279,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (num_lit))
+        (return_statement
+          (num_lit))))))
 
 =================================
 If Else Statement Binder and Ref
@@ -219,13 +316,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (identifier))
+        (return_statement
+          (num_lit))))))
 
 ======================================
 If Else Statement Binder Some and Ref
@@ -243,14 +353,28 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (variable_redefinition
+          (identifier)
+          (identifier))
+        (ITest)
+        (return_statement
+          (identifier))
+        (return_statement
+          (num_lit))))))
 
 ======================================
 If Else Statement Some and Ref
@@ -268,13 +392,26 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (num_lit))
+        (return_statement
+          (identifier))))))
 
 =========================================
 If Else Statement Binder Some and Empty
@@ -293,10 +430,23 @@ function main(): Int {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (num_lit)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (option
+            (entity_id))
+          (special_lit
+            (num_lit))))
+      (if_statement
+        (identifier)
+        (ITest)
+        (return_statement
+          (num_lit)))
+      (return_statement
+        (identifier)))))

@@ -13,15 +13,37 @@ function main(): Bool {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (binary_expression
+            (lambda_expression
+              (identifier)
+              (entity_id)
+              (function_return_parameters
+                (entity_id))
+              (identifier))
+            (num_lit)))))))
 
 =========================================
 Simple Lambda Infer Argument
@@ -37,15 +59,38 @@ function main(): Bool {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (function_return_parameters
+              (entity_id))
+            (function_body
+              (return_statement
+                (binary_expression
+                  (identifier)
+                  (num_lit))))))))))
 
 =========================================
 Simple Lambda with Return
@@ -62,15 +107,37 @@ function main(): Bool {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (entity_id)
+            (function_body
+              (return_statement
+                (binary_expression
+                  (identifier)
+                  (num_lit))))))))))
 
 =========================================
 Simple Lambda Infer Both
@@ -87,15 +154,36 @@ function main(): Bool {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (function_body
+              (return_statement
+                (binary_expression
+                  (identifier)
+                  (num_lit))))))))))
 
 =========================================
 Simple Lambda Capture
@@ -113,17 +201,40 @@ function main(): Bool {
 ---
 
 (source_file
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (num_lit)))
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (function_body
+              (return_statement
+                (binary_expression
+                  (identifier)
+                  (identifier))))))))))
 
 =========================================
 Simple Lambda Reference Full
@@ -145,26 +256,47 @@ function main(): Bool {
 ---
 
 (source_file
-  (entity_id
+  (entity
+    (entity_id)
+    (identifier)
     (entity_id))
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (entity_id)
+            (function_return_parameters
+              (entity_id))
+            (identifier)
+            (identifier)))))))
 
 =========================================
 Simple Lambda Reference Infer
@@ -186,21 +318,43 @@ function main(): Bool {
 ---
 
 (source_file
-  (entity_id
+  (entity
+    (entity_id)
+    (identifier)
     (entity_id))
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters
+      (identifier)
+      (lambda_type
+        (entity_id)
+        (entity_id)))
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (variable_statement
+        (variable_expression
+          (identifier)
+          (entity_definition
+            (entity_id)
+            (num_lit))))
+      (return_statement
+        (function_call
+          (identifier)
+          (identifier)
+          (identifier)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (function_call
+          (identifier)
+          (lambda_expression
+            (identifier)
+            (function_body
+              (return_statement
+                (identifier)
+                (identifier)))))))))

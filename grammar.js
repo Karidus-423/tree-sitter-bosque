@@ -24,7 +24,7 @@ const PREC = {
   SHIFT: 9,
   ADD: 10,
   MULTIPLY: 11,
-  SIZEOF: 13,
+  LAMBDA: 13,
   UNARY: 14,
   CALL: 15,
   FIELD: 16,
@@ -42,6 +42,8 @@ module.exports = grammar({
     [$.type_cast_expression, $.binary_expression],
     [$._expression_not_binary, $._concrete_type],
     [$.type_cast_expression, $.unary_expression, $.binary_expression],
+    [$.type_cast_expression, $.lambda_expression, $.binary_expression],
+    [$.lambda_type, $.bind_regex],
   ],
 
   rules: {
@@ -292,6 +294,7 @@ module.exports = grammar({
         $.assert_statement,
         $.return_statement,
         $.match_statement,
+        $.if_statement,
         $.switch_statement,
       ),
     expression_statement: ($) => seq($._expression, ";"),
@@ -308,6 +311,36 @@ module.exports = grammar({
           ),
         )),
         ";",
+      ),
+    if_statement: ($) =>
+      seq(
+        "if",
+        "(",
+        choice($._expression, $.variable_redefinition),
+        ")",
+        optional($.ITest),
+        $._if_body,
+        optional(
+          seq(
+            "else",
+            $._if_body,
+          ),
+        ),
+      ),
+    _if_body: ($) =>
+      seq(
+        "{",
+        optional(repeat($._statement)),
+        optional(";"),
+        "}",
+      ),
+    ITest: ($) =>
+      seq(
+        optional(repeat("@")),
+        choice(
+          "!some",
+          "some",
+        ),
       ),
     match_statement: ($) =>
       seq(
@@ -414,6 +447,7 @@ module.exports = grammar({
         $._constructor,
         $.type_cast_expression,
         $.import,
+        $.lambda_expression,
       ),
     type_cast_expression: ($) =>
       prec(PREC.CAST, seq($._expression, "<", $._type, ">")),
@@ -447,7 +481,6 @@ module.exports = grammar({
         ),
         "}",
       ),
-
     parenthesized_expression: ($) =>
       seq(
         "(",
@@ -549,6 +582,33 @@ module.exports = grammar({
         ")",
       ),
 
+    lambda_type: ($) =>
+      seq(
+        "fn",
+        "(",
+        optional("ref"),
+        $._type,
+        ")",
+        "->",
+        $._type,
+      ),
+    lambda_expression: ($) =>
+      prec(
+        PREC.LAMBDA,
+        seq(
+          "fn",
+          "(",
+          optional("ref"),
+          $.identifier,
+          optional(seq(":", $._type)),
+          ")",
+          optional($.function_return_parameters),
+          "=>",
+          choice($.function_body, $._expression),
+        ),
+      ),
+    // fn(x: Int): Int => x + 1i
+
     binary_expression: ($) => {
       const table = [
         ["+", PREC.ADD],
@@ -640,6 +700,7 @@ module.exports = grammar({
         $.some_type,
         $.map_type,
         $._concept_type,
+        $.lambda_type,
       ),
     _abstract_type: ($) =>
       choice(
