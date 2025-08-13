@@ -1,3 +1,7 @@
+==================================
+Nbody
+==================================
+
 %%
 %%This is a bosque nbody implementation of https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/nbody.html.
 %%
@@ -238,3 +242,5 @@ public function main(): Float {
     %%return system_end.1.energy();
 }
 
+
+---

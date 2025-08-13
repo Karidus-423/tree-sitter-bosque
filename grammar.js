@@ -44,6 +44,7 @@ module.exports = grammar({
     [$.type_cast_expression, $.unary_expression, $.binary_expression],
     [$.type_cast_expression, $.lambda_expression, $.binary_expression],
     [$.lambda_type, $.bind_regex],
+    [$.elist_type, $.elist],
   ],
 
   rules: {
@@ -207,15 +208,22 @@ module.exports = grammar({
     _entity_block: ($) =>
       seq(
         "{",
-        optional(repeat($._statement)),
+        optional(
+          repeat(
+            choice(
+              $._statement,
+              $._entity_field,
+            ),
+          ),
+        ),
         "}",
       ),
     _entity_field: ($) =>
       choice(
         $._entity_method,
         $._entity_member,
-        $.const_decl,
         $.function_definition,
+        $.const_decl,
         $.invariant,
       ),
     _entity_method: ($) =>
@@ -240,7 +248,7 @@ module.exports = grammar({
         $._expression,
         ";",
       ),
-    _entity_access: ($) =>
+    entity_access: ($) =>
       seq(
         prec(
           PREC.FIELD,
@@ -249,15 +257,11 @@ module.exports = grammar({
             ".",
           ),
         ),
-        choice(
-          $.identifier,
-          $.function_call,
-          $.entity_update,
-        ),
+        choice($._expression, /[+-]?[0-9]*/),
       ),
     entity_definition: ($) =>
       seq(
-        $.object_id,
+        $._concrete_type,
         "{",
         optional(repeat(
           seq(
@@ -442,7 +446,7 @@ module.exports = grammar({
         $.parenthesized_expression,
         $.function_call,
         $.enum_access,
-        $._entity_access,
+        $.entity_access,
         $.entity_definition,
         $.entity_update,
         $.key_comparator,
@@ -485,10 +489,13 @@ module.exports = grammar({
         "}",
       ),
     parenthesized_expression: ($) =>
-      seq(
-        "(",
-        $._expression,
-        ")",
+      prec(
+        PREC.DEFAULT,
+        seq(
+          "(",
+          $._expression,
+          ")",
+        ),
       ),
     unary_expression: ($) =>
       prec.left(
@@ -547,6 +554,12 @@ module.exports = grammar({
         ),
       ),
     enum_access: ($) => seq($._entity_id, "#", $._enum_member),
+    elist_type: ($) =>
+      seq(
+        "(|",
+        repeat(seq($._type, optional(","))),
+        "|)",
+      ),
     elist: ($) =>
       seq(
         "(|",
@@ -606,8 +619,8 @@ module.exports = grammar({
           optional(seq(":", $._type)),
           ")",
           optional($.function_return_parameters),
-          "=>",
-          choice($.function_body, $._expression),
+          field("lambda_define", "=>"),
+          field("lambda_body", choice($.function_body, $._expression)),
         ),
       ),
     // fn(x: Int): Int => x + 1i
@@ -666,8 +679,8 @@ module.exports = grammar({
     num_lit: ($) =>
       choice(
         /[+-]?[0-9]*[iI]/,
-        /[+-]?[0-9]\.[0-9]f/,
-        /[+-]?[0-9]\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
+        /[+-]?\d+\.\d+f/,
+        /[+-]?[0-9]*\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
         /[+-]?[0-9]+(?:\.[0-9]+)?lat[+-]?[0-9]+(?:\.[0-9]+)?long/,
         /[+-]?[0-9]+(?:\.[0-9]+)?[+-]?[0-9]+(?:\.[0-9]+)?j/,
         /[+]?[0-9]*[nN]/,
@@ -700,16 +713,16 @@ module.exports = grammar({
         $.primitive_type,
         $.import,
         $._entity_id,
-        $.elist,
+        $.elist_type,
         $.list,
-        $.option,
-        $.some_type,
-        $.map_type,
         $._concept_type,
         $.lambda_type,
       ),
     _abstract_type: ($) =>
       choice(
+        $.some_type,
+        $.option,
+        $.map_type,
         $.result_type,
         $.bind_regex,
         $.string_regex,

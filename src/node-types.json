@@ -9,7 +9,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -30,6 +30,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -128,13 +132,9 @@
     "named": true,
     "fields": {
       "left": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": ".",
-            "named": false
-          },
           {
             "type": "binary_expression",
             "named": true
@@ -153,6 +153,10 @@
           },
           {
             "type": "elist",
+            "named": true
+          },
+          {
+            "type": "entity_access",
             "named": true
           },
           {
@@ -340,13 +344,9 @@
         ]
       },
       "right": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": ".",
-            "named": false
-          },
           {
             "type": "binary_expression",
             "named": true
@@ -365,6 +365,10 @@
           },
           {
             "type": "elist",
+            "named": true
+          },
+          {
+            "type": "entity_access",
             "named": true
           },
           {
@@ -472,7 +476,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -544,6 +548,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -663,6 +671,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -790,6 +802,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -972,6 +992,14 @@
           "named": true
         },
         {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -1132,6 +1160,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -1334,6 +1370,10 @@
           "named": true
         },
         {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -1425,7 +1465,7 @@
     }
   },
   {
-    "type": "entity",
+    "type": "elist_type",
     "named": true,
     "fields": {},
     "children": {
@@ -1433,23 +1473,15 @@
       "required": false,
       "types": [
         {
-          "type": "assert_statement",
+          "type": "bind_regex",
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
           "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "expression_statement",
-          "named": true
-        },
-        {
-          "type": "if_statement",
           "named": true
         },
         {
@@ -1469,7 +1501,174 @@
           "named": true
         },
         {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entity",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assert_statement",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "function_parameters",
+          "named": true
+        },
+        {
+          "type": "function_return_parameters",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_type",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "object_id",
           "named": true
         },
         {
@@ -1477,7 +1676,23 @@
           "named": true
         },
         {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "result_type",
           "named": true
         },
         {
@@ -1489,7 +1704,35 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
           "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         },
         {
@@ -1500,7 +1743,7 @@
     }
   },
   {
-    "type": "entity_definition",
+    "type": "entity_access",
     "named": true,
     "fields": {},
     "children": {
@@ -1525,6 +1768,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -1576,7 +1823,142 @@
           "named": true
         },
         {
-          "type": "object_id",
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entity_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_type",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
           "named": true
         },
         {
@@ -1585,6 +1967,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
           "named": true
         },
         {
@@ -1648,6 +2034,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -1788,7 +2178,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -1809,6 +2199,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -1970,6 +2364,10 @@
           "named": true
         },
         {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -2120,6 +2518,14 @@
           "named": true
         },
         {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -2255,7 +2661,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -2343,6 +2749,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -2477,7 +2887,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -2536,7 +2946,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -2557,6 +2967,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -2680,6 +3094,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -2808,61 +3230,154 @@
   {
     "type": "lambda_expression",
     "named": true,
-    "fields": {},
+    "fields": {
+      "lambda_body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "compound_and",
+            "named": true
+          },
+          {
+            "type": "compound_or",
+            "named": true
+          },
+          {
+            "type": "cstring",
+            "named": true
+          },
+          {
+            "type": "elist",
+            "named": true
+          },
+          {
+            "type": "entity_access",
+            "named": true
+          },
+          {
+            "type": "entity_definition",
+            "named": true
+          },
+          {
+            "type": "entity_update",
+            "named": true
+          },
+          {
+            "type": "enum_access",
+            "named": true
+          },
+          {
+            "type": "false_lit",
+            "named": true
+          },
+          {
+            "type": "function_body",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "key_comparator",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "map_constructor",
+            "named": true
+          },
+          {
+            "type": "none_lit",
+            "named": true
+          },
+          {
+            "type": "num_lit",
+            "named": true
+          },
+          {
+            "type": "option_constructor",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "result_constructor",
+            "named": true
+          },
+          {
+            "type": "special_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true_lit",
+            "named": true
+          },
+          {
+            "type": "type_cast_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "lambda_define": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "=>",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
           "type": "bind_regex",
           "named": true
         },
         {
-          "type": "compound_and",
-          "named": true
-        },
-        {
-          "type": "compound_or",
-          "named": true
-        },
-        {
-          "type": "cstring",
-          "named": true
-        },
-        {
-          "type": "elist",
-          "named": true
-        },
-        {
-          "type": "entity_definition",
+          "type": "elist_type",
           "named": true
         },
         {
           "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "entity_update",
-          "named": true
-        },
-        {
-          "type": "enum_access",
-          "named": true
-        },
-        {
-          "type": "false_lit",
-          "named": true
-        },
-        {
-          "type": "function_body",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2878,14 +3393,6 @@
           "named": true
         },
         {
-          "type": "key_comparator",
-          "named": true
-        },
-        {
-          "type": "lambda_expression",
-          "named": true
-        },
-        {
           "type": "lambda_type",
           "named": true
         },
@@ -2894,19 +3401,7 @@
           "named": true
         },
         {
-          "type": "map_constructor",
-          "named": true
-        },
-        {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "none_lit",
-          "named": true
-        },
-        {
-          "type": "num_lit",
           "named": true
         },
         {
@@ -2914,19 +3409,7 @@
           "named": true
         },
         {
-          "type": "option_constructor",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
-          "named": true
-        },
-        {
           "type": "primitive_type",
-          "named": true
-        },
-        {
-          "type": "result_constructor",
           "named": true
         },
         {
@@ -2938,31 +3421,7 @@
           "named": true
         },
         {
-          "type": "special_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
           "type": "string_regex",
-          "named": true
-        },
-        {
-          "type": "this",
-          "named": true
-        },
-        {
-          "type": "true_lit",
-          "named": true
-        },
-        {
-          "type": "type_cast_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
           "named": true
         }
       ]
@@ -2981,7 +3440,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -3040,7 +3499,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -3112,6 +3571,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -3222,7 +3685,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -3296,7 +3759,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -3433,7 +3896,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -3505,6 +3968,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -3607,7 +4074,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -3628,6 +4095,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -3726,7 +4197,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -3747,6 +4218,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -3845,7 +4320,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -3866,6 +4341,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -3988,6 +4467,10 @@
           "named": true
         },
         {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -4095,7 +4578,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -4167,6 +4650,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -4273,7 +4760,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -4370,6 +4857,10 @@
         },
         {
           "type": "entity",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -4508,7 +4999,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
@@ -4529,6 +5020,10 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -4656,6 +5151,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -4838,6 +5341,14 @@
           "named": true
         },
         {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
           "type": "entity_definition",
           "named": true
         },
@@ -4973,7 +5484,7 @@
           "named": true
         },
         {
-          "type": "elist",
+          "type": "elist_type",
           "named": true
         },
         {
@@ -5024,13 +5535,9 @@
     "named": true,
     "fields": {
       "unary_target": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": ".",
-            "named": false
-          },
           {
             "type": "binary_expression",
             "named": true
@@ -5049,6 +5556,10 @@
           },
           {
             "type": "elist",
+            "named": true
+          },
+          {
+            "type": "entity_access",
             "named": true
           },
           {
@@ -5191,6 +5702,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
@@ -5346,6 +5865,14 @@
         },
         {
           "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
           "named": true
         },
         {
