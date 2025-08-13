@@ -14,7 +14,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -22,7 +23,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -47,7 +49,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -61,7 +64,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -88,7 +92,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -102,7 +107,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -131,7 +137,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -145,7 +152,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -175,7 +183,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -189,7 +198,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -223,7 +233,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -237,7 +248,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -265,7 +277,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -279,7 +292,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -307,7 +321,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -321,7 +336,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -349,7 +365,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -362,7 +379,8 @@ function main(): Int {
       (return_statement
         (identifier))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -392,7 +410,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -402,7 +421,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -434,7 +454,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id)
@@ -452,7 +473,8 @@ function main(): Int {
           (identifier)
           (identifier)))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -479,7 +501,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -493,7 +516,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -519,7 +543,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -537,7 +562,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -562,7 +588,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -576,7 +603,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -602,7 +630,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -620,7 +649,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -645,7 +675,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -663,7 +694,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -694,7 +726,8 @@ function main(): Int {
   (entity
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -704,7 +737,8 @@ function main(): Int {
       (return_statement
         (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -713,7 +747,8 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_definition
-            (entity_id))))
+            (object_id
+              (entity_id)))))
       (return_statement
         (function_call
           (identifier)

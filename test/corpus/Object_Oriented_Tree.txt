@@ -14,20 +14,23 @@ function main(): Int {
 
 (source_file
   (datatype
-    (entity_id)
+    (object_id
+      (entity_id))
     (identifier)
     (entity_id)
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
+          (object_id
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -90,22 +93,25 @@ function main(): Int {
 
 (source_file
   (datatype
-    (entity_id)
-    (entity_id)
+    (object_id
+      (entity_id)
+      (entity_id))
     (identifier)
     (entity_id)
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
-          (entity_id)
+          (object_id
+            (entity_id)
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -456,14 +462,16 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
+          (object_id
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -539,14 +547,16 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
+          (object_id
+            (entity_id))
           (num_lit)
           (true_lit))
         (identifier)))))
@@ -578,15 +588,17 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
-          (entity_id)
+          (object_id
+            (entity_id)
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -617,15 +629,17 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
-          (entity_id)
+          (object_id
+            (entity_id)
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -658,14 +672,16 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
+          (object_id
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -873,18 +889,23 @@ function main(): Int {
 (source_file
   (entity
     (entity_id)
-    (identifier)
-    (entity_id)
-    (num_lit))
+    (variable_statement
+      (variable_redefinition
+        (identifier)
+        (identifier)
+        (entity_id)
+        (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
     (function_body
       (return_statement
         (entity_definition
-          (entity_id)
+          (object_id
+            (entity_id))
           (num_lit))
         (identifier)))))
 
@@ -940,12 +961,15 @@ function main(): Int {
 (source_file
   (entity
     (entity_id)
-    (const_decl
-      (identifier)
-      (entity_id)
-      (num_lit)))
+    (variable_statement
+      (variable_redefinition
+        (identifier)
+        (identifier)
+        (entity_id)
+        (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -973,12 +997,15 @@ function main(): Int {
   (entity
     (entity_id)
     (entity_id)
-    (const_decl
-      (identifier)
-      (entity_id)
-      (num_lit)))
+    (variable_statement
+      (variable_redefinition
+        (identifier)
+        (identifier)
+        (entity_id)
+        (num_lit))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))

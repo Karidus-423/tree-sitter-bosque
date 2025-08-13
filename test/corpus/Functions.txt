@@ -10,7 +10,8 @@ function main() {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_body
       (return_statement))))
@@ -27,7 +28,8 @@ function main(k: CString) {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))
@@ -46,7 +48,8 @@ function main(k: CString): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))

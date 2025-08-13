@@ -14,6 +14,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
           "name": "namespace"
         },
         {
@@ -184,6 +188,18 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "public"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "STRING",
           "value": "function"
         },
@@ -198,7 +214,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_object_id"
+          "name": "object_id"
         },
         {
           "type": "SYMBOL",
@@ -475,7 +491,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_object_id"
+          "name": "object_id"
         },
         {
           "type": "CHOICE",
@@ -737,7 +753,7 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "_entity_field"
+                "name": "_statement"
               }
             },
             {
@@ -911,7 +927,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_object_id"
+          "name": "object_id"
         },
         {
           "type": "STRING",
@@ -1721,6 +1737,10 @@
         {
           "type": "SYMBOL",
           "name": "num_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "this"
         },
         {
           "type": "SYMBOL",
@@ -3199,18 +3219,37 @@
         }
       ]
     },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "%%"
+              },
+              {
+                "type": "PATTERN",
+                "value": "(\\\\+(.|\\r?\\n)|[^\\\\\\n])*"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "identifier": {
       "type": "PATTERN",
       "value": "[$]?[_a-zA-Z][_a-zA-Z0-9]*"
     },
     "this": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "this"
-        }
-      ]
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "this"
+      }
     },
     "_namespace_id": {
       "type": "ALIAS",
@@ -3238,15 +3277,6 @@
       },
       "named": true,
       "value": "enum_member"
-    },
-    "type_id": {
-      "type": "ALIAS",
-      "content": {
-        "type": "SYMBOL",
-        "name": "identifier"
-      },
-      "named": true,
-      "value": "type_id"
     },
     "none_lit": {
       "type": "TOKEN",
@@ -3363,7 +3393,7 @@
         ]
       }
     },
-    "_object_id": {
+    "object_id": {
       "type": "CHOICE",
       "members": [
         {

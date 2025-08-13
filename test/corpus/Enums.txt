@@ -54,7 +54,8 @@ function main(): Int {
     (enum_member)
     (enum_member))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))

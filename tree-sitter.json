@@ -7,8 +7,11 @@
       "title": "Bosque",
       "scope": "source.bosque",
       "file-types": [
-        "bsq"
+        "bsq",
+        "bsqtest",
+        "bsqon"
       ],
+      "highlights": "queries/highlights.scm",
       "injection-regex": "^bosque$",
       "class-name": "TreeSitterBosque"
     }

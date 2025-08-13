@@ -105,6 +105,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -221,6 +225,10 @@
           },
           {
             "type": "string_regex",
+            "named": true
+          },
+          {
+            "type": "this",
             "named": true
           },
           {
@@ -432,6 +440,10 @@
             "named": true
           },
           {
+            "type": "this",
+            "named": true
+          },
+          {
             "type": "true_lit",
             "named": true
           },
@@ -607,6 +619,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -719,6 +735,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -857,6 +877,10 @@
           "named": true
         },
         {
+          "type": "object_id",
+          "named": true
+        },
+        {
           "type": "option",
           "named": true
         },
@@ -894,6 +918,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -1048,6 +1076,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -1070,6 +1102,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "assert_statement",
+          "named": true
+        },
         {
           "type": "binary_expression",
           "named": true
@@ -1115,6 +1151,10 @@
           "named": true
         },
         {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
           "type": "false_lit",
           "named": true
         },
@@ -1140,6 +1180,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
           "named": true
         },
         {
@@ -1175,11 +1219,19 @@
           "named": true
         },
         {
+          "type": "match_statement",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
         {
           "type": "num_lit",
+          "named": true
+        },
+        {
+          "type": "object_id",
           "named": true
         },
         {
@@ -1207,6 +1259,10 @@
           "named": true
         },
         {
+          "type": "return_statement",
+          "named": true
+        },
+        {
           "type": "some_type",
           "named": true
         },
@@ -1223,6 +1279,14 @@
           "named": true
         },
         {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -1232,6 +1296,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable_statement",
           "named": true
         }
       ]
@@ -1338,6 +1406,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -1361,27 +1433,7 @@
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
-          "type": "compound_and",
-          "named": true
-        },
-        {
-          "type": "compound_or",
-          "named": true
-        },
-        {
-          "type": "const_decl",
-          "named": true
-        },
-        {
-          "type": "cstring",
+          "type": "assert_statement",
           "named": true
         },
         {
@@ -1389,63 +1441,19 @@
           "named": true
         },
         {
-          "type": "entity_definition",
-          "named": true
-        },
-        {
           "type": "entity_id",
           "named": true
         },
         {
-          "type": "entity_update",
+          "type": "expression_statement",
           "named": true
         },
         {
-          "type": "enum_access",
-          "named": true
-        },
-        {
-          "type": "false_lit",
-          "named": true
-        },
-        {
-          "type": "function_body",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "function_parameters",
-          "named": true
-        },
-        {
-          "type": "function_return_parameters",
-          "named": true
-        },
-        {
-          "type": "identifier",
+          "type": "if_statement",
           "named": true
         },
         {
           "type": "import",
-          "named": true
-        },
-        {
-          "type": "invariant",
-          "named": true
-        },
-        {
-          "type": "key_comparator",
-          "named": true
-        },
-        {
-          "type": "lambda_expression",
           "named": true
         },
         {
@@ -1457,19 +1465,11 @@
           "named": true
         },
         {
-          "type": "map_constructor",
-          "named": true
-        },
-        {
           "type": "map_type",
           "named": true
         },
         {
-          "type": "none_lit",
-          "named": true
-        },
-        {
-          "type": "num_lit",
+          "type": "match_statement",
           "named": true
         },
         {
@@ -1477,23 +1477,11 @@
           "named": true
         },
         {
-          "type": "option_constructor",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
-          "named": true
-        },
-        {
           "type": "primitive_type",
           "named": true
         },
         {
-          "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
+          "type": "return_statement",
           "named": true
         },
         {
@@ -1501,27 +1489,11 @@
           "named": true
         },
         {
-          "type": "special_lit",
+          "type": "switch_statement",
           "named": true
         },
         {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "string_regex",
-          "named": true
-        },
-        {
-          "type": "true_lit",
-          "named": true
-        },
-        {
-          "type": "type_cast_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "variable_statement",
           "named": true
         }
       ]
@@ -1560,10 +1532,6 @@
           "named": true
         },
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "entity_update",
           "named": true
         },
@@ -1608,6 +1576,10 @@
           "named": true
         },
         {
+          "type": "object_id",
+          "named": true
+        },
+        {
           "type": "option_constructor",
           "named": true
         },
@@ -1629,6 +1601,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -1744,6 +1720,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -1904,6 +1884,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -2058,6 +2042,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -2081,10 +2069,6 @@
       "required": true,
       "types": [
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "function_body",
           "named": true
         },
@@ -2094,6 +2078,10 @@
         },
         {
           "type": "function_return_parameters",
+          "named": true
+        },
+        {
+          "type": "object_id",
           "named": true
         }
       ]
@@ -2233,6 +2221,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -2446,6 +2438,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -2636,6 +2632,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -2784,6 +2784,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -2943,6 +2947,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -3183,6 +3191,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -3394,6 +3406,21 @@
     "fields": {}
   },
   {
+    "type": "object_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "entity_id",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "option",
     "named": true,
     "fields": {},
@@ -3557,6 +3584,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -3669,6 +3700,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -3787,6 +3822,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -3899,6 +3938,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -4018,6 +4061,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -4195,6 +4242,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -4283,6 +4334,10 @@
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         },
         {
@@ -4422,6 +4477,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -4542,6 +4601,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -4720,6 +4783,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -4872,6 +4939,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -5053,6 +5124,10 @@
             "named": true
           },
           {
+            "type": "this",
+            "named": true
+          },
+          {
             "type": "true_lit",
             "named": true
           },
@@ -5223,6 +5298,10 @@
           "named": true
         },
         {
+          "type": "this",
+          "named": true
+        },
+        {
           "type": "true_lit",
           "named": true
         },
@@ -5371,6 +5450,10 @@
         },
         {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
           "named": true
         },
         {
@@ -5608,6 +5691,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "concept",
     "named": false
   },
@@ -5724,6 +5811,10 @@
     "named": false
   },
   {
+    "type": "public",
+    "named": false
+  },
+  {
     "type": "ref",
     "named": false
   },
@@ -5750,6 +5841,10 @@
   {
     "type": "switch",
     "named": false
+  },
+  {
+    "type": "this",
+    "named": true
   },
   {
     "type": "true_lit",

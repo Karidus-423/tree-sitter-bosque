@@ -50,9 +50,9 @@ public function main(f: Foo): Int {
 ---
 
 (source_file
-  (identifier)
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters
       (identifier)
       (entity_id))

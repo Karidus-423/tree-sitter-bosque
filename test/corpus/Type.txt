@@ -15,7 +15,8 @@ function main(): Flag {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -42,7 +43,8 @@ function main(): NVal {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -69,7 +71,8 @@ function main(): FVal {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -97,7 +100,8 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -129,7 +133,8 @@ function main(): SV1 {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -156,7 +161,8 @@ function main(): SV2 {
     (entity_id)
     (entity_id))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -185,7 +191,8 @@ function main(): SV1 {
       (entity_id)
       (string_regex)))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -221,7 +228,8 @@ function main(): SV2 {
         (entity_id)
         (identifier))))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))

@@ -51,6 +51,7 @@ module.exports = grammar({
 
     _components: ($) =>
       choice(
+        $.comment,
         $.namespace,
         $.type_decl,
         $.entity,
@@ -97,12 +98,13 @@ module.exports = grammar({
 
     function_definition: ($) =>
       seq(
+        optional("public"),
         "function",
         $._function_signature,
       ),
     _function_signature: ($) =>
       seq(
-        $._object_id,
+        $.object_id,
         $.function_parameters,
         optional($.function_return_parameters),
         $.function_body,
@@ -153,7 +155,7 @@ module.exports = grammar({
     datatype: ($) =>
       seq(
         "datatype",
-        $._object_id,
+        $.object_id,
         optional($._inherit),
         optional($._datatype_block),
         "of",
@@ -205,7 +207,7 @@ module.exports = grammar({
     _entity_block: ($) =>
       seq(
         "{",
-        optional(repeat($._entity_field)),
+        optional(repeat($._statement)),
         "}",
       ),
     _entity_field: ($) =>
@@ -255,7 +257,7 @@ module.exports = grammar({
       ),
     entity_definition: ($) =>
       seq(
-        $._object_id,
+        $.object_id,
         "{",
         optional(repeat(
           seq(
@@ -429,6 +431,7 @@ module.exports = grammar({
     _expression_not_binary: ($) =>
       choice(
         $.num_lit,
+        $.this,
         $._strings,
         $.true_lit,
         $.false_lit,
@@ -648,12 +651,15 @@ module.exports = grammar({
       }));
     },
 
+    comment: (_) =>
+      token(choice(
+        seq("%%", /(\\+(.|\r?\n)|[^\\\n])*/),
+      )),
     identifier: ($) => /[$]?[_a-zA-Z][_a-zA-Z0-9]*/,
-    this: ($) => seq("this"),
+    this: ($) => token("this"),
     _namespace_id: ($) => alias($.identifier, $.namespace_id),
     _entity_id: ($) => alias($.identifier, $.entity_id),
     _enum_member: ($) => alias($.identifier, $.enum_member),
-    type_id: ($) => alias($.identifier, $.type_id),
     none_lit: (_) => token("none"),
     true_lit: (_) => token("true"),
     false_lit: (_) => token("false"),
@@ -678,7 +684,7 @@ module.exports = grammar({
         optional("c"),
       )),
 
-    _object_id: ($) =>
+    object_id: ($) =>
       choice(
         $._entity_id,
         $._concept_type,

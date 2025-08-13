@@ -18,7 +18,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -61,7 +62,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -71,7 +73,8 @@ function main(): Int {
           (identifier)
           (entity_id)
           (entity_definition
-            (entity_id))))
+            (object_id
+              (entity_id)))))
       (match_statement
         (entity_id)
         (entity_id)
@@ -102,7 +105,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -143,7 +147,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -191,7 +196,8 @@ function main(): Int {
     (enum_member)
     (enum_member))
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))

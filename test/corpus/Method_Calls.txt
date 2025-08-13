@@ -25,7 +25,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (identifier)
+        (this)
         (identifier))))
   (function_definition
     (entity_id)
@@ -34,7 +34,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (identifier)
+        (this)
         (function_call
           (identifier))))))
 
@@ -67,7 +67,7 @@ function main(): Int {
       (entity_id))
     (function_body
       (return_statement
-        (identifier)
+        (this)
         (identifier))))
   (function_definition
     (entity_id)
@@ -99,7 +99,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -108,7 +109,8 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_definition
-            (entity_id)
+            (object_id
+              (entity_id))
             (num_lit))))
       (return_statement
         (identifier)
@@ -131,7 +133,8 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (entity_id)
+    (object_id
+      (entity_id))
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -140,7 +143,8 @@ function main(): Int {
         (variable_expression
           (identifier)
           (entity_definition
-            (entity_id)
+            (object_id
+              (entity_id))
             (num_lit))))
       (return_statement
         (identifier)
