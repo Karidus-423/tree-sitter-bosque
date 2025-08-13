@@ -20,7 +20,7 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -62,7 +62,7 @@ function main(): Bool {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -97,7 +97,7 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -150,7 +150,7 @@ function main(): Int {
         (num_lit)))
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -185,7 +185,7 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -224,7 +224,7 @@ function main(): Bool {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -258,7 +258,7 @@ function main(): Int {
     (entity_id)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -286,7 +286,27 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (const_decl
+      (identifier)
+      (entity_id)
+      (num_lit)))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (identifier))))))
 
 =======================================
 eADT Const 2
@@ -304,7 +324,27 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (const_decl
+      (identifier)
+      (entity_id)
+      (num_lit)))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (identifier))))))
 
 =======================================
 eADT Function 1
@@ -322,7 +362,32 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (function_definition
+      (entity_id)
+      (function_parameters)
+      (function_return_parameters
+        (entity_id))
+      (function_body
+        (return_statement
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (function_call
+            (identifier)))))))
 
 =======================================
 eADT Function 2
@@ -340,7 +405,32 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (datatype
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (entity_id)
+    (function_definition
+      (entity_id)
+      (function_parameters)
+      (function_return_parameters
+        (entity_id))
+      (function_body
+        (return_statement
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (function_call
+            (identifier)))))))
 
 =======================================
 Entity Inherit Fields 1
@@ -357,7 +447,25 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Fields 2
@@ -376,7 +484,28 @@ function main(): Bool {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit)
+          (true_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Fields 3 (Multi Concept)
@@ -396,7 +525,31 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit)
+          (true_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Generic 1
@@ -413,7 +566,29 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id)
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Generic 2 (Renamed Param)
@@ -430,7 +605,29 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id)
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Invariants 1
@@ -448,7 +645,29 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit))))
+  (entity
+    (entity_id)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Invariants 2 (Override)
@@ -467,7 +686,29 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (entity
+    (entity_id)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Inherit Invariants 3 (Composed)
@@ -487,7 +728,33 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (concept
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit))))
+  (entity
+    (entity_id)
+    (entity_id)
+    (invariant
+      (binary_expression
+        (identifier)
+        (num_lit))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Decl 1
@@ -509,7 +776,7 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -545,7 +812,7 @@ function main(): Int {
         (identifier)
         (num_lit))))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -570,7 +837,24 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (entity_id)
+    (identifier)
+    (entity_id))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Default Fields 1
@@ -586,7 +870,23 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (num_lit))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Default Fields 2
@@ -603,7 +903,25 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier)
+    (entity_id)
+    (identifier))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (entity_definition
+          (entity_id)
+          (num_lit))
+        (identifier)))))
 
 =======================================
 Entity Consts 1
@@ -619,7 +937,23 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (const_decl
+      (identifier)
+      (entity_id)
+      (num_lit)))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (identifier))))))
 
 =======================================
 Entity Consts 2
@@ -635,7 +969,24 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (entity_id)
+    (const_decl
+      (identifier)
+      (entity_id)
+      (num_lit)))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (identifier))))))
 
 =======================================
 Entity Functions 1
@@ -653,7 +1004,28 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (function_definition
+      (entity_id)
+      (function_parameters)
+      (function_return_parameters
+        (entity_id))
+      (function_body
+        (return_statement
+          (num_lit)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (function_call
+            (identifier)))))))
 
 =======================================
 Entity Functions 2
@@ -671,7 +1043,33 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (entity_id)
+    (function_definition
+      (entity_id)
+      (function_parameters
+        (identifier)
+        (entity_id))
+      (function_return_parameters
+        (entity_id))
+      (function_body
+        (return_statement
+          (identifier)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (import
+          (entity_id)
+          (entity_id)
+          (function_call
+            (identifier)
+            (num_lit)))))))
 
 =======================================
 Entity Functions 3
@@ -689,4 +1087,32 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (entity_id)
+    (function_definition
+      (entity_id)
+      (entity_id)
+      (function_parameters
+        (identifier)
+        (entity_id))
+      (function_return_parameters
+        (entity_id))
+      (function_body
+        (return_statement
+          (identifier)))))
+  (function_definition
+    (entity_id)
+    (function_parameters)
+    (function_return_parameters
+      (entity_id))
+    (function_body
+      (return_statement
+        (binary_expression
+          (binary_expression
+            (import
+              (entity_id)
+              (identifier))
+            (identifier))
+          (parenthesized_expression
+            (num_lit)))))))

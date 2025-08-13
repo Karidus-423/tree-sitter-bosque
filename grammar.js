@@ -36,10 +36,11 @@ module.exports = grammar({
   name: "bosque",
 
   conflicts: ($) => [
+    [$._concept_type, $._concrete_type],
     [$._expression_not_binary, $._entity_id],
-    [$._strings, $._type],
+    [$._strings, $._abstract_type],
     [$.type_cast_expression, $.binary_expression],
-    [$._expression_not_binary, $._type],
+    [$._expression_not_binary, $._concrete_type],
     [$.type_cast_expression, $.unary_expression, $.binary_expression],
   ],
 
@@ -54,15 +55,16 @@ module.exports = grammar({
         $.enum,
         $.const_decl,
         $.concept,
-        $.datatype,
         $.function_definition,
+        $.datatype,
         $._expression,
         $._statement,
       ),
 
     namespace: ($) =>
       seq(
-        "declare namespace",
+        "declare",
+        "namespace",
         $._namespace_id,
         choice(
           ";",
@@ -98,7 +100,7 @@ module.exports = grammar({
       ),
     _function_signature: ($) =>
       seq(
-        $.identifier,
+        $._object_id,
         $.function_parameters,
         optional($.function_return_parameters),
         $.function_body,
@@ -106,17 +108,16 @@ module.exports = grammar({
     function_parameters: ($) =>
       seq(
         "(",
-        repeat(
-          seq(
-            optional(choice("ref", "...")),
-            $.identifier,
-            ":",
-            $._type,
-            optional(seq("=", $._expression)),
-            optional(","),
-          ),
-        ),
+        optional(repeat(seq($._function_param_signature, optional(",")))),
         ")",
+      ),
+    _function_param_signature: ($) =>
+      seq(
+        optional(choice("ref", "...")),
+        $.identifier,
+        ":",
+        $._type,
+        optional(seq("=", $._expression)),
       ),
     function_return_parameters: ($) =>
       seq(
@@ -141,7 +142,7 @@ module.exports = grammar({
     concept: ($) =>
       seq(
         "concept",
-        $._concept_type,
+        $._type,
         "{",
         optional(repeat($._entity_field)),
         "}",
@@ -151,18 +152,34 @@ module.exports = grammar({
       seq(
         "datatype",
         $._object_id,
-        optional(seq("provides", $._type)),
+        optional($._inherit),
         optional($._datatype_block),
         "of",
         repeat(seq(
           $._entity_signature,
           optional("|"),
         )),
+        optional($._datatype_constants),
         ";",
+      ),
+    _inherit: ($) =>
+      seq(
+        "provides",
+        repeat(seq(
+          $._concrete_type,
+          optional(","),
+        )),
       ),
     _datatype_block: ($) =>
       seq(
         "using",
+        "{",
+        optional(repeat($._entity_field)),
+        "}",
+      ),
+    _datatype_constants: ($) =>
+      seq(
+        "&",
         "{",
         optional(repeat($._entity_field)),
         "}",
@@ -181,7 +198,8 @@ module.exports = grammar({
         ";",
       ),
     entity: ($) => seq("entity", $._entity_signature),
-    _entity_signature: ($) => seq($._entity_id, $._entity_block),
+    _entity_signature: ($) =>
+      seq($._concrete_type, optional($._inherit), $._entity_block),
     _entity_block: ($) =>
       seq(
         "{",
@@ -192,15 +210,24 @@ module.exports = grammar({
       choice(
         $._entity_method,
         $._entity_member,
+        $.const_decl,
+        $.function_definition,
         $.invariant,
       ),
-    _entity_method: ($) => seq("ref", "method", $._function_signature),
+    _entity_method: ($) =>
+      seq(optional("ref"), "method", $._function_signature),
     _entity_member: ($) =>
       seq(
         "field",
         $.identifier,
         ":",
         $._type,
+        optional(
+          seq(
+            "=",
+            repeat($._variable_assignment),
+          ),
+        ),
         ";",
       ),
     invariant: ($) =>
@@ -386,6 +413,7 @@ module.exports = grammar({
         $.elist,
         $._constructor,
         $.type_cast_expression,
+        $.import,
       ),
     type_cast_expression: ($) =>
       prec(PREC.CAST, seq($._expression, "<", $._type, ">")),
@@ -598,18 +626,26 @@ module.exports = grammar({
 
     _type: ($) =>
       choice(
+        $._abstract_type,
+        $._concrete_type,
+      ),
+    _concrete_type: ($) =>
+      choice(
         $.primitive_type,
-        $._namespace_type_import,
+        $.import,
         $._entity_id,
         $.elist,
         $.list,
         $.option,
         $.some_type,
-        $.result_type,
         $.map_type,
+        $._concept_type,
+      ),
+    _abstract_type: ($) =>
+      choice(
+        $.result_type,
         $.bind_regex,
         $.string_regex,
-        $._concept_type,
       ),
     _concept_type: ($) => seq($._entity_id, "<", $._entity_id, ">"),
     bind_regex: ($) =>
@@ -656,12 +692,15 @@ module.exports = grammar({
         $._type,
         ">",
       ),
-    _namespace_type_import: ($) =>
-      prec.left(seq(
-        $._namespace_id,
-        "::",
-        $._type,
-      )),
+    import: ($) =>
+      prec.right(
+        PREC.CALL,
+        seq(
+          $._concrete_type,
+          "::",
+          choice($._type, $.identifier, $.function_call),
+        ),
+      ),
 
     primitive_type: ($) =>
       token(choice(

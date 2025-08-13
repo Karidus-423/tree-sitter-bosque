@@ -1,5 +1,11 @@
-datatype Foo provides Bar<Int> using {
+concept Foo {
+	field f: Int;
+}
+concept Baz {
 	field g: Bool;
-} of F1 {
-	invariant $g ==> $f >= 0i;
-} | F2 { };
+}
+entity Bar provides Foo, Baz { }
+
+function main(): Int {
+	return Bar{3i, true}.f;
+}

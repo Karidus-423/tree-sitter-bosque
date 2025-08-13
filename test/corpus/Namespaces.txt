@@ -28,7 +28,7 @@ function main(): Option<Bar> {
   (entity
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (option
@@ -55,12 +55,13 @@ function main(): Option<Main::Bar> {
   (entity
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (option
-        (namespace_id)
-        (entity_id)))
+        (import
+          (entity_id)
+          (identifier))))
     (function_body
       (return_statement
         (none_lit)))))
@@ -84,12 +85,13 @@ function main(): Option<NSOther::Foo> {
     (namespace_import
       (namespace_id)))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (option
-        (namespace_id)
-        (entity_id)))
+        (import
+          (entity_id)
+          (identifier))))
     (function_body
       (return_statement
         (none_lit)))))
@@ -114,12 +116,13 @@ function main(): Option<Other::Foo> {
       (namespace_id)
       (namespace_id)))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (option
-        (namespace_id)
-        (entity_id)))
+        (import
+          (entity_id)
+          (identifier))))
     (function_body
       (return_statement
         (none_lit)))))

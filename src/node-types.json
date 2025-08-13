@@ -52,6 +52,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -160,6 +164,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
             "named": true
           },
           {
@@ -363,6 +371,10 @@
             "named": true
           },
           {
+            "type": "import",
+            "named": true
+          },
+          {
             "type": "key_comparator",
             "named": true
           },
@@ -424,7 +436,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "bind_regex",
@@ -439,15 +451,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -523,6 +535,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -633,6 +649,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -693,10 +713,30 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
           "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
           "named": true
         },
         {
@@ -704,11 +744,35 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
           "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
           "named": true
         },
         {
@@ -724,7 +788,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
           "named": true
         },
         {
@@ -732,11 +804,19 @@
           "named": true
         },
         {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
           "type": "map_type",
           "named": true
         },
         {
-          "type": "namespace_id",
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
           "named": true
         },
         {
@@ -744,7 +824,19 @@
           "named": true
         },
         {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
           "named": true
         },
         {
@@ -756,7 +848,27 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -823,6 +935,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -836,10 +952,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -914,7 +1026,27 @@
       "required": true,
       "types": [
         {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
           "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
           "named": true
         },
         {
@@ -922,11 +1054,35 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
           "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
           "named": true
         },
         {
@@ -942,7 +1098,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
           "named": true
         },
         {
@@ -950,11 +1114,19 @@
           "named": true
         },
         {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
           "type": "map_type",
           "named": true
         },
         {
-          "type": "namespace_id",
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
           "named": true
         },
         {
@@ -962,7 +1134,19 @@
           "named": true
         },
         {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
           "named": true
         },
         {
@@ -974,7 +1158,27 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -1030,6 +1234,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -1096,7 +1304,27 @@
       "required": false,
       "types": [
         {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
           "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
           "named": true
         },
         {
@@ -1104,11 +1332,35 @@
           "named": true
         },
         {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
           "type": "entity_id",
           "named": true
         },
         {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
           "type": "function_body",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
           "named": true
         },
         {
@@ -1124,7 +1376,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
           "named": true
         },
         {
@@ -1132,11 +1392,19 @@
           "named": true
         },
         {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
           "type": "map_type",
           "named": true
         },
         {
-          "type": "namespace_id",
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_lit",
           "named": true
         },
         {
@@ -1144,7 +1412,19 @@
           "named": true
         },
         {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
           "named": true
         },
         {
@@ -1156,7 +1436,27 @@
           "named": true
         },
         {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -1216,6 +1516,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -1323,6 +1627,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -1475,6 +1783,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -1617,6 +1929,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -1680,6 +1996,10 @@
       "required": true,
       "types": [
         {
+          "type": "entity_id",
+          "named": true
+        },
+        {
           "type": "function_body",
           "named": true
         },
@@ -1689,10 +2009,6 @@
         },
         {
           "type": "function_return_parameters",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -1759,6 +2075,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -1772,10 +2092,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -1847,6 +2163,69 @@
     "fields": {},
     "children": {
       "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_id",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "post_condition",
+          "named": true
+        },
+        {
+          "type": "pre_condition",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "import",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -1862,6 +2241,18 @@
           "named": true
         },
         {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1870,19 +2261,7 @@
           "named": true
         },
         {
-          "type": "namespace_id",
-          "named": true
-        },
-        {
           "type": "option",
-          "named": true
-        },
-        {
-          "type": "post_condition",
-          "named": true
-        },
-        {
-          "type": "pre_condition",
           "named": true
         },
         {
@@ -1954,6 +2333,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -2072,6 +2455,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -2085,10 +2472,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -2175,15 +2558,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -2259,6 +2642,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -2341,15 +2728,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -2392,7 +2779,7 @@
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "assert_statement",
@@ -2415,6 +2802,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -2424,10 +2815,6 @@
         },
         {
           "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -2525,15 +2912,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -2609,6 +2996,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -2723,6 +3114,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -2827,6 +3222,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -2937,6 +3336,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3044,6 +3447,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3123,15 +3530,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -3210,6 +3617,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3285,15 +3696,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -3402,6 +3813,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         },
         {
@@ -3536,6 +3951,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3596,7 +4015,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "assert_statement",
@@ -3659,6 +4078,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3676,10 +4099,6 @@
         },
         {
           "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -3818,6 +4237,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -3831,10 +4254,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -3921,15 +4340,15 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -4009,6 +4428,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
             "named": true
           },
           {
@@ -4146,6 +4569,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -4159,10 +4586,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -4289,6 +4712,10 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
           "type": "key_comparator",
           "named": true
         },
@@ -4302,10 +4729,6 @@
         },
         {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "namespace_id",
           "named": true
         },
         {
@@ -4599,7 +5022,7 @@
     "named": false
   },
   {
-    "type": "declare namespace",
+    "type": "declare",
     "named": false
   },
   {
@@ -4660,6 +5083,10 @@
   },
   {
     "type": "method",
+    "named": false
+  },
+  {
+    "type": "namespace",
     "named": false
   },
   {

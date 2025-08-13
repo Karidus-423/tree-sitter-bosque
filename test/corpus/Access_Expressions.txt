@@ -18,7 +18,7 @@ function main(x: Foo): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters
       (identifier)
       (entity_id))
@@ -53,7 +53,7 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -63,7 +63,7 @@ function main(): Int {
           (entity_id)
           (num_lit)))))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -94,7 +94,7 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -134,7 +134,7 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -188,7 +188,7 @@ function main(): Int {
     (identifier)
     (entity_id))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))

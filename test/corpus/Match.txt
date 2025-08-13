@@ -18,7 +18,7 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -61,7 +61,7 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -102,7 +102,7 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -143,7 +143,7 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
@@ -191,7 +191,7 @@ function main(): Int {
     (enum_member)
     (enum_member))
   (function_definition
-    (identifier)
+    (entity_id)
     (function_parameters)
     (function_return_parameters
       (entity_id))
