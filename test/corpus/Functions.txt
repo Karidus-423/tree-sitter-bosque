@@ -58,3 +58,32 @@ function main(k: CString): Int {
     (function_body
       (return_statement
         (num_whole)))))
+
+=================================
+Function Definition Recursive
+=================================
+
+recursive function main(k: CString): Int { 
+    return 2i;
+}
+
+---
+
+====================================
+Function Definition Recursive Might
+====================================
+
+recursive? function main(k: CString): Int { 
+    return 2i;
+}
+
+---
+
+=======================================
+Function Definition Return Option Type
+=======================================
+
+function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
+
+---
+

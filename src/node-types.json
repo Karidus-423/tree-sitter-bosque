@@ -77,6 +77,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -201,6 +205,10 @@
           },
           {
             "type": "map_constructor",
+            "named": true
+          },
+          {
+            "type": "map_expression",
             "named": true
           },
           {
@@ -420,6 +428,10 @@
             "named": true
           },
           {
+            "type": "map_expression",
+            "named": true
+          },
+          {
             "type": "none_lit",
             "named": true
           },
@@ -492,7 +504,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -609,6 +621,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -739,6 +755,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -802,31 +822,7 @@
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
           "type": "bind_regex",
-          "named": true
-        },
-        {
-          "type": "compound_and",
-          "named": true
-        },
-        {
-          "type": "compound_or",
-          "named": true
-        },
-        {
-          "type": "const_decl",
-          "named": true
-        },
-        {
-          "type": "cstring",
-          "named": true
-        },
-        {
-          "type": "elist",
           "named": true
         },
         {
@@ -834,39 +830,7 @@
           "named": true
         },
         {
-          "type": "entity_access",
-          "named": true
-        },
-        {
-          "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "entity_update",
-          "named": true
-        },
-        {
-          "type": "enum_access",
-          "named": true
-        },
-        {
-          "type": "false_lit",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "function_signature",
+          "type": "field",
           "named": true
         },
         {
@@ -878,18 +842,6 @@
           "named": true
         },
         {
-          "type": "invariant",
-          "named": true
-        },
-        {
-          "type": "key_comparator",
-          "named": true
-        },
-        {
-          "type": "lambda_expression",
-          "named": true
-        },
-        {
           "type": "lambda_type",
           "named": true
         },
@@ -898,23 +850,7 @@
           "named": true
         },
         {
-          "type": "map_constructor",
-          "named": true
-        },
-        {
           "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "none_lit",
-          "named": true
-        },
-        {
-          "type": "num_float",
-          "named": true
-        },
-        {
-          "type": "num_whole",
           "named": true
         },
         {
@@ -922,19 +858,7 @@
           "named": true
         },
         {
-          "type": "option_constructor",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
-          "named": true
-        },
-        {
           "type": "primitive_type",
-          "named": true
-        },
-        {
-          "type": "result_constructor",
           "named": true
         },
         {
@@ -946,31 +870,7 @@
           "named": true
         },
         {
-          "type": "special_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
           "type": "string_regex",
-          "named": true
-        },
-        {
-          "type": "this",
-          "named": true
-        },
-        {
-          "type": "true_lit",
-          "named": true
-        },
-        {
-          "type": "type_cast_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
           "named": true
         }
       ]
@@ -989,10 +889,6 @@
           "named": true
         },
         {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
           "type": "compound_and",
           "named": true
         },
@@ -1009,19 +905,11 @@
           "named": true
         },
         {
-          "type": "elist_type",
-          "named": true
-        },
-        {
           "type": "entity_access",
           "named": true
         },
         {
           "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -1057,19 +945,11 @@
           "named": true
         },
         {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "map_constructor",
           "named": true
         },
         {
-          "type": "map_type",
+          "type": "map_expression",
           "named": true
         },
         {
@@ -1085,10 +965,6 @@
           "named": true
         },
         {
-          "type": "option",
-          "named": true
-        },
-        {
           "type": "option_constructor",
           "named": true
         },
@@ -1097,19 +973,7 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
           "named": true
         },
         {
@@ -1139,6 +1003,10 @@
         {
           "type": "unary_expression",
           "named": true
+        },
+        {
+          "type": "variable_definition",
+          "named": true
         }
       ]
     }
@@ -1146,7 +1014,46 @@
   {
     "type": "datatype",
     "named": true,
-    "fields": {},
+    "fields": {
+      "entity_id": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -1156,55 +1063,7 @@
           "named": true
         },
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
-          "type": "compound_and",
-          "named": true
-        },
-        {
-          "type": "compound_or",
-          "named": true
-        },
-        {
-          "type": "const_decl",
-          "named": true
-        },
-        {
-          "type": "cstring",
-          "named": true
-        },
-        {
-          "type": "elist",
-          "named": true
-        },
-        {
           "type": "elist_type",
-          "named": true
-        },
-        {
-          "type": "entity_access",
-          "named": true
-        },
-        {
-          "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "entity_update",
-          "named": true
-        },
-        {
-          "type": "enum_access",
           "named": true
         },
         {
@@ -1212,19 +1071,7 @@
           "named": true
         },
         {
-          "type": "false_lit",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "function_signature",
+          "type": "field",
           "named": true
         },
         {
@@ -1240,18 +1087,6 @@
           "named": true
         },
         {
-          "type": "invariant",
-          "named": true
-        },
-        {
-          "type": "key_comparator",
-          "named": true
-        },
-        {
-          "type": "lambda_expression",
-          "named": true
-        },
-        {
           "type": "lambda_type",
           "named": true
         },
@@ -1260,39 +1095,7 @@
           "named": true
         },
         {
-          "type": "map_constructor",
-          "named": true
-        },
-        {
-          "type": "map_type",
-          "named": true
-        },
-        {
           "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "none_lit",
-          "named": true
-        },
-        {
-          "type": "num_float",
-          "named": true
-        },
-        {
-          "type": "num_whole",
-          "named": true
-        },
-        {
-          "type": "option",
-          "named": true
-        },
-        {
-          "type": "option_constructor",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -1300,51 +1103,11 @@
           "named": true
         },
         {
-          "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
           "type": "return_statement",
           "named": true
         },
         {
-          "type": "some_type",
-          "named": true
-        },
-        {
-          "type": "special_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "string_regex",
-          "named": true
-        },
-        {
           "type": "switch_statement",
-          "named": true
-        },
-        {
-          "type": "this",
-          "named": true
-        },
-        {
-          "type": "true_lit",
-          "named": true
-        },
-        {
-          "type": "type_cast_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
           "named": true
         },
         {
@@ -1357,7 +1120,28 @@
   {
     "type": "elist",
     "named": true,
-    "fields": {},
+    "fields": {
+      "elist_end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "|)",
+            "named": false
+          }
+        ]
+      },
+      "elist_start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "(|",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -1424,6 +1208,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -1484,66 +1272,134 @@
   {
     "type": "elist_type",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
-          "type": "elist_type",
-          "named": true
-        },
-        {
-          "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "import",
-          "named": true
-        },
-        {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "option",
-          "named": true
-        },
-        {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
-          "named": true
-        },
-        {
-          "type": "string_regex",
-          "named": true
-        }
-      ]
+    "fields": {
+      "elist_type_end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "|)",
+            "named": false
+          }
+        ]
+      },
+      "elist_type_start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "(|",
+            "named": false
+          }
+        ]
+      },
+      "type_sig": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind_regex",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "map_type",
+            "named": true
+          },
+          {
+            "type": "option",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "result_type",
+            "named": true
+          },
+          {
+            "type": "some_type",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
     "type": "entity",
     "named": true,
-    "fields": {},
+    "fields": {
+      "entity_id": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -1553,55 +1409,7 @@
           "named": true
         },
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
-          "type": "compound_and",
-          "named": true
-        },
-        {
-          "type": "compound_or",
-          "named": true
-        },
-        {
-          "type": "const_decl",
-          "named": true
-        },
-        {
-          "type": "cstring",
-          "named": true
-        },
-        {
-          "type": "elist",
-          "named": true
-        },
-        {
           "type": "elist_type",
-          "named": true
-        },
-        {
-          "type": "entity_access",
-          "named": true
-        },
-        {
-          "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "entity_update",
-          "named": true
-        },
-        {
-          "type": "enum_access",
           "named": true
         },
         {
@@ -1609,19 +1417,7 @@
           "named": true
         },
         {
-          "type": "false_lit",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "function_signature",
+          "type": "field",
           "named": true
         },
         {
@@ -1637,18 +1433,6 @@
           "named": true
         },
         {
-          "type": "invariant",
-          "named": true
-        },
-        {
-          "type": "key_comparator",
-          "named": true
-        },
-        {
-          "type": "lambda_expression",
-          "named": true
-        },
-        {
           "type": "lambda_type",
           "named": true
         },
@@ -1657,39 +1441,7 @@
           "named": true
         },
         {
-          "type": "map_constructor",
-          "named": true
-        },
-        {
-          "type": "map_type",
-          "named": true
-        },
-        {
           "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "none_lit",
-          "named": true
-        },
-        {
-          "type": "num_float",
-          "named": true
-        },
-        {
-          "type": "num_whole",
-          "named": true
-        },
-        {
-          "type": "option",
-          "named": true
-        },
-        {
-          "type": "option_constructor",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -1697,51 +1449,11 @@
           "named": true
         },
         {
-          "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
           "type": "return_statement",
           "named": true
         },
         {
-          "type": "some_type",
-          "named": true
-        },
-        {
-          "type": "special_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "string_regex",
-          "named": true
-        },
-        {
           "type": "switch_statement",
-          "named": true
-        },
-        {
-          "type": "this",
-          "named": true
-        },
-        {
-          "type": "true_lit",
-          "named": true
-        },
-        {
-          "type": "type_cast_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
           "named": true
         },
         {
@@ -1824,6 +1536,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -1881,10 +1597,49 @@
   {
     "type": "entity_definition",
     "named": true,
-    "fields": {},
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "binary_expression",
@@ -1907,19 +1662,11 @@
           "named": true
         },
         {
-          "type": "elist_type",
-          "named": true
-        },
-        {
           "type": "entity_access",
           "named": true
         },
         {
           "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -1955,15 +1702,11 @@
           "named": true
         },
         {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -1984,10 +1727,6 @@
         },
         {
           "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "primitive_type",
           "named": true
         },
         {
@@ -2024,11 +1763,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "entity_id",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "entity_update",
@@ -2103,6 +1837,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -2170,11 +1908,11 @@
       "required": true,
       "types": [
         {
-          "type": "entity_id",
+          "type": "enum_member",
           "named": true
         },
         {
-          "type": "enum_member",
+          "type": "identifier",
           "named": true
         }
       ]
@@ -2189,11 +1927,11 @@
       "required": true,
       "types": [
         {
-          "type": "entity_id",
+          "type": "enum_member",
           "named": true
         },
         {
-          "type": "enum_member",
+          "type": "identifier",
           "named": true
         }
       ]
@@ -2274,6 +2012,220 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
+          "named": true
+        },
+        {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind_regex",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "map_type",
+            "named": true
+          },
+          {
+            "type": "option",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "result_type",
+            "named": true
+          },
+          {
+            "type": "some_type",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "function_signature",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "invariant",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -2373,10 +2325,21 @@
   {
     "type": "function_call",
     "named": true,
-    "fields": {},
+    "fields": {
+      "function_id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "binary_expression",
@@ -2440,6 +2403,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -2513,19 +2480,78 @@
     }
   },
   {
-    "type": "function_parameters",
+    "type": "function_param_signature",
     "named": true,
-    "fields": {},
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind_regex",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "map_type",
+            "named": true
+          },
+          {
+            "type": "option",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "result_type",
+            "named": true
+          },
+          {
+            "type": "some_type",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "bind_regex",
           "named": true
         },
         {
@@ -2545,19 +2571,11 @@
           "named": true
         },
         {
-          "type": "elist_type",
-          "named": true
-        },
-        {
           "type": "entity_access",
           "named": true
         },
         {
           "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -2593,19 +2611,11 @@
           "named": true
         },
         {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "map_constructor",
           "named": true
         },
         {
-          "type": "map_type",
+          "type": "map_expression",
           "named": true
         },
         {
@@ -2621,10 +2631,6 @@
           "named": true
         },
         {
-          "type": "option",
-          "named": true
-        },
-        {
           "type": "option_constructor",
           "named": true
         },
@@ -2633,19 +2639,7 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
           "named": true
         },
         {
@@ -2680,7 +2674,7 @@
     }
   },
   {
-    "type": "function_return_parameters",
+    "type": "function_parameters",
     "named": true,
     "fields": {},
     "children": {
@@ -2688,59 +2682,89 @@
       "required": false,
       "types": [
         {
-          "type": "bind_regex",
+          "type": "function_param_signature",
           "named": true
-        },
-        {
-          "type": "elist_type",
-          "named": true
-        },
-        {
-          "type": "entity_id",
-          "named": true
-        },
-        {
-          "type": "import",
-          "named": true
-        },
-        {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "map_type",
-          "named": true
-        },
-        {
-          "type": "option",
-          "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_return_parameters",
+    "named": true,
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind_regex",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "map_type",
+            "named": true
+          },
+          {
+            "type": "option",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "result_type",
+            "named": true
+          },
+          {
+            "type": "some_type",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
         {
           "type": "post_condition",
           "named": true
         },
         {
           "type": "pre_condition",
-          "named": true
-        },
-        {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
-          "named": true
-        },
-        {
-          "type": "string_regex",
           "named": true
         }
       ]
@@ -2763,7 +2787,7 @@
             "named": false
           },
           {
-            "type": "entity_id",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -2882,6 +2906,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "match_statement",
           "named": true
         },
@@ -2959,10 +2987,49 @@
   {
     "type": "import",
     "named": true,
-    "fields": {},
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "bind_regex",
@@ -2970,10 +3037,6 @@
         },
         {
           "type": "elist_type",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -3096,6 +3159,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -3195,10 +3262,6 @@
           "named": true
         },
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "entity_update",
           "named": true
         },
@@ -3240,6 +3303,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -3394,6 +3461,10 @@
             "named": true
           },
           {
+            "type": "map_expression",
+            "named": true
+          },
+          {
             "type": "none_lit",
             "named": true
           },
@@ -3471,10 +3542,6 @@
           "named": true
         },
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "function_return_parameters",
           "named": true
         },
@@ -3538,7 +3605,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -3597,7 +3664,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -3712,6 +3779,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "map_type",
           "named": true
         },
@@ -3771,6 +3842,173 @@
     }
   },
   {
+    "type": "map_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bind_regex",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_type",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
+          "named": true
+        },
+        {
+          "type": "map_type",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "result_type",
+          "named": true
+        },
+        {
+          "type": "some_type",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "map_type",
     "named": true,
     "fields": {},
@@ -3787,7 +4025,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -3861,11 +4099,11 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "expression_statement",
           "named": true
         },
         {
-          "type": "expression_statement",
+          "type": "identifier",
           "named": true
         },
         {
@@ -3995,7 +4233,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -4107,6 +4345,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -4241,6 +4483,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -4365,6 +4611,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -4495,6 +4745,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -4548,6 +4802,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "primitive_type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "result_constructor",
@@ -4619,6 +4878,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -4697,7 +4960,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -4812,6 +5075,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -4883,7 +5150,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -5039,6 +5306,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "match_statement",
           "named": true
         },
@@ -5190,6 +5461,10 @@
           "named": true
         },
         {
+          "type": "map_expression",
+          "named": true
+        },
+        {
           "type": "none_lit",
           "named": true
         },
@@ -5293,10 +5568,6 @@
           "named": true
         },
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "entity_update",
           "named": true
         },
@@ -5346,6 +5617,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -5484,10 +5759,6 @@
           "named": true
         },
         {
-          "type": "entity_id",
-          "named": true
-        },
-        {
           "type": "entity_update",
           "named": true
         },
@@ -5529,6 +5800,10 @@
         },
         {
           "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
           "named": true
         },
         {
@@ -5623,7 +5898,7 @@
           "named": true
         },
         {
-          "type": "entity_id",
+          "type": "identifier",
           "named": true
         },
         {
@@ -5738,6 +6013,10 @@
             "named": true
           },
           {
+            "type": "map_expression",
+            "named": true
+          },
+          {
             "type": "none_lit",
             "named": true
           },
@@ -5812,6 +6091,84 @@
     }
   },
   {
+    "type": "variable_definition",
+    "named": true,
+    "fields": {
+      "type_sig": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind_regex",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "map_type",
+            "named": true
+          },
+          {
+            "type": "option",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "result_type",
+            "named": true
+          },
+          {
+            "type": "some_type",
+            "named": true
+          },
+          {
+            "type": "string_regex",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable_expression",
     "named": true,
     "fields": {},
@@ -5821,10 +6178,6 @@
       "types": [
         {
           "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "bind_regex",
           "named": true
         },
         {
@@ -5844,19 +6197,11 @@
           "named": true
         },
         {
-          "type": "elist_type",
-          "named": true
-        },
-        {
           "type": "entity_access",
           "named": true
         },
         {
           "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -5892,19 +6237,11 @@
           "named": true
         },
         {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "map_constructor",
           "named": true
         },
         {
-          "type": "map_type",
+          "type": "map_expression",
           "named": true
         },
         {
@@ -5920,10 +6257,6 @@
           "named": true
         },
         {
-          "type": "option",
-          "named": true
-        },
-        {
           "type": "option_constructor",
           "named": true
         },
@@ -5932,19 +6265,7 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
           "named": true
         },
         {
@@ -5973,6 +6294,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
           "named": true
         }
       ]
@@ -5991,10 +6316,6 @@
           "named": true
         },
         {
-          "type": "bind_regex",
-          "named": true
-        },
-        {
           "type": "compound_and",
           "named": true
         },
@@ -6011,19 +6332,11 @@
           "named": true
         },
         {
-          "type": "elist_type",
-          "named": true
-        },
-        {
           "type": "entity_access",
           "named": true
         },
         {
           "type": "entity_definition",
-          "named": true
-        },
-        {
-          "type": "entity_id",
           "named": true
         },
         {
@@ -6059,19 +6372,11 @@
           "named": true
         },
         {
-          "type": "lambda_type",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "map_constructor",
           "named": true
         },
         {
-          "type": "map_type",
+          "type": "map_expression",
           "named": true
         },
         {
@@ -6087,10 +6392,6 @@
           "named": true
         },
         {
-          "type": "option",
-          "named": true
-        },
-        {
           "type": "option_constructor",
           "named": true
         },
@@ -6099,19 +6400,7 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "result_constructor",
-          "named": true
-        },
-        {
-          "type": "result_type",
-          "named": true
-        },
-        {
-          "type": "some_type",
           "named": true
         },
         {
@@ -6140,6 +6429,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
           "named": true
         }
       ]
@@ -6333,7 +6626,83 @@
     "named": false
   },
   {
+    "type": "BigInt",
+    "named": false
+  },
+  {
+    "type": "BigNat",
+    "named": false
+  },
+  {
+    "type": "Bool",
+    "named": false
+  },
+  {
+    "type": "ByteBuffer",
+    "named": false
+  },
+  {
+    "type": "CChar",
+    "named": false
+  },
+  {
+    "type": "CCharBuffer",
+    "named": false
+  },
+  {
+    "type": "CRegex",
+    "named": false
+  },
+  {
+    "type": "CString",
+    "named": false
+  },
+  {
+    "type": "Complex",
+    "named": false
+  },
+  {
+    "type": "Decimal",
+    "named": false
+  },
+  {
+    "type": "DecimalDegree",
+    "named": false
+  },
+  {
+    "type": "DeltaDateTime",
+    "named": false
+  },
+  {
+    "type": "DeltaISOTimestamp",
+    "named": false
+  },
+  {
+    "type": "DeltaLogicalTime",
+    "named": false
+  },
+  {
+    "type": "DeltaSeconds",
+    "named": false
+  },
+  {
     "type": "Fail",
+    "named": false
+  },
+  {
+    "type": "Float",
+    "named": false
+  },
+  {
+    "type": "Glob",
+    "named": false
+  },
+  {
+    "type": "ISOTimestamp",
+    "named": false
+  },
+  {
+    "type": "Int",
     "named": false
   },
   {
@@ -6341,11 +6710,27 @@
     "named": false
   },
   {
+    "type": "LatLongCoordinate",
+    "named": false
+  },
+  {
     "type": "List",
     "named": false
   },
   {
+    "type": "LogicalTime",
+    "named": false
+  },
+  {
     "type": "MapEntry",
+    "named": false
+  },
+  {
+    "type": "Nat",
+    "named": false
+  },
+  {
+    "type": "None",
     "named": false
   },
   {
@@ -6357,11 +6742,71 @@
     "named": false
   },
   {
+    "type": "Path",
+    "named": false
+  },
+  {
+    "type": "PathItem",
+    "named": false
+  },
+  {
+    "type": "PathRegex",
+    "named": false
+  },
+  {
+    "type": "PlainDate",
+    "named": false
+  },
+  {
+    "type": "PlainTime",
+    "named": false
+  },
+  {
+    "type": "Rational",
+    "named": false
+  },
+  {
+    "type": "Regex",
+    "named": false
+  },
+  {
     "type": "Result",
     "named": false
   },
   {
+    "type": "SHAContentHash",
+    "named": false
+  },
+  {
     "type": "Some",
+    "named": false
+  },
+  {
+    "type": "String",
+    "named": false
+  },
+  {
+    "type": "TAITime",
+    "named": false
+  },
+  {
+    "type": "TZDateTime",
+    "named": false
+  },
+  {
+    "type": "UUIDv4",
+    "named": false
+  },
+  {
+    "type": "UUIDv7",
+    "named": false
+  },
+  {
+    "type": "UnicodeChar",
+    "named": false
+  },
+  {
+    "type": "UnicodeCharBuffer",
     "named": false
   },
   {
@@ -6461,6 +6906,10 @@
     "named": false
   },
   {
+    "type": "map",
+    "named": false
+  },
+  {
     "type": "match",
     "named": false
   },
@@ -6479,10 +6928,6 @@
   {
     "type": "of",
     "named": false
-  },
-  {
-    "type": "primitive_type",
-    "named": true
   },
   {
     "type": "provides",

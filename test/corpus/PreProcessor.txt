@@ -1,0 +1,22 @@
+============================
+PreProcess if, else, endif
+============================
+
+#if STRIPPED_CORE
+const x = 5i;
+#else
+const y = 20I;
+#endif %% STRIPPED_CORE
+
+---
+
+=============================
+Internal Preprocess
+=============================
+
+__internal entity MapEntry<K: keytype, V> {
+}
+
+---
+
+

@@ -128,7 +128,7 @@ entity Body {
 
 entity NBodySystem {
     field bodies: List<Body>;
-   
+
     const energypairs: List<List<(|Nat, Nat|)>> = List<List<(|Nat, Nat|)>>{
         List<(|Nat, Nat|)>{(|0n, 1n|), (|0n, 2n|), (|0n, 3n|), (|0n, 4n|)},
         List<(|Nat, Nat|)>{(|1n, 2n|), (|1n, 3n|), (|1n, 4n|)},

@@ -8,15 +8,46 @@
 (namespace
   namespace_id: (identifier) @module)
 
-(entity_id) @constant
+; (entity_id) @constant
 (enum_member) @constant
 (none_lit) @constant
 
-(function_call) @function.call
+(function_call
+  function_id: (identifier) @function.call)
+
 (function_signature
-  function_id: (entity_id) @function)
+  function_id: (identifier) @function)
+
+
+(elist_type
+  elist_type_start: "(|" @type.builtin
+  type_sig: (identifier) @type
+  elist_type_end: "|)"   @type.builtin)
+
+(entity
+  entity_id: (identifier) @type)
+
+(function_param_signature
+  type_sig: (identifier) @type)
+
+(function_return_parameters
+  type_sig: (identifier) @type)
+
+(field
+  type_sig: (identifier) @type)
+
+(variable_definition
+  type_sig: (identifier) @type)
+
+(entity_definition
+  type_sig: (identifier) @type)
+
+(import
+  type_sig: (identifier) @module)
+
 
 [
+"!"
 "+" 
 "-" 
 "*" 
@@ -48,15 +79,17 @@
 "}" 
 ] @punctuation.bracket
 
-[
-"(|" 
-"|)" 
-] @punctuation.special
+
+(elist
+  elist_start: "(|" @punctuation.special
+  elist_end: "|)" @punctuation.special)
 
 [
 "#"
 "$" 
+"@"
 "." 
+"::"
 ";" 
 "=>" 
 "->" 
@@ -70,10 +103,8 @@
 (num_float) @number.float
 
 [
-"fn" 
 "if" 
 "match" 
-"let" 
 "switch" 
 "else" 
 ] @statement
@@ -87,10 +118,14 @@
 [
 "ref" 
 "var" 
+"let"
 "const" 
 ] @keyword.modifier
 
-"function" @keyword.function
+[
+"function" 
+"fn" 
+]@keyword.function
 
 [
 "some" 
@@ -112,6 +147,7 @@
 "using" 
 "public" 
 ] @keyword
+
 ; "recursive?" @keyword
 ; "recursive" @keyword
 ; "action" @keyword
@@ -163,3 +199,45 @@
 ; "abstract" @keyword
 ; "override" @keyword
 ; "virtual" @keyword
+
+[
+"None"
+"Bool"
+"Nat"
+"Int"
+"BigInt"
+"BigNat"
+"Rational"
+"Float"
+"Decimal"
+"DecimalDegree"
+"LatLongCoordinate"
+"Complex"
+"ByteBuffer"
+"UUIDv4"
+"UUIDv7"
+"SHAContentHash"
+"TZDateTime"
+"TAITime"
+"PlainDate"
+"PlainTime"
+"LogicalTime"
+"ISOTimestamp"
+"DeltaDateTime"
+"DeltaSeconds"
+"DeltaLogicalTime"
+"DeltaISOTimestamp"
+"CChar"
+"UnicodeChar"
+"CCharBuffer"
+"UnicodeCharBuffer"
+"String"
+"CString"
+"Regex"
+"CRegex"
+"PathRegex"
+"Path"
+"PathItem"
+"Glob"
+(list)
+] @type.builtin

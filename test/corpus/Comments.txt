@@ -1,0 +1,25 @@
+============================
+Comment Line
+============================
+
+%% Everything after it is a comment.
+
+---
+
+============================
+Comment Multiline
+============================
+
+%*
+Whatever lies between is a comment.
+*%
+
+---
+
+============================
+Comment Inline
+============================
+
+%** Has a start and an end in a line. **%
+
+---
