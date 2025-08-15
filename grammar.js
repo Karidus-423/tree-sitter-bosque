@@ -98,10 +98,18 @@ module.exports = grammar({
         ";",
       ),
 
+    function_modifier: ($)=>
+    choice(
+        "public",
+        "recursive",
+        "recursive?",
+        "chktest",
+        "errtest",
+        "function",
+      ),
     function_definition: ($) =>
       seq(
-        optional("public"),
-        "function",
+        optional(repeat($.function_modifier)),
         $.function_signature,
       ),
     function_signature: ($) =>

@@ -196,6 +196,35 @@
         }
       ]
     },
+    "function_modifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "public"
+        },
+        {
+          "type": "STRING",
+          "value": "recursive"
+        },
+        {
+          "type": "STRING",
+          "value": "recursive?"
+        },
+        {
+          "type": "STRING",
+          "value": "chktest"
+        },
+        {
+          "type": "STRING",
+          "value": "errtest"
+        },
+        {
+          "type": "STRING",
+          "value": "function"
+        }
+      ]
+    },
     "function_definition": {
       "type": "SEQ",
       "members": [
@@ -203,17 +232,16 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "STRING",
-              "value": "public"
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "function_modifier"
+              }
             },
             {
               "type": "BLANK"
             }
           ]
-        },
-        {
-          "type": "STRING",
-          "value": "function"
         },
         {
           "type": "SYMBOL",

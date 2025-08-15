@@ -2469,15 +2469,24 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "function_modifier",
+          "named": true
+        },
         {
           "type": "function_signature",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "function_modifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "function_param_signature",
@@ -6834,6 +6843,10 @@
     "named": false
   },
   {
+    "type": "chktest",
+    "named": false
+  },
+  {
     "type": "concept",
     "named": false
   },
@@ -6871,6 +6884,10 @@
   },
   {
     "type": "equal",
+    "named": false
+  },
+  {
+    "type": "errtest",
     "named": false
   },
   {
@@ -6935,6 +6952,14 @@
   },
   {
     "type": "public",
+    "named": false
+  },
+  {
+    "type": "recursive",
+    "named": false
+  },
+  {
+    "type": "recursive?",
     "named": false
   },
   {

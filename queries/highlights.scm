@@ -146,10 +146,12 @@
 "datatype" 
 "using" 
 "public" 
+"recursive?" 
+"recursive" 
+"errtest" 
+"chktest"
 ] @keyword
 
-; "recursive?" @keyword
-; "recursive" @keyword
 ; "action" @keyword
 ; "_debug" @keyword
 ; "abort" @keyword
@@ -184,8 +186,6 @@
 ; "resource" @keyword
 ; "predicate" @keyword
 ; "softcheck" @keyword
-; "errtest" @keyword
-; "chktest" @keyword
 ; "example" @keyword
 ; "operator" @keyword
 ; "variant" @keyword
