@@ -1940,7 +1940,17 @@
   {
     "type": "enum_member",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "expression_statement",
@@ -2284,6 +2294,21 @@
     }
   },
   {
+    "type": "function_alias",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_body",
     "named": true,
     "fields": {},
@@ -2472,6 +2497,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "function_alias",
+          "named": true
+        },
         {
           "type": "function_modifier",
           "named": true
@@ -2824,7 +2853,17 @@
   {
     "type": "identifier",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "if_statement",
@@ -3603,7 +3642,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bind_regex",
@@ -3611,6 +3650,10 @@
         },
         {
           "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "function_modifier",
           "named": true
         },
         {
@@ -4175,6 +4218,11 @@
     }
   },
   {
+    "type": "modifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "namespace",
     "named": true,
     "fields": {
@@ -4194,14 +4242,14 @@
       "required": false,
       "types": [
         {
-          "type": "namespace_import",
+          "type": "namespace_block",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "namespace_import",
+    "type": "namespace_block",
     "named": true,
     "fields": {},
     "children": {
@@ -4209,7 +4257,187 @@
       "required": false,
       "types": [
         {
+          "type": "assert_statement",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "compound_and",
+          "named": true
+        },
+        {
+          "type": "compound_or",
+          "named": true
+        },
+        {
+          "type": "concept",
+          "named": true
+        },
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "cstring",
+          "named": true
+        },
+        {
+          "type": "datatype",
+          "named": true
+        },
+        {
+          "type": "elist",
+          "named": true
+        },
+        {
+          "type": "entity",
+          "named": true
+        },
+        {
+          "type": "entity_access",
+          "named": true
+        },
+        {
+          "type": "entity_definition",
+          "named": true
+        },
+        {
+          "type": "entity_update",
+          "named": true
+        },
+        {
+          "type": "enum",
+          "named": true
+        },
+        {
+          "type": "enum_access",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "false_lit",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "key_comparator",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "map_constructor",
+          "named": true
+        },
+        {
+          "type": "map_expression",
+          "named": true
+        },
+        {
+          "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "namespace",
+          "named": true
+        },
+        {
+          "type": "none_lit",
+          "named": true
+        },
+        {
+          "type": "num_float",
+          "named": true
+        },
+        {
+          "type": "num_whole",
+          "named": true
+        },
+        {
+          "type": "option_constructor",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "result_constructor",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "special_lit",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_regex",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "this",
+          "named": true
+        },
+        {
+          "type": "true_lit",
+          "named": true
+        },
+        {
+          "type": "type_cast_expression",
+          "named": true
+        },
+        {
+          "type": "type_decl",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable_statement",
           "named": true
         }
       ]

@@ -8,7 +8,7 @@ declare namespace Main;
 
 (source_file
   (namespace
-    (namespace_id)))
+    (identifier)))
 
 ===============================
 Namespaces Scope Simple
@@ -24,19 +24,20 @@ function main(): Option<Bar> {
 
 (source_file
   (namespace
-    (namespace_id))
+    (identifier))
   (entity
-    (entity_id))
+    (identifier))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (option
-        (entity_id)))
-    (function_body
-      (return_statement
-        (none_lit)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (option
+          (identifier)))
+      (function_body
+        (return_statement
+          (none_lit))))))
 
 =================================
 Namespaces Scope Access Explicit
@@ -52,21 +53,22 @@ function main(): Option<Main::Bar> {
 
 (source_file
   (namespace
-    (namespace_id))
+    (identifier))
   (entity
-    (entity_id))
+    (identifier))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (option
-        (import
-          (entity_id)
-          (identifier))))
-    (function_body
-      (return_statement
-        (none_lit)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (option
+          (import
+            (identifier)
+            (identifier))))
+      (function_body
+        (return_statement
+          (none_lit))))))
 
 ===============================
 Namespace Import Access
@@ -83,21 +85,22 @@ function main(): Option<NSOther::Foo> {
 
 (source_file
   (namespace
-    (namespace_id)
-    (namespace_import
-      (namespace_id)))
+    (identifier)
+    (namespace_block
+      (identifier)))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (option
-        (import
-          (entity_id)
-          (identifier))))
-    (function_body
-      (return_statement
-        (none_lit)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (option
+          (import
+            (identifier)
+            (identifier))))
+      (function_body
+        (return_statement
+          (none_lit))))))
 
 ===============================
 Namespace Import Access Rename
@@ -114,22 +117,23 @@ function main(): Option<Other::Foo> {
 
 (source_file
   (namespace
-    (namespace_id)
-    (namespace_import
-      (namespace_id)
-      (namespace_id)))
+    (identifier)
+    (namespace_block
+      (identifier)
+      (identifier)))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (option
-        (import
-          (entity_id)
-          (identifier))))
-    (function_body
-      (return_statement
-        (none_lit)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (option
+          (import
+            (identifier)
+            (identifier))))
+      (function_body
+        (return_statement
+          (none_lit))))))
 
 ===============================
 Namespace Definitions
@@ -137,13 +141,8 @@ Namespace Definitions
 
 namespace NumericOps {
     function s_natToCString(v: Nat): CString = s_nat_to_cstring;
-    function s_natFromCString(str: CString): Nat = s_nat_from_cstring;
-
-    function s_intToCString(v: Int): CString = s_int_to_cstring;
-    function s_intFromCString(str: CString): Int = s_int_from_cstring;
-
-    function s_floatPow(a: Float, b: Float): Float = s_float_pow;
-    function s_floatSqrt(a: Float): Float = s_float_sqrt;
 }
 
 ---
+
+

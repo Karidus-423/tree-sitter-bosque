@@ -1,2 +1,4 @@
-recursive? function s_list_allof<T>(l: List<T>, p: recursive? pred(T) -> Bool): Bool;
+namespace NumericOps {
+    function s_natToCString(v: Nat): CString = s_nat_to_cstring;
+} 
 

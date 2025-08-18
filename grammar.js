@@ -43,6 +43,8 @@ module.exports = grammar({
     [$.type_cast_expression, $.unary_expression, $.binary_expression],
     [$.type_cast_expression, $.lambda_expression, $.binary_expression],
     [$.lambda_type, $.bind_regex],
+    [$.function_definition, $.lambda_type],
+    [$._concrete_type, $.lambda_type],
     [$.elist_type, $.elist],
     [$._expression_not_binary, $._concept_type],
     [$.entity_access, $._expression],
@@ -73,15 +75,16 @@ module.exports = grammar({
         field("namespace_id", $.identifier),
         choice(
           ";",
-          $.namespace_import,
+          $.namespace_block,
         ),
       ),
-    namespace_import: ($) =>
+    namespace_block: ($) =>
       seq(
         "{",
         repeat(choice(
           $._namespace_import_simple,
           $._namespace_import_with_alias,
+          $._components,
         )),
         "}",
       ),
@@ -98,8 +101,8 @@ module.exports = grammar({
         ";",
       ),
 
-    function_modifier: ($)=>
-    choice(
+    function_modifier: ($) =>
+      choice(
         "public",
         "recursive",
         "recursive?",
@@ -108,10 +111,11 @@ module.exports = grammar({
         "function",
       ),
     function_definition: ($) =>
-      seq(
+      prec.right(PREC.ASSIGNMENT,seq(
         optional(repeat($.function_modifier)),
         $.function_signature,
-      ),
+        optional($.function_alias),
+      )),
     function_signature: ($) =>
       seq(
         field("function_id", $._object_id),
@@ -127,16 +131,15 @@ module.exports = grammar({
       ),
     function_param_signature: ($) =>
       seq(
-        optional(choice("ref", "...")),
         $.identifier,
         ":",
-        field("type_sig",$._type),
+        field("type_sig", $._type),
         optional(seq("=", $._expression)),
       ),
     function_return_parameters: ($) =>
       seq(
         ":",
-        field("type_sig",$._type),
+        field("type_sig", $._type),
         optional(repeat(seq($._pre_post_conditions, ";"))),
       ),
     _pre_post_conditions: ($) =>
@@ -152,6 +155,7 @@ module.exports = grammar({
         optional(repeat($._statement)),
         "}",
       ),
+    function_alias: ($) => seq("=", $.identifier,";"),
 
     concept: ($) =>
       seq(
@@ -214,9 +218,9 @@ module.exports = grammar({
     entity: ($) => seq("entity", $._entity_signature),
     _entity_signature: ($) =>
       seq(
-        field("entity_id",$._concrete_type),
+        field("entity_id", $._concrete_type),
         optional($._inherit),
-        $._entity_block
+        $._entity_block,
       ),
     _entity_block: ($) =>
       seq(
@@ -239,13 +243,13 @@ module.exports = grammar({
         $.const_decl,
         $.invariant,
       ),
-    _entity_method: ($) => seq(optional("ref"), "method", $.function_signature),
+    _entity_method: ($) => seq("method", $.function_signature),
     _entity_member: ($) =>
       seq(
         "field",
         $.identifier,
         ":",
-        field("type_sig",$._type),
+        field("type_sig", $._type),
         optional(
           seq(
             "=",
@@ -273,7 +277,7 @@ module.exports = grammar({
       ),
     entity_definition: ($) =>
       seq(
-        field("type_sig",$._concrete_type),
+        field("type_sig", $._concrete_type),
         "{",
         optional(repeat(
           seq(
@@ -415,7 +419,7 @@ module.exports = grammar({
         seq(
           $.identifier,
           optional(
-            seq(":", field("type_sig",$._type)),
+            seq(":", field("type_sig", $._type)),
           ),
           optional(","),
         ),
@@ -469,8 +473,8 @@ module.exports = grammar({
         $.lambda_expression,
         $.map_expression,
       ),
-    map_expression: ($)=>
-    seq(
+    map_expression: ($) =>
+      seq(
         "map",
         "<",
         $._type,
@@ -512,11 +516,11 @@ module.exports = grammar({
         "}",
       ),
     parenthesized_expression: ($) =>
-        seq(
-          "(",
-          $._expression,
-          ")",
-        ),
+      seq(
+        "(",
+        $._expression,
+        ")",
+      ),
     unary_expression: ($) =>
       prec.left(
         PREC.UNARY,
@@ -576,15 +580,15 @@ module.exports = grammar({
     enum_access: ($) => seq($.identifier, "#", $._enum_member),
     elist_type: ($) =>
       seq(
-        field("elist_type_start","(|"),
-        repeat(seq(field("type_sig",$._type), optional(","))),
+        field("elist_type_start", "(|"),
+        repeat(seq(field("type_sig", $._type), optional(","))),
         field("elist_type_end", "|)"),
       ),
     elist: ($) =>
       seq(
-        field("elist_start","(|"),
+        field("elist_start", "(|"),
         repeat(seq($._expression, optional(","))),
-        field("elist_end","|)"),
+        field("elist_end", "|)"),
       ),
     special_lit: ($) =>
       prec.left(
@@ -601,7 +605,7 @@ module.exports = grammar({
       prec(
         PREC.CALL,
         seq(
-          field("function_id",$.identifier),
+          field("function_id", $.identifier),
           $._function_call_params,
         ),
       ),
@@ -620,9 +624,9 @@ module.exports = grammar({
 
     lambda_type: ($) =>
       seq(
-        "fn",
+        optional($.function_modifier),
+        $.identifier,
         "(",
-        optional("ref"),
         $._type,
         ")",
         "->",
@@ -634,7 +638,6 @@ module.exports = grammar({
         seq(
           "fn",
           "(",
-          optional("ref"),
           $.identifier,
           optional(seq(":", $._type)),
           ")",
@@ -684,6 +687,13 @@ module.exports = grammar({
       }));
     },
 
+    modifier: ($) =>
+      choice(
+        "...",
+        "ref",
+        "$",
+      ),
+
     comment: (_) =>
       choice(
         //Line
@@ -693,7 +703,7 @@ module.exports = grammar({
         //Inline
         seq("%**", /[^*\n]*(\*+[^*\n]*)*/, "**%"),
       ),
-    identifier: ($) => seq(optional("$"), /[_a-zA-Z][_a-zA-Z0-9]*/),
+    identifier: ($) => seq(optional($.modifier), /[_a-zA-Z][_a-zA-Z0-9]*/),
     this: ($) => token("this"),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     none_lit: (_) => token("none"),
@@ -804,7 +814,7 @@ module.exports = grammar({
       prec.right(
         PREC.CALL,
         seq(
-          field("type_sig",$._concrete_type),
+          field("type_sig", $._concrete_type),
           "::",
           choice($._type, $.identifier, $.function_call),
         ),

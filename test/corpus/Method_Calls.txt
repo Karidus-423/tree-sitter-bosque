@@ -107,25 +107,27 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_definition
-            (entity_id)
-            (num_whole))))
-      (return_statement
-        (identifier)
-        (entity_access
-          (identifier))
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (return_statement
+          (entity_access
+            (identifier
+              (modifier)))
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==============================
 Entity Ref Method
@@ -141,22 +143,24 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_definition
-            (entity_id)
-            (num_whole))))
-      (return_statement
-        (identifier)
-        (entity_access
-          (identifier))
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (return_statement
+          (entity_access
+            (identifier
+              (modifier)))
+          (function_call
+            (identifier)
+            (num_whole)))))))

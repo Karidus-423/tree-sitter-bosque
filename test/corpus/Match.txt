@@ -18,27 +18,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (match_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (match_statement
-        (entity_id)
-        (entity_id)
-        (return_statement
-          (num_whole))
-        (entity_id)
-        (return_statement
-          (num_whole))))))
+          (primitive_type)
+          (return_statement
+            (num_whole))
+          (identifier)
+          (return_statement
+            (num_whole)))))))
 
 ===============================
 Simple Match Alt
@@ -62,26 +64,28 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (identifier))
+            (entity_definition
+              (identifier))))
+        (match_statement
           (identifier)
-          (entity_id)
-          (entity_definition
-            (entity_id))))
-      (match_statement
-        (entity_id)
-        (entity_id)
-        (return_statement
-          (num_whole))
-        (entity_id)
-        (return_statement
-          (num_whole))))))
+          (identifier)
+          (return_statement
+            (num_whole))
+          (identifier)
+          (return_statement
+            (num_whole)))))))
 
 ======================
 Simple Match Bind
@@ -104,27 +108,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (match_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (match_statement
-        (entity_id)
-        (entity_id)
-        (return_statement
-          (num_whole))
-        (entity_id)
-        (return_statement
-          (num_whole))))))
+          (primitive_type)
+          (return_statement
+            (num_whole))
+          (identifier)
+          (return_statement
+            (num_whole)))))))
 
 ===============================
 Simple Switch
@@ -146,24 +152,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (num_whole)))
+        (switch_statement
           (identifier)
-          (num_whole)))
-      (switch_statement
-        (entity_id)
-        (num_whole)
-        (return_statement
-          (num_whole))
-        (identifier)
-        (return_statement
-          (num_whole))))))
+          (num_whole)
+          (return_statement
+            (num_whole))
+          (identifier)
+          (return_statement
+            (num_whole)))))))
 
 ============================
 Simple Enum Switch
@@ -191,29 +199,31 @@ function main(): Int {
 
 (source_file
   (enum
-    (entity_id)
+    (identifier)
     (enum_member)
     (enum_member))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (enum_access
+              (identifier)
+              (enum_member))))
+        (switch_statement
           (identifier)
           (enum_access
-            (entity_id)
-            (enum_member))))
-      (switch_statement
-        (entity_id)
-        (enum_access
-          (entity_id)
-          (enum_member))
-        (return_statement
-          (num_whole))
-        (identifier)
-        (return_statement
-          (num_whole))))))
+            (identifier)
+            (enum_member))
+          (return_statement
+            (num_whole))
+          (identifier)
+          (return_statement
+            (num_whole)))))))

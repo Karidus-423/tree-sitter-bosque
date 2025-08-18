@@ -14,18 +14,19 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (if_statement
-        (true_lit)
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (if_statement
+          (true_lit)
+          (return_statement
+            (num_whole)))
         (return_statement
-          (num_whole)))
-      (return_statement
-        (num_whole)))))
+          (num_whole))))))
 
 ===============================
 Simple If Statement Empty
@@ -42,16 +43,17 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (if_statement
-        (true_lit))
-      (return_statement
-        (num_whole)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (if_statement
+          (true_lit))
+        (return_statement
+          (num_whole))))))
 
 ===============================
 If Statement ITest
@@ -71,26 +73,28 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
+          (ITest)
+          (return_statement
+            (num_whole)))
         (return_statement
-          (num_whole)))
-      (return_statement
-        (num_whole)))))
+          (num_whole))))))
 
 =================================
 If Statement Binder ITest
@@ -110,26 +114,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
+          (ITest)
+          (return_statement
+            (identifier
+              (modifier))))
         (return_statement
-          (identifier)))
-      (return_statement
-        (num_whole)))))
+          (num_whole))))))
 
 =========================================
 If Statement ITest Binder and Ref
@@ -149,28 +156,33 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (variable_redefinition
-          (identifier)
-          (identifier))
-        (ITest)
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
+          (variable_redefinition
+            (variable_definition
+              (identifier
+                (modifier)))
+            (identifier))
+          (ITest)
+          (return_statement
+            (identifier
+              (modifier))))
         (return_statement
-          (identifier)))
-      (return_statement
-        (num_whole)))))
+          (num_whole))))))
 
 =========================================
 If Statement ITest Binder and Reflow
@@ -190,26 +202,28 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
+          (ITest)
+          (return_statement
+            (num_whole)))
         (return_statement
-          (num_whole)))
-      (return_statement
-        (identifier)))))
+          (identifier))))))
 
 ===============================
 Simple If Else Statement
@@ -227,18 +241,19 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (if_statement
-        (true_lit)
-        (return_statement
-          (num_whole))
-        (return_statement
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (if_statement
+          (true_lit)
+          (return_statement
+            (num_whole))
+          (return_statement
+            (num_whole)))))))
 
 ===============================
 Simple If Else Statement Empty
@@ -258,18 +273,19 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (if_statement
-        (true_lit)
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (if_statement
+          (true_lit)
+          (return_statement
+            (num_whole)))
         (return_statement
-          (num_whole)))
-      (return_statement
-        (num_whole)))))
+          (num_whole))))))
 
 ===============================
 If Else Statement Binder
@@ -288,26 +304,28 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
-        (return_statement
-          (num_whole))
-        (return_statement
-          (num_whole))))))
+          (ITest)
+          (return_statement
+            (num_whole))
+          (return_statement
+            (num_whole)))))))
 
 =================================
 If Else Statement Binder and Ref
@@ -326,26 +344,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
-        (return_statement
-          (identifier))
-        (return_statement
-          (num_whole))))))
+          (ITest)
+          (return_statement
+            (identifier
+              (modifier)))
+          (return_statement
+            (num_whole)))))))
 
 ======================================
 If Else Statement Binder Some and Ref
@@ -364,28 +385,33 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (variable_redefinition
-          (identifier)
-          (identifier))
-        (ITest)
-        (return_statement
-          (identifier))
-        (return_statement
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
+          (variable_redefinition
+            (variable_definition
+              (identifier
+                (modifier)))
+            (identifier))
+          (ITest)
+          (return_statement
+            (identifier
+              (modifier)))
+          (return_statement
+            (num_whole)))))))
 
 ======================================
 If Else Statement Some and Ref
@@ -404,26 +430,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
-        (return_statement
-          (num_whole))
-        (return_statement
-          (identifier))))))
+          (ITest)
+          (return_statement
+            (num_whole))
+          (return_statement
+            (identifier
+              (modifier))))))))
 
 =========================================
 If Else Statement Binder Some and Empty
@@ -443,23 +472,25 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (option
+                (primitive_type)))
+            (special_lit
+              (num_whole))))
+        (if_statement
           (identifier)
-          (option
-            (entity_id))
-          (special_lit
-            (num_whole))))
-      (if_statement
-        (identifier)
-        (ITest)
+          (ITest)
+          (return_statement
+            (num_whole)))
         (return_statement
-          (num_whole)))
-      (return_statement
-        (identifier)))))
+          (identifier))))))

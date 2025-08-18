@@ -9,7 +9,7 @@ enum Test {
 
 (source_file
   (enum
-    (entity_id)))
+    (identifier)))
 
 ===========================
 Enums Multiple Definition
@@ -26,7 +26,7 @@ enum AnotherTest {
 
 (source_file
   (enum
-    (entity_id)
+    (identifier)
     (enum_member)
     (enum_member)
     (enum_member)
@@ -49,18 +49,19 @@ function main(): Int {
 
 (source_file
   (enum
-    (entity_id)
+    (identifier)
     (enum_member)
     (enum_member)
     (enum_member))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (enum_access
-          (entity_id)
-          (enum_member))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (enum_access
+            (identifier)
+            (enum_member)))))))

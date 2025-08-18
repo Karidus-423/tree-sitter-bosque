@@ -14,24 +14,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (num_whole))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)))))))
 
 ==============================
 Simple Call with Arguments
@@ -49,32 +51,36 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)
+            (num_whole)))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Ordered
@@ -92,34 +98,38 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (num_whole)
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier)
+            (num_whole)
+            (identifier)
+            (num_whole)))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Unordered
@@ -137,34 +147,38 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (num_whole)
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier)
+            (num_whole)
+            (identifier)
+            (num_whole)))))))
 
 ===============================
 Function Call with Scoping
@@ -183,39 +197,44 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (num_whole)))
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)))
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))))))
 
 ========================================
 Function Call with Accessing Mixed 󰀫
@@ -233,33 +252,37 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (num_whole)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier)
+            (num_whole)
+            (num_whole)))))))
 
 ========================================
 Function Call with Accessing Mixed 󰂡
@@ -277,33 +300,37 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole)
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)
+            (identifier)
+            (num_whole)))))))
 
 ========================================
 Function Call with Accessing Mixed 󱃮
@@ -321,33 +348,37 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type))
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (num_whole)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier)
+            (num_whole)
+            (num_whole)))))))
 
 ========================================
 Function Call with Rest
@@ -365,33 +396,38 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (identifier)
-      (list
-        (entity_id)))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (identifier))))
+      (function_parameters
+        (function_param_signature
+          (identifier)
+          (primitive_type))
+        (function_param_signature
+          (identifier
+            (modifier))
+          (list
+            (primitive_type))))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (identifier)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole)
-          (identifier)
-          (num_whole)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)
+            (identifier)
+            (num_whole)
+            (num_whole)))))))
 
 ========================================
 Function Call with Ref
@@ -410,33 +446,38 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (num_whole))))
+      (function_parameters
+        (function_param_signature
+          (identifier
+            (modifier))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (num_whole)))
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (identifier))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)))
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier
+              (modifier))))))))
 
 ========================================
 Function Call with Ref
@@ -454,36 +495,41 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id)
-      (num_whole)
-      (identifier)
-      (entity_id)
-      (binary_expression
-        (identifier)
-        (num_whole)))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (identifier)))))
+          (primitive_type)
+          (num_whole))
+        (function_param_signature
+          (identifier)
+          (primitive_type)
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole))))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (binary_expression
+            (identifier)
+            (identifier))))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)
+            (num_whole)))))))
 
 ==================================
 Function Call Pre
@@ -501,31 +547,34 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id)
-      (pre_condition
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (num_whole))))
-    (function_body
-      (return_statement
-        (num_whole))))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type)
+        (pre_condition
+          (binary_expression
+            (identifier)
+            (num_whole))))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==================================
 Function Call Pre Multiple
@@ -543,35 +592,38 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id)
-      (pre_condition
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (num_whole)))
-      (pre_condition
-        (binary_expression
-          (identifier)
-          (num_whole))))
-    (function_body
-      (return_statement
-        (num_whole))))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type)
+        (pre_condition
+          (binary_expression
+            (identifier)
+            (num_whole)))
+        (pre_condition
+          (binary_expression
+            (identifier)
+            (num_whole))))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==================================
 Function Call Post
@@ -588,31 +640,35 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id)
-      (post_condition
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (num_whole))))
-    (function_body
-      (return_statement
-        (num_whole))))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type)
+        (post_condition
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole))))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==================================
 Function Call Post Multiple
@@ -630,35 +686,40 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id)
-      (post_condition
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (num_whole)))
-      (post_condition
-        (binary_expression
-          (identifier)
-          (num_whole))))
-    (function_body
-      (return_statement
-        (num_whole))))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type)
+        (post_condition
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole)))
+        (post_condition
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole))))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==================================
 Function Call Pre & Post
@@ -675,35 +736,39 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id)
-      (pre_condition
-        (binary_expression
+      (function_parameters
+        (function_param_signature
           (identifier)
-          (num_whole)))
-      (post_condition
-        (binary_expression
-          (identifier)
-          (num_whole))))
-    (function_body
-      (return_statement
-        (num_whole))))
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type)
+        (pre_condition
+          (binary_expression
+            (identifier)
+            (num_whole)))
+        (post_condition
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole))))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (function_call
-          (identifier)
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (function_call
+            (identifier)
+            (num_whole)))))))
 
 ==================================
 Function Call Ref Params
@@ -724,32 +789,37 @@ function main(): Int {
 
 (source_file
   (entity
-    (entity_id))
+    (identifier))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (num_whole))))
+      (function_parameters
+        (function_param_signature
+          (identifier
+            (modifier))
+          (identifier)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole)))))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_definition
-            (entity_id))))
-      (return_statement
-        (function_call
-          (identifier)
-          (identifier)
-          (identifier))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier))))
+        (return_statement
+          (function_call
+            (identifier)
+            (identifier
+              (modifier))))))))

@@ -21,34 +21,39 @@ function main(): Int {
 
 (source_file
   (entity
-    (entity_id))
+    (identifier))
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_body
-      (return_statement)))
-  (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_definition
-            (entity_id))))
-      (expression_statement
-        (function_call
-          (identifier)
-          (identifier)
+      (function_parameters
+        (function_param_signature
+          (identifier
+            (modifier))
           (identifier)))
-      (return_statement
-        (num_whole)))))
+      (function_body
+        (return_statement))))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier))))
+        (expression_statement
+          (function_call
+            (identifier)
+            (identifier
+              (modifier))))
+        (return_statement
+          (num_whole))))))
 
 =======================================
 Void Namespace Method Ref Params

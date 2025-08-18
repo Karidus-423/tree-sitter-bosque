@@ -10,18 +10,19 @@ function main(): Option<Int> {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (option
-        (entity_id)))
-    (function_body
-      (return_statement
-        (option_constructor
-          (some_type
-            (entity_id))
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (option
+          (primitive_type)))
+      (function_body
+        (return_statement
+          (option_constructor
+            (some_type
+              (primitive_type))
+            (num_whole)))))))
 
 ==============================
 Result Constructor Ok
@@ -35,20 +36,21 @@ function main(): Result<Int, Bool> {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (result_type
-        (entity_id)
-        (entity_id)))
-    (function_body
-      (return_statement
-        (result_constructor
-          (result_type
-            (entity_id)
-            (entity_id))
-          (num_whole))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (result_type
+          (primitive_type)
+          (primitive_type)))
+      (function_body
+        (return_statement
+          (result_constructor
+            (result_type
+              (primitive_type)
+              (primitive_type))
+            (num_whole)))))))
 
 ==============================
 Result Constructor Fail
@@ -62,20 +64,21 @@ function main(): Result<Int, Bool> {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (result_type
-        (entity_id)
-        (entity_id)))
-    (function_body
-      (return_statement
-        (result_constructor
-          (result_type
-            (entity_id)
-            (entity_id))
-          (false_lit))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (result_type
+          (primitive_type)
+          (primitive_type)))
+      (function_body
+        (return_statement
+          (result_constructor
+            (result_type
+              (primitive_type)
+              (primitive_type))
+            (false_lit)))))))
 
 ==============================
 Map Constructor
@@ -89,18 +92,19 @@ function main(): MapEntry<Int, Bool> {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (map_type
-        (entity_id)
-        (entity_id)))
-    (function_body
-      (return_statement
-        (map_constructor
-          (map_type
-            (entity_id)
-            (entity_id))
-          (num_whole)
-          (true_lit))))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (map_type
+          (primitive_type)
+          (primitive_type)))
+      (function_body
+        (return_statement
+          (map_constructor
+            (map_type
+              (primitive_type)
+              (primitive_type))
+            (num_whole)
+            (true_lit)))))))

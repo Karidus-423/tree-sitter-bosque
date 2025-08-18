@@ -15,19 +15,37 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier))
+  (entity
+    (identifier)
+    (field
+      (identifier)
+      (primitive_type)))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (expression_statement
+          (entity_update
+            (identifier
+              (modifier))
+            (identifier)
+            (variable_redefinition)
+            (num_whole)))
+        (return_statement
+          (entity_access
+            (identifier))
+          (identifier))))))
 
 =======================================
 Simple Ref Updates 2
@@ -46,17 +64,37 @@ function main(): Int {
 ---
 
 (source_file
-  (entity_id
-    (entity_id))
-  (identifier)
-  (identifier)
-  (identifier)
-  (entity_id
-    (entity_id))
-  (num_lit)
-  (identifier)
-  (identifier)
-  (identifier)
-  (num_lit)
-  (identifier)
-  (identifier))
+  (entity
+    (identifier)
+    (field
+      (identifier)
+      (primitive_type)))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (expression_statement
+          (entity_update
+            (identifier
+              (modifier))
+            (identifier)
+            (variable_redefinition)
+            (binary_expression
+              (identifier
+                (modifier))
+              (num_whole))))
+        (return_statement
+          (entity_access
+            (identifier))
+          (identifier))))))

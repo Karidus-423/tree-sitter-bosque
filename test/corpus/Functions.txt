@@ -10,11 +10,12 @@ function main() {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_body
-      (return_statement))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_body
+        (return_statement)))))
 
 ===========================
 Function Definition Params
@@ -28,13 +29,15 @@ function main(k: CString) {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_body
-      (return_statement))))
+      (function_parameters
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_body
+        (return_statement)))))
 
 ===========================
 Function Definition Return
@@ -48,16 +51,18 @@ function main(k: CString): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (num_whole)))))
+      (function_parameters
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole))))))
 
 =================================
 Function Definition Recursive
@@ -69,6 +74,22 @@ recursive function main(k: CString): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_modifier)
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole))))))
+
 ====================================
 Function Definition Recursive Might
 ====================================
@@ -79,6 +100,22 @@ recursive? function main(k: CString): Int {
 
 ---
 
+(source_file
+  (function_definition
+    (function_modifier)
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters
+        (function_param_signature
+          (identifier)
+          (primitive_type)))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (return_statement
+          (num_whole))))))
+
 =======================================
 Function Definition Return Option Type
 =======================================
@@ -86,4 +123,5 @@ Function Definition Return Option Type
 function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
 
 ---
+
 

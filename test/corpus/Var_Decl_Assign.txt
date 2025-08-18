@@ -11,22 +11,25 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (identifier)
-          (entity_id)
-          (num_whole)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign Only 2
@@ -41,22 +44,25 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (identifier)
-          (entity_id)
-          (num_whole)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign Only 3
@@ -71,20 +77,23 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (num_whole)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (num_whole)
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign Only 4
@@ -99,20 +108,23 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (num_whole)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (num_whole)
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign Only 5
@@ -127,22 +139,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (identifier)
-          (num_whole)
-          (true_lit)
-          (false_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (num_whole)
+            (true_lit)
+            (false_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign Only 6
@@ -157,24 +173,28 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (identifier)
-          (identifier)
-          (entity_id)
-          (num_whole)
-          (true_lit)
-          (num_whole)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)
+            (true_lit)
+            (num_whole)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign From EList 1
@@ -189,23 +209,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (identifier)
-          (entity_id)
-          (elist
-            (num_whole)
-            (true_lit))))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (elist
+              (num_whole)
+              (true_lit))))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign From EList 2
@@ -220,23 +243,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (identifier)
-          (entity_id)
-          (elist
-            (num_whole)
-            (true_lit))))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (elist
+              (num_whole)
+              (true_lit))))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign From EList 3
@@ -251,21 +277,24 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (elist
-            (num_whole)
-            (true_lit))))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (elist
+              (num_whole)
+              (true_lit))))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign From EList 4
@@ -280,21 +309,24 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (elist
-            (num_whole)
-            (true_lit))))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (elist
+              (num_whole)
+              (true_lit))))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Declare-Assign From EList 5
@@ -309,23 +341,27 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (identifier)
-          (identifier)
-          (elist
-            (num_whole)
-            (true_lit)
-            (false_lit))))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (elist
+              (num_whole)
+              (true_lit)
+              (false_lit))))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Multi Assign 1
@@ -341,25 +377,29 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (num_whole)))
-      (variable_statement
-        (variable_redefinition
-          (identifier)
-          (identifier)
-          (num_whole)
-          (false_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)))
+        (variable_statement
+          (variable_redefinition
+            (variable_definition
+              (identifier))
+            (variable_definition
+              (identifier))
+            (num_whole)
+            (false_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Simple Ref Updates 1
@@ -377,7 +417,38 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (identifier)
+    (field
+      (identifier)
+      (primitive_type)))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (expression_statement
+          (entity_update
+            (identifier
+              (modifier))
+            (identifier)
+            (variable_redefinition)
+            (num_whole)))
+        (return_statement
+          (entity_access
+            (identifier))
+          (identifier))))))
 
 =======================================
 Simple Ref Updates 2
@@ -395,7 +466,41 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (identifier)
+    (field
+      (identifier)
+      (primitive_type)))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (entity_definition
+              (identifier)
+              (num_whole))))
+        (expression_statement
+          (entity_update
+            (identifier
+              (modifier))
+            (identifier)
+            (variable_redefinition)
+            (binary_expression
+              (identifier
+                (modifier))
+              (num_whole))))
+        (return_statement
+          (entity_access
+            (identifier))
+          (identifier))))))
 
 =======================================
 Simple Declare Only 1
@@ -410,18 +515,20 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)))
-      (return_statement
-        (num_whole)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))))
+        (return_statement
+          (num_whole))))))
 
 =======================================
 Simple Declare Only 2
@@ -436,18 +543,20 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)))
-      (return_statement
-        (true_lit)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))))
+        (return_statement
+          (true_lit))))))
 
 =======================================
 Simple Declare-Assign Only 1
@@ -462,19 +571,21 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (num_whole)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Simple Declare-Assign Only 2
@@ -489,19 +600,21 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Simple Declare-Assign Only 3
@@ -516,18 +629,20 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (true_lit)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier))
+            (true_lit)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Simple Assign 1
@@ -543,23 +658,26 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_expression
-          (identifier)
-          (entity_id)
-          (num_whole)))
-      (variable_statement
-        (variable_redefinition
-          (identifier)
-          (num_whole)))
-      (return_statement
-        (identifier)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_definition
+              (identifier)
+              (primitive_type))
+            (num_whole)))
+        (variable_statement
+          (variable_redefinition
+            (variable_definition
+              (identifier))
+            (num_whole)))
+        (return_statement
+          (identifier))))))
 
 =======================================
 Simple Assign 2
@@ -574,15 +692,17 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
-        (variable_redefinition
-          (identifier)
-          (num_whole)))
-      (return_statement
-        (num_whole)))))
+    (function_modifier)
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_redefinition
+            (variable_definition
+              (identifier))
+            (num_whole)))
+        (return_statement
+          (num_whole))))))

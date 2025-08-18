@@ -6,6 +6,9 @@ Comment Line
 
 ---
 
+(source_file
+  (comment))
+
 ============================
 Comment Multiline
 ============================
@@ -16,6 +19,8 @@ Whatever lies between is a comment.
 
 ---
 
+
+
 ============================
 Comment Inline
 ============================
@@ -23,3 +28,5 @@ Comment Inline
 %** Has a start and an end in a line. **%
 
 ---
+
+
