@@ -18,7 +18,8 @@ some(3i)
 ---
 
 (source_file
-  (special_lit
+  (function_call
+    (identifier)
     (num_whole)))
 
 =======================================
@@ -30,7 +31,8 @@ ok(3i)
 ---
 
 (source_file
-  (special_lit
+  (function_call
+    (identifier)
     (num_whole)))
 
 =======================================
@@ -42,5 +44,6 @@ fail('bad name')
 ---
 
 (source_file
-  (special_lit
+  (function_call
+    (identifier)
     (cstring)))

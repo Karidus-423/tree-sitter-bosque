@@ -33,8 +33,9 @@ function main(): Option<Bar> {
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (option
-          (identifier)))
+        (option_type
+          (type_params
+            (identifier))))
       (function_body
         (return_statement
           (none_lit))))))

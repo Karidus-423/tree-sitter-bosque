@@ -20,7 +20,7 @@ function main(): (|Int, Bool|) {
           (primitive_type)))
       (function_body
         (return_statement
-          (elist
+          (elist_value
             (num_whole)
             (true_lit)))))))
 

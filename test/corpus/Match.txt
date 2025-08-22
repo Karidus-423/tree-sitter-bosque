@@ -29,9 +29,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (match_statement
           (identifier)
@@ -73,10 +75,9 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (identifier))
-            (entity_definition
+            (identifier)
+            (identifier)
+            (type_definition
               (identifier))))
         (match_statement
           (identifier)
@@ -119,9 +120,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (match_statement
           (identifier)
@@ -161,8 +164,7 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
+            (identifier)
             (num_whole)))
         (switch_statement
           (identifier)
@@ -212,8 +214,7 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
+            (identifier)
             (enum_access
               (identifier)
               (enum_member))))

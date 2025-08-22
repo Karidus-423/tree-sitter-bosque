@@ -16,23 +16,24 @@ function main(x: Foo): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier)
           (identifier)))
       (function_return_parameters
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))
 
 =======================================
 Access Field Simple 2
@@ -56,8 +57,9 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -67,7 +69,7 @@ function main(): Int {
         (identifier))
       (function_body
         (return_statement
-          (entity_definition
+          (type_definition
             (identifier)
             (num_whole))))))
   (function_definition
@@ -79,10 +81,10 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
+          (access_expression
             (function_call
-              (identifier)))
-          (identifier))))))
+              (identifier))
+            (identifier)))))))
 
 =======================================
 Simple Field Updates 1
@@ -117,17 +119,18 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (entity_update
               (identifier)
-              (identifier)
-              (variable_redefinition)
-              (num_whole)))
-          (identifier))))))
+              (variable_redefinition
+                (variable_definition
+                  (identifier)))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Simple Field Updates 2
@@ -162,20 +165,21 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (entity_update
               (identifier)
-              (identifier)
-              (variable_redefinition)
+              (variable_redefinition
+                (variable_definition
+                  (identifier)))
               (binary_expression
                 (identifier
                   (modifier))
-                (num_whole))))
-          (identifier))))))
+                (num_whole)))
+            (identifier)))))))
 
 =======================================
 Postfix Field Updates 1
@@ -224,9 +228,9 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
-              (entity_definition
+              (type_definition
                 (identifier)
                 (num_whole)
                 (num_whole)))))
@@ -234,14 +238,15 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_access
-              (identifier))
-            (entity_update
+            (access_expression
               (identifier)
-              (identifier)
-              (variable_redefinition)
-              (num_whole))))
+              (entity_update
+                (identifier)
+                (variable_redefinition
+                  (variable_definition
+                    (identifier)))
+                (num_whole)))))
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))

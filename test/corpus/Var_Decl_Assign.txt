@@ -20,12 +20,10 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
+            (identifier)
+            (primitive_type)
             (num_whole)
             (true_lit)))
         (return_statement
@@ -53,12 +51,10 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
+            (identifier)
+            (primitive_type)
             (num_whole)
             (true_lit)))
         (return_statement
@@ -86,10 +82,8 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
+            (identifier)
+            (identifier)
             (num_whole)
             (true_lit)))
         (return_statement
@@ -117,10 +111,8 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
+            (identifier)
+            (identifier)
             (num_whole)
             (true_lit)))
         (return_statement
@@ -148,12 +140,9 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
+            (identifier)
+            (identifier)
+            (identifier)
             (num_whole)
             (true_lit)
             (false_lit)))
@@ -182,14 +171,11 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
+            (identifier)
+            (identifier)
+            (primitive_type)
             (num_whole)
             (true_lit)
             (num_whole)))
@@ -218,13 +204,11 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (elist
+            (identifier)
+            (primitive_type)
+            (identifier)
+            (primitive_type)
+            (elist_value
               (num_whole)
               (true_lit))))
         (return_statement
@@ -252,13 +236,11 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (variable_definition
-              (identifier)
-              (primitive_type))
-            (elist
+            (identifier)
+            (primitive_type)
+            (identifier)
+            (primitive_type)
+            (elist_value
               (num_whole)
               (true_lit))))
         (return_statement
@@ -286,11 +268,9 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
-            (elist
+            (identifier)
+            (identifier)
+            (elist_value
               (num_whole)
               (true_lit))))
         (return_statement
@@ -318,11 +298,9 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
-            (elist
+            (identifier)
+            (identifier)
+            (elist_value
               (num_whole)
               (true_lit))))
         (return_statement
@@ -350,13 +328,10 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
-            (elist
+            (identifier)
+            (identifier)
+            (identifier)
+            (elist_value
               (num_whole)
               (true_lit)
               (false_lit))))
@@ -386,16 +361,13 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
             (num_whole)))
-        (variable_statement
-          (variable_redefinition
-            (variable_definition
-              (identifier))
-            (variable_definition
-              (identifier))
+        (variable_ex_statement
+          (variable_expression
+            (identifier)
+            (identifier)
             (num_whole)
             (false_lit)))
         (return_statement
@@ -435,20 +407,21 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (identifier)
-            (variable_redefinition)
+            (variable_redefinition
+              (variable_definition
+                (identifier)))
             (num_whole)))
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))
 
 =======================================
 Simple Ref Updates 2
@@ -484,23 +457,24 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (identifier)
-            (variable_redefinition)
+            (variable_redefinition
+              (variable_definition
+                (identifier)))
             (binary_expression
               (identifier
                 (modifier))
               (num_whole))))
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))
 
 =======================================
 Simple Declare Only 1
@@ -524,9 +498,8 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))))
+            (identifier)
+            (primitive_type)))
         (return_statement
           (num_whole))))))
 
@@ -552,9 +525,8 @@ function main(): Bool {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))))
+            (identifier)
+            (primitive_type)))
         (return_statement
           (true_lit))))))
 
@@ -580,9 +552,8 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
             (num_whole)))
         (return_statement
           (identifier))))))
@@ -609,9 +580,8 @@ function main(): Bool {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
             (true_lit)))
         (return_statement
           (identifier))))))
@@ -638,8 +608,7 @@ function main(): Bool {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
+            (identifier)
             (true_lit)))
         (return_statement
           (identifier))))))
@@ -667,14 +636,12 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier)
-              (primitive_type))
+            (identifier)
+            (primitive_type)
             (num_whole)))
-        (variable_statement
-          (variable_redefinition
-            (variable_definition
-              (identifier))
+        (variable_ex_statement
+          (variable_expression
+            (identifier)
             (num_whole)))
         (return_statement
           (identifier))))))
@@ -699,10 +666,9 @@ function main(): Int {
       (function_return_parameters
         (primitive_type))
       (function_body
-        (variable_statement
-          (variable_redefinition
-            (variable_definition
-              (identifier))
+        (variable_ex_statement
+          (variable_expression
+            (identifier)
             (num_whole)))
         (return_statement
           (num_whole))))))

@@ -28,17 +28,21 @@ entity Food{
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
-      (identifier)
-      (primitive_type))))
+      (variable_expression
+        (identifier)
+        (primitive_type)))))
 
 ===========================
 Entities Accesors Use
@@ -55,29 +59,35 @@ public function main(f: Foo): Int {
 
 (source_file
   (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters
+    (function_modifier)
+    (function_modifier)
+    (function_signature
       (identifier)
-      (entity_id))
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (variable_statement
+      (function_parameters
         (variable_expression
           (identifier)
-          (binary_expression
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier))))
-      (assert_statement
-        (binary_expression
-          (identifier)
-          (identifier)
           (identifier)))
-      (return_statement
-        (identifier)))))
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (identifier)
+            (access_expression
+              (identifier)
+              (access_expression
+                (binary_expression
+                  (identifier)
+                  (identifier))
+                (identifier)))))
+        (assert_statement
+          (access_expression
+            (binary_expression
+              (identifier)
+              (identifier))
+            (identifier)))
+        (return_statement
+          (identifier))))))
 
 ===========================
 Entities Accesors Use Alt
@@ -97,8 +107,9 @@ function foo(): Foo {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -108,7 +119,7 @@ function foo(): Foo {
         (identifier))
       (function_body
         (return_statement
-          (entity_definition
+          (type_definition
             (identifier)
             (num_whole)))))))
 
@@ -145,17 +156,18 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (entity_update
               (identifier)
-              (identifier)
-              (variable_redefinition)
-              (num_whole)))
-          (identifier))))))
+              (variable_redefinition
+                (variable_definition
+                  (identifier)))
+              (num_whole))
+            (identifier)))))))
 
 ===========================
 Entities Field Update Alt
@@ -190,17 +202,18 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (entity_update
               (identifier)
-              (identifier)
-              (variable_redefinition)
+              (variable_redefinition
+                (variable_definition
+                  (identifier)))
               (binary_expression
                 (identifier
                   (modifier))
-                (num_whole))))
-          (identifier))))))
+                (num_whole)))
+            (identifier)))))))

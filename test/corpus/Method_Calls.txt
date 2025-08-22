@@ -118,16 +118,16 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (identifier
-              (modifier)))
-          (function_call
-            (identifier)
-            (num_whole)))))))
+              (modifier))
+            (function_call
+              (identifier)
+              (num_whole))))))))
 
 ==============================
 Entity Ref Method
@@ -154,13 +154,13 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (return_statement
-          (entity_access
+          (access_expression
             (identifier
-              (modifier)))
-          (function_call
-            (identifier)
-            (num_whole)))))))
+              (modifier))
+            (function_call
+              (identifier)
+              (num_whole))))))))

@@ -33,7 +33,7 @@ function main(k: CString) {
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier)
           (primitive_type)))
       (function_body
@@ -55,7 +55,7 @@ function main(k: CString): Int {
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier)
           (primitive_type)))
       (function_return_parameters
@@ -81,7 +81,7 @@ recursive function main(k: CString): Int {
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier)
           (primitive_type)))
       (function_return_parameters
@@ -107,7 +107,7 @@ recursive? function main(k: CString): Int {
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier)
           (primitive_type)))
       (function_return_parameters

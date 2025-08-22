@@ -15,13 +15,15 @@ function main(): Option<Int> {
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (option
-          (primitive_type)))
+        (option_type
+          (type_params
+            (primitive_type))))
       (function_body
         (return_statement
-          (option_constructor
-            (some_type
-              (primitive_type))
+          (type_definition
+            (constructor_type
+              (type_params
+                (primitive_type)))
             (num_whole)))))))
 
 ==============================
@@ -41,15 +43,17 @@ function main(): Result<Int, Bool> {
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (result_type
-          (primitive_type)
-          (primitive_type)))
+        (constructor_type
+          (type_params
+            (primitive_type)
+            (primitive_type))))
       (function_body
         (return_statement
-          (result_constructor
-            (result_type
-              (primitive_type)
-              (primitive_type))
+          (type_definition
+            (constructor_type
+              (type_params
+                (primitive_type)
+                (primitive_type)))
             (num_whole)))))))
 
 ==============================
@@ -69,15 +73,17 @@ function main(): Result<Int, Bool> {
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (result_type
-          (primitive_type)
-          (primitive_type)))
+        (constructor_type
+          (type_params
+            (primitive_type)
+            (primitive_type))))
       (function_body
         (return_statement
-          (result_constructor
-            (result_type
-              (primitive_type)
-              (primitive_type))
+          (type_definition
+            (constructor_type
+              (type_params
+                (primitive_type)
+                (primitive_type)))
             (false_lit)))))))
 
 ==============================
@@ -97,14 +103,16 @@ function main(): MapEntry<Int, Bool> {
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (map_type
-          (primitive_type)
-          (primitive_type)))
+        (constructor_type
+          (type_params
+            (primitive_type)
+            (primitive_type))))
       (function_body
         (return_statement
-          (map_constructor
-            (map_type
-              (primitive_type)
-              (primitive_type))
+          (type_definition
+            (constructor_type
+              (type_params
+                (primitive_type)
+                (primitive_type)))
             (num_whole)
             (true_lit)))))))

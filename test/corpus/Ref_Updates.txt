@@ -32,20 +32,21 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (identifier)
-            (variable_redefinition)
+            (variable_redefinition
+              (variable_definition
+                (identifier)))
             (num_whole)))
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))
 
 =======================================
 Simple Ref Updates 2
@@ -81,20 +82,21 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier))
-            (entity_definition
+            (type_definition
               (identifier)
               (num_whole))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (identifier)
-            (variable_redefinition)
+            (variable_redefinition
+              (variable_definition
+                (identifier)))
             (binary_expression
               (identifier
                 (modifier))
               (num_whole))))
         (return_statement
-          (entity_access
-            (identifier))
-          (identifier))))))
+          (access_expression
+            (identifier)
+            (identifier)))))))

@@ -1,4 +1,9 @@
-namespace NumericOps {
-    function s_natToCString(v: Nat): CString = s_nat_to_cstring;
+function foo(x: Int, y: Int): Int {
+	return x + y; 
 } 
+
+function main(): Int {
+	return foo(1i, 2i); 
+}
+
 

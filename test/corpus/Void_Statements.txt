@@ -27,7 +27,7 @@ function main(): Int {
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
+        (variable_expression
           (identifier
             (modifier))
           (identifier)))
@@ -43,15 +43,15 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
-              (identifier))
-            (entity_definition
+            (identifier)
+            (type_definition
               (identifier))))
         (expression_statement
           (function_call
             (identifier)
-            (identifier
-              (modifier))))
+            (variable_expression
+              (identifier
+                (modifier)))))
         (return_statement
           (num_whole))))))
 

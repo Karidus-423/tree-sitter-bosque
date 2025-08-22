@@ -16,8 +16,9 @@ function main(): Int {
   (datatype
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (identifier)
     (identifier))
   (function_definition
@@ -29,11 +30,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 eADT Decl 2
@@ -56,8 +57,9 @@ function main(): Bool {
   (datatype
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
       (invariant
         (binary_expression
@@ -67,8 +69,9 @@ function main(): Bool {
     (identifier)
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -78,12 +81,12 @@ function main(): Bool {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
               (num_whole)
-              (false_lit)))
-          (identifier))))))
+              (false_lit))
+            (identifier)))))))
 
 =======================================
 eADT Decl 3
@@ -205,8 +208,9 @@ function main(): Int {
     (identifier)
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (identifier))
   (function_definition
     (function_modifier)
@@ -217,11 +221,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 eADT Basic 2
@@ -242,8 +246,9 @@ function main(): Bool {
     (identifier)
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
       (invariant
         (binary_expression
@@ -252,8 +257,9 @@ function main(): Bool {
           (num_whole))))
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -263,11 +269,11 @@ function main(): Bool {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (false_lit)))
-          (identifier))))))
+              (false_lit))
+            (identifier)))))))
 
 =======================================
 eADT Basic 3 (Generic)
@@ -505,8 +511,9 @@ function main(): Int {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (entity
     (identifier)
     (identifier))
@@ -519,11 +526,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Inherit Fields 2
@@ -546,14 +553,16 @@ function main(): Bool {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (entity
     (identifier)
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -563,12 +572,12 @@ function main(): Bool {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
               (num_whole)
-              (true_lit)))
-          (identifier))))))
+              (true_lit))
+            (identifier)))))))
 
 =======================================
 Entity Inherit Fields 3 (Multi Concept)
@@ -592,13 +601,15 @@ function main(): Int {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (entity
     (identifier)
     (identifier)
@@ -612,12 +623,12 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
               (num_whole)
-              (true_lit)))
-          (identifier))))))
+              (true_lit))
+            (identifier)))))))
 
 =======================================
 Entity Inherit Generic 1
@@ -725,8 +736,9 @@ function main(): Int {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
       (invariant
         (binary_expression
@@ -745,11 +757,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Inherit Invariants 2 (Override)
@@ -772,8 +784,9 @@ function main(): Int {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (entity
     (identifier)
     (identifier)
@@ -792,11 +805,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Inherit Invariants 3 (Composed)
@@ -820,8 +833,9 @@ function main(): Int {
   (concept
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
       (invariant
         (binary_expression
@@ -846,11 +860,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Decl 1
@@ -870,8 +884,9 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (identifier)
+        (primitive_type))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -881,11 +896,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Decl 2
@@ -906,8 +921,9 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
       (invariant
         (binary_expression
@@ -923,11 +939,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Decl 3
@@ -984,9 +1000,10 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)
-      (num_whole)))
+      (variable_expression
+        (identifier)
+        (primitive_type)
+        (num_whole))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -996,11 +1013,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Default Fields 2
@@ -1021,13 +1038,15 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (identifier)
+        (primitive_type)))
     (field
-      (identifier)
-      (primitive_type)
-      (identifier
-        (modifier))))
+      (variable_expression
+        (identifier)
+        (primitive_type)
+        (identifier
+          (modifier)))))
   (function_definition
     (function_modifier)
     (function_signature
@@ -1037,11 +1056,11 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (entity_definition
+          (access_expression
+            (type_definition
               (identifier)
-              (num_whole)))
-          (identifier))))))
+              (num_whole))
+            (identifier)))))))
 
 =======================================
 Entity Consts 1

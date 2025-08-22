@@ -84,9 +84,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -125,9 +127,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -167,9 +171,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (variable_redefinition
@@ -213,9 +219,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -315,9 +323,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -355,9 +365,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -396,9 +408,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (variable_redefinition
@@ -441,9 +455,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)
@@ -483,9 +499,11 @@ function main(): Int {
           (variable_expression
             (variable_definition
               (identifier)
-              (option
-                (primitive_type)))
-            (special_lit
+              (option_type
+                (type_params
+                  (primitive_type))))
+            (function_call
+              (identifier)
               (num_whole))))
         (if_statement
           (identifier)

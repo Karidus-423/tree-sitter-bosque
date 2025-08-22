@@ -18,7 +18,8 @@ function main(): Int {
         (primitive_type))
       (function_body
         (return_statement
-          (entity_access
-            (elist
+          (access_expression
+            (elist_value
               (num_whole)
-              (true_lit))))))))
+              (true_lit))
+            (num_whole)))))))

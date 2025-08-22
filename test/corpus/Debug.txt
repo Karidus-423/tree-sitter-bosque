@@ -10,6 +10,15 @@ function main(): Int {
 ---
 
 (source_file
-  func_name: (identifier)
-  debug_target: (num_lit)
-  func_body: (num_lit))
+  (function_definition
+    (function_modifier)
+    (function_signature
+      function_id: (identifier)
+      (function_parameters)
+      (function_return_parameters
+        type_sig: (primitive_type))
+      (function_body
+        (debug_statement
+          (num_whole))
+        (return_statement
+          (num_whole))))))

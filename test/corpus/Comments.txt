@@ -19,7 +19,8 @@ Whatever lies between is a comment.
 
 ---
 
-
+(source_file
+  (comment))
 
 ============================
 Comment Inline
@@ -29,4 +30,5 @@ Comment Inline
 
 ---
 
-
+(source_file
+  (comment))
