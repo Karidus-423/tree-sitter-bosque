@@ -23,18 +23,17 @@ function main(): Int {
   (entity
     (identifier))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier
-            (modifier))
-          (identifier)))
+          (variable_signature
+            (identifier
+              (modifier))
+            (identifier))))
       (function_body
         (return_statement))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -43,13 +42,15 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (type_definition
-              (identifier))))
+            (variable_signature
+              (identifier))
+            (variable_assignment
+              (type_definition
+                (identifier)))))
         (expression_statement
           (function_call
             (identifier)
-            (variable_expression
+            (function_call_parameters
               (identifier
                 (modifier)))))
         (return_statement
@@ -73,4 +74,36 @@ function main(): Int {
 
 ---
 
-
+(source_file
+  (entity
+    (identifier)
+    (field
+      (modifier)
+      (function_signature
+        (identifier)
+        (function_parameters)
+        (function_body
+          (return_statement)))))
+  (function_definition
+    (function_signature
+      (identifier)
+      (function_parameters)
+      (function_return_parameters
+        (primitive_type))
+      (function_body
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier))
+            (variable_assignment
+              (type_definition
+                (identifier)))))
+        (expression_statement
+          (access_expression
+            (identifier
+              (modifier))
+            (function_call
+              (identifier)
+              (function_call_parameters))))
+        (return_statement
+          (num_whole))))))

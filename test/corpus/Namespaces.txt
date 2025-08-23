@@ -28,7 +28,6 @@ function main(): Option<Bar> {
   (entity
     (identifier))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)

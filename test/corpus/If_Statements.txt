@@ -14,7 +14,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -43,7 +42,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -73,7 +71,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -82,14 +79,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -116,7 +115,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -125,14 +123,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -160,7 +160,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -169,20 +168,23 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
-          (variable_redefinition
-            (variable_definition
+          (variable_expression
+            (variable_signature
               (identifier
                 (modifier)))
-            (identifier))
+            (variable_assignment
+              (identifier)))
           (ITest)
           (return_statement
             (identifier
@@ -208,7 +210,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -217,14 +218,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -249,7 +252,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -281,7 +283,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -312,7 +313,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -321,14 +321,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -354,7 +356,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -363,14 +364,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -397,7 +400,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -406,20 +408,23 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
-          (variable_redefinition
-            (variable_definition
+          (variable_expression
+            (variable_signature
               (identifier
                 (modifier)))
-            (identifier))
+            (variable_assignment
+              (identifier)))
           (ITest)
           (return_statement
             (identifier
@@ -444,7 +449,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -453,14 +457,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)
@@ -488,7 +494,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -497,14 +502,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier)
               (option_type
                 (type_params
                   (primitive_type))))
-            (function_call
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))
         (if_statement
           (identifier)
           (ITest)

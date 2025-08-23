@@ -10,7 +10,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)

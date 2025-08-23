@@ -10,7 +10,6 @@ function main() {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -29,13 +28,13 @@ function main(k: CString) {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier)
-          (primitive_type)))
+          (variable_signature
+            (identifier)
+            (primitive_type))))
       (function_body
         (return_statement)))))
 
@@ -51,13 +50,13 @@ function main(k: CString): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier)
-          (primitive_type)))
+          (variable_signature
+            (identifier)
+            (primitive_type))))
       (function_return_parameters
         (primitive_type))
       (function_body
@@ -77,13 +76,13 @@ recursive function main(k: CString): Int {
 (source_file
   (function_definition
     (function_modifier)
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier)
-          (primitive_type)))
+          (variable_signature
+            (identifier)
+            (primitive_type))))
       (function_return_parameters
         (primitive_type))
       (function_body
@@ -103,13 +102,13 @@ recursive? function main(k: CString): Int {
 (source_file
   (function_definition
     (function_modifier)
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier)
-          (primitive_type)))
+          (variable_signature
+            (identifier)
+            (primitive_type))))
       (function_return_parameters
         (primitive_type))
       (function_body
@@ -124,4 +123,24 @@ function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
 
 ---
 
-
+(source_file
+  (function_definition
+    (function_signature
+      (identifier)
+      (function_parameters
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier)))
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier)))
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier))))
+      (function_return_parameters
+        (option_type
+          (type_params
+            (identifier)))))))

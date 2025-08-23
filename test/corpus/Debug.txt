@@ -11,7 +11,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       function_id: (identifier)
       (function_parameters)

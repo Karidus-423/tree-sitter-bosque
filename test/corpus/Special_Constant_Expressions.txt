@@ -20,7 +20,8 @@ some(3i)
 (source_file
   (function_call
     (identifier)
-    (num_whole)))
+    (function_call_parameters
+      (num_whole))))
 
 =======================================
 Special Constructor 1
@@ -33,7 +34,8 @@ ok(3i)
 (source_file
   (function_call
     (identifier)
-    (num_whole)))
+    (function_call_parameters
+      (num_whole))))
 
 =======================================
 Special Constructor 2
@@ -46,4 +48,5 @@ fail('bad name')
 (source_file
   (function_call
     (identifier)
-    (cstring)))
+    (function_call_parameters
+      (cstring))))

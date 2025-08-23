@@ -36,9 +36,8 @@ module.exports = grammar({
   name: "bosque",
 
   conflicts: ($) => [
-    [$._expression_not_binary, $._type],
-    [$._identifier_sig, $._expression_not_binary],
-    [$.identifier],
+    [$.variable_signature, $._expression_not_binary, $._type],
+    [$.variable_assignment, $.access_expression],
   ],
 
   rules: {
@@ -97,11 +96,11 @@ module.exports = grammar({
         "recursive?",
         "chktest",
         "errtest",
-        "function",
       ),
     function_definition: ($) =>
       seq(
         optional(repeat($.function_modifier)),
+        "function",
         $.function_signature,
       ),
     function_signature: ($) =>
@@ -109,11 +108,12 @@ module.exports = grammar({
         field("function_id", $.identifier),
         $.function_parameters,
         optional($.function_return_parameters),
-        $.function_body,
+        choice($.function_body, ";"),
       ),
     function_parameters: ($) =>
       seq(
         "(",
+        commaSep($.variable_expression),
         ")",
       ),
     function_return_parameters: ($) =>
@@ -144,6 +144,26 @@ module.exports = grammar({
         optional(repeat($.field)),
         "}",
       ),
+
+    variable_expression: ($) =>
+      seq(
+        $.variable_signature,
+        optional($.variable_assignment),
+      ),
+
+    variable_signature: ($) =>
+      prec.left(
+        PREC.ASSIGNMENT,
+        commaSep1(seq($.identifier, optional($._type_bind))),
+      ),
+
+    variable_assignment: ($) =>
+      prec.left(seq(
+        "=",
+        commaSep1($._expression),
+      )),
+
+    _type_bind: ($) => seq(":", $._type),
 
     datatype: ($) =>
       seq(
@@ -192,26 +212,27 @@ module.exports = grammar({
     _entity_block: ($) =>
       seq(
         "{",
-        optional(
-          repeat(
-            choice(
-              $.field,
-            ),
-          ),
-        ),
+        optional(repeat($.field)),
         "}",
       ),
     field: ($) =>
       choice(
         $._entity_method,
         $._entity_member,
-        $.function_definition,
         $.invariant,
+        $._statement,
       ),
-    _entity_method: ($) => seq("method", $.function_signature),
+
+    _entity_method: ($) =>
+      seq(
+        optional(repeat($.modifier)),
+        "method",
+        $.function_signature,
+      ),
     _entity_member: ($) =>
       seq(
         "field",
+        $._expression,
         ";",
       ),
     invariant: ($) =>
@@ -225,18 +246,14 @@ module.exports = grammar({
         $._type,
         optional(seq("::", choice("Ok", "Fail"))),
         "{",
-        optional(repeat(
-          seq(
-            $._expression,
-            optional(","),
-          ),
-        )),
+        commaSep($._expression),
         "}",
       ),
     entity_update: ($) =>
       seq(
         $.identifier,
         "[",
+        commaSep($._expression),
         "]",
       ),
 
@@ -259,7 +276,10 @@ module.exports = grammar({
         $.switch_statement,
         $.debug_statement,
         $.abort_statement,
+        $.variable_statement,
       ),
+    variable_statement: ($) =>
+      seq(choice("let", "const", "var"), $.variable_expression, ";"),
     abort_statement: ($) => seq("abort", ";"),
     debug_statement: ($) => seq("_debug", $._expression, ";"),
     expression_statement: ($) => seq($._expression, ";"),
@@ -338,8 +358,6 @@ module.exports = grammar({
         "}",
       ),
 
-
-
     _bind_var: ($) => seq(":", $._type),
 
     _expression: ($) =>
@@ -366,6 +384,7 @@ module.exports = grammar({
         $.entity_update,
         $.elist_value,
         $.access_expression,
+        $.variable_expression,
       ),
 
     elist_value: ($) =>
@@ -458,7 +477,7 @@ module.exports = grammar({
       ),
     enum_access: ($) => seq($.identifier, "#", $._enum_member),
     access_expression: ($) =>
-      prec.right(seq(
+      prec.left(seq(
         $._expression,
         ".",
         $._expression,
@@ -469,15 +488,11 @@ module.exports = grammar({
         PREC.CALL,
         seq(
           field("function_id", $.identifier),
-          $._function_call_params,
+          $.function_call_parameters,
         ),
       ),
-    _function_call_params: ($) =>
-      seq(
-        "(",
-        commaSep(),
-        ")",
-      ),
+    function_call_parameters: ($) =>
+      prec.left(seq("(", commaSep($._expression), ")")),
 
     binary_expression: ($) => {
       const table = [
@@ -567,18 +582,6 @@ module.exports = grammar({
         "/",
         optional("c"),
       )),
-
-    _explicit_bind_type: ($) =>
-      seq(
-        optional($.modifier),
-        optional(
-          seq(
-            $.identifier,
-            ":",
-          ),
-        ),
-        field("type_sig", $._type),
-      ),
 
     _type: ($) =>
       choice(

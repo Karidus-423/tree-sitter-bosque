@@ -18,10 +18,11 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -30,19 +31,21 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (type_definition
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (type_definition
+                (identifier)
+                (num_whole)))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (variable_redefinition
-              (variable_definition
-                (identifier)))
-            (num_whole)))
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (num_whole)))))
         (return_statement
           (access_expression
             (identifier)
@@ -68,10 +71,11 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -80,22 +84,24 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (type_definition
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (type_definition
+                (identifier)
+                (num_whole)))))
         (expression_statement
           (entity_update
             (identifier
               (modifier))
-            (variable_redefinition
-              (variable_definition
-                (identifier)))
-            (binary_expression
-              (identifier
-                (modifier))
-              (num_whole))))
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (binary_expression
+                  (identifier
+                    (modifier))
+                  (num_whole))))))
         (return_statement
           (access_expression
             (identifier)

@@ -17,16 +17,17 @@ function main(x: Foo): Int {
     (identifier)
     (field
       (variable_expression
-        (identifier)
-        (primitive_type))))
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
         (variable_expression
-          (identifier)
-          (identifier)))
+          (variable_signature
+            (identifier)
+            (identifier))))
       (function_return_parameters
         (primitive_type))
       (function_body
@@ -58,10 +59,10 @@ function main(): Int {
     (identifier)
     (field
       (variable_expression
-        (identifier)
-        (primitive_type))))
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -73,7 +74,6 @@ function main(): Int {
             (identifier)
             (num_whole))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -83,7 +83,8 @@ function main(): Int {
         (return_statement
           (access_expression
             (function_call
-              (identifier))
+              (identifier)
+              (function_call_parameters))
             (identifier)))))))
 
 =======================================
@@ -105,10 +106,11 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -117,19 +119,21 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (type_definition
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (type_definition
+                (identifier)
+                (num_whole)))))
         (return_statement
           (access_expression
             (entity_update
               (identifier)
-              (variable_redefinition
-                (variable_definition
-                  (identifier)))
-              (num_whole))
+              (variable_expression
+                (variable_signature
+                  (identifier))
+                (variable_assignment
+                  (num_whole))))
             (identifier)))))))
 
 =======================================
@@ -151,10 +155,11 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -163,22 +168,24 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (type_definition
-              (identifier)
-              (num_whole))))
+            (variable_assignment
+              (type_definition
+                (identifier)
+                (num_whole)))))
         (return_statement
           (access_expression
             (entity_update
               (identifier)
-              (variable_redefinition
-                (variable_definition
-                  (identifier)))
-              (binary_expression
-                (identifier
-                  (modifier))
-                (num_whole)))
+              (variable_expression
+                (variable_signature
+                  (identifier))
+                (variable_assignment
+                  (binary_expression
+                    (identifier
+                      (modifier))
+                    (num_whole)))))
             (identifier)))))))
 
 =======================================
@@ -206,18 +213,23 @@ function main(): Int {
   (entity
     (identifier)
     (field
-      (identifier)
-      (primitive_type))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type))))
     (field
-      (identifier)
-      (primitive_type)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (primitive_type)))))
   (entity
     (identifier)
     (field
-      (identifier)
-      (identifier)))
+      (variable_expression
+        (variable_signature
+          (identifier)
+          (identifier)))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -226,26 +238,29 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (type_definition
-              (identifier)
+            (variable_assignment
               (type_definition
                 (identifier)
-                (num_whole)
-                (num_whole)))))
+                (type_definition
+                  (identifier)
+                  (num_whole)
+                  (num_whole))))))
         (variable_statement
           (variable_expression
-            (variable_definition
+            (variable_signature
               (identifier))
-            (access_expression
-              (identifier)
-              (entity_update
+            (variable_assignment
+              (access_expression
                 (identifier)
-                (variable_redefinition
-                  (variable_definition
-                    (identifier)))
-                (num_whole)))))
+                (entity_update
+                  (identifier)
+                  (variable_expression
+                    (variable_signature
+                      (identifier))
+                    (variable_assignment
+                      (num_whole))))))))
         (return_statement
           (access_expression
             (identifier)

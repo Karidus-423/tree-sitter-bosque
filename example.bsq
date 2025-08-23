@@ -1,9 +1,11 @@
-function foo(x: Int, y: Int): Int {
-	return x + y; 
-} 
-
-function main(): Int {
-	return foo(1i, 2i); 
+entity Foo {
+	field f: Int;
+	ref method foo(): Int {
+		return this.f; 
+	}
 }
 
+function main(): Int {
+	return this.foo(); 
+}
 

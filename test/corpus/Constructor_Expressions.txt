@@ -10,7 +10,6 @@ function main(): Option<Int> {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -38,7 +37,6 @@ function main(): Result<Int, Bool> {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -68,7 +66,6 @@ function main(): Result<Int, Bool> {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -98,7 +95,6 @@ function main(): MapEntry<Int, Bool> {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)

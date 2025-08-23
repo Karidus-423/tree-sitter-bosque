@@ -11,7 +11,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -20,12 +19,14 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (identifier)
-            (primitive_type)
-            (num_whole)
-            (true_lit)))
+            (variable_signature
+              (identifier)
+              (primitive_type)
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole)
+              (true_lit))))
         (return_statement
           (identifier))))))
 
@@ -42,7 +43,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -51,12 +51,14 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (identifier)
-            (primitive_type)
-            (num_whole)
-            (true_lit)))
+            (variable_signature
+              (identifier)
+              (primitive_type)
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole)
+              (true_lit))))
         (return_statement
           (identifier))))))
 
@@ -73,7 +75,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -82,10 +83,12 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (num_whole)
-            (true_lit)))
+            (variable_signature
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (num_whole)
+              (true_lit))))
         (return_statement
           (identifier))))))
 
@@ -102,7 +105,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -111,10 +113,12 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (num_whole)
-            (true_lit)))
+            (variable_signature
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (num_whole)
+              (true_lit))))
         (return_statement
           (identifier))))))
 
@@ -131,7 +135,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -140,12 +143,14 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (identifier)
-            (num_whole)
-            (true_lit)
-            (false_lit)))
+            (variable_signature
+              (identifier)
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (num_whole)
+              (true_lit)
+              (false_lit))))
         (return_statement
           (identifier))))))
 
@@ -162,7 +167,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -171,14 +175,16 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (identifier)
-            (identifier)
-            (primitive_type)
-            (num_whole)
-            (true_lit)
-            (num_whole)))
+            (variable_signature
+              (identifier)
+              (primitive_type)
+              (identifier)
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole)
+              (true_lit)
+              (num_whole))))
         (return_statement
           (identifier))))))
 
@@ -195,7 +201,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -204,13 +209,15 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (identifier)
-            (primitive_type)
-            (elist_value
-              (num_whole)
-              (true_lit))))
+            (variable_signature
+              (identifier)
+              (primitive_type)
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (elist_value
+                (num_whole)
+                (true_lit)))))
         (return_statement
           (identifier))))))
 
@@ -227,7 +234,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -236,13 +242,15 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (identifier)
-            (primitive_type)
-            (elist_value
-              (num_whole)
-              (true_lit))))
+            (variable_signature
+              (identifier)
+              (primitive_type)
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (elist_value
+                (num_whole)
+                (true_lit)))))
         (return_statement
           (identifier))))))
 
@@ -259,7 +267,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -268,11 +275,13 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (elist_value
-              (num_whole)
-              (true_lit))))
+            (variable_signature
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (elist_value
+                (num_whole)
+                (true_lit)))))
         (return_statement
           (identifier))))))
 
@@ -289,7 +298,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -298,11 +306,13 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (elist_value
-              (num_whole)
-              (true_lit))))
+            (variable_signature
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (elist_value
+                (num_whole)
+                (true_lit)))))
         (return_statement
           (identifier))))))
 
@@ -319,7 +329,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -328,13 +337,15 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (identifier)
-            (elist_value
-              (num_whole)
-              (true_lit)
-              (false_lit))))
+            (variable_signature
+              (identifier)
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (elist_value
+                (num_whole)
+                (true_lit)
+                (false_lit)))))
         (return_statement
           (identifier))))))
 
@@ -352,7 +363,6 @@ function main(): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
@@ -361,14 +371,18 @@ function main(): Int {
       (function_body
         (variable_statement
           (variable_expression
-            (identifier)
-            (primitive_type)
-            (num_whole)))
-        (variable_ex_statement
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole))))
+        (expression_statement
           (variable_expression
-            (identifier)
-            (identifier)
-            (num_whole)
-            (false_lit)))
+            (variable_signature
+              (identifier)
+              (identifier))
+            (variable_assignment
+              (num_whole)
+              (false_lit))))
         (return_statement
           (identifier))))))

@@ -54,7 +54,6 @@ function main(): Int {
     (enum_member)
     (enum_member))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
