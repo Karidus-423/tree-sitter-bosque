@@ -21,23 +21,23 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
             (identifier
               (modifier))
-            (identifier))))
+            (custom_type))))
       (function_usage
         (object_body
           (return_statement)))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -49,10 +49,10 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)))))
+                  (custom_type)))))
           (expression_statement
             (function_call
-              (identifier)
+              (custom_type)
               (function_call_parameters
                 (identifier
                   (modifier)))))
@@ -79,19 +79,19 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (method_statement
         (modifier)
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_usage
             (object_body
               (return_statement)))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -103,13 +103,13 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)))))
+                  (custom_type)))))
           (expression_statement
             (access_expression
               (identifier
                 (modifier))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters))))
           (return_statement
             (num_whole)))))))

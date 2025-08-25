@@ -16,7 +16,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -25,7 +25,7 @@ function main(): Int {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -37,7 +37,7 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (num_whole)))))
           (expression_statement
             (object_update
@@ -72,7 +72,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -81,7 +81,7 @@ function main(): Int {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -93,7 +93,7 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (num_whole)))))
           (expression_statement
             (object_update

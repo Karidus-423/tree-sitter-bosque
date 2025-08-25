@@ -12,21 +12,21 @@ function main(): Flag {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (true_lit)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Number 1
@@ -42,21 +42,21 @@ function main(): NVal {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (num_whole)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Number 2
@@ -72,21 +72,21 @@ function main(): FVal {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (num_float)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Number With Value 1
@@ -103,11 +103,11 @@ function main(): Int {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -121,7 +121,7 @@ function main(): Int {
                 (type_cast_expression
                   (num_whole)
                   (type_params
-                    (identifier))))))
+                    (custom_type))))))
           (return_statement
             (access_expression
               (identifier)
@@ -141,21 +141,21 @@ function main(): SV1 {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (string)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Strings Without Constraints 2
@@ -171,21 +171,21 @@ function main(): SV2 {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (primitive_type))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (cstring)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Strings With Constraints 1
@@ -201,22 +201,22 @@ function main(): SV1 {
 
 (source_file
   (type_statement
-    (identifier)
+    (custom_type)
     (regex_type
       (regex_expression)))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (string)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))
 
 =======================================
 Type Decl of Strings With Constraints 2
@@ -240,21 +240,21 @@ function main(): SV2 {
       (variable_assignment
         (regex_expression))))
   (type_statement
-    (identifier)
+    (custom_type)
     (namespace_access_type
       (regex_type
-        (identifier))
-      (identifier)))
+        (custom_type))
+      (custom_type)))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (type_cast_expression
               (cstring)
               (type_params
-                (identifier)))))))))
+                (custom_type)))))))))

@@ -19,7 +19,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -34,15 +34,15 @@ function main(): Int {
                     (primitive_type))))
               (variable_assignment
                 (function_call
-                  (identifier)
+                  (custom_type)
                   (function_call_parameters
                     (num_whole))))))
           (match_statement
-            (identifier)
+            (custom_type)
             (primitive_type)
             (return_statement
               (num_whole))
-            (identifier)
+            (custom_type)
             (return_statement
               (num_whole))))))))
 
@@ -69,7 +69,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -79,16 +79,16 @@ function main(): Int {
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))
+                (custom_type))
               (variable_assignment
                 (object_creation
-                  (identifier)))))
+                  (custom_type)))))
           (match_statement
-            (identifier)
-            (identifier)
+            (custom_type)
+            (custom_type)
             (return_statement
               (num_whole))
-            (identifier)
+            (custom_type)
             (return_statement
               (num_whole))))))))
 
@@ -114,7 +114,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -129,15 +129,15 @@ function main(): Int {
                     (primitive_type))))
               (variable_assignment
                 (function_call
-                  (identifier)
+                  (custom_type)
                   (function_call_parameters
                     (num_whole))))))
           (match_statement
-            (identifier)
+            (custom_type)
             (primitive_type)
             (return_statement
               (num_whole))
-            (identifier)
+            (custom_type)
             (return_statement
               (num_whole))))))))
 
@@ -162,7 +162,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -175,7 +175,7 @@ function main(): Int {
               (variable_assignment
                 (num_whole))))
           (switch_statement
-            (identifier)
+            (custom_type)
             (num_whole)
             (return_statement
               (num_whole))
@@ -214,7 +214,7 @@ function main(): Int {
     (enum_member))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -229,7 +229,7 @@ function main(): Int {
                   (identifier)
                   (enum_member)))))
           (switch_statement
-            (identifier)
+            (custom_type)
             (enum_access
               (identifier)
               (enum_member))

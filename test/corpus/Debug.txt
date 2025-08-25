@@ -12,7 +12,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      function_id: (identifier)
+      function_id: (custom_type)
       (function_parameters)
       (function_return_parameters
         type_sig: (primitive_type))

@@ -29,7 +29,7 @@ entity Velocity {
   (namespace
     (identifier))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -47,7 +47,7 @@ entity Velocity {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -183,7 +183,7 @@ entity Body {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (variable_statement
         (variable_expression
@@ -221,181 +221,181 @@ entity Body {
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (namespace_access_expression
-                (identifier)
+                (custom_type)
                 (identifier))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
@@ -410,12 +410,12 @@ entity Body {
                 (identifier)
                 (primitive_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (access_expression
                     (this)
                     (identifier))
@@ -426,28 +426,28 @@ entity Body {
                     (this)
                     (identifier))
                   (object_creation
-                    (identifier)
+                    (custom_type)
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier)))
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier)))
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
             (primitive_type))
@@ -465,7 +465,7 @@ entity Body {
                         (primitive_type)
                         (binary_expression
                           (function_call
-                            (identifier)
+                            (custom_type)
                             (function_call_parameters
                               (access_expression
                                 (access_expression
@@ -476,7 +476,7 @@ entity Body {
                             (primitive_type)
                             (binary_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (access_expression
                                     (access_expression
@@ -486,7 +486,7 @@ entity Body {
                               (namespace_access_expression
                                 (primitive_type)
                                 (function_call
-                                  (identifier)
+                                  (custom_type)
                                   (function_call_parameters
                                     (access_expression
                                       (access_expression
@@ -495,16 +495,16 @@ entity Body {
                                       (identifier)))))))))))))))))
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier)))
+                (custom_type)))
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))))
+                (custom_type))))
           (function_return_parameters
             (primitive_type))
           (function_usage
@@ -561,26 +561,26 @@ entity Body {
                 (namespace_access_expression
                   (primitive_type)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters
                       (namespace_access_expression
                         (primitive_type)
                         (binary_expression
                           (function_call
-                            (identifier)
+                            (custom_type)
                             (function_call_parameters
                               (identifier)))
                           (namespace_access_expression
                             (primitive_type)
                             (binary_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (identifier)))
                               (namespace_access_expression
                                 (primitive_type)
                                 (function_call
-                                  (identifier)
+                                  (custom_type)
                                   (function_call_parameters
                                     (identifier)))))))))))))))))))
 
@@ -690,7 +690,7 @@ entity NBodySystem {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -698,7 +698,7 @@ entity NBodySystem {
             (identifier)
             (list_type
               (type_params
-                (identifier))))))
+                (custom_type))))))
       (variable_statement
         (variable_expression
           (variable_signature
@@ -775,10 +775,10 @@ entity NBodySystem {
                   (num_whole)))))))
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (variable_statement
@@ -789,18 +789,18 @@ entity NBodySystem {
                     (object_creation
                       (list_type
                         (type_params
-                          (identifier)))
+                          (custom_type)))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))
               (variable_statement
                 (variable_expression
@@ -812,7 +812,7 @@ entity NBodySystem {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -821,12 +821,12 @@ entity NBodySystem {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -836,7 +836,7 @@ entity NBodySystem {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -848,7 +848,7 @@ entity NBodySystem {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -857,12 +857,12 @@ entity NBodySystem {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -872,7 +872,7 @@ entity NBodySystem {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -884,7 +884,7 @@ entity NBodySystem {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -893,12 +893,12 @@ entity NBodySystem {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -908,7 +908,7 @@ entity NBodySystem {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -918,36 +918,36 @@ entity NBodySystem {
                     (object_creation
                       (list_type
                         (type_params
-                          (identifier)))
+                          (custom_type)))
                       (access_expression
                         (namespace_access_expression
-                          (identifier)
+                          (custom_type)
                           (identifier))
                         (function_call
-                          (identifier)
+                          (custom_type)
                           (function_call_parameters
                             (identifier)
                             (identifier)
                             (identifier))))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (identifier)))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
@@ -970,13 +970,13 @@ entity NBodySystem {
                       (identifier)
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
@@ -997,7 +997,7 @@ entity NBodySystem {
                                         (this)
                                         (identifier))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters
                                           (access_expression
                                             (identifier)
@@ -1012,7 +1012,7 @@ entity NBodySystem {
                                         (this)
                                         (identifier))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters
                                           (access_expression
                                             (identifier)
@@ -1028,9 +1028,9 @@ entity NBodySystem {
                                           (identifier)))
                                       (identifier)))
                                   (namespace_access_expression
-                                    (identifier)
+                                    (custom_type)
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (identifier)
                                         (identifier))))))))))))))
@@ -1038,11 +1038,11 @@ entity NBodySystem {
                 (access_expression
                   (identifier)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
             (primitive_type))
@@ -1059,24 +1059,24 @@ entity NBodySystem {
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (access_expression
                             (lambda_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (variable_expression
                                     (variable_signature
                                       (identifier)
-                                      (identifier)))))
+                                      (custom_type)))))
                               (function_return_parameters
                                 (primitive_type))
                               (identifier))
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters)))))))))
               (variable_statement
                 (variable_expression
@@ -1085,17 +1085,17 @@ entity NBodySystem {
                   (variable_assignment
                     (access_expression
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
@@ -1112,7 +1112,7 @@ entity NBodySystem {
                                 (access_expression
                                   (this)
                                   (function_call
-                                    (identifier)
+                                    (custom_type)
                                     (function_call_parameters
                                       (identifier)))))))))))))
               (return_statement
@@ -1121,22 +1121,22 @@ entity NBodySystem {
                     (identifier)
                     (binary_expression
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))
                       (identifier)))
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
                 (primitive_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (variable_statement
@@ -1150,25 +1150,25 @@ entity NBodySystem {
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (elist_type
-                              (identifier)
+                              (custom_type)
                               (primitive_type)
                               (primitive_type)
                               (primitive_type))))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
                                     (identifier)
-                                    (identifier)))))
+                                    (custom_type)))))
                             (function_return_parameters
                               (elist_type
-                                (identifier)
+                                (custom_type)
                                 (primitive_type)
                                 (primitive_type)
                                 (primitive_type)))
@@ -1184,7 +1184,7 @@ entity NBodySystem {
                                         (identifier))
                                       (function_call
                                         (template
-                                          (identifier)
+                                          (custom_type)
                                           (type_params
                                             (elist_type
                                               (primitive_type)
@@ -1193,12 +1193,12 @@ entity NBodySystem {
                                         (function_call_parameters
                                           (lambda_expression
                                             (function_call
-                                              (identifier)
+                                              (custom_type)
                                               (function_call_parameters
                                                 (variable_expression
                                                   (variable_signature
                                                     (identifier)
-                                                    (identifier)))))
+                                                    (custom_type)))))
                                             (function_return_parameters
                                               (elist_type
                                                 (primitive_type)
@@ -1272,9 +1272,9 @@ entity NBodySystem {
                                                       (identifier))
                                                     (variable_assignment
                                                       (namespace_access_expression
-                                                        (identifier)
+                                                        (custom_type)
                                                         (function_call
-                                                          (identifier)
+                                                          (custom_type)
                                                           (function_call_parameters
                                                             (identifier)
                                                             (identifier)))))))
@@ -1330,14 +1330,14 @@ entity NBodySystem {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -1351,7 +1351,7 @@ entity NBodySystem {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (variable_statement
                                 (variable_expression
@@ -1369,14 +1369,14 @@ entity NBodySystem {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -1390,7 +1390,7 @@ entity NBodySystem {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (variable_statement
                                 (variable_expression
@@ -1408,14 +1408,14 @@ entity NBodySystem {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -1429,7 +1429,7 @@ entity NBodySystem {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (return_statement
                                 (elist_value
@@ -1446,24 +1446,24 @@ entity NBodySystem {
                       (identifier)
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
-                            (identifier)))
+                            (custom_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
                                     (identifier)
                                     (elist_type
-                                      (identifier)
+                                      (custom_type)
                                       (primitive_type)
                                       (primitive_type)
                                       (primitive_type))))))
                             (function_return_parameters
-                              (identifier))
+                              (custom_type))
                             (object_body
                               (variable_statement
                                 (variable_expression
@@ -1503,7 +1503,7 @@ entity NBodySystem {
                                     (identifier))
                                   (variable_assignment
                                     (object_creation
-                                      (identifier)
+                                      (custom_type)
                                       (identifier)
                                       (identifier)
                                       (identifier)))))
@@ -1558,13 +1558,13 @@ entity NBodySystem {
                                     (identifier))
                                   (variable_assignment
                                     (object_creation
-                                      (identifier)
+                                      (custom_type)
                                       (identifier)
                                       (identifier)
                                       (identifier)))))
                               (return_statement
                                 (object_creation
-                                  (identifier)
+                                  (custom_type)
                                   (access_expression
                                     (identifier)
                                     (identifier))
@@ -1575,7 +1575,7 @@ entity NBodySystem {
                                   (identifier)))))))))))
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (identifier))))))))))
 
 ==================================
@@ -1601,9 +1601,9 @@ public function main(): Float {
 
 (source_file
   (function_definition
-    (function_modifier)
+    (modifier)
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1615,9 +1615,9 @@ public function main(): Float {
                 (identifier))
               (variable_assignment
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))
           (variable_statement
             (variable_expression
@@ -1633,7 +1633,7 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (expression_statement
@@ -1644,7 +1644,7 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (expression_statement
@@ -1655,14 +1655,14 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (return_statement
             (access_expression
               (identifier)
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters))))
           (comment)
           (comment))))))
@@ -1920,7 +1920,7 @@ public function main(): Float {
   (namespace
     (identifier))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1938,7 +1938,7 @@ public function main(): Float {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1956,7 +1956,7 @@ public function main(): Float {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (variable_statement
         (variable_expression
@@ -1994,181 +1994,181 @@ public function main(): Float {
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (binary_expression
                 (num_float)
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (identifier)))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier)))
                 (binary_expression
                   (num_float)
                   (namespace_access_expression
-                    (identifier)
+                    (custom_type)
                     (identifier))))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))
+            (custom_type))
           (variable_assignment
             (object_creation
-              (identifier)
+              (custom_type)
               (cstring)
               (namespace_access_expression
-                (identifier)
+                (custom_type)
                 (identifier))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_float)
                 (num_float)
                 (num_float))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
@@ -2183,12 +2183,12 @@ public function main(): Float {
                 (identifier)
                 (primitive_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (access_expression
                     (this)
                     (identifier))
@@ -2199,28 +2199,28 @@ public function main(): Float {
                     (this)
                     (identifier))
                   (object_creation
-                    (identifier)
+                    (custom_type)
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier)))
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier)))
                     (binary_expression
                       (unary_expression
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
             (primitive_type))
@@ -2238,7 +2238,7 @@ public function main(): Float {
                         (primitive_type)
                         (binary_expression
                           (function_call
-                            (identifier)
+                            (custom_type)
                             (function_call_parameters
                               (access_expression
                                 (access_expression
@@ -2249,7 +2249,7 @@ public function main(): Float {
                             (primitive_type)
                             (binary_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (access_expression
                                     (access_expression
@@ -2259,7 +2259,7 @@ public function main(): Float {
                               (namespace_access_expression
                                 (primitive_type)
                                 (function_call
-                                  (identifier)
+                                  (custom_type)
                                   (function_call_parameters
                                     (access_expression
                                       (access_expression
@@ -2268,16 +2268,16 @@ public function main(): Float {
                                       (identifier)))))))))))))))))
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier)))
+                (custom_type)))
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))))
+                (custom_type))))
           (function_return_parameters
             (primitive_type))
           (function_usage
@@ -2334,30 +2334,30 @@ public function main(): Float {
                 (namespace_access_expression
                   (primitive_type)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters
                       (namespace_access_expression
                         (primitive_type)
                         (binary_expression
                           (function_call
-                            (identifier)
+                            (custom_type)
                             (function_call_parameters
                               (identifier)))
                           (namespace_access_expression
                             (primitive_type)
                             (binary_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (identifier)))
                               (namespace_access_expression
                                 (primitive_type)
                                 (function_call
-                                  (identifier)
+                                  (custom_type)
                                   (function_call_parameters
                                     (identifier))))))))))))))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -2365,7 +2365,7 @@ public function main(): Float {
             (identifier)
             (list_type
               (type_params
-                (identifier))))))
+                (custom_type))))))
       (variable_statement
         (variable_expression
           (variable_signature
@@ -2442,10 +2442,10 @@ public function main(): Float {
                   (num_whole)))))))
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (variable_statement
@@ -2456,18 +2456,18 @@ public function main(): Float {
                     (object_creation
                       (list_type
                         (type_params
-                          (identifier)))
+                          (custom_type)))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))
               (variable_statement
                 (variable_expression
@@ -2479,7 +2479,7 @@ public function main(): Float {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -2488,12 +2488,12 @@ public function main(): Float {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -2503,7 +2503,7 @@ public function main(): Float {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -2515,7 +2515,7 @@ public function main(): Float {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -2524,12 +2524,12 @@ public function main(): Float {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -2539,7 +2539,7 @@ public function main(): Float {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -2551,7 +2551,7 @@ public function main(): Float {
                         (identifier)
                         (function_call
                           (template
-                            (identifier)
+                            (custom_type)
                             (type_params
                               (primitive_type)))
                           (function_call_parameters
@@ -2560,12 +2560,12 @@ public function main(): Float {
                                 (access_expression
                                   (lambda_expression
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (variable_expression
                                           (variable_signature
                                             (identifier)
-                                            (identifier)))))
+                                            (custom_type)))))
                                     (function_return_parameters
                                       (primitive_type))
                                     (identifier))
@@ -2575,7 +2575,7 @@ public function main(): Float {
                                   (identifier)))
                               (identifier)))))
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))))))
               (variable_statement
                 (variable_expression
@@ -2585,36 +2585,36 @@ public function main(): Float {
                     (object_creation
                       (list_type
                         (type_params
-                          (identifier)))
+                          (custom_type)))
                       (access_expression
                         (namespace_access_expression
-                          (identifier)
+                          (custom_type)
                           (identifier))
                         (function_call
-                          (identifier)
+                          (custom_type)
                           (function_call_parameters
                             (identifier)
                             (identifier)
                             (identifier))))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))))))
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (identifier)))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
@@ -2637,13 +2637,13 @@ public function main(): Float {
                       (identifier)
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
@@ -2664,7 +2664,7 @@ public function main(): Float {
                                         (this)
                                         (identifier))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters
                                           (access_expression
                                             (identifier)
@@ -2679,7 +2679,7 @@ public function main(): Float {
                                         (this)
                                         (identifier))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters
                                           (access_expression
                                             (identifier)
@@ -2695,9 +2695,9 @@ public function main(): Float {
                                           (identifier)))
                                       (identifier)))
                                   (namespace_access_expression
-                                    (identifier)
+                                    (custom_type)
                                     (function_call
-                                      (identifier)
+                                      (custom_type)
                                       (function_call_parameters
                                         (identifier)
                                         (identifier))))))))))))))
@@ -2705,11 +2705,11 @@ public function main(): Float {
                 (access_expression
                   (identifier)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
             (primitive_type))
@@ -2726,24 +2726,24 @@ public function main(): Float {
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (access_expression
                             (lambda_expression
                               (function_call
-                                (identifier)
+                                (custom_type)
                                 (function_call_parameters
                                   (variable_expression
                                     (variable_signature
                                       (identifier)
-                                      (identifier)))))
+                                      (custom_type)))))
                               (function_return_parameters
                                 (primitive_type))
                               (identifier))
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters)))))))))
               (variable_statement
                 (variable_expression
@@ -2752,17 +2752,17 @@ public function main(): Float {
                   (variable_assignment
                     (access_expression
                       (namespace_access_expression
-                        (identifier)
+                        (custom_type)
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (primitive_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
@@ -2779,7 +2779,7 @@ public function main(): Float {
                                 (access_expression
                                   (this)
                                   (function_call
-                                    (identifier)
+                                    (custom_type)
                                     (function_call_parameters
                                       (identifier)))))))))))))
               (return_statement
@@ -2788,22 +2788,22 @@ public function main(): Float {
                     (identifier)
                     (binary_expression
                       (function_call
-                        (identifier)
+                        (custom_type)
                         (function_call_parameters))
                       (identifier)))
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))))
       (method_statement
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
                 (primitive_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (variable_statement
@@ -2817,25 +2817,25 @@ public function main(): Float {
                         (identifier))
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
                             (elist_type
-                              (identifier)
+                              (custom_type)
                               (primitive_type)
                               (primitive_type)
                               (primitive_type))))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
                                     (identifier)
-                                    (identifier)))))
+                                    (custom_type)))))
                             (function_return_parameters
                               (elist_type
-                                (identifier)
+                                (custom_type)
                                 (primitive_type)
                                 (primitive_type)
                                 (primitive_type)))
@@ -2851,7 +2851,7 @@ public function main(): Float {
                                         (identifier))
                                       (function_call
                                         (template
-                                          (identifier)
+                                          (custom_type)
                                           (type_params
                                             (elist_type
                                               (primitive_type)
@@ -2860,12 +2860,12 @@ public function main(): Float {
                                         (function_call_parameters
                                           (lambda_expression
                                             (function_call
-                                              (identifier)
+                                              (custom_type)
                                               (function_call_parameters
                                                 (variable_expression
                                                   (variable_signature
                                                     (identifier)
-                                                    (identifier)))))
+                                                    (custom_type)))))
                                             (function_return_parameters
                                               (elist_type
                                                 (primitive_type)
@@ -2939,9 +2939,9 @@ public function main(): Float {
                                                       (identifier))
                                                     (variable_assignment
                                                       (namespace_access_expression
-                                                        (identifier)
+                                                        (custom_type)
                                                         (function_call
-                                                          (identifier)
+                                                          (custom_type)
                                                           (function_call_parameters
                                                             (identifier)
                                                             (identifier)))))))
@@ -2997,14 +2997,14 @@ public function main(): Float {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -3018,7 +3018,7 @@ public function main(): Float {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (variable_statement
                                 (variable_expression
@@ -3036,14 +3036,14 @@ public function main(): Float {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -3057,7 +3057,7 @@ public function main(): Float {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (variable_statement
                                 (variable_expression
@@ -3075,14 +3075,14 @@ public function main(): Float {
                                             (identifier)))
                                         (function_call
                                           (template
-                                            (identifier)
+                                            (custom_type)
                                             (type_params
                                               (primitive_type)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
                                                 (function_call
-                                                  (identifier)
+                                                  (custom_type)
                                                   (function_call_parameters
                                                     (variable_expression
                                                       (variable_signature
@@ -3096,7 +3096,7 @@ public function main(): Float {
                                                 (identifier))
                                               (num_whole)))))
                                       (function_call
-                                        (identifier)
+                                        (custom_type)
                                         (function_call_parameters))))))
                               (return_statement
                                 (elist_value
@@ -3113,24 +3113,24 @@ public function main(): Float {
                       (identifier)
                       (function_call
                         (template
-                          (identifier)
+                          (custom_type)
                           (type_params
-                            (identifier)))
+                            (custom_type)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
-                              (identifier)
+                              (custom_type)
                               (function_call_parameters
                                 (variable_expression
                                   (variable_signature
                                     (identifier)
                                     (elist_type
-                                      (identifier)
+                                      (custom_type)
                                       (primitive_type)
                                       (primitive_type)
                                       (primitive_type))))))
                             (function_return_parameters
-                              (identifier))
+                              (custom_type))
                             (object_body
                               (variable_statement
                                 (variable_expression
@@ -3170,7 +3170,7 @@ public function main(): Float {
                                     (identifier))
                                   (variable_assignment
                                     (object_creation
-                                      (identifier)
+                                      (custom_type)
                                       (identifier)
                                       (identifier)
                                       (identifier)))))
@@ -3225,13 +3225,13 @@ public function main(): Float {
                                     (identifier))
                                   (variable_assignment
                                     (object_creation
-                                      (identifier)
+                                      (custom_type)
                                       (identifier)
                                       (identifier)
                                       (identifier)))))
                               (return_statement
                                 (object_creation
-                                  (identifier)
+                                  (custom_type)
                                   (access_expression
                                     (identifier)
                                     (identifier))
@@ -3242,12 +3242,12 @@ public function main(): Float {
                                   (identifier)))))))))))
               (return_statement
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (identifier)))))))))
   (function_definition
-    (function_modifier)
+    (modifier)
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -3259,9 +3259,9 @@ public function main(): Float {
                 (identifier))
               (variable_assignment
                 (namespace_access_expression
-                  (identifier)
+                  (custom_type)
                   (function_call
-                    (identifier)
+                    (custom_type)
                     (function_call_parameters))))))
           (variable_statement
             (variable_expression
@@ -3277,7 +3277,7 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (expression_statement
@@ -3288,7 +3288,7 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (expression_statement
@@ -3299,14 +3299,14 @@ public function main(): Float {
                 (variable_assignment
                   (identifier)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (identifier)))))
           (return_statement
             (access_expression
               (identifier)
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters))))
           (comment)
           (comment))))))

@@ -11,7 +11,7 @@ function main(): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))

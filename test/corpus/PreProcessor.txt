@@ -10,7 +10,22 @@ const y = 20I;
 
 ---
 
-
+(source_file
+  (preprocess_statement
+    (identifier)
+    (variable_statement
+      (variable_expression
+        (variable_signature
+          (identifier))
+        (variable_assignment
+          (num_whole))))
+    (variable_statement
+      (variable_expression
+        (variable_signature
+          (identifier))
+        (variable_assignment
+          (num_whole)))))
+  (comment))
 
 =============================
 Internal Preprocess
@@ -21,4 +36,39 @@ __internal entity MapEntry<K: keytype, V> {
 
 ---
 
+(source_file
+  (entity_declaration
+    (modifier)
+    (constructor_type
+      (type_params
+        (custom_type)
+        (custom_type)
+        (custom_type)))
+    (object_body)))
 
+=============================
+Inner Preprocess
+=============================
+
+__internal entity Map<K: keytype, V> {
+
+#if STRIPPED_CORE
+#else
+#endif %% STRIPPED_CORE
+
+}
+
+---
+
+(source_file
+  (entity_declaration
+    (modifier)
+    (constructor_type
+      (type_params
+        (custom_type)
+        (custom_type)
+        (custom_type)))
+    (object_body
+      (preprocess_statement
+        (identifier))
+      (comment))))

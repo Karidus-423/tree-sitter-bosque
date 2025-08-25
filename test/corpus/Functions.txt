@@ -11,7 +11,7 @@ function main() {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_usage
         (object_body
@@ -30,7 +30,7 @@ function main(k: CString) {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
@@ -53,7 +53,7 @@ function main(k: CString): Int {
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
@@ -78,9 +78,9 @@ recursive function main(k: CString): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
+    (modifier)
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
@@ -105,9 +105,9 @@ recursive? function main(k: CString): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
+    (modifier)
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
@@ -131,22 +131,22 @@ function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
 (source_file
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier)))
+            (custom_type)))
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier)))
+            (custom_type)))
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (function_return_parameters
         (option_type
           (type_params
-            (identifier))))
+            (custom_type))))
       (function_usage))))

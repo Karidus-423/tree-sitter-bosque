@@ -26,16 +26,16 @@ function main(): Option<Bar> {
   (namespace
     (identifier))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (option_type
           (type_params
-            (identifier))))
+            (custom_type))))
       (function_usage
         (object_body
           (return_statement
@@ -57,18 +57,18 @@ function main(): Option<Main::Bar> {
   (namespace
     (identifier))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (option_type
           (type_params
             (namespace_access_type
-              (identifier)
-              (identifier)))))
+              (custom_type)
+              (custom_type)))))
       (function_usage
         (object_body
           (return_statement
@@ -94,14 +94,14 @@ function main(): Option<NSOther::Foo> {
       (identifier)))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (option_type
           (type_params
             (namespace_access_type
-              (identifier)
-              (identifier)))))
+              (custom_type)
+              (custom_type)))))
       (function_usage
         (object_body
           (return_statement
@@ -128,14 +128,14 @@ function main(): Option<Other::Foo> {
       (identifier)))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (option_type
           (type_params
             (namespace_access_type
-              (identifier)
-              (identifier)))))
+              (custom_type)
+              (custom_type)))))
       (function_usage
         (object_body
           (return_statement
@@ -157,7 +157,7 @@ namespace NumericOps {
     (namespace_block
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
@@ -168,3 +168,32 @@ namespace NumericOps {
           (function_usage
             (function_alias
               (identifier))))))))
+
+============================================
+Namespaces and internal
+============================================
+
+namespace Core;
+
+namespace Map {
+}
+
+__internal entity MapEntry<K: keytype, V> {
+}
+
+---
+
+(source_file
+  (namespace
+    (identifier))
+  (namespace
+    (identifier)
+    (namespace_block))
+  (entity_declaration
+    (modifier)
+    (constructor_type
+      (type_params
+        (custom_type)
+        (custom_type)
+        (custom_type)))
+    (object_body)))

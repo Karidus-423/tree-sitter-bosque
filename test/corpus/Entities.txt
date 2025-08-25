@@ -9,7 +9,7 @@ entity Base{
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body)))
 
 ===========================
@@ -27,7 +27,7 @@ entity Food{
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -65,14 +65,14 @@ public function main(f: Foo): Int {
 
 (source_file
   (function_definition
-    (function_modifier)
+    (modifier)
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))
+            (custom_type))))
       (function_return_parameters
         (primitive_type))
       (function_usage
@@ -114,7 +114,7 @@ function foo(): Foo {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -123,15 +123,15 @@ function foo(): Foo {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
-        (identifier))
+        (custom_type))
       (function_usage
         (object_body
           (return_statement
             (object_creation
-              (identifier)
+              (custom_type)
               (num_whole))))))))
 
 ===========================
@@ -151,7 +151,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -160,7 +160,7 @@ function main(): Int {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -172,7 +172,7 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (num_whole)))))
           (return_statement
             (access_expression
@@ -203,7 +203,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -212,7 +212,7 @@ function main(): Int {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -224,7 +224,7 @@ function main(): Int {
                 (identifier))
               (variable_assignment
                 (object_creation
-                  (identifier)
+                  (custom_type)
                   (num_whole)))))
           (return_statement
             (access_expression

@@ -79,17 +79,9 @@ module.exports = grammar({
     _namespace_import_with_alias: ($) =>
       seq("using", $.identifier, "as", $.identifier, ";"),
 
-    function_modifier: (_) =>
-      choice(
-        "public",
-        "recursive",
-        "recursive?",
-        "chktest",
-        "errtest",
-      ),
     function_definition: ($) =>
       seq(
-        optional(repeat($.function_modifier)),
+        optional(repeat($.modifier)),
         "function",
         $.function_signature,
       ),
@@ -151,7 +143,7 @@ module.exports = grammar({
     _type_bind: ($) => prec.left(seq(":", $._type)),
 
     datatype_declaration: ($) =>
-    seq(
+      seq(
         "datatype",
         $._type,
         optional($.object_inherit),
@@ -161,38 +153,39 @@ module.exports = grammar({
         ";",
       ),
     datatype_constant_block: ($) =>
-    seq(
+      seq(
         "&",
         $.object_body,
       ),
     datatype_block: ($) =>
-    seq(
+      seq(
         "using",
         $.object_body,
       ),
     datatype_inheritance: ($) =>
-    prec.left(seq(
+      prec.left(seq(
         "of",
         repeat1($.datatype_objects),
       )),
-    datatype_objects: ($) =>
-    seq($._type, $.object_body, optional("|")),
+    datatype_objects: ($) => seq($._type, $.object_body, optional("|")),
 
     concept_declaration: ($) =>
       seq(
+        optional(repeat($.modifier)),
         "concept",
         $._type,
         $.object_body,
       ),
     entity_declaration: ($) =>
       seq(
+        optional(repeat($.modifier)),
         "entity",
         $._type,
         optional($.object_inherit),
         $.object_body,
       ),
     object_inherit: ($) =>
-    seq(
+      seq(
         "provides",
         commaSep1($._type),
       ),
@@ -204,7 +197,7 @@ module.exports = grammar({
         $._expression_body,
       ),
     _expression_body: ($) =>
-    seq(
+      seq(
         "{",
         commaSep($._expression),
         "}",
@@ -240,17 +233,33 @@ module.exports = grammar({
         $.method_statement,
         $.type_statement,
         $.comment,
+        $.preprocess_statement,
       ),
+    preprocess_statement: ($) =>
+      seq(
+        seq("#if", field("preprocess_tag",$.identifier)),
+        optional($._components),
+        optional($._else_preprocess),
+        "#endif",
+      ),
+    _else_preprocess: ($) =>
+        seq("#else", optional($._components)),
+
     variable_statement: ($) =>
       seq(choice("let", "const", "var"), $.variable_expression, ";"),
     abort_statement: (_) => seq("abort", ";"),
-    debug_statement: ($) => seq("_debug", $._expression, ";"),
+    debug_statement: ($) => seq(choice("_debug", "debug"), $._expression, ";"),
     expression_statement: ($) => seq($._expression, ";"),
     assert_statement: ($) => seq("assert", $._expression, ";"),
     field_statement: ($) => seq("field", $._expression, ";"),
     invariant_statement: ($) => seq("invariant", $._expression, ";"),
-    method_statement: ($) => seq(optional($.modifier), "method", $.function_signature),
-    type_statement: ($) =>seq("type", $._type, "=", $._type, ";"),
+    method_statement: ($) =>
+      seq(
+        optional(repeat($.modifier)),
+        "method",
+        $.function_signature,
+      ),
+    type_statement: ($) => seq("type", $._type, "=", $._type, ";"),
     return_statement: ($) =>
       seq(
         "return",
@@ -358,7 +367,7 @@ module.exports = grammar({
         $.lambda_expression,
       )),
     lambda_expression: ($) =>
-    prec.left(seq(
+      prec.left(seq(
         $.function_call,
         optional($.function_return_parameters),
         "=>",
@@ -384,14 +393,14 @@ module.exports = grammar({
     type_params: ($) =>
       seq(
         "<",
-        commaSep1($._type),
+        commaSep1(seq($._type, optional(seq(":", $._type)))),
         ">",
       ),
 
     // Result<Int, Bool>
     constructor_type: ($) =>
       seq(
-        choice("Result", "MapEntry", "Some"),
+        choice("Result", "Map", "MapEntry", "Some"),
         $.type_params,
       ),
     // Result<Int, Bool>::Ok{2i}
@@ -528,6 +537,12 @@ module.exports = grammar({
         "ref",
         "$",
         "__internal",
+        "public",
+        "recursive",
+        "recursive?",
+        "chktest",
+        "errtest",
+        "__internal",
       ),
 
     comment: (_) =>
@@ -539,7 +554,7 @@ module.exports = grammar({
         //Inline
         seq("%**", /([^*]|\*\*[^%])*/, "**%"),
       ),
-    identifier: ($) => seq(optional($.modifier), /[_a-zA-Z][_a-zA-Z0-9]*/),
+    identifier: ($) => seq(optional(repeat($.modifier)), /[_a-zA-Z][_a-zA-Z0-9]*/),
     this: (_) => token("this"),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     none_lit: (_) => token("none"),
@@ -575,7 +590,7 @@ module.exports = grammar({
     _type: ($) =>
       choice(
         $.primitive_type,
-        $.identifier,
+        alias($.identifier, $.custom_type),
         $.option_type,
         $.elist_type,
         $.constructor_type,
@@ -586,14 +601,13 @@ module.exports = grammar({
         $.lambda_type,
       ),
     lambda_type: ($) =>
-    prec.left(seq(
+      prec.left(seq(
         $._type,
         $.function_parameters,
         "->",
         $._type,
       )),
-    template: ($) =>
-    seq($._type, $.type_params),
+    template: ($) => seq($._type, $.type_params),
     list_type: ($) =>
       seq(
         "List",

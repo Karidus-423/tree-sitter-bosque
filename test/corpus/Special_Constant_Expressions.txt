@@ -19,7 +19,7 @@ some(3i)
 
 (source_file
   (function_call
-    (identifier)
+    (custom_type)
     (function_call_parameters
       (num_whole))))
 
@@ -33,7 +33,7 @@ ok(3i)
 
 (source_file
   (function_call
-    (identifier)
+    (custom_type)
     (function_call_parameters
       (num_whole))))
 
@@ -47,6 +47,6 @@ fail('bad name')
 
 (source_file
   (function_call
-    (identifier)
+    (custom_type)
     (function_call_parameters
       (cstring))))

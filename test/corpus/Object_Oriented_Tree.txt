@@ -14,7 +14,7 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_block
       (object_body
         (field_statement
@@ -24,14 +24,14 @@ function main(): Int {
               (primitive_type))))))
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -40,7 +40,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -63,7 +63,7 @@ function main(): Bool {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_block
       (object_body
         (field_statement
@@ -78,10 +78,10 @@ function main(): Bool {
             (num_whole)))))
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -90,7 +90,7 @@ function main(): Bool {
                 (primitive_type))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -99,7 +99,7 @@ function main(): Bool {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole)
                 (false_lit))
               (identifier))))))))
@@ -121,26 +121,26 @@ function main(): Int {
 (source_file
   (datatype_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (datatype_block
       (object_body
         (field_statement
           (variable_expression
             (variable_signature
               (identifier)
-              (identifier))))))
+              (custom_type))))))
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -150,7 +150,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole))
@@ -179,20 +179,20 @@ function main(): Int {
 (source_file
   (concept_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))))
+            (custom_type))))))
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
       (template
-        (identifier)
+        (custom_type)
         (type_params
           (primitive_type))))
     (datatype_block
@@ -204,7 +204,7 @@ function main(): Int {
               (primitive_type))))))
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (invariant_statement
             (binary_expression
@@ -215,11 +215,11 @@ function main(): Int {
                   (modifier)))
               (num_whole)))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -229,7 +229,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole)
@@ -252,10 +252,10 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -263,11 +263,11 @@ function main(): Int {
                 (identifier)
                 (primitive_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -276,7 +276,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -296,10 +296,10 @@ function main(): Bool {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -312,7 +312,7 @@ function main(): Bool {
                 (modifier))
               (num_whole)))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -321,7 +321,7 @@ function main(): Bool {
                 (primitive_type))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -330,7 +330,7 @@ function main(): Bool {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (false_lit))
               (identifier))))))))
 
@@ -351,24 +351,24 @@ function main(): Int {
 (source_file
   (datatype_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))))))
+                (custom_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -378,7 +378,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole))
@@ -402,10 +402,10 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -413,7 +413,7 @@ function main(): Int {
                 (identifier)
                 (primitive_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body)))
     (datatype_constant_block
       (object_body
@@ -426,7 +426,7 @@ function main(): Int {
               (num_whole)))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -434,7 +434,7 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (identifier))))))))
 
 =======================================
@@ -455,10 +455,10 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -466,7 +466,7 @@ function main(): Int {
                 (identifier)
                 (primitive_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body)))
     (datatype_constant_block
       (object_body
@@ -479,7 +479,7 @@ function main(): Int {
               (num_whole)))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -487,7 +487,7 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (identifier))))))))
 
 =======================================
@@ -508,10 +508,10 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -519,13 +519,13 @@ function main(): Int {
                 (identifier)
                 (primitive_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body)))
     (datatype_constant_block
       (object_body
         (function_definition
           (function_signature
-            (identifier)
+            (custom_type)
             (function_parameters)
             (function_return_parameters
               (primitive_type))
@@ -535,7 +535,7 @@ function main(): Int {
                   (num_whole)))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -543,9 +543,9 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters)))))))))
 
 =======================================
@@ -566,10 +566,10 @@ function main(): Int {
 
 (source_file
   (datatype_declaration
-    (identifier)
+    (custom_type)
     (datatype_inheritance
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body
           (field_statement
             (variable_expression
@@ -577,13 +577,13 @@ function main(): Int {
                 (identifier)
                 (primitive_type))))))
       (datatype_objects
-        (identifier)
+        (custom_type)
         (object_body)))
     (datatype_constant_block
       (object_body
         (function_definition
           (function_signature
-            (identifier)
+            (custom_type)
             (function_parameters)
             (function_return_parameters
               (primitive_type))
@@ -593,7 +593,7 @@ function main(): Int {
                   (num_whole)))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -601,9 +601,9 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters)))))))))
 
 =======================================
@@ -623,7 +623,7 @@ function main(): Int {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -631,13 +631,13 @@ function main(): Int {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier))
+      (custom_type))
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -646,7 +646,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -669,7 +669,7 @@ function main(): Bool {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -677,9 +677,9 @@ function main(): Bool {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier))
+      (custom_type))
     (object_body
       (field_statement
         (variable_expression
@@ -688,7 +688,7 @@ function main(): Bool {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -697,7 +697,7 @@ function main(): Bool {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole)
                 (true_lit))
               (identifier))))))))
@@ -722,7 +722,7 @@ function main(): Int {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -730,7 +730,7 @@ function main(): Int {
             (identifier)
             (primitive_type))))))
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -738,14 +738,14 @@ function main(): Int {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier)
-      (identifier))
+      (custom_type)
+      (custom_type))
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -754,7 +754,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole)
                 (true_lit))
               (identifier))))))))
@@ -777,29 +777,29 @@ function main(): Int {
 (source_file
   (concept_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))))
+            (custom_type))))))
   (entity_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_inherit
       (template
-        (identifier)
+        (custom_type)
         (type_params
-          (identifier))))
+          (custom_type))))
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -809,7 +809,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole))
@@ -833,29 +833,29 @@ function main(): Int {
 (source_file
   (concept_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))))
+            (custom_type))))))
   (entity_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_inherit
       (template
-        (identifier)
+        (custom_type)
         (type_params
-          (identifier))))
+          (custom_type))))
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -865,7 +865,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole))
@@ -889,7 +889,7 @@ function main(): Int {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -902,13 +902,13 @@ function main(): Int {
             (modifier))
           (num_whole)))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier))
+      (custom_type))
     (object_body))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -917,7 +917,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -940,7 +940,7 @@ function main(): Int {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -948,9 +948,9 @@ function main(): Int {
             (identifier)
             (primitive_type))))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier))
+      (custom_type))
     (object_body
       (invariant_statement
         (binary_expression
@@ -959,7 +959,7 @@ function main(): Int {
           (num_whole)))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -968,7 +968,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -992,7 +992,7 @@ function main(): Int {
 
 (source_file
   (concept_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1005,9 +1005,9 @@ function main(): Int {
             (modifier))
           (num_whole)))))
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_inherit
-      (identifier))
+      (custom_type))
     (object_body
       (invariant_statement
         (binary_expression
@@ -1016,7 +1016,7 @@ function main(): Int {
           (num_whole)))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1025,7 +1025,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -1045,7 +1045,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1054,7 +1054,7 @@ function main(): Int {
             (primitive_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1063,7 +1063,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -1084,7 +1084,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1098,7 +1098,7 @@ function main(): Int {
           (num_whole)))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1107,7 +1107,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -1128,18 +1128,18 @@ function main(): Int {
 (source_file
   (entity_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (field_statement
         (variable_expression
           (variable_signature
             (identifier)
-            (identifier))))))
+            (custom_type))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1149,7 +1149,7 @@ function main(): Int {
             (access_expression
               (object_creation
                 (template
-                  (identifier)
+                  (custom_type)
                   (type_params
                     (primitive_type)))
                 (num_whole))
@@ -1171,7 +1171,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1182,7 +1182,7 @@ function main(): Int {
             (num_whole))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1191,7 +1191,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -1212,7 +1212,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (field_statement
         (variable_expression
@@ -1229,7 +1229,7 @@ function main(): Int {
               (modifier)))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1238,7 +1238,7 @@ function main(): Int {
           (return_statement
             (access_expression
               (object_creation
-                (identifier)
+                (custom_type)
                 (num_whole))
               (identifier))))))))
 
@@ -1258,7 +1258,7 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (variable_statement
         (variable_expression
@@ -1269,7 +1269,7 @@ function main(): Int {
             (num_whole))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1277,7 +1277,7 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (identifier))))))))
 
 =======================================
@@ -1297,9 +1297,9 @@ function main(): Int {
 (source_file
   (entity_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (variable_statement
         (variable_expression
@@ -1310,7 +1310,7 @@ function main(): Int {
             (num_whole))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1318,7 +1318,7 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (identifier))))))))
 
 =======================================
@@ -1339,11 +1339,11 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters)
           (function_return_parameters
             (primitive_type))
@@ -1353,7 +1353,7 @@ function main(): Int {
                 (num_whole))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1361,9 +1361,9 @@ function main(): Int {
         (object_body
           (return_statement
             (namespace_access_expression
-              (identifier)
+              (custom_type)
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters)))))))))
 
 =======================================
@@ -1385,27 +1385,27 @@ function main(): Int {
 (source_file
   (entity_declaration
     (template
-      (identifier)
+      (custom_type)
       (type_params
-        (identifier)))
+        (custom_type)))
     (object_body
       (function_definition
         (function_signature
-          (identifier)
+          (custom_type)
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))))
+                (custom_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (return_statement
                 (identifier))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1414,11 +1414,11 @@ function main(): Int {
           (return_statement
             (namespace_access_expression
               (template
-                (identifier)
+                (custom_type)
                 (type_params
                   (primitive_type)))
               (function_call
-                (identifier)
+                (custom_type)
                 (function_call_parameters
                   (num_whole))))))))))
 
@@ -1440,28 +1440,28 @@ function main(): Int {
 
 (source_file
   (entity_declaration
-    (identifier)
+    (custom_type)
     (object_body
       (function_definition
         (function_signature
           (template
-            (identifier)
+            (custom_type)
             (type_params
-              (identifier)))
+              (custom_type)))
           (function_parameters
             (variable_expression
               (variable_signature
                 (identifier)
-                (identifier))))
+                (custom_type))))
           (function_return_parameters
-            (identifier))
+            (custom_type))
           (function_usage
             (object_body
               (return_statement
                 (identifier))))))))
   (function_definition
     (function_signature
-      (identifier)
+      (custom_type)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
@@ -1471,8 +1471,8 @@ function main(): Int {
             (function_call
               (template
                 (namespace_access_type
-                  (identifier)
-                  (identifier))
+                  (custom_type)
+                  (custom_type))
                 (type_params
                   (primitive_type)))
               (function_call_parameters
