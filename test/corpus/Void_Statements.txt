@@ -20,8 +20,9 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (identifier))
+  (entity_declaration
+    (identifier)
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
@@ -31,30 +32,32 @@ function main(): Int {
             (identifier
               (modifier))
             (identifier))))
-      (function_body
-        (return_statement))))
+      (function_usage
+        (object_body
+          (return_statement)))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)))))
-        (expression_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (identifier
-                (modifier)))))
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)))))
+          (expression_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (identifier
+                  (modifier)))))
+          (return_statement
+            (num_whole)))))))
 
 =======================================
 Void Namespace Method Ref Params
@@ -75,35 +78,38 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (modifier)
-      (function_signature
-        (identifier)
-        (function_parameters)
-        (function_body
-          (return_statement)))))
+    (object_body
+      (method_statement
+        (modifier)
+        (function_signature
+          (identifier)
+          (function_parameters)
+          (function_usage
+            (object_body
+              (return_statement)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)))))
-        (expression_statement
-          (access_expression
-            (identifier
-              (modifier))
-            (function_call
-              (identifier)
-              (function_call_parameters))))
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)))))
+          (expression_statement
+            (access_expression
+              (identifier
+                (modifier))
+              (function_call
+                (identifier)
+                (function_call_parameters))))
+          (return_statement
+            (num_whole)))))))

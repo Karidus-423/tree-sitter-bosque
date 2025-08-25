@@ -16,19 +16,20 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type)
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole)
-              (true_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type)
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole)
+                (true_lit))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign Only 2
@@ -48,19 +49,20 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type)
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole)
-              (true_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type)
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole)
+                (true_lit))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign Only 3
@@ -80,17 +82,18 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (num_whole)
-              (true_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (num_whole)
+                (true_lit))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign Only 4
@@ -110,17 +113,18 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (num_whole)
-              (true_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (num_whole)
+                (true_lit))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign Only 5
@@ -140,19 +144,20 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (num_whole)
-              (true_lit)
-              (false_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (num_whole)
+                (true_lit)
+                (false_lit))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign Only 6
@@ -172,21 +177,22 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type)
-              (identifier)
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole)
-              (true_lit)
-              (num_whole))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type)
+                (identifier)
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole)
+                (true_lit)
+                (num_whole))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign From EList 1
@@ -206,20 +212,21 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type)
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (elist_value
-                (num_whole)
-                (true_lit)))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type)
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (elist_value
+                  (num_whole)
+                  (true_lit)))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign From EList 2
@@ -239,20 +246,21 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type)
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (elist_value
-                (num_whole)
-                (true_lit)))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type)
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (elist_value
+                  (num_whole)
+                  (true_lit)))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign From EList 3
@@ -272,18 +280,19 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (elist_value
-                (num_whole)
-                (true_lit)))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (elist_value
+                  (num_whole)
+                  (true_lit)))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign From EList 4
@@ -303,18 +312,19 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (elist_value
-                (num_whole)
-                (true_lit)))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (elist_value
+                  (num_whole)
+                  (true_lit)))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Declare-Assign From EList 5
@@ -334,20 +344,21 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (elist_value
-                (num_whole)
-                (true_lit)
-                (false_lit)))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (elist_value
+                  (num_whole)
+                  (true_lit)
+                  (false_lit)))))
+          (return_statement
+            (identifier)))))))
 
 =======================================
 Multi Assign 1
@@ -368,21 +379,22 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole))))
-        (expression_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (num_whole)
-              (false_lit))))
-        (return_statement
-          (identifier))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole))))
+          (expression_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (num_whole)
+                (false_lit))))
+          (return_statement
+            (identifier)))))))

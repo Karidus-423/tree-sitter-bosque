@@ -38,6 +38,8 @@ module.exports = grammar({
   conflicts: ($) => [
     [$.variable_signature, $._expression_not_binary, $._type],
     [$.variable_assignment, $.access_expression],
+    [$.type_cast_expression, $.unary_expression, $.binary_expression],
+    [$.type_cast_expression, $.binary_expression],
   ],
 
   rules: {
@@ -45,16 +47,12 @@ module.exports = grammar({
 
     _components: ($) =>
       choice(
-        $.comment,
         $.namespace,
-        $.type_decl,
-        $.entity,
-        $.enum,
-        $.concept,
-        $.function_definition,
-        $.datatype,
         $._expression,
         $._statement,
+        $.entity_declaration,
+        $.concept_declaration,
+        $.datatype_declaration,
       ),
 
     namespace: ($) =>
@@ -73,6 +71,7 @@ module.exports = grammar({
         repeat(choice(
           $._namespace_import_simple,
           $._namespace_import_with_alias,
+          $._components,
         )),
         "}",
       ),
@@ -80,16 +79,7 @@ module.exports = grammar({
     _namespace_import_with_alias: ($) =>
       seq("using", $.identifier, "as", $.identifier, ";"),
 
-    type_decl: ($) =>
-      seq(
-        "type",
-        $.identifier,
-        "=",
-        $._type,
-        ";",
-      ),
-
-    function_modifier: ($) =>
+    function_modifier: (_) =>
       choice(
         "public",
         "recursive",
@@ -105,10 +95,10 @@ module.exports = grammar({
       ),
     function_signature: ($) =>
       seq(
-        field("function_id", $.identifier),
+        field("function_id", $._type),
         $.function_parameters,
         optional($.function_return_parameters),
-        choice($.function_body, ";"),
+        $.function_usage,
       ),
     function_parameters: ($) =>
       seq(
@@ -117,11 +107,11 @@ module.exports = grammar({
         ")",
       ),
     function_return_parameters: ($) =>
-      seq(
+      prec.left(seq(
         ":",
         field("type_sig", $._type),
         optional(repeat(seq($._pre_post_conditions, ";"))),
-      ),
+      )),
     _pre_post_conditions: ($) =>
       choice(
         $.post_condition,
@@ -129,145 +119,113 @@ module.exports = grammar({
       ),
     pre_condition: ($) => seq("requires", $._expression),
     post_condition: ($) => seq("ensures", $._expression),
-    function_body: ($) =>
+    function_usage: ($) =>
+      choice(
+        $.object_body,
+        $.function_alias,
+        ";",
+      ),
+    object_body: ($) =>
       seq(
         "{",
         optional(repeat($._statement)),
         "}",
       ),
-
-    concept: ($) =>
-      seq(
-        "concept",
-        $._type,
-        "{",
-        optional(repeat($.field)),
-        "}",
-      ),
+    function_alias: ($) => seq("=", $.identifier, ";"),
 
     variable_expression: ($) =>
       seq(
         $.variable_signature,
         optional($.variable_assignment),
       ),
-
     variable_signature: ($) =>
       prec.left(
         PREC.ASSIGNMENT,
         commaSep1(seq($.identifier, optional($._type_bind))),
       ),
-
     variable_assignment: ($) =>
       prec.left(seq(
         "=",
         commaSep1($._expression),
       )),
+    _type_bind: ($) => prec.left(seq(":", $._type)),
 
-    _type_bind: ($) => seq(":", $._type),
-
-    datatype: ($) =>
-      seq(
+    datatype_declaration: ($) =>
+    seq(
         "datatype",
-        $.identifier,
-        optional($._inherit),
-        optional($._datatype_block),
-        "of",
-        repeat(seq(
-          $._entity_signature,
-          optional("|"),
-        )),
-        optional($._datatype_constants),
+        $._type,
+        optional($.object_inherit),
+        optional($.datatype_block),
+        optional($.datatype_inheritance),
+        optional($.datatype_constant_block),
         ";",
       ),
-    _inherit: ($) =>
-      seq(
-        "provides",
-        repeat(seq(
-          $._type,
-          optional(","),
-        )),
-      ),
-    _datatype_block: ($) =>
-      seq(
-        "using",
-        "{",
-        optional(repeat($.field)),
-        "}",
-      ),
-    _datatype_constants: ($) =>
-      seq(
+    datatype_constant_block: ($) =>
+    seq(
         "&",
-        "{",
-        optional(repeat($.field)),
-        "}",
+        $.object_body,
+      ),
+    datatype_block: ($) =>
+    seq(
+        "using",
+        $.object_body,
+      ),
+    datatype_inheritance: ($) =>
+    prec.left(seq(
+        "of",
+        repeat1($.datatype_objects),
+      )),
+    datatype_objects: ($) =>
+    seq($._type, $.object_body, optional("|")),
+
+    concept_declaration: ($) =>
+      seq(
+        "concept",
+        $._type,
+        $.object_body,
+      ),
+    entity_declaration: ($) =>
+      seq(
+        "entity",
+        $._type,
+        optional($.object_inherit),
+        $.object_body,
+      ),
+    object_inherit: ($) =>
+    seq(
+        "provides",
+        commaSep1($._type),
       ),
 
-    entity: ($) => seq(optional($.modifier), "entity", $._entity_signature),
-    _entity_signature: ($) =>
-      seq(
-        field("entity_id", $._type),
-        optional($._inherit),
-        $._entity_block,
-      ),
-    _entity_block: ($) =>
-      seq(
-        "{",
-        optional(repeat($.field)),
-        "}",
-      ),
-    field: ($) =>
-      choice(
-        $._entity_method,
-        $._entity_member,
-        $.invariant,
-        $._statement,
-      ),
-
-    _entity_method: ($) =>
-      seq(
-        optional(repeat($.modifier)),
-        "method",
-        $.function_signature,
-      ),
-    _entity_member: ($) =>
-      seq(
-        "field",
-        $._expression,
-        ";",
-      ),
-    invariant: ($) =>
-      seq(
-        "invariant",
-        $._expression,
-        ";",
-      ),
-    type_definition: ($) =>
+    object_creation: ($) =>
       seq(
         $._type,
         optional(seq("::", choice("Ok", "Fail"))),
+        $._expression_body,
+      ),
+    _expression_body: ($) =>
+    seq(
         "{",
         commaSep($._expression),
         "}",
       ),
-    entity_update: ($) =>
-      seq(
-        $.identifier,
-        "[",
-        commaSep($._expression),
-        "]",
-      ),
+
+    object_update: ($) => seq($.identifier, $.object_update_block),
+    object_update_block: ($) => seq("[", commaSep($._expression), "]"),
 
     enum: ($) => seq("enum", $.identifier, $._enum_block),
     _enum_block: ($) =>
       seq(
         "{",
-        optional(repeat($._enum_field)),
+        commaSep($._enum_member),
         "}",
       ),
-    _enum_field: ($) => seq($._enum_member, optional(",")),
+    enum_access: ($) => seq($.identifier, "#", $._enum_member),
 
     _statement: ($) =>
       choice(
+        $.enum,
+        $.function_definition,
         $.expression_statement,
         $.assert_statement,
         $.return_statement,
@@ -277,13 +235,22 @@ module.exports = grammar({
         $.debug_statement,
         $.abort_statement,
         $.variable_statement,
+        $.field_statement,
+        $.invariant_statement,
+        $.method_statement,
+        $.type_statement,
+        $.comment,
       ),
     variable_statement: ($) =>
       seq(choice("let", "const", "var"), $.variable_expression, ";"),
-    abort_statement: ($) => seq("abort", ";"),
+    abort_statement: (_) => seq("abort", ";"),
     debug_statement: ($) => seq("_debug", $._expression, ";"),
     expression_statement: ($) => seq($._expression, ";"),
     assert_statement: ($) => seq("assert", $._expression, ";"),
+    field_statement: ($) => seq("field", $._expression, ";"),
+    invariant_statement: ($) => seq("invariant", $._expression, ";"),
+    method_statement: ($) => seq(optional($.modifier), "method", $.function_signature),
+    type_statement: ($) =>seq("type", $._type, "=", $._type, ";"),
     return_statement: ($) =>
       seq(
         "return",
@@ -312,7 +279,7 @@ module.exports = grammar({
         optional(";"),
         "}",
       ),
-    ITest: ($) =>
+    ITest: (_) =>
       seq(
         optional(repeat("@")),
         choice(
@@ -367,10 +334,11 @@ module.exports = grammar({
         $._compound_expression,
       ),
     _expression_not_binary: ($) =>
-      choice(
+      prec.left(choice(
         $._num_lit,
         $.this,
         $._strings,
+        $.regex_expression,
         $.true_lit,
         $.false_lit,
         $.key_comparator,
@@ -380,13 +348,33 @@ module.exports = grammar({
         $.parenthesized_expression,
         $.function_call,
         $.enum_access,
-        $.type_definition,
-        $.entity_update,
+        $.object_creation,
+        $.object_update,
         $.elist_value,
         $.access_expression,
         $.variable_expression,
+        $.type_cast_expression,
+        $.namespace_access_expression,
+        $.lambda_expression,
+      )),
+    lambda_expression: ($) =>
+    prec.left(seq(
+        $.function_call,
+        optional($.function_return_parameters),
+        "=>",
+        choice(
+          $._expression,
+          $.object_body,
+        ),
+      )),
+    type_cast_expression: ($) =>
+      prec(
+        PREC.CAST,
+        seq(
+          $._expression,
+          $.type_params,
+        ),
       ),
-
     elist_value: ($) =>
       seq(
         "(|",
@@ -415,12 +403,7 @@ module.exports = grammar({
         choice("equal", "less"),
         $.type_params,
         "(",
-        repeat(
-          seq(
-            $._expression,
-            optional(","),
-          ),
-        ),
+        commaSep1($._expression),
         ")",
       )),
     parenthesized_expression: ($) =>
@@ -475,19 +458,25 @@ module.exports = grammar({
           ")",
         ),
       ),
-    enum_access: ($) => seq($.identifier, "#", $._enum_member),
     access_expression: ($) =>
       prec.left(seq(
         $._expression,
         ".",
         $._expression,
       )),
+    namespace_access_expression: ($) =>
+      prec.left(seq(
+        $._type,
+        "::",
+        $._expression,
+      )),
+    namespace_access_type: ($) => prec.left(seq($._type, "::", $._type)),
 
     function_call: ($) =>
       prec(
         PREC.CALL,
         seq(
-          field("function_id", $.identifier),
+          field("function_id", $._type),
           $.function_call_parameters,
         ),
       ),
@@ -525,7 +514,7 @@ module.exports = grammar({
           precedence,
           seq(
             field("left", $._expression),
-            // @ts-ignore
+            // @ts-ignore // Uses "rules" and expects $.rule but works the same.
             field("operator", operator),
             field("right", $._expression),
           ),
@@ -533,7 +522,7 @@ module.exports = grammar({
       }));
     },
 
-    modifier: ($) =>
+    modifier: (_) =>
       choice(
         "...",
         "ref",
@@ -551,13 +540,13 @@ module.exports = grammar({
         seq("%**", /([^*]|\*\*[^%])*/, "**%"),
       ),
     identifier: ($) => seq(optional($.modifier), /[_a-zA-Z][_a-zA-Z0-9]*/),
-    this: ($) => token("this"),
+    this: (_) => token("this"),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     none_lit: (_) => token("none"),
     true_lit: (_) => token("true"),
     false_lit: (_) => token("false"),
     _num_lit: ($) => choice($.num_float, $.num_whole),
-    num_whole: ($) =>
+    num_whole: (_) =>
       choice(
         field("index", /[0-9]+/),
         /[+-]?[0-9]*[iI]/,
@@ -566,16 +555,16 @@ module.exports = grammar({
         /[+]?[0-9]*[nN]/,
         /-?[0-9]+\/[1-9][0-9]*R/,
       ),
-    num_float: ($) =>
+    num_float: (_) =>
       choice(
         /[+-]?\d+\.\d+f/,
         /[+-]?[0-9]*\.0d|[+-]?[0-9]\.[0-9]*0+d{2}/,
       ),
 
-    _strings: ($) => choice($.string, $.cstring, $.string_regex),
-    string: ($) => /"(?:[^%"\\]|%.)*"/u,
-    cstring: ($) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
-    string_regex: ($) =>
+    _strings: ($) => choice($.string, $.cstring),
+    string: (_) => /"(?:[^%"\\]|%.)*"/u,
+    cstring: (_) => /'(?:[ !-$/&-\[\]-~]|%.)*'/,
+    regex_expression: (_) =>
       token(seq(
         "/",
         repeat1(/[^/]/),
@@ -591,7 +580,20 @@ module.exports = grammar({
         $.elist_type,
         $.constructor_type,
         $.list_type,
+        $.regex_type,
+        $.namespace_access_type,
+        $.template,
+        $.lambda_type,
       ),
+    lambda_type: ($) =>
+    prec.left(seq(
+        $._type,
+        $.function_parameters,
+        "->",
+        $._type,
+      )),
+    template: ($) =>
+    seq($._type, $.type_params),
     list_type: ($) =>
       seq(
         "List",
@@ -608,9 +610,15 @@ module.exports = grammar({
         "Option",
         $.type_params,
       ),
+    regex_type: ($) =>
+      prec.left(seq(
+        choice("CString", "String"),
+        "of",
+        choice($.regex_expression, $._type),
+      )),
 
-    primitive_type: ($) =>
-      choice(
+    primitive_type: (_) =>
+      prec.left(choice(
         "None",
         "Bool",
         "Nat",
@@ -649,7 +657,7 @@ module.exports = grammar({
         "Path",
         "PathItem",
         "Glob",
-      ),
+      )),
   },
 });
 

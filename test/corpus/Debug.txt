@@ -16,8 +16,9 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         type_sig: (primitive_type))
-      (function_body
-        (debug_statement
-          (num_whole))
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (debug_statement
+            (num_whole))
+          (return_statement
+            (num_whole)))))))

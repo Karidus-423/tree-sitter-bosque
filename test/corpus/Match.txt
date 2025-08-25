@@ -23,27 +23,28 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (option_type
-                (type_params
-                  (primitive_type))))
-            (variable_assignment
-              (function_call
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
                 (identifier)
-                (function_call_parameters
-                  (num_whole))))))
-        (match_statement
-          (identifier)
-          (primitive_type)
-          (return_statement
-            (num_whole))
-          (identifier)
-          (return_statement
-            (num_whole)))))))
+                (option_type
+                  (type_params
+                    (primitive_type))))
+              (variable_assignment
+                (function_call
+                  (identifier)
+                  (function_call_parameters
+                    (num_whole))))))
+          (match_statement
+            (identifier)
+            (primitive_type)
+            (return_statement
+              (num_whole))
+            (identifier)
+            (return_statement
+              (num_whole))))))))
 
 ===============================
 Simple Match Alt
@@ -72,23 +73,24 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)))))
-        (match_statement
-          (identifier)
-          (identifier)
-          (return_statement
-            (num_whole))
-          (identifier)
-          (return_statement
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)))))
+          (match_statement
+            (identifier)
+            (identifier)
+            (return_statement
+              (num_whole))
+            (identifier)
+            (return_statement
+              (num_whole))))))))
 
 ======================
 Simple Match Bind
@@ -116,27 +118,28 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier)
-              (option_type
-                (type_params
-                  (primitive_type))))
-            (variable_assignment
-              (function_call
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
                 (identifier)
-                (function_call_parameters
-                  (num_whole))))))
-        (match_statement
-          (identifier)
-          (primitive_type)
-          (return_statement
-            (num_whole))
-          (identifier)
-          (return_statement
-            (num_whole)))))))
+                (option_type
+                  (type_params
+                    (primitive_type))))
+              (variable_assignment
+                (function_call
+                  (identifier)
+                  (function_call_parameters
+                    (num_whole))))))
+          (match_statement
+            (identifier)
+            (primitive_type)
+            (return_statement
+              (num_whole))
+            (identifier)
+            (return_statement
+              (num_whole))))))))
 
 ===============================
 Simple Switch
@@ -163,21 +166,22 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (num_whole))))
-        (switch_statement
-          (identifier)
-          (num_whole)
-          (return_statement
-            (num_whole))
-          (identifier)
-          (return_statement
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (num_whole))))
+          (switch_statement
+            (identifier)
+            (num_whole)
+            (return_statement
+              (num_whole))
+            (identifier)
+            (return_statement
+              (num_whole))))))))
 
 ============================
 Simple Enum Switch
@@ -214,22 +218,23 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (enum_access
-                (identifier)
-                (enum_member)))))
-        (switch_statement
-          (identifier)
-          (enum_access
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (enum_access
+                  (identifier)
+                  (enum_member)))))
+          (switch_statement
             (identifier)
-            (enum_member))
-          (return_statement
-            (num_whole))
-          (identifier)
-          (return_statement
-            (num_whole)))))))
+            (enum_access
+              (identifier)
+              (enum_member))
+            (return_statement
+              (num_whole))
+            (identifier)
+            (return_statement
+              (num_whole))))))))

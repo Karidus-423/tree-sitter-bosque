@@ -25,8 +25,9 @@ function main(): Option<Bar> {
 (source_file
   (namespace
     (identifier))
-  (entity
-    (identifier))
+  (entity_declaration
+    (identifier)
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
@@ -35,9 +36,10 @@ function main(): Option<Bar> {
         (option_type
           (type_params
             (identifier))))
-      (function_body
-        (return_statement
-          (none_lit))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (none_lit)))))))
 
 =================================
 Namespaces Scope Access Explicit
@@ -54,21 +56,23 @@ function main(): Option<Main::Bar> {
 (source_file
   (namespace
     (identifier))
-  (entity
-    (identifier))
+  (entity_declaration
+    (identifier)
+    (object_body))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (option
-          (import
-            (identifier)
-            (identifier))))
-      (function_body
-        (return_statement
-          (none_lit))))))
+        (option_type
+          (type_params
+            (namespace_access_type
+              (identifier)
+              (identifier)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (none_lit)))))))
 
 ===============================
 Namespace Import Access
@@ -89,18 +93,19 @@ function main(): Option<NSOther::Foo> {
     (namespace_block
       (identifier)))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (option
-          (import
-            (identifier)
-            (identifier))))
-      (function_body
-        (return_statement
-          (none_lit))))))
+        (option_type
+          (type_params
+            (namespace_access_type
+              (identifier)
+              (identifier)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (none_lit)))))))
 
 ===============================
 Namespace Import Access Rename
@@ -122,18 +127,19 @@ function main(): Option<Other::Foo> {
       (identifier)
       (identifier)))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
-        (option
-          (import
-            (identifier)
-            (identifier))))
-      (function_body
-        (return_statement
-          (none_lit))))))
+        (option_type
+          (type_params
+            (namespace_access_type
+              (identifier)
+              (identifier)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (none_lit)))))))
 
 ===============================
 Namespace Definitions
@@ -145,4 +151,20 @@ namespace NumericOps {
 
 ---
 
-
+(source_file
+  (namespace
+    (identifier)
+    (namespace_block
+      (function_definition
+        (function_signature
+          (identifier)
+          (function_parameters
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))
+          (function_return_parameters
+            (primitive_type))
+          (function_usage
+            (function_alias
+              (identifier))))))))

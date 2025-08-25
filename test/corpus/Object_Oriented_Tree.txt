@@ -13,28 +13,36 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (identifier)
-    (identifier))
+    (datatype_block
+      (object_body
+        (field_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body))
+      (datatype_objects
+        (identifier)
+        (object_body))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 eADT Decl 2
@@ -54,40 +62,47 @@ function main(): Bool {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (invariant
-        (binary_expression
-          (identifier
-            (modifier))
-          (num_whole))))
-    (identifier)
-    (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (datatype_block
+      (object_body
+        (field_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))))
+        (invariant_statement
+          (binary_expression
+            (identifier
+              (modifier))
+            (num_whole)))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body))
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole)
-              (false_lit))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole)
+                (false_lit))
+              (identifier))))))))
 
 =======================================
 eADT Decl 3
@@ -104,29 +119,42 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
-    (identifier)
-    (identifier)
-    (field
+  (datatype_declaration
+    (template
       (identifier)
-      (identifier))
-    (identifier)
-    (identifier))
+      (type_params
+        (identifier)))
+    (datatype_block
+      (object_body
+        (field_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (identifier))))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body))
+      (datatype_objects
+        (identifier)
+        (object_body))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 eADT Decl 4
@@ -149,46 +177,64 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
-    (identifier)
-    (identifier)
-    (field
+  (concept_declaration
+    (template
       (identifier)
-      (identifier)))
-  (datatype
+      (type_params
+        (identifier)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier))))))
+  (datatype_declaration
     (identifier)
-    (identifier)
-    (identifier)
-    (field
-      (identifier)
-      (primitive_type))
-    (identifier)
-    (field
-      (invariant
-        (binary_expression
-          (binary_expression
-            (identifier
-              (modifier))
-            (identifier
-              (modifier)))
-          (num_whole))))
-    (identifier))
+    (object_inherit
+      (template
+        (identifier)
+        (type_params
+          (primitive_type))))
+    (datatype_block
+      (object_body
+        (field_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (invariant_statement
+            (binary_expression
+              (binary_expression
+                (identifier
+                  (modifier))
+                (identifier
+                  (modifier)))
+              (num_whole)))))
+      (datatype_objects
+        (identifier)
+        (object_body))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)
-              (true_lit)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole)
+                (true_lit))
+              (identifier))))))))
 
 =======================================
 eADT Basic 1
@@ -205,28 +251,34 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (identifier))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))
+      (datatype_objects
+        (identifier)
+        (object_body))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 eADT Basic 2
@@ -243,39 +295,44 @@ function main(): Bool {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (invariant
-        (binary_expression
-          (identifier
-            (modifier))
-          (num_whole))))
-    (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))
+          (invariant_statement
+            (binary_expression
+              (identifier
+                (modifier))
+              (num_whole)))))
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (false_lit))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (false_lit))
+              (identifier))))))))
 
 =======================================
 eADT Basic 3 (Generic)
@@ -292,29 +349,40 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
-    (identifier)
-    (identifier)
-    (identifier)
-    (field
+  (datatype_declaration
+    (template
       (identifier)
-      (identifier))
-    (identifier))
+      (type_params
+        (identifier)))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))))))
+      (datatype_objects
+        (identifier)
+        (object_body))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 eADT Const 1
@@ -333,31 +401,41 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (identifier)
-    (field
-      (identifier)
-      (primitive_type))
-    (identifier)
-    (field
-      (const_decl
-        (variable_definition
-          (identifier)
-          (primitive_type))
-        (num_whole))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))
+      (datatype_objects
+        (identifier)
+        (object_body)))
+    (datatype_constant_block
+      (object_body
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole)))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (import
-            (identifier)
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (identifier))))))))
 
 =======================================
 eADT Const 2
@@ -376,31 +454,41 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
+  (datatype_declaration
     (identifier)
-    (identifier)
-    (field
-      (identifier)
-      (primitive_type))
-    (identifier)
-    (field
-      (const_decl
-        (variable_definition
-          (identifier)
-          (primitive_type))
-        (num_whole))))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))
+      (datatype_objects
+        (identifier)
+        (object_body)))
+    (datatype_constant_block
+      (object_body
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_whole)))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (import
-            (identifier)
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (identifier))))))))
 
 =======================================
 eADT Function 1
@@ -419,34 +507,46 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
-    (object_id
-      (entity_id))
-    (entity_id)
+  (datatype_declaration
     (identifier)
-    (entity_id)
-    (entity_id)
-    (function_definition
-      (object_id
-        (entity_id))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))
+      (datatype_objects
+        (identifier)
+        (object_body)))
+    (datatype_constant_block
+      (object_body
+        (function_definition
+          (function_signature
+            (identifier)
+            (function_parameters)
+            (function_return_parameters
+              (primitive_type))
+            (function_usage
+              (object_body
+                (return_statement
+                  (num_whole)))))))))
+  (function_definition
+    (function_signature
+      (identifier)
       (function_parameters)
       (function_return_parameters
-        (entity_id))
-      (function_body
-        (return_statement
-          (num_whole)))))
-  (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (import
-          (entity_id)
-          (function_call
-            (identifier)))))))
+        (primitive_type))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (function_call
+                (identifier)
+                (function_call_parameters)))))))))
 
 =======================================
 eADT Function 2
@@ -465,34 +565,46 @@ function main(): Int {
 ---
 
 (source_file
-  (datatype
-    (object_id
-      (entity_id))
-    (entity_id)
+  (datatype_declaration
     (identifier)
-    (entity_id)
-    (entity_id)
-    (function_definition
-      (object_id
-        (entity_id))
+    (datatype_inheritance
+      (datatype_objects
+        (identifier)
+        (object_body
+          (field_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))))))
+      (datatype_objects
+        (identifier)
+        (object_body)))
+    (datatype_constant_block
+      (object_body
+        (function_definition
+          (function_signature
+            (identifier)
+            (function_parameters)
+            (function_return_parameters
+              (primitive_type))
+            (function_usage
+              (object_body
+                (return_statement
+                  (num_whole)))))))))
+  (function_definition
+    (function_signature
+      (identifier)
       (function_parameters)
       (function_return_parameters
-        (entity_id))
-      (function_body
-        (return_statement
-          (num_whole)))))
-  (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (import
-          (entity_id)
-          (function_call
-            (identifier)))))))
+        (primitive_type))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (function_call
+                (identifier)
+                (function_call_parameters)))))))))
 
 =======================================
 Entity Inherit Fields 1
@@ -510,29 +622,33 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
-  (entity
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
+  (entity_declaration
     (identifier)
-    (identifier))
+    (object_inherit
+      (identifier))
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Fields 2
@@ -552,35 +668,39 @@ function main(): Bool {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
-  (entity
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
+  (entity_declaration
     (identifier)
-    (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (object_inherit
+      (identifier))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole)
-              (true_lit))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole)
+                (true_lit))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Fields 3 (Multi Concept)
@@ -601,38 +721,43 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
-  (concept
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
-  (entity
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
+  (entity_declaration
     (identifier)
-    (identifier)
-    (identifier))
+    (object_inherit
+      (identifier)
+      (identifier))
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole)
-              (true_lit))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole)
+                (true_lit))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Generic 1
@@ -650,32 +775,45 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
-    (identifier)
-    (identifier)
-    (field
+  (concept_declaration
+    (template
       (identifier)
-      (identifier)))
-  (entity
-    (identifier)
-    (identifier)
-    (identifier)
-    (identifier))
+      (type_params
+        (identifier)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier))))))
+  (entity_declaration
+    (template
+      (identifier)
+      (type_params
+        (identifier)))
+    (object_inherit
+      (template
+        (identifier)
+        (type_params
+          (identifier))))
+    (object_body))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Generic 2 (Renamed Param)
@@ -693,32 +831,45 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
-    (identifier)
-    (identifier)
-    (field
+  (concept_declaration
+    (template
       (identifier)
-      (identifier)))
-  (entity
-    (identifier)
-    (identifier)
-    (identifier)
-    (identifier))
+      (type_params
+        (identifier)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier))))))
+  (entity_declaration
+    (template
+      (identifier)
+      (type_params
+        (identifier)))
+    (object_inherit
+      (template
+        (identifier)
+        (type_params
+          (identifier))))
+    (object_body))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Invariants 1
@@ -737,35 +888,38 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (invariant
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (invariant_statement
         (binary_expression
           (identifier
             (modifier))
           (num_whole)))))
-  (entity
+  (entity_declaration
     (identifier)
-    (identifier))
+    (object_inherit
+      (identifier))
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Invariants 2 (Override)
@@ -785,18 +939,20 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
-  (entity
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
+  (entity_declaration
     (identifier)
-    (identifier)
-    (field
-      (invariant
+    (object_inherit
+      (identifier))
+    (object_body
+      (invariant_statement
         (binary_expression
           (identifier
             (modifier))
@@ -807,13 +963,14 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Inherit Invariants 3 (Composed)
@@ -834,24 +991,25 @@ function main(): Int {
 ---
 
 (source_file
-  (concept
+  (concept_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (invariant
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (invariant_statement
         (binary_expression
           (identifier
             (modifier))
           (num_whole)))))
-  (entity
+  (entity_declaration
     (identifier)
-    (identifier)
-    (field
-      (invariant
+    (object_inherit
+      (identifier))
+    (object_body
+      (invariant_statement
         (binary_expression
           (identifier
             (modifier))
@@ -862,13 +1020,14 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Decl 1
@@ -885,26 +1044,28 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Decl 2
@@ -922,15 +1083,15 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (invariant
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (invariant_statement
         (binary_expression
           (identifier
             (modifier))
@@ -941,13 +1102,14 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Decl 3
@@ -964,27 +1126,34 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (identifier)
-    (identifier)
-    (field
+  (entity_declaration
+    (template
       (identifier)
-      (identifier)))
+      (type_params
+        (identifier)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (identifier))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (entity_access
-            (entity_definition
-              (identifier)
-              (identifier)
-              (num_whole)))
-          (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (template
+                  (identifier)
+                  (type_params
+                    (primitive_type)))
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Default Fields 1
@@ -1001,28 +1170,30 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))
-        (variable_assignment
-          (num_whole)))))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))
+          (variable_assignment
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Default Fields 2
@@ -1040,34 +1211,36 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))))
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type))
-        (variable_assignment
-          (identifier
-            (modifier))))))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))
+          (variable_assignment
+            (identifier
+              (modifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (type_definition
-              (identifier)
-              (num_whole))
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (object_creation
+                (identifier)
+                (num_whole))
+              (identifier))))))))
 
 =======================================
 Entity Consts 1
@@ -1084,26 +1257,28 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (const_decl
-        (variable_definition
-          (identifier)
-          (primitive_type))
-        (num_whole))))
+    (object_body
+      (variable_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))
+          (variable_assignment
+            (num_whole))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (import
-            (identifier)
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (identifier))))))))
 
 =======================================
 Entity Consts 2
@@ -1120,27 +1295,31 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (identifier)
-    (identifier)
-    (field
-      (const_decl
-        (variable_definition
-          (identifier)
-          (primitive_type))
-        (num_whole))))
+  (entity_declaration
+    (template
+      (identifier)
+      (type_params
+        (identifier)))
+    (object_body
+      (variable_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))
+          (variable_assignment
+            (num_whole))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (import
-            (identifier)
-            (identifier)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (identifier))))))))
 
 =======================================
 Entity Functions 1
@@ -1159,29 +1338,33 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (entity_id)
-    (function_definition
-      (object_id
-        (entity_id))
+  (entity_declaration
+    (identifier)
+    (object_body
+      (function_definition
+        (function_signature
+          (identifier)
+          (function_parameters)
+          (function_return_parameters
+            (primitive_type))
+          (function_usage
+            (object_body
+              (return_statement
+                (num_whole))))))))
+  (function_definition
+    (function_signature
+      (identifier)
       (function_parameters)
       (function_return_parameters
-        (entity_id))
-      (function_body
-        (return_statement
-          (num_whole)))))
-  (function_definition
-    (object_id
-      (entity_id))
-    (function_parameters)
-    (function_return_parameters
-      (entity_id))
-    (function_body
-      (return_statement
-        (import
-          (entity_id)
-          (function_call
-            (identifier)))))))
+        (primitive_type))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (identifier)
+              (function_call
+                (identifier)
+                (function_call_parameters)))))))))
 
 =======================================
 Entity Functions 2
@@ -1200,38 +1383,44 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (identifier)
-    (identifier)
-    (field
+  (entity_declaration
+    (template
+      (identifier)
+      (type_params
+        (identifier)))
+    (object_body
       (function_definition
-        (function_modifier)
         (function_signature
           (identifier)
           (function_parameters
-            (function_param_signature
-              (identifier)
-              (identifier)))
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))))
           (function_return_parameters
             (identifier))
-          (function_body
-            (return_statement
-              (identifier)))))))
+          (function_usage
+            (object_body
+              (return_statement
+                (identifier))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (import
-            (identifier)
-            (identifier)
-            (identifier))
-          (parenthesized_expression
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (namespace_access_expression
+              (template
+                (identifier)
+                (type_params
+                  (primitive_type)))
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (num_whole))))))))))
 
 =======================================
 Entity Functions 3
@@ -1250,36 +1439,41 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
+    (object_body
       (function_definition
-        (function_modifier)
         (function_signature
-          (identifier)
-          (identifier)
-          (function_parameters
-            (function_param_signature
-              (identifier)
+          (template
+            (identifier)
+            (type_params
               (identifier)))
+          (function_parameters
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier))))
           (function_return_parameters
             (identifier))
-          (function_body
-            (return_statement
-              (identifier)))))))
+          (function_usage
+            (object_body
+              (return_statement
+                (identifier))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (type_cast_expression
-            (import
-              (identifier)
-              (identifier))
-            (primitive_type))
-          (parenthesized_expression
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (template
+                (namespace_access_type
+                  (identifier)
+                  (identifier))
+                (type_params
+                  (primitive_type)))
+              (function_call_parameters
+                (num_whole)))))))))

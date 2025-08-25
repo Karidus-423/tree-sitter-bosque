@@ -17,11 +17,12 @@ function main(): (|Int, Bool|) {
         (elist_type
           (primitive_type)
           (primitive_type)))
-      (function_body
-        (return_statement
-          (elist_value
-            (num_whole)
-            (true_lit)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (elist_value
+              (num_whole)
+              (true_lit))))))))
 
 =======================================
 EList Return 2
@@ -42,10 +43,11 @@ function main(): (|Int, Bool|) {
         (elist_type
           (primitive_type)
           (primitive_type)))
-      (function_body
-        (return_statement
-          (num_whole)
-          (true_lit))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole)
+            (true_lit)))))))
 
 =======================================
 Simple Return 1
@@ -64,9 +66,10 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole)))))))
 
 =======================================
 Simple Return 2
@@ -83,5 +86,6 @@ function main() {
     (function_signature
       (identifier)
       (function_parameters)
-      (function_body
-        (return_statement)))))
+      (function_usage
+        (object_body
+          (return_statement))))))

@@ -19,20 +19,22 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters))))))))
 
 ==============================
 Simple Call with Arguments
@@ -63,24 +65,26 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole)
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)
+                (num_whole)))))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Ordered
@@ -111,32 +115,34 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole)))
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole))))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))))))))))
 
 ==============================================================
 Simple Call with Accessing Arguments Unordered
@@ -167,32 +173,34 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole)))
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole))))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))))))))))
 
 ===============================
 Function Call with Scoping
@@ -224,39 +232,41 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole))))
+          (return_statement
+            (function_call
               (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole))))
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (identifier)))
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (identifier))))))))))
+              (function_call_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (identifier)))
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (identifier)))))))))))
 
 ========================================
 Function Call with Accessing Mixed 󰀫
@@ -287,28 +297,30 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole)))
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))
+                (num_whole)))))))))
 
 ========================================
 Function Call with Accessing Mixed 󰂡
@@ -339,28 +351,30 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole)
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole))))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))))))))))
 
 ========================================
 Function Call with Accessing Mixed 󱃮
@@ -391,28 +405,30 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole)))
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))
+                (num_whole)))))))))
 
 ========================================
 Function Call with Rest
@@ -446,27 +462,29 @@ function main(): Int {
                 (primitive_type))))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (identifier)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (identifier))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole)
-              (variable_expression
-                (variable_signature
-                  (identifier))
-                (variable_assignment
-                  (num_whole)))
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole)))
+                (num_whole)))))))))
 
 ========================================
 Function Call with Ref
@@ -495,29 +513,31 @@ function main(): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (primitive_type))
+              (variable_assignment
+                (num_whole))))
+          (return_statement
+            (function_call
               (identifier)
-              (primitive_type))
-            (variable_assignment
-              (num_whole))))
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (identifier
-                (modifier)))))))))
+              (function_call_parameters
+                (identifier
+                  (modifier))))))))))
 
 ========================================
 Function Call with Defaults
@@ -555,24 +575,26 @@ function main(): Int {
               (num_whole)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (binary_expression
-            (identifier)
-            (identifier))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier)))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole)
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)
+                (num_whole)))))))))
 
 ==================================
 Function Call Pre
@@ -603,21 +625,23 @@ function main(): Int {
           (binary_expression
             (identifier)
             (num_whole))))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)))))))))
 
 ==================================
 Function Call Pre Multiple
@@ -652,21 +676,23 @@ function main(): Int {
           (binary_expression
             (identifier)
             (num_whole))))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)))))))))
 
 ==================================
 Function Call Post
@@ -697,21 +723,23 @@ function main(): Int {
             (identifier
               (modifier))
             (num_whole))))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)))))))))
 
 ==================================
 Function Call Post Multiple
@@ -748,21 +776,23 @@ function main(): Int {
             (identifier
               (modifier))
             (num_whole))))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)))))))))
 
 ==================================
 Function Call Pre & Post
@@ -797,21 +827,23 @@ function main(): Int {
             (identifier
               (modifier))
             (num_whole))))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole)))))))))
 
 ==================================
 Function Call Ref Params
@@ -831,8 +863,9 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
-    (identifier))
+  (entity_declaration
+    (identifier)
+    (object_body))
   (function_definition
     (function_signature
       (identifier)
@@ -844,26 +877,28 @@ function main(): Int {
             (identifier))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole)))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)))))
-        (return_statement
-          (function_call
-            (identifier)
-            (function_call_parameters
-              (identifier
-                (modifier)))))))))
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)))))
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (identifier
+                  (modifier))))))))))

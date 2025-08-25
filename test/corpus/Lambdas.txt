@@ -14,42 +14,53 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (primitive_type)
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (binary_expression
-              (lambda_expression
-                (identifier)
-                (primitive_type)
-                (function_return_parameters
-                  (primitive_type))
-                (identifier))
-              (num_whole))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
+                    (identifier)
+                    (function_call_parameters
+                      (variable_expression
+                        (variable_signature
+                          (identifier)
+                          (primitive_type)))))
+                  (function_return_parameters
+                    (primitive_type))
+                  (binary_expression
+                    (identifier)
+                    (num_whole)))))))))))
 
 =========================================
 Simple Lambda Infer Argument
@@ -66,43 +77,52 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (primitive_type)
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
               (identifier)
-              (function_return_parameters
-                (primitive_type))
-              (function_body
-                (return_statement
-                  (binary_expression
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
                     (identifier)
-                    (num_whole)))))))))))
+                    (function_call_parameters
+                      (identifier)))
+                  (function_return_parameters
+                    (primitive_type))
+                  (object_body
+                    (return_statement
+                      (binary_expression
+                        (identifier)
+                        (num_whole)))))))))))))
 
 =========================================
 Simple Lambda with Return
@@ -120,42 +140,53 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (primitive_type)
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
               (identifier)
-              (primitive_type)
-              (function_body
-                (return_statement
-                  (binary_expression
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
                     (identifier)
-                    (num_whole)))))))))))
+                    (function_call_parameters
+                      (variable_expression
+                        (variable_signature
+                          (identifier)
+                          (primitive_type)))))
+                  (object_body
+                    (return_statement
+                      (binary_expression
+                        (identifier)
+                        (num_whole)))))))))))))
 
 =========================================
 Simple Lambda Infer Both
@@ -173,41 +204,50 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (primitive_type)
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
               (identifier)
-              (function_body
-                (return_statement
-                  (binary_expression
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
                     (identifier)
-                    (num_whole)))))))))))
+                    (function_call_parameters
+                      (identifier)))
+                  (object_body
+                    (return_statement
+                      (binary_expression
+                        (identifier)
+                        (num_whole)))))))))))))
 
 =========================================
 Simple Lambda Capture
@@ -226,46 +266,56 @@ function main(): Bool {
 
 (source_file
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (primitive_type)
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (num_whole))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_definition
-              (identifier))
-            (num_whole)))
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (num_whole))))
+          (return_statement
+            (function_call
               (identifier)
-              (function_body
-                (return_statement
-                  (binary_expression
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
                     (identifier)
-                    (identifier)))))))))))
+                    (function_call_parameters
+                      (identifier)))
+                  (object_body
+                    (return_statement
+                      (binary_expression
+                        (identifier)
+                        (identifier)))))))))))))
 
 =========================================
 Simple Lambda Reference Full
@@ -287,58 +337,73 @@ function main(): Bool {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (identifier)
-      (primitive_type)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (identifier
-              (modifier))
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier
+                      (modifier)))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_definition
-              (identifier))
-            (entity_definition
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (return_statement
+            (function_call
               (identifier)
-              (num_whole))))
-        (return_statement
-          (function_call
-            (identifier)
-            (identifier
-              (modifier)))))))
+              (function_call_parameters
+                (identifier
+                  (modifier)))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
-              (identifier
-                (modifier))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
               (identifier)
-              (function_return_parameters
-                (primitive_type))
-              (entity_access
-                (identifier)))
-            (identifier)))))))
+              (function_call_parameters
+                (access_expression
+                  (lambda_expression
+                    (function_call
+                      (identifier)
+                      (function_call_parameters
+                        (variable_expression
+                          (variable_signature
+                            (identifier
+                              (modifier))
+                            (identifier)))))
+                    (function_return_parameters
+                      (primitive_type))
+                    (identifier))
+                  (identifier))))))))))
 
 =========================================
 Simple Lambda Reference Infer
@@ -360,57 +425,70 @@ function main(): Bool {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (identifier)
-      (primitive_type)))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters
-        (function_param_signature
-          (identifier)
-          (lambda_type
+        (variable_expression
+          (variable_signature
             (identifier)
-            (identifier
-              (modifier))
-            (primitive_type))))
+            (lambda_type
+              (identifier)
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier
+                      (modifier)))))
+              (primitive_type)))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_definition
-              (identifier))
-            (entity_definition
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (return_statement
+            (function_call
               (identifier)
-              (num_whole))))
-        (return_statement
-          (function_call
-            (identifier)
-            (identifier
-              (modifier)))))))
+              (function_call_parameters
+                (identifier
+                  (modifier)))))))))
   (function_definition
-    (function_modifier)
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (function_call
-            (identifier)
-            (lambda_expression
-              (identifier
-                (modifier))
-              (function_body
-                (return_statement
-                  (entity_access
-                    (identifier))
-                  (identifier))))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (function_call
+              (identifier)
+              (function_call_parameters
+                (lambda_expression
+                  (function_call
+                    (identifier)
+                    (function_call_parameters
+                      (identifier
+                        (modifier))))
+                  (object_body
+                    (return_statement
+                      (access_expression
+                        (identifier)
+                        (identifier)))))))))))))
 
 =========================================
 Parenthesized Lambda
@@ -420,4 +498,20 @@ Parenthesized Lambda
 
 ---
 
-
+(source_file
+  (parenthesized_expression
+    (access_expression
+      (lambda_expression
+        (function_call
+          (identifier)
+          (function_call_parameters
+            (variable_expression
+              (variable_signature
+                (identifier)
+                (identifier)))))
+        (function_return_parameters
+          (primitive_type))
+        (identifier))
+      (function_call
+        (identifier)
+        (function_call_parameters)))))

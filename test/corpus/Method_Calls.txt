@@ -15,38 +15,41 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (method_statement
+        (modifier)
+        (function_signature
           (identifier)
-          (primitive_type))))
-    (field
-      (modifier)
-      (function_signature
-        (identifier)
-        (function_parameters)
-        (function_return_parameters
-          (primitive_type))
-        (function_body
-          (return_statement
-            (access_expression
-              (this)
-              (identifier)))))))
+          (function_parameters)
+          (function_return_parameters
+            (primitive_type))
+          (function_usage
+            (object_body
+              (return_statement
+                (access_expression
+                  (this)
+                  (identifier)))))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (access_expression
-            (this)
-            (function_call
-              (identifier)
-              (function_call_parameters))))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (access_expression
+              (this)
+              (function_call
+                (identifier)
+                (function_call_parameters)))))))))
 
 =============================
 Simple Entity Method 2
@@ -67,46 +70,49 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (method_statement
+        (modifier)
+        (function_signature
           (identifier)
-          (primitive_type))))
-    (field
-      (modifier)
-      (function_signature
-        (identifier)
-        (function_parameters)
-        (function_return_parameters
-          (primitive_type))
-        (function_body
-          (return_statement
-            (access_expression
-              (this)
-              (identifier)))))))
+          (function_parameters)
+          (function_return_parameters
+            (primitive_type))
+          (function_usage
+            (object_body
+              (return_statement
+                (access_expression
+                  (this)
+                  (identifier)))))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)
-                (num_whole)))))
-        (return_statement
-          (access_expression
-            (identifier)
-            (function_call
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (return_statement
+            (access_expression
               (identifier)
-              (function_call_parameters))))))))
+              (function_call
+                (identifier)
+                (function_call_parameters)))))))))
 
 =============================
 Simple Entity Eadt Methods
@@ -126,23 +132,24 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (return_statement
+            (access_expression
+              (identifier
+                (modifier))
+              (function_call
                 (identifier)
-                (num_whole)))))
-        (return_statement
-          (access_expression
-            (identifier
-              (modifier))
-            (function_call
-              (identifier)
-              (function_call_parameters
-                (num_whole)))))))))
+                (function_call_parameters
+                  (num_whole))))))))))
 
 ==============================
 Entity Ref Method
@@ -163,20 +170,21 @@ function main(): Int {
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
+      (function_usage
+        (object_body
+          (variable_statement
+            (variable_expression
+              (variable_signature
+                (identifier))
+              (variable_assignment
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (return_statement
+            (access_expression
+              (identifier
+                (modifier))
+              (function_call
                 (identifier)
-                (num_whole)))))
-        (return_statement
-          (access_expression
-            (identifier
-              (modifier))
-            (function_call
-              (identifier)
-              (function_call_parameters
-                (num_whole)))))))))
+                (function_call_parameters
+                  (num_whole))))))))))

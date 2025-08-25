@@ -15,41 +15,44 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)
-                (num_whole)))))
-        (expression_statement
-          (entity_update
-            (identifier
-              (modifier))
+      (function_usage
+        (object_body
+          (variable_statement
             (variable_expression
               (variable_signature
                 (identifier))
               (variable_assignment
-                (num_whole)))))
-        (return_statement
-          (access_expression
-            (identifier)
-            (identifier)))))))
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (expression_statement
+            (object_update
+              (identifier
+                (modifier))
+              (object_update_block
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (num_whole))))))
+          (return_statement
+            (access_expression
+              (identifier)
+              (identifier))))))))
 
 =======================================
 Simple Ref Updates 2
@@ -68,41 +71,44 @@ function main(): Int {
 ---
 
 (source_file
-  (entity
+  (entity_declaration
     (identifier)
-    (field
-      (variable_expression
-        (variable_signature
-          (identifier)
-          (primitive_type)))))
+    (object_body
+      (field_statement
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))))
   (function_definition
     (function_signature
       (identifier)
       (function_parameters)
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (variable_statement
-          (variable_expression
-            (variable_signature
-              (identifier))
-            (variable_assignment
-              (type_definition
-                (identifier)
-                (num_whole)))))
-        (expression_statement
-          (entity_update
-            (identifier
-              (modifier))
+      (function_usage
+        (object_body
+          (variable_statement
             (variable_expression
               (variable_signature
                 (identifier))
               (variable_assignment
-                (binary_expression
-                  (identifier
-                    (modifier))
-                  (num_whole))))))
-        (return_statement
-          (access_expression
-            (identifier)
-            (identifier)))))))
+                (object_creation
+                  (identifier)
+                  (num_whole)))))
+          (expression_statement
+            (object_update
+              (identifier
+                (modifier))
+              (object_update_block
+                (variable_expression
+                  (variable_signature
+                    (identifier))
+                  (variable_assignment
+                    (binary_expression
+                      (identifier
+                        (modifier))
+                      (num_whole)))))))
+          (return_statement
+            (access_expression
+              (identifier)
+              (identifier))))))))

@@ -17,13 +17,14 @@ function main(): Option<Int> {
         (option_type
           (type_params
             (primitive_type))))
-      (function_body
-        (return_statement
-          (type_definition
-            (constructor_type
-              (type_params
-                (primitive_type)))
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (object_creation
+              (constructor_type
+                (type_params
+                  (primitive_type)))
+              (num_whole))))))))
 
 ==============================
 Result Constructor Ok
@@ -45,14 +46,15 @@ function main(): Result<Int, Bool> {
           (type_params
             (primitive_type)
             (primitive_type))))
-      (function_body
-        (return_statement
-          (type_definition
-            (constructor_type
-              (type_params
-                (primitive_type)
-                (primitive_type)))
-            (num_whole)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (object_creation
+              (constructor_type
+                (type_params
+                  (primitive_type)
+                  (primitive_type)))
+              (num_whole))))))))
 
 ==============================
 Result Constructor Fail
@@ -74,14 +76,15 @@ function main(): Result<Int, Bool> {
           (type_params
             (primitive_type)
             (primitive_type))))
-      (function_body
-        (return_statement
-          (type_definition
-            (constructor_type
-              (type_params
-                (primitive_type)
-                (primitive_type)))
-            (false_lit)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (object_creation
+              (constructor_type
+                (type_params
+                  (primitive_type)
+                  (primitive_type)))
+              (false_lit))))))))
 
 ==============================
 Map Constructor
@@ -103,12 +106,13 @@ function main(): MapEntry<Int, Bool> {
           (type_params
             (primitive_type)
             (primitive_type))))
-      (function_body
-        (return_statement
-          (type_definition
-            (constructor_type
-              (type_params
-                (primitive_type)
-                (primitive_type)))
-            (num_whole)
-            (true_lit)))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (object_creation
+              (constructor_type
+                (type_params
+                  (primitive_type)
+                  (primitive_type)))
+              (num_whole)
+              (true_lit))))))))

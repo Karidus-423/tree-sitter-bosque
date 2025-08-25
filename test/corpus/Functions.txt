@@ -13,8 +13,9 @@ function main() {
     (function_signature
       (identifier)
       (function_parameters)
-      (function_body
-        (return_statement)))))
+      (function_usage
+        (object_body
+          (return_statement))))))
 
 ===========================
 Function Definition Params
@@ -35,8 +36,9 @@ function main(k: CString) {
           (variable_signature
             (identifier)
             (primitive_type))))
-      (function_body
-        (return_statement)))))
+      (function_usage
+        (object_body
+          (return_statement))))))
 
 ===========================
 Function Definition Return
@@ -59,9 +61,10 @@ function main(k: CString): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole)))))))
 
 =================================
 Function Definition Recursive
@@ -85,9 +88,10 @@ recursive function main(k: CString): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole)))))))
 
 ====================================
 Function Definition Recursive Might
@@ -111,9 +115,10 @@ recursive? function main(k: CString): Int {
             (primitive_type))))
       (function_return_parameters
         (primitive_type))
-      (function_body
-        (return_statement
-          (num_whole))))))
+      (function_usage
+        (object_body
+          (return_statement
+            (num_whole)))))))
 
 =======================================
 Function Definition Return Option Type
@@ -143,4 +148,5 @@ function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
       (function_return_parameters
         (option_type
           (type_params
-            (identifier)))))))
+            (identifier))))
+      (function_usage))))
