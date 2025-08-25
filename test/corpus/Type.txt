@@ -26,7 +26,9 @@ function main(): Flag {
             (type_cast_expression
               (true_lit)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Number 1
@@ -56,7 +58,9 @@ function main(): NVal {
             (type_cast_expression
               (num_whole)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Number 2
@@ -86,7 +90,9 @@ function main(): FVal {
             (type_cast_expression
               (num_float)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Number With Value 1
@@ -121,7 +127,9 @@ function main(): Int {
                 (type_cast_expression
                   (num_whole)
                   (type_params
-                    (custom_type))))))
+                    (type_start)
+                    (custom_type)
+                    (type_end))))))
           (return_statement
             (access_expression
               (identifier)
@@ -155,7 +163,9 @@ function main(): SV1 {
             (type_cast_expression
               (string)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Strings Without Constraints 2
@@ -185,7 +195,9 @@ function main(): SV2 {
             (type_cast_expression
               (cstring)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Strings With Constraints 1
@@ -216,7 +228,9 @@ function main(): SV1 {
             (type_cast_expression
               (string)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))
 
 =======================================
 Type Decl of Strings With Constraints 2
@@ -257,4 +271,6 @@ function main(): SV2 {
             (type_cast_expression
               (cstring)
               (type_params
-                (custom_type)))))))))
+                (type_start)
+                (custom_type)
+                (type_end)))))))))

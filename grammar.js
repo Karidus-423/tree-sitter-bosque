@@ -393,9 +393,9 @@ module.exports = grammar({
       ),
     type_params: ($) =>
       seq(
-        "<",
+        alias("<", $.type_start),
         commaSep1(seq($._type, optional(seq(":", $._type)))),
-        ">",
+        alias(">", $.type_end),
       ),
 
     // Result<Int, Bool>

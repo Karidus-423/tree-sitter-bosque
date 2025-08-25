@@ -113,7 +113,9 @@ KeyComparator::equal<Nat>(0n, 1n)
 (source_file
   (key_comparator
     (type_params
-      (primitive_type))
+      (type_start)
+      (primitive_type)
+      (type_end))
     (num_whole)
     (num_whole)))
 
@@ -128,6 +130,8 @@ KeyComparator::less<Nat>(5n, 80n)
 (source_file
   (key_comparator
     (type_params
-      (primitive_type))
+      (type_start)
+      (primitive_type)
+      (type_end))
     (num_whole)
     (num_whole)))

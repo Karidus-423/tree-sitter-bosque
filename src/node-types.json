@@ -5137,6 +5137,14 @@
         {
           "type": "template",
           "named": true
+        },
+        {
+          "type": "type_end",
+          "named": true
+        },
+        {
+          "type": "type_start",
+          "named": true
         }
       ]
     }
@@ -6133,6 +6141,14 @@
   {
     "type": "type",
     "named": false
+  },
+  {
+    "type": "type_end",
+    "named": true
+  },
+  {
+    "type": "type_start",
+    "named": true
   },
   {
     "type": "using",

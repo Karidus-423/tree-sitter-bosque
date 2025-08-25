@@ -41,9 +41,11 @@ __internal entity MapEntry<K: keytype, V> {
     (modifier)
     (constructor_type
       (type_params
+        (type_start)
         (custom_type)
         (custom_type)
-        (custom_type)))
+        (custom_type)
+        (type_end)))
     (object_body)))
 
 =============================
@@ -65,9 +67,11 @@ __internal entity Map<K: keytype, V> {
     (modifier)
     (constructor_type
       (type_params
+        (type_start)
         (custom_type)
         (custom_type)
-        (custom_type)))
+        (custom_type)
+        (type_end)))
     (object_body
       (preprocess_statement
         (identifier))

@@ -148,5 +148,7 @@ function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
       (function_return_parameters
         (option_type
           (type_params
-            (custom_type))))
+            (type_start)
+            (custom_type)
+            (type_end))))
       (function_usage))))

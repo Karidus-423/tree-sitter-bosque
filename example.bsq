@@ -7,6 +7,8 @@ __internal __typedeclable __numeric entity Float {
     const pi: Float = 3.1415926535897931f;
     const e: Float = 2.7182818284590451f;
 
+	let oof: List<Int,Float>;
+
     function min(a: Float, b: Float): Float { return if(a < b) then a else b; }
     function max(a: Float, b: Float): Float { return if(a > b) then a else b; }
 

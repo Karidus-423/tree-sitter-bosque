@@ -94,8 +94,8 @@ __internal __typedeclable __numeric entity Float {
     const pi: Float = 3.1415926535897931f;
     const e: Float = 2.7182818284590451f;
 	%*NOTE:If expression causes error, does not matter it will be depreceated at one point. *%
-    function min(a: Float, b: Float): Float { return if(a < b) then a else b; }
-    function max(a: Float, b: Float): Float { return if(a > b) then a else b; }
+    %%function min(a: Float, b: Float): Float { return if(a < b) then a else b; }
+    %%function max(a: Float, b: Float): Float { return if(a > b) then a else b; }
 
     function pow(a: Float, b: Float): Float {
         return NumericOps::s_floatPow(a, b);
@@ -119,4 +119,125 @@ __internal __typedeclable __numeric entity Float {
 
 ---
 
-
+(source_file
+  (entity_declaration
+    (modifier)
+    (modifier)
+    (modifier)
+    (primitive_type)
+    (object_body
+      (preprocess_statement
+        (identifier)
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_float))))
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_float))))
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_float))))
+        (variable_statement
+          (variable_expression
+            (variable_signature
+              (identifier)
+              (primitive_type))
+            (variable_assignment
+              (num_float))))
+        (comment)
+        (comment)
+        (comment)
+        (function_definition
+          (function_signature
+            (custom_type)
+            (function_parameters
+              (variable_expression
+                (variable_signature
+                  (identifier)
+                  (primitive_type)))
+              (variable_expression
+                (variable_signature
+                  (identifier)
+                  (primitive_type))))
+            (function_return_parameters
+              (primitive_type))
+            (function_usage
+              (object_body
+                (return_statement
+                  (namespace_access_expression
+                    (custom_type)
+                    (function_call
+                      (custom_type)
+                      (function_call_parameters
+                        (identifier)
+                        (identifier)))))))))
+        (function_definition
+          (function_signature
+            (custom_type)
+            (function_parameters
+              (variable_expression
+                (variable_signature
+                  (identifier)
+                  (primitive_type))))
+            (function_return_parameters
+              (primitive_type))
+            (function_usage
+              (object_body
+                (return_statement
+                  (binary_expression
+                    (identifier)
+                    (identifier)))))))
+        (function_definition
+          (function_signature
+            (custom_type)
+            (function_parameters
+              (variable_expression
+                (variable_signature
+                  (identifier)
+                  (primitive_type))))
+            (function_return_parameters
+              (primitive_type))
+            (function_usage
+              (object_body
+                (return_statement
+                  (binary_expression
+                    (binary_expression
+                      (identifier)
+                      (identifier))
+                    (identifier)))))))
+        (function_definition
+          (function_signature
+            (custom_type)
+            (function_parameters
+              (variable_expression
+                (variable_signature
+                  (identifier)
+                  (primitive_type))))
+            (function_return_parameters
+              (primitive_type)
+              (pre_condition
+                (binary_expression
+                  (identifier)
+                  (num_float))))
+            (function_usage
+              (object_body
+                (return_statement
+                  (namespace_access_expression
+                    (custom_type)
+                    (function_call
+                      (custom_type)
+                      (function_call_parameters
+                        (identifier))))))))))
+      (comment))))

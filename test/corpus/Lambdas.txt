@@ -531,7 +531,9 @@ recursive? method map<U>(f: recursive? fn(K, V) -> U): Map<K, U>;
       (template
         (custom_type)
         (type_params
-          (custom_type)))
+          (type_start)
+          (custom_type)
+          (type_end)))
       (function_parameters
         (variable_expression
           (variable_signature
@@ -550,6 +552,8 @@ recursive? method map<U>(f: recursive? fn(K, V) -> U): Map<K, U>;
       (function_return_parameters
         (constructor_type
           (type_params
+            (type_start)
             (custom_type)
-            (custom_type))))
+            (custom_type)
+            (type_end))))
       (function_usage))))

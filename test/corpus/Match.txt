@@ -31,7 +31,9 @@ function main(): Int {
                 (identifier)
                 (option_type
                   (type_params
-                    (primitive_type))))
+                    (type_start)
+                    (primitive_type)
+                    (type_end))))
               (variable_assignment
                 (function_call
                   (custom_type)
@@ -126,7 +128,9 @@ function main(): Int {
                 (identifier)
                 (option_type
                   (type_params
-                    (primitive_type))))
+                    (type_start)
+                    (primitive_type)
+                    (type_end))))
               (variable_assignment
                 (function_call
                   (custom_type)

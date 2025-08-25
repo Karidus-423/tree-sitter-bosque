@@ -459,7 +459,9 @@ function main(): Int {
               (modifier))
             (list_type
               (type_params
-                (primitive_type))))))
+                (type_start)
+                (primitive_type)
+                (type_end))))))
       (function_return_parameters
         (primitive_type))
       (function_usage

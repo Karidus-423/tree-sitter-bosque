@@ -1952,8 +1952,13 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "<"
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
+            "value": "<"
+          },
+          "named": true,
+          "value": "type_start"
         },
         {
           "type": "SEQ",
@@ -2033,8 +2038,13 @@
           ]
         },
         {
-          "type": "STRING",
-          "value": ">"
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
+            "value": ">"
+          },
+          "named": true,
+          "value": "type_end"
         }
       ]
     },

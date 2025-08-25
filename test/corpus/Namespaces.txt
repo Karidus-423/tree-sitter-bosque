@@ -35,7 +35,9 @@ function main(): Option<Bar> {
       (function_return_parameters
         (option_type
           (type_params
-            (custom_type))))
+            (type_start)
+            (custom_type)
+            (type_end))))
       (function_usage
         (object_body
           (return_statement
@@ -66,9 +68,11 @@ function main(): Option<Main::Bar> {
       (function_return_parameters
         (option_type
           (type_params
+            (type_start)
             (namespace_access_type
               (custom_type)
-              (custom_type)))))
+              (custom_type))
+            (type_end))))
       (function_usage
         (object_body
           (return_statement
@@ -99,9 +103,11 @@ function main(): Option<NSOther::Foo> {
       (function_return_parameters
         (option_type
           (type_params
+            (type_start)
             (namespace_access_type
               (custom_type)
-              (custom_type)))))
+              (custom_type))
+            (type_end))))
       (function_usage
         (object_body
           (return_statement
@@ -133,9 +139,11 @@ function main(): Option<Other::Foo> {
       (function_return_parameters
         (option_type
           (type_params
+            (type_start)
             (namespace_access_type
               (custom_type)
-              (custom_type)))))
+              (custom_type))
+            (type_end))))
       (function_usage
         (object_body
           (return_statement
@@ -193,7 +201,9 @@ __internal entity MapEntry<K: keytype, V> {
     (modifier)
     (constructor_type
       (type_params
+        (type_start)
         (custom_type)
         (custom_type)
-        (custom_type)))
+        (custom_type)
+        (type_end)))
     (object_body)))

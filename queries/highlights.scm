@@ -25,19 +25,20 @@
 (function_signature
   function_id: (custom_type) @function)
 
-(elist_type
-  "(|" @type
-  "|)" @type)
-
-(type_params
-  "<" @type
-  ">" @type)
 
 (namespace_access_expression
   (custom_type) @module)
 (namespace_access_type
   (custom_type) @module
   access_target: (custom_type) @type)
+
+(elist_type
+  "(|" @type
+  "|)" @type)
+
+(type_params
+  (type_start) @type
+  (type_end) @type)
 
 [
 "!"
@@ -106,7 +107,17 @@
 "recursive?"
 "chktest"
 "errtest"
-(custom_modifier)
+"safe"
+"__safe"
+"numeric"
+"__numeric"
+"__internal"
+"__typedeclable"
+"__typebase"
+"keycomparable"
+"__keycomparable"
+"assume_safe"
+"__assume_safe"
 ] @keyword.modifier
 
 [
@@ -134,6 +145,7 @@
 "using" 
 "abort"
 "Ok" 
+"Fail"
 "if" 
 "match" 
 "switch" 

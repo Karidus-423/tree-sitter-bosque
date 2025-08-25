@@ -698,33 +698,45 @@ entity NBodySystem {
             (identifier)
             (list_type
               (type_params
-                (custom_type))))))
+                (type_start)
+                (custom_type)
+                (type_end))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
             (list_type
               (type_params
+                (type_start)
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type)))))))
+                      (primitive_type))
+                    (type_end)))
+                (type_end))))
           (variable_assignment
             (object_creation
               (list_type
                 (type_params
+                  (type_start)
                   (list_type
                     (type_params
+                      (type_start)
                       (elist_type
                         (primitive_type)
-                        (primitive_type))))))
+                        (primitive_type))
+                      (type_end)))
+                  (type_end)))
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -740,9 +752,11 @@ entity NBodySystem {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -755,9 +769,11 @@ entity NBodySystem {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -767,9 +783,11 @@ entity NBodySystem {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole)))))))
@@ -789,7 +807,9 @@ entity NBodySystem {
                     (object_creation
                       (list_type
                         (type_params
-                          (custom_type)))
+                          (type_start)
+                          (custom_type)
+                          (type_end)))
                       (namespace_access_expression
                         (custom_type)
                         (identifier))
@@ -814,7 +834,9 @@ entity NBodySystem {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -850,7 +872,9 @@ entity NBodySystem {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -886,7 +910,9 @@ entity NBodySystem {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -918,7 +944,9 @@ entity NBodySystem {
                     (object_creation
                       (list_type
                         (type_params
-                          (custom_type)))
+                          (type_start)
+                          (custom_type)
+                          (type_end)))
                       (access_expression
                         (namespace_access_expression
                           (custom_type)
@@ -954,9 +982,11 @@ entity NBodySystem {
                 (identifier)
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type)))))))
+                      (primitive_type))
+                    (type_end))))))
           (function_return_parameters
             (primitive_type))
           (function_usage
@@ -972,7 +1002,9 @@ entity NBodySystem {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -1061,7 +1093,9 @@ entity NBodySystem {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (access_expression
                             (lambda_expression
@@ -1091,7 +1125,9 @@ entity NBodySystem {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -1102,9 +1138,11 @@ entity NBodySystem {
                                     (identifier)
                                     (list_type
                                       (type_params
+                                        (type_start)
                                         (elist_type
                                           (primitive_type)
-                                          (primitive_type))))))))
+                                          (primitive_type))
+                                        (type_end)))))))
                             (function_return_parameters
                               (primitive_type))
                             (object_body
@@ -1152,11 +1190,13 @@ entity NBodySystem {
                         (template
                           (custom_type)
                           (type_params
+                            (type_start)
                             (elist_type
                               (custom_type)
                               (primitive_type)
                               (primitive_type)
-                              (primitive_type))))
+                              (primitive_type))
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -1186,10 +1226,12 @@ entity NBodySystem {
                                         (template
                                           (custom_type)
                                           (type_params
+                                            (type_start)
                                             (elist_type
                                               (primitive_type)
                                               (primitive_type)
-                                              (primitive_type))))
+                                              (primitive_type))
+                                            (type_end)))
                                         (function_call_parameters
                                           (lambda_expression
                                             (function_call
@@ -1332,7 +1374,9 @@ entity NBodySystem {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -1371,7 +1415,9 @@ entity NBodySystem {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -1410,7 +1456,9 @@ entity NBodySystem {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -1448,7 +1496,9 @@ entity NBodySystem {
                         (template
                           (custom_type)
                           (type_params
-                            (custom_type)))
+                            (type_start)
+                            (custom_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -2365,33 +2415,45 @@ public function main(): Float {
             (identifier)
             (list_type
               (type_params
-                (custom_type))))))
+                (type_start)
+                (custom_type)
+                (type_end))))))
       (variable_statement
         (variable_expression
           (variable_signature
             (identifier)
             (list_type
               (type_params
+                (type_start)
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type)))))))
+                      (primitive_type))
+                    (type_end)))
+                (type_end))))
           (variable_assignment
             (object_creation
               (list_type
                 (type_params
+                  (type_start)
                   (list_type
                     (type_params
+                      (type_start)
                       (elist_type
                         (primitive_type)
-                        (primitive_type))))))
+                        (primitive_type))
+                      (type_end)))
+                  (type_end)))
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -2407,9 +2469,11 @@ public function main(): Float {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -2422,9 +2486,11 @@ public function main(): Float {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole))
@@ -2434,9 +2500,11 @@ public function main(): Float {
               (object_creation
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type))))
+                      (primitive_type))
+                    (type_end)))
                 (elist_value
                   (num_whole)
                   (num_whole)))))))
@@ -2456,7 +2524,9 @@ public function main(): Float {
                     (object_creation
                       (list_type
                         (type_params
-                          (custom_type)))
+                          (type_start)
+                          (custom_type)
+                          (type_end)))
                       (namespace_access_expression
                         (custom_type)
                         (identifier))
@@ -2481,7 +2551,9 @@ public function main(): Float {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -2517,7 +2589,9 @@ public function main(): Float {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -2553,7 +2627,9 @@ public function main(): Float {
                           (template
                             (custom_type)
                             (type_params
-                              (primitive_type)))
+                              (type_start)
+                              (primitive_type)
+                              (type_end)))
                           (function_call_parameters
                             (access_expression
                               (access_expression
@@ -2585,7 +2661,9 @@ public function main(): Float {
                     (object_creation
                       (list_type
                         (type_params
-                          (custom_type)))
+                          (type_start)
+                          (custom_type)
+                          (type_end)))
                       (access_expression
                         (namespace_access_expression
                           (custom_type)
@@ -2621,9 +2699,11 @@ public function main(): Float {
                 (identifier)
                 (list_type
                   (type_params
+                    (type_start)
                     (elist_type
                       (primitive_type)
-                      (primitive_type)))))))
+                      (primitive_type))
+                    (type_end))))))
           (function_return_parameters
             (primitive_type))
           (function_usage
@@ -2639,7 +2719,9 @@ public function main(): Float {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -2728,7 +2810,9 @@ public function main(): Float {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (access_expression
                             (lambda_expression
@@ -2758,7 +2842,9 @@ public function main(): Float {
                         (template
                           (custom_type)
                           (type_params
-                            (primitive_type)))
+                            (type_start)
+                            (primitive_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -2769,9 +2855,11 @@ public function main(): Float {
                                     (identifier)
                                     (list_type
                                       (type_params
+                                        (type_start)
                                         (elist_type
                                           (primitive_type)
-                                          (primitive_type))))))))
+                                          (primitive_type))
+                                        (type_end)))))))
                             (function_return_parameters
                               (primitive_type))
                             (object_body
@@ -2819,11 +2907,13 @@ public function main(): Float {
                         (template
                           (custom_type)
                           (type_params
+                            (type_start)
                             (elist_type
                               (custom_type)
                               (primitive_type)
                               (primitive_type)
-                              (primitive_type))))
+                              (primitive_type))
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call
@@ -2853,10 +2943,12 @@ public function main(): Float {
                                         (template
                                           (custom_type)
                                           (type_params
+                                            (type_start)
                                             (elist_type
                                               (primitive_type)
                                               (primitive_type)
-                                              (primitive_type))))
+                                              (primitive_type))
+                                            (type_end)))
                                         (function_call_parameters
                                           (lambda_expression
                                             (function_call
@@ -2999,7 +3091,9 @@ public function main(): Float {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -3038,7 +3132,9 @@ public function main(): Float {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -3077,7 +3173,9 @@ public function main(): Float {
                                           (template
                                             (custom_type)
                                             (type_params
-                                              (primitive_type)))
+                                              (type_start)
+                                              (primitive_type)
+                                              (type_end)))
                                           (function_call_parameters
                                             (access_expression
                                               (lambda_expression
@@ -3115,7 +3213,9 @@ public function main(): Float {
                         (template
                           (custom_type)
                           (type_params
-                            (custom_type)))
+                            (type_start)
+                            (custom_type)
+                            (type_end)))
                         (function_call_parameters
                           (lambda_expression
                             (function_call

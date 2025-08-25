@@ -123,7 +123,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (datatype_block
       (object_body
         (field_statement
@@ -152,7 +154,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole))
               (identifier))))))))
 
@@ -181,7 +185,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (field_statement
         (variable_expression
@@ -194,7 +200,9 @@ function main(): Int {
       (template
         (custom_type)
         (type_params
-          (primitive_type))))
+          (type_start)
+          (primitive_type)
+          (type_end))))
     (datatype_block
       (object_body
         (field_statement
@@ -231,7 +239,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole)
                 (true_lit))
               (identifier))))))))
@@ -353,7 +363,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (datatype_inheritance
       (datatype_objects
         (custom_type)
@@ -380,7 +392,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole))
               (identifier))))))))
 
@@ -779,7 +793,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (field_statement
         (variable_expression
@@ -790,12 +806,16 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_inherit
       (template
         (custom_type)
         (type_params
-          (custom_type))))
+          (type_start)
+          (custom_type)
+          (type_end))))
     (object_body))
   (function_definition
     (function_signature
@@ -811,7 +831,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole))
               (identifier))))))))
 
@@ -835,7 +857,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (field_statement
         (variable_expression
@@ -846,12 +870,16 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_inherit
       (template
         (custom_type)
         (type_params
-          (custom_type))))
+          (type_start)
+          (custom_type)
+          (type_end))))
     (object_body))
   (function_definition
     (function_signature
@@ -867,7 +895,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole))
               (identifier))))))))
 
@@ -1130,7 +1160,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (field_statement
         (variable_expression
@@ -1151,7 +1183,9 @@ function main(): Int {
                 (template
                   (custom_type)
                   (type_params
-                    (primitive_type)))
+                    (type_start)
+                    (primitive_type)
+                    (type_end)))
                 (num_whole))
               (identifier))))))))
 
@@ -1299,7 +1333,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (variable_statement
         (variable_expression
@@ -1387,7 +1423,9 @@ function main(): Int {
     (template
       (custom_type)
       (type_params
-        (custom_type)))
+        (type_start)
+        (custom_type)
+        (type_end)))
     (object_body
       (function_definition
         (function_signature
@@ -1416,7 +1454,9 @@ function main(): Int {
               (template
                 (custom_type)
                 (type_params
-                  (primitive_type)))
+                  (type_start)
+                  (primitive_type)
+                  (type_end)))
               (function_call
                 (custom_type)
                 (function_call_parameters
@@ -1447,7 +1487,9 @@ function main(): Int {
           (template
             (custom_type)
             (type_params
-              (custom_type)))
+              (type_start)
+              (custom_type)
+              (type_end)))
           (function_parameters
             (variable_expression
               (variable_signature
@@ -1474,6 +1516,8 @@ function main(): Int {
                   (custom_type)
                   (custom_type))
                 (type_params
-                  (primitive_type)))
+                  (type_start)
+                  (primitive_type)
+                  (type_end)))
               (function_call_parameters
                 (num_whole)))))))))
