@@ -515,3 +515,41 @@ Parenthesized Lambda
       (function_call
         (custom_type)
         (function_call_parameters)))))
+
+=========================================
+Lambda with Modifier
+=========================================
+
+recursive? method map<U>(f: recursive? fn(K, V) -> U): Map<K, U>;
+
+---
+
+(source_file
+  (method_statement
+    (modifier)
+    (function_signature
+      (template
+        (custom_type)
+        (type_params
+          (custom_type)))
+      (function_parameters
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (lambda_type
+              (custom_type
+                (modifier))
+              (function_parameters
+                (variable_expression
+                  (variable_signature
+                    (identifier)))
+                (variable_expression
+                  (variable_signature
+                    (identifier))))
+              (custom_type)))))
+      (function_return_parameters
+        (constructor_type
+          (type_params
+            (custom_type)
+            (custom_type))))
+      (function_usage))))

@@ -29,6 +29,16 @@
   "(|" @type
   "|)" @type)
 
+(type_params
+  "<" @type
+  ">" @type)
+
+(namespace_access_expression
+  (custom_type) @module)
+(namespace_access_type
+  (custom_type) @module
+  access_target: (custom_type) @type)
+
 [
 "!"
 "+" 
@@ -69,23 +79,13 @@
 "@"
 "." 
 "::"
+":"
+","
 ";" 
 "=>" 
 "->" 
 ] @punctuation.delimeter
 
-
-[
-"if" 
-"match" 
-"switch" 
-"else" 
-"#if"
-"#else"
-"#endif"
-] @statement
-
-"return" @keyword.return
 
 [
 "assert" 
@@ -96,9 +96,17 @@
 "var" 
 "let"
 "const" 
-"__internal"
 "_debug" 
 "debug" 
+"..."
+"ref"
+"$"
+"public"
+"recursive"
+"recursive?"
+"chktest"
+"errtest"
+(custom_modifier)
 ] @keyword.modifier
 
 [
@@ -116,6 +124,7 @@
 "ensures" 
 "field" 
 "invariant" 
+"return"
 "method" 
 "namespace" 
 "of" 
@@ -123,14 +132,15 @@
 "requires" 
 "datatype" 
 "using" 
-"public" 
-"recursive?" 
-"recursive" 
-"errtest" 
-"chktest"
 "abort"
 "Ok" 
-"Option" 
+"if" 
+"match" 
+"switch" 
+"else" 
+"#if"
+"#else"
+"#endif"
 ] @keyword
 
 ; "action" @keyword
@@ -184,7 +194,13 @@
 "BigInt"
 "BigNat"
 "Rational"
+"List"
+"Option"
+"Some"
 "Float"
+"MapEntry"
+"Result"
+"Map"
 "Decimal"
 "DecimalDegree"
 "LatLongCoordinate"
@@ -215,4 +231,4 @@
 "Path"
 "PathItem"
 "Glob"
-] @type.builtin
+] @type

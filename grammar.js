@@ -237,13 +237,14 @@ module.exports = grammar({
       ),
     preprocess_statement: ($) =>
       seq(
-        seq("#if", field("preprocess_tag",$.identifier)),
-        optional($._components),
+        "#if", 
+        field("preprocess_tag",$.identifier),
+        optional(repeat($._components)),
         optional($._else_preprocess),
         "#endif",
       ),
     _else_preprocess: ($) =>
-        seq("#else", optional($._components)),
+        seq("#else", optional(repeat($._components))),
 
     variable_statement: ($) =>
       seq(choice("let", "const", "var"), $.variable_expression, ";"),
@@ -479,7 +480,13 @@ module.exports = grammar({
         "::",
         $._expression,
       )),
-    namespace_access_type: ($) => prec.left(seq($._type, "::", $._type)),
+    namespace_access_type: ($) => 
+      prec.left(
+        seq(
+          $._type,
+          "::",
+          field("access_target",$._type)),
+      ),
 
     function_call: ($) =>
       prec(
@@ -536,14 +543,25 @@ module.exports = grammar({
         "...",
         "ref",
         "$",
-        "__internal",
         "public",
         "recursive",
         "recursive?",
         "chktest",
         "errtest",
+        "internal",
+        "safe",
+        "__safe",
+        "numeric",
+        "__numeric",
         "__internal",
+        "__typedeclable",
+        "__typebase",
+        "keycomparable",
+        "__keycomparable",
+        "assume_safe",
+        "__assume_safe",
       ),
+
 
     comment: (_) =>
       choice(

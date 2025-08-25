@@ -1,98 +1,32 @@
-entity NBodySystem {
-    field bodies: List<Body>;
-   
-    const energypairs: List<List<(|Nat, Nat|)>> = List<List<(|Nat, Nat|)>>{
-        List<(|Nat, Nat|)>{(|0n, 1n|), (|0n, 2n|), (|0n, 3n|), (|0n, 4n|)},
-        List<(|Nat, Nat|)>{(|1n, 2n|), (|1n, 3n|), (|1n, 4n|)},
-        List<(|Nat, Nat|)>{(|2n, 3n|), (|2n, 4n|)},
-        List<(|Nat, Nat|)>{(|3n, 4n|)}
-    };
+__internal __typedeclable __numeric entity Float {
+#if STRIPPED_CORE
+#else
+    const zero: Float = 0.0f;
+    const one: Float = 1.0f;
 
-    function create(): NBodySystem {
-        let planets = List<Body>{
-            Body::jupiter,
-            Body::saturn,
-            Body::uranus,
-            Body::neptune
-        };
+    const pi: Float = 3.1415926535897931f;
+    const e: Float = 2.7182818284590451f;
 
-        let px = planets.map<Float>(fn(p: Body): Float => p.vel.vx * p.mass).sum();
-        let py = planets.map<Float>(fn(p: Body): Float => p.vel.vy * p.mass).sum();
-        let pz = planets.map<Float>(fn(p: Body): Float => p.vel.vz * p.mass).sum();
+    function min(a: Float, b: Float): Float { return if(a < b) then a else b; }
+    function max(a: Float, b: Float): Float { return if(a > b) then a else b; }
 
-        let allbodies = List<Body>{
-            Body::sun.offsetMomentum(px, py, pz),
-            Body::jupiter,
-            Body::saturn,
-            Body::uranus,
-            Body::neptune
-        };
-
-        return NBodySystem{ allbodies };
+    function pow(a: Float, b: Float): Float {
+        return NumericOps::s_floatPow(a, b);
     }
 
-    method potentialEnergyCompute(ppairs: List<(|Nat, Nat|)>): Float {
-        let potentialEnergies = ppairs.map<Float>(fn(bp: (|Nat, Nat|)): Float => {
-            let b0 = this.bodies.get(bp.0);
-            let b1 = this.bodies.get(bp.1);
-
-            return (b0.mass * b1.mass) // Body::distance(b0, b1);
-        });
-
-        return potentialEnergies.sum();
+    function square(x: Float): Float {
+        return x * x;
     }
 
-    method energy(): Float {
-        let keneticEnergies = this.bodies.map<Float>(fn(b: Body): Float => b.kineticEnergy());
-        let potentialEnergies = NBodySystem::energypairs.map<Float>(fn(pep: List<(|Nat, Nat|)>): Float => {
-            return this.potentialEnergyCompute(pep);
-        });
-
-        return keneticEnergies.sum() - potentialEnergies.sum();
+    function cube(x: Float): Float {
+        return x * x * x;
     }
 
-    method advance(dt: Float): NBodySystem {
-        let deltav = this.bodies.map<(|Body, Float, Float, Float|)>(fn(b: Body): (|Body, Float, Float, Float|) => {
-            let forces = this.bodies.map<(|Float, Float, Float|)>(fn(ob: Body): (|Float, Float, Float|) => {
-                if(b.name === ob.name) {
-                    return (|0.0f, 0.0f, 0.0f|);
-                }
-                else {
-                    let dx = ob.pos.x - b.pos.x;
-                    let dy = ob.pos.y - b.pos.y;
-                    let dz = ob.pos.z - b.pos.z;
-
-                    let distance = Body::distance(ob, b);
-                    let mag = dt // (distance * distance * distance);
-
-                    return (|dx * ob.mass * mag, dy * ob.mass * mag, dz * ob.mass * mag|);
-                }
-            });
-
-            let fx = b.vel.vx + forces.map<Float>(fn(fv: (|Float, Float, Float|)): Float => fv.0).sum();
-            let fy = b.vel.vy + forces.map<Float>(fn(fv: (|Float, Float, Float|)): Float => fv.1).sum();
-            let fz = b.vel.vz + forces.map<Float>(fn(fv: (|Float, Float, Float|)): Float => fv.2).sum();
-
-            return (|b, fx, fy, fz|);
-        });
-
-        let bodies = deltav.map<Body>(fn(utuple: (|Body, Float, Float, Float|)): Body => {
-            let b = utuple.0;
-
-            let nvx = utuple.1;
-            let nvy = utuple.2;
-            let nvz = utuple.3;
-            let nvel = Velocity{nvx, nvy, nvz};
-
-            let nx = b.pos.x + (nvx * dt);
-            let ny = b.pos.y + (nvy * dt);
-            let nz = b.pos.z + (nvz * dt);
-            let npos = Position{nx, ny, nz};
-
-            return Body{b.name, b.mass, npos, nvel};
-        });
-
-        return NBodySystem{ bodies };
+    function sqrt(x: Float): Float
+        requires x >= 0.0f;
+    {
+        return NumericOps::s_floatSqrt(x);
     }
+#endif %% STRIPPED_CORE
 }
 

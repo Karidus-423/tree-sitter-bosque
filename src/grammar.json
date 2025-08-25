@@ -1098,28 +1098,26 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "#if"
-            },
-            {
-              "type": "FIELD",
-              "name": "preprocess_tag",
-              "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
-              }
-            }
-          ]
+          "type": "STRING",
+          "value": "#if"
+        },
+        {
+          "type": "FIELD",
+          "name": "preprocess_tag",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         },
         {
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_components"
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_components"
+              }
             },
             {
               "type": "BLANK"
@@ -1155,8 +1153,11 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_components"
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_components"
+              }
             },
             {
               "type": "BLANK"
@@ -2353,8 +2354,12 @@
             "value": "::"
           },
           {
-            "type": "SYMBOL",
-            "name": "_type"
+            "type": "FIELD",
+            "name": "access_target",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_type"
+            }
           }
         ]
       }
@@ -3178,10 +3183,6 @@
         },
         {
           "type": "STRING",
-          "value": "__internal"
-        },
-        {
-          "type": "STRING",
           "value": "public"
         },
         {
@@ -3202,7 +3203,51 @@
         },
         {
           "type": "STRING",
+          "value": "internal"
+        },
+        {
+          "type": "STRING",
+          "value": "safe"
+        },
+        {
+          "type": "STRING",
+          "value": "__safe"
+        },
+        {
+          "type": "STRING",
+          "value": "numeric"
+        },
+        {
+          "type": "STRING",
+          "value": "__numeric"
+        },
+        {
+          "type": "STRING",
           "value": "__internal"
+        },
+        {
+          "type": "STRING",
+          "value": "__typedeclable"
+        },
+        {
+          "type": "STRING",
+          "value": "__typebase"
+        },
+        {
+          "type": "STRING",
+          "value": "keycomparable"
+        },
+        {
+          "type": "STRING",
+          "value": "__keycomparable"
+        },
+        {
+          "type": "STRING",
+          "value": "assume_safe"
+        },
+        {
+          "type": "STRING",
+          "value": "__assume_safe"
         }
       ]
     },

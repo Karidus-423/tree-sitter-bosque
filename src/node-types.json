@@ -3025,9 +3025,56 @@
   {
     "type": "namespace_access_type",
     "named": true,
-    "fields": {},
+    "fields": {
+      "access_target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constructor_type",
+            "named": true
+          },
+          {
+            "type": "custom_type",
+            "named": true
+          },
+          {
+            "type": "elist_type",
+            "named": true
+          },
+          {
+            "type": "lambda_type",
+            "named": true
+          },
+          {
+            "type": "list_type",
+            "named": true
+          },
+          {
+            "type": "namespace_access_type",
+            "named": true
+          },
+          {
+            "type": "option_type",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "regex_type",
+            "named": true
+          },
+          {
+            "type": "template",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -5868,7 +5915,31 @@
     "named": false
   },
   {
+    "type": "__assume_safe",
+    "named": false
+  },
+  {
     "type": "__internal",
+    "named": false
+  },
+  {
+    "type": "__keycomparable",
+    "named": false
+  },
+  {
+    "type": "__numeric",
+    "named": false
+  },
+  {
+    "type": "__safe",
+    "named": false
+  },
+  {
+    "type": "__typebase",
+    "named": false
+  },
+  {
+    "type": "__typedeclable",
     "named": false
   },
   {
@@ -5885,6 +5956,10 @@
   },
   {
     "type": "assert",
+    "named": false
+  },
+  {
+    "type": "assume_safe",
     "named": false
   },
   {
@@ -5956,7 +6031,15 @@
     "named": false
   },
   {
+    "type": "internal",
+    "named": false
+  },
+  {
     "type": "invariant",
+    "named": false
+  },
+  {
+    "type": "keycomparable",
     "named": false
   },
   {
@@ -5982,6 +6065,10 @@
   {
     "type": "none_lit",
     "named": true
+  },
+  {
+    "type": "numeric",
+    "named": false
   },
   {
     "type": "of",
@@ -6017,6 +6104,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "safe",
     "named": false
   },
   {
