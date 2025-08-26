@@ -12,14 +12,14 @@
         "bsqon"
       ],
       "highlights": "queries/highlights.scm",
-      "injection-regex": "^bosque$",
+      "injection-regex": "^bsq$",
       "class-name": "TreeSitterBosque"
     }
   ],
   "metadata": {
     "version": "0.1.5",
     "license": "MIT",
-    "description": "n/a",
+    "description": "Bosque Grammar for Tree-sitter",
     "authors": [
       {
         "name": "Kennett Puerto",

@@ -21,7 +21,7 @@
 (num_whole) @number
 (num_float) @number.float
 
-(comment) @comment
+(comment) @comment @spell
 
 (function_signature
   function_id: (custom_type) @function)
