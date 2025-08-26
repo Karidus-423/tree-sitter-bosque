@@ -101,7 +101,7 @@ module.exports = grammar({
     function_return_parameters: ($) =>
       prec.left(seq(
         ":",
-        field("type_sig", $._type),
+        commaSep1($._type),
         optional(repeat(seq($._pre_post_conditions, ";"))),
       )),
     _pre_post_conditions: ($) =>
@@ -560,6 +560,8 @@ module.exports = grammar({
         "__keycomparable",
         "assume_safe",
         "__assume_safe",
+        "validate",
+        "__validate",
       ),
 
 

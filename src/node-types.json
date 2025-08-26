@@ -1906,64 +1906,57 @@
   {
     "type": "function_return_parameters",
     "named": true,
-    "fields": {
-      "type_sig": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "constructor_type",
-            "named": true
-          },
-          {
-            "type": "custom_type",
-            "named": true
-          },
-          {
-            "type": "elist_type",
-            "named": true
-          },
-          {
-            "type": "lambda_type",
-            "named": true
-          },
-          {
-            "type": "list_type",
-            "named": true
-          },
-          {
-            "type": "namespace_access_type",
-            "named": true
-          },
-          {
-            "type": "option_type",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "regex_type",
-            "named": true
-          },
-          {
-            "type": "template",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "constructor_type",
+          "named": true
+        },
+        {
+          "type": "custom_type",
+          "named": true
+        },
+        {
+          "type": "elist_type",
+          "named": true
+        },
+        {
+          "type": "lambda_type",
+          "named": true
+        },
+        {
+          "type": "list_type",
+          "named": true
+        },
+        {
+          "type": "namespace_access_type",
+          "named": true
+        },
+        {
+          "type": "option_type",
+          "named": true
+        },
         {
           "type": "post_condition",
           "named": true
         },
         {
           "type": "pre_condition",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "regex_type",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         }
       ]
@@ -5951,6 +5944,10 @@
     "named": false
   },
   {
+    "type": "__validate",
+    "named": false
+  },
+  {
     "type": "_debug",
     "named": false
   },
@@ -6152,6 +6149,10 @@
   },
   {
     "type": "using",
+    "named": false
+  },
+  {
+    "type": "validate",
     "named": false
   },
   {

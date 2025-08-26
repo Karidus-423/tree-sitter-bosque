@@ -101,7 +101,6 @@
 "debug" 
 "..."
 "ref"
-"$"
 "public"
 "recursive"
 "recursive?"
@@ -118,6 +117,8 @@
 "__keycomparable"
 "assume_safe"
 "__assume_safe"
+"validate"
+"__validate"
 ] @keyword.modifier
 
 [
@@ -177,7 +178,6 @@
 ; "api" @keyword
 ; "in" @keyword
 ; "task" @keyword
-; "validate" @keyword
 ; "when" @keyword
 ; "event" @keyword
 ; "status" @keyword

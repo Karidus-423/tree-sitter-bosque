@@ -152,3 +152,83 @@ function balanceHelper_RR_LL(c: Color, tleft: Rope, tright: Rope): Option<Node>;
             (custom_type)
             (type_end))))
       (function_usage))))
+
+===========================
+Function Definition Void
+===========================
+
+entity Database {
+    validate $entries.allOf(pred(e) => e.items.size() == $format.vcount);
+    validate Database::indexFullCheck($index, $entries.size());
+}
+
+---
+
+(source_file
+  (entity_declaration
+    (custom_type)
+    (object_body
+      (expression_statement
+        (access_expression
+          (identifier
+            (modifier)
+            (modifier))
+          (function_call
+            (custom_type)
+            (function_call_parameters
+              (access_expression
+                (access_expression
+                  (access_expression
+                    (lambda_expression
+                      (function_call
+                        (custom_type)
+                        (function_call_parameters
+                          (identifier)))
+                      (identifier))
+                    (identifier))
+                  (binary_expression
+                    (function_call
+                      (custom_type)
+                      (function_call_parameters))
+                    (identifier
+                      (modifier))))
+                (identifier))))))
+      (expression_statement
+        (namespace_access_expression
+          (custom_type
+            (modifier))
+          (function_call
+            (custom_type)
+            (function_call_parameters
+              (identifier
+                (modifier))
+              (access_expression
+                (identifier
+                  (modifier))
+                (function_call
+                  (custom_type)
+                  (function_call_parameters))))))))))
+
+=====================
+Return Multiple
+=====================
+
+method setIndex(atidx: Nat): Database, DatabaseIndex {
+}
+
+---
+
+(source_file
+  (method_statement
+    (function_signature
+      (custom_type)
+      (function_parameters
+        (variable_expression
+          (variable_signature
+            (identifier)
+            (primitive_type))))
+      (function_return_parameters
+        (custom_type)
+        (custom_type))
+      (function_usage
+        (object_body)))))
