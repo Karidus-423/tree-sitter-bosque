@@ -26,7 +26,6 @@
 (function_signature
   function_id: (custom_type) @function)
 
-
 (namespace_access_expression
   (custom_type) @module)
 (namespace_access_type
@@ -122,6 +121,9 @@
 "__assume_safe"
 "validate"
 "__validate"
+"private" 
+"__private" 
+"test" 
 ] @keyword.modifier
 
 [
@@ -177,7 +179,6 @@
 ; "release" @keyword
 ; "safety" @keyword
 ; "spec" @keyword
-; "test" @keyword
 ; "api" @keyword
 ; "in" @keyword
 ; "task" @keyword
@@ -190,7 +191,6 @@
 ; "example" @keyword
 ; "operator" @keyword
 ; "variant" @keyword
-; "private" @keyword
 ; "internal" @keyword
 ; "hidden" @keyword
 ; "sensitive" @keyword

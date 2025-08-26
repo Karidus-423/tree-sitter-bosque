@@ -368,7 +368,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         },
         {
           "type": "SYMBOL",
@@ -380,7 +380,7 @@
         }
       ]
     },
-    "object_body": {
+    "_object_body": {
       "type": "SEQ",
       "members": [
         {
@@ -638,7 +638,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         }
       ]
     },
@@ -651,7 +651,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         }
       ]
     },
@@ -684,7 +684,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         },
         {
           "type": "CHOICE",
@@ -728,7 +728,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         }
       ]
     },
@@ -772,7 +772,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "object_body"
+          "name": "_object_body"
         }
       ]
     },
@@ -1903,7 +1903,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "object_body"
+                "name": "_object_body"
               }
             ]
           }
@@ -3214,6 +3214,14 @@
         },
         {
           "type": "STRING",
+          "value": "__public"
+        },
+        {
+          "type": "STRING",
+          "value": "test"
+        },
+        {
+          "type": "STRING",
           "value": "recursive"
         },
         {
@@ -3283,6 +3291,14 @@
         {
           "type": "STRING",
           "value": "__validate"
+        },
+        {
+          "type": "STRING",
+          "value": "private"
+        },
+        {
+          "type": "STRING",
+          "value": "__private"
         }
       ]
     },

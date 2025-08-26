@@ -113,11 +113,11 @@ module.exports = grammar({
     post_condition: ($) => seq("ensures", $._expression),
     function_usage: ($) =>
       choice(
-        $.object_body,
+        $._object_body,
         $.function_alias,
         ";",
       ),
-    object_body: ($) =>
+    _object_body: ($) =>
       seq(
         "{",
         optional(repeat($._statement)),
@@ -155,26 +155,26 @@ module.exports = grammar({
     datatype_constant_block: ($) =>
       seq(
         "&",
-        $.object_body,
+        $._object_body,
       ),
     datatype_block: ($) =>
       seq(
         "using",
-        $.object_body,
+        $._object_body,
       ),
     datatype_inheritance: ($) =>
       prec.left(seq(
         "of",
         repeat1($.datatype_objects),
       )),
-    datatype_objects: ($) => seq($._type, $.object_body, optional("|")),
+    datatype_objects: ($) => seq($._type, $._object_body, optional("|")),
 
     concept_declaration: ($) =>
       seq(
         optional(repeat($.modifier)),
         "concept",
         $._type,
-        $.object_body,
+        $._object_body,
       ),
     entity_declaration: ($) =>
       seq(
@@ -182,7 +182,7 @@ module.exports = grammar({
         "entity",
         $._type,
         optional($.object_inherit),
-        $.object_body,
+        $._object_body,
       ),
     object_inherit: ($) =>
       seq(
@@ -237,14 +237,13 @@ module.exports = grammar({
       ),
     preprocess_statement: ($) =>
       seq(
-        "#if", 
-        field("preprocess_tag",$.identifier),
+        "#if",
+        field("preprocess_tag", $.identifier),
         optional(repeat($._components)),
         optional($._else_preprocess),
         "#endif",
       ),
-    _else_preprocess: ($) =>
-        seq("#else", optional(repeat($._components))),
+    _else_preprocess: ($) => seq("#else", optional(repeat($._components))),
 
     variable_statement: ($) =>
       seq(choice("let", "const", "var"), $.variable_expression, ";"),
@@ -374,7 +373,7 @@ module.exports = grammar({
         "=>",
         choice(
           $._expression,
-          $.object_body,
+          $._object_body,
         ),
       )),
     type_cast_expression: ($) =>
@@ -480,12 +479,13 @@ module.exports = grammar({
         "::",
         $._expression,
       )),
-    namespace_access_type: ($) => 
+    namespace_access_type: ($) =>
       prec.left(
         seq(
           $._type,
           "::",
-          field("access_target",$._type)),
+          field("access_target", $._type),
+        ),
       ),
 
     function_call: ($) =>
@@ -544,6 +544,8 @@ module.exports = grammar({
         "ref",
         "$",
         "public",
+        "__public",
+        "test",
         "recursive",
         "recursive?",
         "chktest",
@@ -562,8 +564,9 @@ module.exports = grammar({
         "__assume_safe",
         "validate",
         "__validate",
+        "private",
+        "__private",
       ),
-
 
     comment: (_) =>
       choice(
@@ -574,7 +577,8 @@ module.exports = grammar({
         //Inline
         seq("%**", /([^*]|\*\*[^%])*/, "**%"),
       ),
-    identifier: ($) => seq(optional(repeat($.modifier)), /[_a-zA-Z][_a-zA-Z0-9]*/),
+    identifier: ($) =>
+      seq(optional(repeat($.modifier)), /[_a-zA-Z][_a-zA-Z0-9]*/),
     this: (_) => token("this"),
     _enum_member: ($) => alias($.identifier, $.enum_member),
     none_lit: (_) => token("none"),
