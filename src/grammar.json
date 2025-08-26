@@ -3299,6 +3299,14 @@
         {
           "type": "STRING",
           "value": "__private"
+        },
+        {
+          "type": "STRING",
+          "value": "internal"
+        },
+        {
+          "type": "STRING",
+          "value": "__intrinsic_error"
         }
       ]
     },

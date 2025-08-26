@@ -124,6 +124,8 @@
 "private" 
 "__private" 
 "test" 
+"internal"
+"__intrinsic_error"
 ] @keyword.modifier
 
 [

@@ -566,6 +566,8 @@ module.exports = grammar({
         "__validate",
         "private",
         "__private",
+        "internal",
+        "__intrinsic_error"
       ),
 
     comment: (_) =>
