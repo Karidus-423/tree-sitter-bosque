@@ -1,34 +1,16 @@
-__internal __typedeclable __numeric entity Float {
-#if STRIPPED_CORE
-#else
-    const zero: Float = 0.0f;
-    const one: Float = 1.0f;
+declare namespace Main;
 
-    const pi: Float = 3.1415926535897931f;
-    const e: Float = 2.7182818284590451f;
+const re_SAFEIDENTIFIERCHAR: CRegex = /[a-zA-Z0-9-_]/c;
 
-	let oof: List<Int,Float>;
+type ALPHANUMERIC = CString of / [a-zA-Z0-9]+/c;
+type EMAIL = CString of /${Main::re_SAFEIDENTIFIERCHAR}+('.'${Main::re_SAFEIDENTIFIERCHAR})* '@' (${Main::re_SAFEIDENTIFIERCHAR}+ '.')+ [a-zA-Z]+ /c;
 
-    function min(a: Float, b: Float): Float { return if(a < b) then a else b; }
-    function max(a: Float, b: Float): Float { return if(a > b) then a else b; }
+type USER_PHONE = CString of /[+]? [1-9][0-9]?' '* '('? [0-9]{3} ')'? [ -]?[0-9]{3}[ -]?[0-9]{4} /c;
 
-    function pow(a: Float, b: Float): Float {
-        return NumericOps::s_floatPow(a, b);
-    }
+type CCNUMBER = CString of /[0-9 -]{13,16}/c;
+%% Should be a String
+const re_USERNAME: CRegex = / .{1, 50} /c;
+type USER_NAME = CString of / ${Main::re_USERNAME} /c;
 
-    function square(x: Float): Float {
-        return x * x;
-    }
-
-    function cube(x: Float): Float {
-        return x * x * x;
-    }
-
-    function sqrt(x: Float): Float
-        requires x >= 0.0f;
-    {
-        return NumericOps::s_floatSqrt(x);
-    }
-#endif %% STRIPPED_CORE
-}
+type USER_ADDRESS = CString of /[0-9a-zA-Z -,.#()]+/c;
 

@@ -16,6 +16,7 @@
 
 (string) @string
 (cstring) @string
+(regex_expression) @regexp
 
 (num_whole) @number
 (num_float) @number.float
@@ -64,6 +65,8 @@
 "<" 
 "<<" 
 ">>" 
+"\\/"
+"/\\"
 ] @operator
 
 [
