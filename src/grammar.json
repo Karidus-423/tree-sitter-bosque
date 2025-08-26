@@ -273,12 +273,29 @@
             "value": ":"
           },
           {
-            "type": "FIELD",
-            "name": "type_sig",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_type"
-            }
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_type"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ","
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_type"
+                    }
+                  ]
+                }
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -3258,6 +3275,14 @@
         {
           "type": "STRING",
           "value": "__assume_safe"
+        },
+        {
+          "type": "STRING",
+          "value": "validate"
+        },
+        {
+          "type": "STRING",
+          "value": "__validate"
         }
       ]
     },

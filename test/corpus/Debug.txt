@@ -15,7 +15,7 @@ function main(): Int {
       function_id: (custom_type)
       (function_parameters)
       (function_return_parameters
-        type_sig: (primitive_type))
+        (primitive_type))
       (function_usage
         (object_body
           (debug_statement

@@ -14,3 +14,8 @@ type USER_NAME = CString of / ${Main::re_USERNAME} /c;
 
 type USER_ADDRESS = CString of /[0-9a-zA-Z -,.#()]+/c;
 
+entity Database {
+    validate $entries.allOf(pred(e) => e.items.size() == $format.vcount);
+    validate Database::indexFullCheck($index, $entries.size());
+}
+
