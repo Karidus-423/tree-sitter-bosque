@@ -1,3 +1,3 @@
 # Bosque Tree-sitter Parser
 
-(./assets/bosque_treesitter.png)
+[./assets/bosque_treesitter.png]
