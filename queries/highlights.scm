@@ -144,6 +144,7 @@
 "field" 
 "invariant" 
 "return"
+"yield" 
 "method" 
 "namespace" 
 "of" 
@@ -162,46 +163,6 @@
 "#else"
 "#endif"
 ] @keyword
-
-; "action" @keyword
-; "bsqon" @keyword
-; "$bsqon" @keyword
-; "do" @keyword
-; "elif" @keyword
-; "env" @keyword
-; "fail" @keyword
-; "implements" @keyword
-; "pred" @keyword
-; "result" @keyword
-; "self" @keyword
-; "then" @keyword
-; "yield" @keyword
-; "continue" @keyword
-; "break" @keyword
-; "release" @keyword
-; "safety" @keyword
-; "spec" @keyword
-; "api" @keyword
-; "in" @keyword
-; "task" @keyword
-; "when" @keyword
-; "event" @keyword
-; "status" @keyword
-; "resource" @keyword
-; "predicate" @keyword
-; "softcheck" @keyword
-; "example" @keyword
-; "operator" @keyword
-; "variant" @keyword
-; "internal" @keyword
-; "hidden" @keyword
-; "sensitive" @keyword
-; "export" @keyword
-; "deterministic" @keyword
-; "idempotent" @keyword
-; "abstract" @keyword
-; "override" @keyword
-; "virtual" @keyword
 
 [
 "None"

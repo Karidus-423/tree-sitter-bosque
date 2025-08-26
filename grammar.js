@@ -262,7 +262,7 @@ module.exports = grammar({
     type_statement: ($) => seq("type", $._type, "=", $._type, ";"),
     return_statement: ($) =>
       seq(
-        "return",
+        choice("return","yield"),
         commaSep($._expression),
         ";",
       ),
